@@ -1,0 +1,152 @@
+.skl-single {
+    &__content {
+        padding: 3.2rem 0;
+
+        aside {
+            display: none;
+        }
+    }
+
+    &__post {
+        display: flex;
+        flex-direction: column;
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #000;
+        }
+
+        h2 {
+            font-size: 3.2rem;
+            font-weight: 600;
+            line-height: 125%;
+            letter-spacing: -1px;
+        }
+
+        h3 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            line-height: 3.2rem;
+            letter-spacing: -1px;
+        }
+
+        &-header {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+            padding-bottom: 3.2rem;
+        }
+
+        &-title {
+            color: var(--skl-color-black);
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 3.2rem;
+        }
+
+        &-excerpt {
+            color: rgba(29, 36, 51, 0.8);
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 150%;
+        }
+
+        &-metadata {
+            color: rgba(29, 36, 51, 0.65);
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.6rem;
+        }
+
+        &-thumbnail {
+            width: 100%;
+            margin-top: calc(2.4rem - 1.6rem);
+
+            img {
+                aspect-ratio: 343/250;
+                border-radius: 8px;
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            figcaption {
+                color: rgba(29, 36, 51, 0.651);
+                text-align: center;
+                font-size: 10px;
+                font-weight: 400;
+                line-height: 140%;
+            }
+        }
+
+        &-content {
+            color: rgba(29, 36, 51, 0.8);
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 150%;
+            padding: 1.6rem 0;
+
+            p,
+            ol,
+            ul {
+                margin-bottom: 2.4rem;
+            }
+
+            ol,
+            ul {
+                list-style-position: inside;
+            }
+
+            li + li {
+                margin-top: 1rem;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                margin-bottom: 3rem;
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        .skl-container {
+            display: flex;
+            gap: 2.4rem;
+            justify-content: center;
+        }
+
+        &__content {
+            padding-bottom: 4.8rem;
+
+            aside {
+                display: block;
+            }
+        }
+
+        &__post {
+            max-width: 728px;
+
+            &-title {
+                font-size: 3.6rem;
+                font-weight: 600;
+                line-height: 4.8rem;
+            }
+
+            &-thumbnail {
+                margin-bottom: 3.2rem;
+
+                img {
+                    aspect-ratio: 728/388;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,279 @@
+# Copyright (C) 2024 Skallar Theme
+# This file is distributed under the same license as the Skallar Theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00:00+00:00\n"
+"PO-Revision-Date: 2024-01-01 00:00:00+00:00\n"
+"Last-Translator: \n"
+"Language-Team: Indonesian (Indonesia)\n"
+"Language: id_ID\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: includes/ThemeOptions.php:89
+msgid "Header Menu"
+msgstr "Menu Header"
+
+#: includes/ThemeOptions.php:90
+msgid "Bottom Menu"
+msgstr "Menu Bawah"
+
+#: includes/ThemeOptions.php:205
+msgid "Theme Settings"
+msgstr "Pengaturan Tema"
+
+#: includes/ThemeOptions.php:206
+msgid "Skallar Theme"
+msgstr "Tema Skallar"
+
+#: includes/ThemeOptions.php:217
+msgid "General Settings"
+msgstr "Pengaturan Umum"
+
+#: includes/ThemeOptions.php:279
+msgid "Color Settings"
+msgstr "Pengaturan Warna"
+
+#: includes/ThemeOptions.php:280
+msgid "Language Settings"
+msgstr "Pengaturan Bahasa"
+
+#: includes/ThemeOptions.php:291
+msgid "Primary Color"
+msgstr "Warna Utama"
+
+#: includes/ThemeOptions.php:295
+msgid "Secondary Color"
+msgstr "Warna Sekunder"
+
+#: includes/ThemeOptions.php:299
+msgid "Text Color"
+msgstr "Warna Teks"
+
+#: includes/ThemeOptions.php:303
+msgid "Background Color"
+msgstr "Warna Latar Belakang"
+
+#: includes/ThemeOptions.php:307
+msgid "Success Color"
+msgstr "Warna Sukses"
+
+#: includes/ThemeOptions.php:311
+msgid "Danger Color"
+msgstr "Warna Bahaya"
+
+#: includes/ThemeOptions.php:354
+msgid "Language Settings"
+msgstr "Pengaturan Bahasa"
+
+#: includes/ThemeOptions.php:358
+msgid "Current Language:"
+msgstr "Bahasa Saat Ini:"
+
+#: includes/ThemeOptions.php:368
+msgid "Site Language"
+msgstr "Bahasa Situs"
+
+#: includes/ThemeOptions.php:371
+msgid "Portuguese (Brazil)"
+msgstr "Portugis (Brasil)"
+
+#: includes/ThemeOptions.php:374
+msgid "English (United States)"
+msgstr "Inggris (Amerika Serikat)"
+
+#: includes/ThemeOptions.php:377
+msgid "Spanish (Spain)"
+msgstr "Spanyol (Spanyol)"
+
+#: includes/ThemeOptions.php:380
+msgid "French (France)"
+msgstr "Perancis (Prancis)"
+
+#: includes/ThemeOptions.php:383
+msgid "German (Germany)"
+msgstr "Jerman (Jerman)"
+
+#: includes/ThemeOptions.php:386
+msgid "Korean (South Korea)"
+msgstr "Korea (Korea Selatan)"
+
+#: includes/ThemeOptions.php:389
+msgid "Danish (Denmark)"
+msgstr "Denmark (Denmark)"
+
+#: includes/ThemeOptions.php:392
+msgid "Arabic"
+msgstr "Arab"
+
+#: includes/ThemeOptions.php:395
+msgid "Dutch (Netherlands)"
+msgstr "Belanda (Belanda)"
+
+#: includes/ThemeOptions.php:398
+msgid "Hungarian (Hungary)"
+msgstr "Hungaria (Hungaria)"
+
+#: includes/ThemeOptions.php:401
+msgid "Hindi (India)"
+msgstr "Hindi (India)"
+
+#: includes/ThemeOptions.php:404
+msgid "Indonesian (Indonesia)"
+msgstr "Indonesia (Indonesia)"
+
+#: includes/ThemeOptions.php:407
+msgid "Italian (Italy)"
+msgstr "Italia (Italia)"
+
+#: includes/ThemeOptions.php:410
+msgid "Japanese (Japan)"
+msgstr "Jepang (Jepang)"
+
+#: includes/ThemeOptions.php:413
+msgid "Norwegian (Norway)"
+msgstr "Norwegia (Norwegia)"
+
+#: includes/ThemeOptions.php:416
+msgid "Polish (Poland)"
+msgstr "Polandia (Polandia)"
+
+#: includes/ThemeOptions.php:419
+msgid "Portuguese (Portugal)"
+msgstr "Portugis (Portugal)"
+
+#: includes/ThemeOptions.php:422
+msgid "Swedish (Sweden)"
+msgstr "Swedia (Swedia)"
+
+#: includes/ThemeOptions.php:425
+msgid "Turkish (Turkey)"
+msgstr "Turki (Turki)"
+
+#: includes/ThemeOptions.php:428
+msgid "Filipino (Philippines)"
+msgstr "Filipino (Filipina)"
+
+#: includes/ThemeOptions.php:431
+msgid "Finnish (Finland)"
+msgstr "Finlandia (Finlandia)"
+
+#: includes/ThemeOptions.php:434
+msgid "Thai (Thailand)"
+msgstr "Thailand (Thailand)"
+
+#: includes/ThemeOptions.php:437
+msgid "Greek (Greece)"
+msgstr "Yunani (Yunani)"
+
+#: includes/ThemeOptions.php:440
+msgid "Czech (Czech Republic)"
+msgstr "Ceko (Republik Ceko)"
+
+#: includes/ThemeOptions.php:443
+msgid "Luxembourgish (Luxembourg)"
+msgstr "Luksemburg (Luksemburg)"
+
+#: includes/ThemeOptions.php:446
+msgid "Romanian (Romania)"
+msgstr "Rumania (Rumania)"
+
+#: includes/ThemeOptions.php:449
+msgid "Serbian (Serbia)"
+msgstr "Serbia (Serbia)"
+
+#: includes/ThemeOptions.php:452
+msgid "Bulgarian (Bulgaria)"
+msgstr "Bulgaria (Bulgaria)"
+
+#: includes/ThemeOptions.php:456
+msgid "Select the language for your site. This will change the language of the theme interface and content."
+msgstr "Pilih bahasa untuk situs Anda. Ini akan mengubah bahasa antarmuka tema dan konten."
+
+#: includes/ThemeOptions.php:465
+msgid "Quick Language Switch"
+msgstr "Pergantian Bahasa Cepat"
+
+#: includes/ThemeOptions.php:466
+msgid "Click on a language below to change it immediately:"
+msgstr "Klik pada bahasa di bawah untuk mengubahnya segera:"
+
+#: includes/ThemeOptions.php:472
+msgid "Portuguese"
+msgstr "Portugis"
+
+#: includes/ThemeOptions.php:473
+msgid "Current"
+msgstr "Saat Ini"
+
+#: includes/ThemeOptions.php:481
+msgid "English"
+msgstr "Inggris"
+
+#: includes/ThemeOptions.php:489
+msgid "Spanish"
+msgstr "Spanyol"
+
+#: includes/ThemeOptions.php:497
+msgid "French"
+msgstr "Perancis"
+
+#: includes/ThemeOptions.php:508
+msgid "Reset Language Settings"
+msgstr "Reset Pengaturan Bahasa"
+
+#: includes/ThemeOptions.php:513
+msgid "Reset to Default Language"
+msgstr "Reset ke Bahasa Default"
+
+#: includes/ThemeOptions.php:520
+msgid "Language Information"
+msgstr "Informasi Bahasa"
+
+#: includes/ThemeOptions.php:523
+msgid "Language Code:"
+msgstr "Kode Bahasa:"
+
+#: includes/ThemeOptions.php:527
+msgid "Available Languages:"
+msgstr "Bahasa yang Tersedia:"
+
+#: includes/ThemeOptions.php:533
+msgid "Translation Files:"
+msgstr "File Terjemahan:"
+
+#: includes/ThemeOptions.php:542
+msgid "Available"
+msgstr "Tersedia"
+
+#: includes/ThemeOptions.php:543
+msgid "Missing"
+msgstr "Tidak Ada"
+
+#: includes/ThemeOptions.php:553
+msgid "Instructions"
+msgstr "Petunjuk"
+
+#: includes/ThemeOptions.php:556
+msgid "Use the dropdown above to select your preferred language"
+msgstr "Gunakan dropdown di atas untuk memilih bahasa pilihan Anda"
+
+#: includes/ThemeOptions.php:557
+msgid "Or use the quick buttons for instant language switching"
+msgstr "Atau gunakan tombol cepat untuk pergantian bahasa instan"
+
+#: includes/ThemeOptions.php:558
+msgid "The change affects both the admin panel and front-end of your site"
+msgstr "Perubahan ini mempengaruhi panel admin dan tampilan depan situs Anda"
+
+#: includes/ThemeOptions.php:559
+msgid "All theme text will be displayed in the selected language"
+msgstr "Semua teks tema akan ditampilkan dalam bahasa yang dipilih"
+
+#: includes/ThemeOptions.php:560
+msgid "Use the reset button if you encounter any language-related issues"
+msgstr "Gunakan tombol reset jika Anda mengalami masalah terkait bahasa"

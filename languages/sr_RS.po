@@ -1,0 +1,113 @@
+# Serbian (Serbia) - sr_RS.po
+msgid ""
+msgstr ""
+"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Language: sr_RS\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: includes/ThemeOptions.php:89
+msgid "Header Menu"
+msgstr "Мени заглавља"
+
+#: includes/ThemeOptions.php:90
+msgid "Bottom Menu"
+msgstr "Доњи мени"
+
+#: includes/ThemeOptions.php:205
+msgid "Theme Settings"
+msgstr "Подешавања теме"
+
+#: includes/ThemeOptions.php:206
+msgid "Skallar Theme"
+msgstr "Skallar тема"
+
+#: includes/ThemeOptions.php:217
+msgid "General Settings"
+msgstr "Општа подешавања"
+
+#: includes/ThemeOptions.php:279
+msgid "Color Settings"
+msgstr "Подешавања боја"
+
+#: includes/ThemeOptions.php:280
+msgid "Language Settings"
+msgstr "Подешавања језика"
+
+#: includes/ThemeOptions.php:354
+msgid "Language Settings"
+msgstr "Подешавања језика"
+
+#: includes/ThemeOptions.php:358
+msgid "Current Language:"
+msgstr "Тренутни језик:"
+
+#: includes/ThemeOptions.php:368
+msgid "Site Language"
+msgstr "Језик сајта"
+
+#: includes/ThemeOptions.php:449
+msgid "Serbian (Serbia)"
+msgstr "Српски (Србија)"
+
+#: includes/ThemeOptions.php:456
+msgid "Select the language for your site. This will change the language of the theme interface and content."
+msgstr "Изаберите језик за ваш сајт. Ово ће променити језик интерфејса теме и садржаја."
+
+#: includes/ThemeOptions.php:465
+msgid "Quick Language Switch"
+msgstr "Брза промена језика"
+
+#: includes/ThemeOptions.php:466
+msgid "Click on a language below to change it immediately:"
+msgstr "Кликните на језик испод да га одмах промените:"
+
+#: includes/ThemeOptions.php:472
+msgid "Portuguese"
+msgstr "Португалски"
+
+#: includes/ThemeOptions.php:473
+msgid "Current"
+msgstr "Тренутни"
+
+#: includes/ThemeOptions.php:481
+msgid "English"
+msgstr "Енглески"
+
+#: includes/ThemeOptions.php:508
+msgid "Reset Language Settings"
+msgstr "Ресетовање подешавања језика"
+
+#: includes/ThemeOptions.php:513
+msgid "Reset to Default Language"
+msgstr "Враћање на подразумевани језик"
+
+#: includes/ThemeOptions.php:520
+msgid "Language Information"
+msgstr "Информације о језику"
+
+#: includes/ThemeOptions.php:523
+msgid "Language Code:"
+msgstr "Код језика:"
+
+#: includes/ThemeOptions.php:527
+msgid "Available Languages:"
+msgstr "Доступни језици:"
+
+#: includes/ThemeOptions.php:533
+msgid "Translation Files:"
+msgstr "Фајлови превода:"
+
+#: includes/ThemeOptions.php:542
+msgid "Available"
+msgstr "Доступно"
+
+#: includes/ThemeOptions.php:543
+msgid "Missing"
+msgstr "Недостаје"
+
+#: includes/ThemeOptions.php:553
+msgid "Instructions"
+msgstr "Упутства"

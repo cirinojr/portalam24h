@@ -1,0 +1,339 @@
+# Copyright (C) 2024 Skallar Theme
+# This file is distributed under the same license as the Skallar Theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00:00+00:00\n"
+"PO-Revision-Date: 2024-01-01 00:00:00+00:00\n"
+"Last-Translator: \n"
+"Language-Team: Korean (South Korea)\n"
+"Language: ko_KR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: includes/ThemeOptions.php:89
+msgid "Header Menu"
+msgstr "헤더 메뉴"
+
+#: includes/ThemeOptions.php:90
+msgid "Bottom Menu"
+msgstr "하단 메뉴"
+
+#: includes/ThemeOptions.php:205
+msgid "Theme Settings"
+msgstr "테마 설정"
+
+#: includes/ThemeOptions.php:206
+msgid "Skallar Theme"
+msgstr "스칼라 테마"
+
+#: includes/ThemeOptions.php:217
+msgid "General Settings"
+msgstr "일반 설정"
+
+#: includes/ThemeOptions.php:251
+msgid "Configure Header Bottom Menu"
+msgstr "헤더 하단 메뉴 구성"
+
+#: includes/ThemeOptions.php:258
+msgid "Menu Items"
+msgstr "메뉴 항목"
+
+#: includes/ThemeOptions.php:262
+msgid "Format:"
+msgstr "형식:"
+
+#: includes/ThemeOptions.php:262
+msgid "One item per line in format:"
+msgstr "한 줄에 하나의 항목 형식:"
+
+#: includes/ThemeOptions.php:264
+msgid "Link Text | URL"
+msgstr "링크 텍스트 | URL"
+
+#: includes/ThemeOptions.php:265
+msgid "Example:"
+msgstr "예시:"
+
+#: includes/ThemeOptions.php:266
+msgid "Home | /"
+msgstr "홈 | /"
+
+#: includes/ThemeOptions.php:267
+msgid "About | /about"
+msgstr "소개 | /about"
+
+#: includes/ThemeOptions.php:268
+msgid "Contact | /contact"
+msgstr "연락처 | /contact"
+
+#: includes/ThemeOptions.php:279
+msgid "Color Settings"
+msgstr "색상 설정"
+
+#: includes/ThemeOptions.php:280
+msgid "Language Settings"
+msgstr "언어 설정"
+
+#: includes/ThemeOptions.php:291
+msgid "Primary Color"
+msgstr "기본 색상"
+
+#: includes/ThemeOptions.php:295
+msgid "Secondary Color"
+msgstr "보조 색상"
+
+#: includes/ThemeOptions.php:299
+msgid "Text Color"
+msgstr "텍스트 색상"
+
+#: includes/ThemeOptions.php:303
+msgid "Background Color"
+msgstr "배경 색상"
+
+#: includes/ThemeOptions.php:307
+msgid "Success Color"
+msgstr "성공 색상"
+
+#: includes/ThemeOptions.php:311
+msgid "Danger Color"
+msgstr "위험 색상"
+
+#: includes/ThemeOptions.php:328
+msgid "Colors have been reset to default values."
+msgstr "색상이 기본값으로 재설정되었습니다."
+
+#: includes/ThemeOptions.php:340
+msgid "Language settings have been reset to default (Portuguese - Brazil)."
+msgstr "언어 설정이 기본값(포르투갈어 - 브라질)으로 재설정되었습니다."
+
+#: includes/ThemeOptions.php:347
+msgid "Language changed to %s. The site will display in the new language."
+msgstr "언어가 %s로 변경되었습니다. 사이트가 새 언어로 표시됩니다."
+
+#: includes/ThemeOptions.php:354
+msgid "Language Settings"
+msgstr "언어 설정"
+
+#: includes/ThemeOptions.php:358
+msgid "Current Language:"
+msgstr "현재 언어:"
+
+#: includes/ThemeOptions.php:368
+msgid "Site Language"
+msgstr "사이트 언어"
+
+#: includes/ThemeOptions.php:371
+msgid "Portuguese (Brazil)"
+msgstr "포르투갈어 (브라질)"
+
+#: includes/ThemeOptions.php:374
+msgid "English (United States)"
+msgstr "영어 (미국)"
+
+#: includes/ThemeOptions.php:377
+msgid "Spanish (Spain)"
+msgstr "스페인어 (스페인)"
+
+#: includes/ThemeOptions.php:380
+msgid "French (France)"
+msgstr "프랑스어 (프랑스)"
+
+#: includes/ThemeOptions.php:383
+msgid "German (Germany)"
+msgstr "독일어 (독일)"
+
+#: includes/ThemeOptions.php:386
+msgid "Korean (South Korea)"
+msgstr "한국어 (대한민국)"
+
+#: includes/ThemeOptions.php:389
+msgid "Danish (Denmark)"
+msgstr "덴마크어 (덴마크)"
+
+#: includes/ThemeOptions.php:392
+msgid "Arabic"
+msgstr "아랍어"
+
+#: includes/ThemeOptions.php:395
+msgid "Dutch (Netherlands)"
+msgstr "네덜란드어 (네덜란드)"
+
+#: includes/ThemeOptions.php:398
+msgid "Hungarian (Hungary)"
+msgstr "헝가리어 (헝가리)"
+
+#: includes/ThemeOptions.php:401
+msgid "Hindi (India)"
+msgstr "힌디어 (인도)"
+
+#: includes/ThemeOptions.php:404
+msgid "Indonesian (Indonesia)"
+msgstr "인도네시아어 (인도네시아)"
+
+#: includes/ThemeOptions.php:407
+msgid "Italian (Italy)"
+msgstr "이탈리아어 (이탈리아)"
+
+#: includes/ThemeOptions.php:410
+msgid "Japanese (Japan)"
+msgstr "일본어 (일본)"
+
+#: includes/ThemeOptions.php:413
+msgid "Norwegian (Norway)"
+msgstr "노르웨이어 (노르웨이)"
+
+#: includes/ThemeOptions.php:416
+msgid "Polish (Poland)"
+msgstr "폴란드어 (폴란드)"
+
+#: includes/ThemeOptions.php:419
+msgid "Portuguese (Portugal)"
+msgstr "포르투갈어 (포르투갈)"
+
+#: includes/ThemeOptions.php:422
+msgid "Swedish (Sweden)"
+msgstr "스웨덴어 (스웨덴)"
+
+#: includes/ThemeOptions.php:425
+msgid "Turkish (Turkey)"
+msgstr "터키어 (터키)"
+
+#: includes/ThemeOptions.php:428
+msgid "Filipino (Philippines)"
+msgstr "필리핀어 (필리핀)"
+
+#: includes/ThemeOptions.php:431
+msgid "Finnish (Finland)"
+msgstr "핀란드어 (핀란드)"
+
+#: includes/ThemeOptions.php:434
+msgid "Thai (Thailand)"
+msgstr "태국어 (태국)"
+
+#: includes/ThemeOptions.php:437
+msgid "Greek (Greece)"
+msgstr "그리스어 (그리스)"
+
+#: includes/ThemeOptions.php:440
+msgid "Czech (Czech Republic)"
+msgstr "체코어 (체코)"
+
+#: includes/ThemeOptions.php:443
+msgid "Luxembourgish (Luxembourg)"
+msgstr "룩셈부르크어 (룩셈부르크)"
+
+#: includes/ThemeOptions.php:446
+msgid "Romanian (Romania)"
+msgstr "루마니아어 (루마니아)"
+
+#: includes/ThemeOptions.php:449
+msgid "Serbian (Serbia)"
+msgstr "세르비아어 (세르비아)"
+
+#: includes/ThemeOptions.php:452
+msgid "Bulgarian (Bulgaria)"
+msgstr "불가리아어 (불가리아)"
+
+#: includes/ThemeOptions.php:456
+msgid "Select the language for your site. This will change the language of the theme interface and content."
+msgstr "사이트의 언어를 선택하세요. 이는 테마 인터페이스와 콘텐츠의 언어를 변경합니다."
+
+#: includes/ThemeOptions.php:465
+msgid "Quick Language Switch"
+msgstr "빠른 언어 전환"
+
+#: includes/ThemeOptions.php:466
+msgid "Click on a language below to change it immediately:"
+msgstr "즉시 변경하려면 아래 언어를 클릭하세요:"
+
+#: includes/ThemeOptions.php:472
+msgid "Portuguese"
+msgstr "포르투갈어"
+
+#: includes/ThemeOptions.php:473
+msgid "Current"
+msgstr "현재"
+
+#: includes/ThemeOptions.php:481
+msgid "English"
+msgstr "영어"
+
+#: includes/ThemeOptions.php:489
+msgid "Spanish"
+msgstr "스페인어"
+
+#: includes/ThemeOptions.php:497
+msgid "French"
+msgstr "프랑스어"
+
+#: includes/ThemeOptions.php:508
+msgid "Reset Language Settings"
+msgstr "언어 설정 재설정"
+
+#: includes/ThemeOptions.php:509
+msgid "If you are experiencing issues with the language settings, you can reset them to default values."
+msgstr "언어 설정에 문제가 있는 경우 기본값으로 재설정할 수 있습니다."
+
+#: includes/ThemeOptions.php:513
+msgid "Reset to Default Language"
+msgstr "기본 언어로 재설정"
+
+#: includes/ThemeOptions.php:514
+msgid "Are you sure you want to reset the language to Portuguese (Brazil)?"
+msgstr "언어를 포르투갈어(브라질)로 재설정하시겠습니까?"
+
+#: includes/ThemeOptions.php:520
+msgid "Language Information"
+msgstr "언어 정보"
+
+#: includes/ThemeOptions.php:523
+msgid "Language Code:"
+msgstr "언어 코드:"
+
+#: includes/ThemeOptions.php:527
+msgid "Available Languages:"
+msgstr "사용 가능한 언어:"
+
+#: includes/ThemeOptions.php:529
+msgid "Portuguese (Brazil), English (United States), Spanish (Spain), French (France), German (Germany), Korean (South Korea), Danish (Denmark), Arabic, Dutch (Netherlands), Hungarian (Hungary), Hindi (India), Indonesian (Indonesia), Italian (Italy), Japanese (Japan), Norwegian (Norway), Polish (Poland), Portuguese (Portugal), Swedish (Sweden), Turkish (Turkey), Filipino (Philippines), Finnish (Finland), Thai (Thailand), Greek (Greece), Czech (Czech Republic), Luxembourgish (Luxembourg), Romanian (Romania), Serbian (Serbia), Bulgarian (Bulgaria)"
+msgstr "포르투갈어 (브라질), 영어 (미국), 스페인어 (스페인), 프랑스어 (프랑스), 독일어 (독일), 한국어 (대한민국), 덴마크어 (덴마크), 아랍어, 네덜란드어 (네덜란드), 헝가리어 (헝가리), 힌디어 (인도), 인도네시아어 (인도네시아), 이탈리아어 (이탈리아), 일본어 (일본), 노르웨이어 (노르웨이), 폴란드어 (폴란드), 포르투갈어 (포르투갈), 스웨덴어 (스웨덴), 터키어 (터키), 필리핀어 (필리핀), 핀란드어 (핀란드), 태국어 (태국), 그리스어 (그리스), 체코어 (체코), 룩셈부르크어 (룩셈부르크), 루마니아어 (루마니아), 세르비아어 (세르비아), 불가리아어 (불가리아)"
+
+#: includes/ThemeOptions.php:533
+msgid "Translation Files:"
+msgstr "번역 파일:"
+
+#: includes/ThemeOptions.php:542
+msgid "Available"
+msgstr "사용 가능"
+
+#: includes/ThemeOptions.php:543
+msgid "Missing"
+msgstr "누락"
+
+#: includes/ThemeOptions.php:553
+msgid "Instructions"
+msgstr "지침"
+
+#: includes/ThemeOptions.php:556
+msgid "Use the dropdown above to select your preferred language"
+msgstr "위 드롭다운을 사용하여 원하는 언어를 선택하세요"
+
+#: includes/ThemeOptions.php:557
+msgid "Or use the quick buttons for instant language switching"
+msgstr "또는 빠른 버튼을 사용하여 즉시 언어를 전환하세요"
+
+#: includes/ThemeOptions.php:558
+msgid "The change affects both the admin panel and front-end of your site"
+msgstr "변경 사항은 관리 패널과 사이트 프론트엔드 모두에 영향을 미칩니다"
+
+#: includes/ThemeOptions.php:559
+msgid "All theme text will be displayed in the selected language"
+msgstr "모든 테마 텍스트가 선택된 언어로 표시됩니다"
+
+#: includes/ThemeOptions.php:560
+msgid "Use the reset button if you encounter any language-related issues"
+msgstr "언어 관련 문제가 발생하면 재설정 버튼을 사용하세요"

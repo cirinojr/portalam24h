@@ -1,0 +1,113 @@
+# Romanian (Romania) - ro_RO.po
+msgid ""
+msgstr ""
+"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Language: ro_RO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+
+#: includes/ThemeOptions.php:89
+msgid "Header Menu"
+msgstr "Meniu Antet"
+
+#: includes/ThemeOptions.php:90
+msgid "Bottom Menu"
+msgstr "Meniu Jos"
+
+#: includes/ThemeOptions.php:205
+msgid "Theme Settings"
+msgstr "Setări Temă"
+
+#: includes/ThemeOptions.php:206
+msgid "Skallar Theme"
+msgstr "Tema Skallar"
+
+#: includes/ThemeOptions.php:217
+msgid "General Settings"
+msgstr "Setări Generale"
+
+#: includes/ThemeOptions.php:279
+msgid "Color Settings"
+msgstr "Setări Culori"
+
+#: includes/ThemeOptions.php:280
+msgid "Language Settings"
+msgstr "Setări Limbă"
+
+#: includes/ThemeOptions.php:354
+msgid "Language Settings"
+msgstr "Setări Limbă"
+
+#: includes/ThemeOptions.php:358
+msgid "Current Language:"
+msgstr "Limba Curentă:"
+
+#: includes/ThemeOptions.php:368
+msgid "Site Language"
+msgstr "Limba Site-ului"
+
+#: includes/ThemeOptions.php:446
+msgid "Romanian (Romania)"
+msgstr "Română (România)"
+
+#: includes/ThemeOptions.php:456
+msgid "Select the language for your site. This will change the language of the theme interface and content."
+msgstr "Selectați limba pentru site-ul dvs. Aceasta va schimba limba interfeței temei și conținutului."
+
+#: includes/ThemeOptions.php:465
+msgid "Quick Language Switch"
+msgstr "Schimbare Rapidă Limbă"
+
+#: includes/ThemeOptions.php:466
+msgid "Click on a language below to change it immediately:"
+msgstr "Faceți clic pe o limbă de mai jos pentru a o schimba imediat:"
+
+#: includes/ThemeOptions.php:472
+msgid "Portuguese"
+msgstr "Portugheză"
+
+#: includes/ThemeOptions.php:473
+msgid "Current"
+msgstr "Curent"
+
+#: includes/ThemeOptions.php:481
+msgid "English"
+msgstr "Engleză"
+
+#: includes/ThemeOptions.php:508
+msgid "Reset Language Settings"
+msgstr "Resetare Setări Limbă"
+
+#: includes/ThemeOptions.php:513
+msgid "Reset to Default Language"
+msgstr "Resetare la Limba Implicită"
+
+#: includes/ThemeOptions.php:520
+msgid "Language Information"
+msgstr "Informații Limbă"
+
+#: includes/ThemeOptions.php:523
+msgid "Language Code:"
+msgstr "Cod Limbă:"
+
+#: includes/ThemeOptions.php:527
+msgid "Available Languages:"
+msgstr "Limbi Disponibile:"
+
+#: includes/ThemeOptions.php:533
+msgid "Translation Files:"
+msgstr "Fișiere Traducere:"
+
+#: includes/ThemeOptions.php:542
+msgid "Available"
+msgstr "Disponibil"
+
+#: includes/ThemeOptions.php:543
+msgid "Missing"
+msgstr "Lipsește"
+
+#: includes/ThemeOptions.php:553
+msgid "Instructions"
+msgstr "Instrucțiuni"

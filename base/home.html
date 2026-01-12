@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Home</title>
+
+        <link rel="stylesheet" href="styles/style.css" />
+    </head>
+    <body>
+        <header class="skl-header">
+            <div class="skl-header__top">
+                <div class="skl-container">
+                    <div class="skl-header__top-container">
+                        <div class="skl-header__left">
+                            <button
+                                class="skl-btn skl-btn--secondary skl-btn--icon"
+                            >
+                                <svg
+                                    viewBox="0 0 16 16"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M2.66667 12C2.47778 12 2.31956 11.936 2.192 11.808C2.064 11.6804 2 11.5222 2 11.3333C2 11.1444 2.064 10.9862 2.192 10.8587C2.31956 10.7307 2.47778 10.6667 2.66667 10.6667H13.3333C13.5222 10.6667 13.6804 10.7307 13.808 10.8587C13.936 10.9862 14 11.1444 14 11.3333C14 11.5222 13.936 11.6804 13.808 11.808C13.6804 11.936 13.5222 12 13.3333 12H2.66667ZM2.66667 8.66667C2.47778 8.66667 2.31956 8.60267 2.192 8.47467C2.064 8.34711 2 8.18889 2 8C2 7.81111 2.064 7.65267 2.192 7.52467C2.31956 7.39711 2.47778 7.33333 2.66667 7.33333H13.3333C13.5222 7.33333 13.6804 7.39711 13.808 7.52467C13.936 7.65267 14 7.81111 14 8C14 8.18889 13.936 8.34711 13.808 8.47467C13.6804 8.60267 13.5222 8.66667 13.3333 8.66667H2.66667ZM2.66667 5.33333C2.47778 5.33333 2.31956 5.26956 2.192 5.142C2.064 5.014 2 4.85556 2 4.66667C2 4.47778 2.064 4.31933 2.192 4.19133C2.31956 4.06378 2.47778 4 2.66667 4H13.3333C13.5222 4 13.6804 4.06378 13.808 4.19133C13.936 4.31933 14 4.47778 14 4.66667C14 4.85556 13.936 5.014 13.808 5.142C13.6804 5.26956 13.5222 5.33333 13.3333 5.33333H2.66667Z"
+                                        fill="currentColor"
+                                    />
+                                </svg>
+                            </button>
+
+                            <div class="skl-header__logo">
+                                <img src="./images/Logo.png" alt="Logo" />
+                            </div>
+                        </div>
+
+                        <div action="" class="skl-search-bar">
+                            <form action="">
+                                <div class="skl-input">
+                                    <span class="skl-input__icon">
+                                        <svg
+                                            viewBox="0 0 16 16"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M12.6 13.5333L8.86667 9.8C8.53333 10.0667 8.15 10.2778 7.71667 10.4333C7.28333 10.5889 6.82222 10.6667 6.33333 10.6667C5.12222 10.6667 4.09733 10.2473 3.25867 9.40867C2.41956 8.56956 2 7.54444 2 6.33333C2 5.12222 2.41956 4.09711 3.25867 3.258C4.09733 2.41933 5.12222 2 6.33333 2C7.54444 2 8.56956 2.41933 9.40867 3.258C10.2473 4.09711 10.6667 5.12222 10.6667 6.33333C10.6667 6.82222 10.5889 7.28333 10.4333 7.71667C10.2778 8.15 10.0667 8.53333 9.8 8.86667L13.55 12.6167C13.6722 12.7389 13.7333 12.8889 13.7333 13.0667C13.7333 13.2444 13.6667 13.4 13.5333 13.5333C13.4111 13.6556 13.2556 13.7167 13.0667 13.7167C12.8778 13.7167 12.7222 13.6556 12.6 13.5333V13.5333ZM6.33333 9.33333C7.16667 9.33333 7.87511 9.04178 8.45867 8.45867C9.04178 7.87511 9.33333 7.16667 9.33333 6.33333C9.33333 5.5 9.04178 4.79156 8.45867 4.208C7.87511 3.62489 7.16667 3.33333 6.33333 3.33333C5.5 3.33333 4.79156 3.62489 4.208 4.208C3.62489 4.79156 3.33333 5.5 3.33333 6.33333C3.33333 7.16667 3.62489 7.87511 4.208 8.45867C4.79156 9.04178 5.5 9.33333 6.33333 9.33333Z"
+                                                fill="currentColor"
+                                            />
+                                        </svg>
+                                    </span>
+
+                                    <input
+                                        type="text"
+                                        placeholder="Search..."
+                                    />
+                                </div>
+
+                                <button
+                                    type="submit"
+                                    class="skl-btn skl-btn--icon"
+                                >
+                                    <svg
+                                        width="17"
+                                        height="17"
+                                        viewBox="0 0 17 17"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M7.62223 3.28303C7.86632 3.03894 8.25264 3.02353 8.51449 3.23713L8.56494 3.28303L13.2316 7.9497C13.492 8.21004 13.492 8.63205 13.2316 8.8924L8.56494 13.5591C8.30459 13.8194 7.88258 13.8194 7.62223 13.5591C7.36188 13.2987 7.36188 12.8767 7.62223 12.6164L11.1509 9.08772H3.42692C3.05873 9.08772 2.76025 8.78924 2.76025 8.42105C2.76025 8.05286 3.05873 7.75438 3.42692 7.75438H11.1509L7.62223 4.22574L7.57633 4.17528C7.36274 3.91343 7.37814 3.52712 7.62223 3.28303Z"
+                                            fill="white"
+                                        />
+                                    </svg>
+                                </button>
+                            </form>
+
+                            <button
+                                type="button"
+                                class="skl-btn skl-btn--icon skl-search-bar__trigger"
+                            >
+                                <svg
+                                    viewBox="0 0 16 16"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M12.6 13.5333L8.86667 9.8C8.53333 10.0667 8.15 10.2778 7.71667 10.4333C7.28333 10.5889 6.82222 10.6667 6.33333 10.6667C5.12222 10.6667 4.09733 10.2473 3.25867 9.40867C2.41956 8.56956 2 7.54444 2 6.33333C2 5.12222 2.41956 4.09711 3.25867 3.258C4.09733 2.41933 5.12222 2 6.33333 2C7.54444 2 8.56956 2.41933 9.40867 3.258C10.2473 4.09711 10.6667 5.12222 10.6667 6.33333C10.6667 6.82222 10.5889 7.28333 10.4333 7.71667C10.2778 8.15 10.0667 8.53333 9.8 8.86667L13.55 12.6167C13.6722 12.7389 13.7333 12.8889 13.7333 13.0667C13.7333 13.2444 13.6667 13.4 13.5333 13.5333C13.4111 13.6556 13.2556 13.7167 13.0667 13.7167C12.8778 13.7167 12.7222 13.6556 12.6 13.5333V13.5333ZM6.33333 9.33333C7.16667 9.33333 7.87511 9.04178 8.45867 8.45867C9.04178 7.87511 9.33333 7.16667 9.33333 6.33333C9.33333 5.5 9.04178 4.79156 8.45867 4.208C7.87511 3.62489 7.16667 3.33333 6.33333 3.33333C5.5 3.33333 4.79156 3.62489 4.208 4.208C3.62489 4.79156 3.33333 5.5 3.33333 6.33333C3.33333 7.16667 3.62489 7.87511 4.208 8.45867C4.79156 9.04178 5.5 9.33333 6.33333 9.33333Z"
+                                        fill="white"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skl-header__bottom">
+                <div class="skl-container">
+                    <div class="skl-header__bottom-container">
+                        <button
+                            class="skl-btn skl-btn--small skl-btn--secondary"
+                        >
+                            Educação
+                        </button>
+
+                        <button
+                            class="skl-btn skl-btn--small skl-btn--secondary"
+                        >
+                            Notícias
+                        </button>
+
+                        <button
+                            class="skl-btn skl-btn--small skl-btn--secondary"
+                        >
+                            Internacional
+                        </button>
+
+                        <button
+                            class="skl-btn skl-btn--small skl-btn--secondary"
+                        >
+                            Finanças
+                        </button>
+
+                        <button
+                            class="skl-btn skl-btn--small skl-btn--secondary"
+                        >
+                            Curiosidades
+                        </button>
+
+                        <button
+                            class="skl-btn skl-btn--small skl-btn--secondary"
+                        >
+                            Ferramentas
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="skl-home">
+            <section class="skl-stock-exchange-quotes">
+                <ul>
+                    <li class="quotes">
+                        <span class="quotes__ticket">PETR4 </span>
+                        <span class="quotes__price">R$ 12,34</span>
+                        <span
+                            class="quotes__variation quotes__variation--positive"
+                            >+0,12%</span
+                        >
+                    </li>
+
+                    <li class="quotes">
+                        <span class="quotes__ticket">PETR4 </span>
+                        <span class="quotes__price">R$ 12,34</span>
+                        <span
+                            class="quotes__variation quotes__variation--negative"
+                            >-0,12%</span
+                        >
+                    </li>
+
+                    <li class="quotes">
+                        <span class="quotes__ticket">PETR4 </span>
+                        <span class="quotes__price">R$ 12,34</span>
+                        <span
+                            class="quotes__variation quotes__variation--positive"
+                            >+0,12%</span
+                        >
+                    </li>
+
+                    <li class="quotes">
+                        <span class="quotes__ticket">PETR4 </span>
+                        <span class="quotes__price">R$ 12,34</span>
+                        <span
+                            class="quotes__variation quotes__variation--negative"
+                            >-0,12%</span
+                        >
+                    </li>
+
+                    <li class="quotes">
+                        <span class="quotes__ticket">PETR4 </span>
+                        <span class="quotes__price">R$ 12,34</span>
+                        <span
+                            class="quotes__variation quotes__variation--positive"
+                            >+0,12%</span
+                        >
+                    </li>
+
+                    <li class="quotes">
+                        <span class="quotes__ticket">PETR4 </span>
+                        <span class="quotes__price">R$ 12,34</span>
+                        <span
+                            class="quotes__variation quotes__variation--negative"
+                            >-0,12%</span
+                        >
+                    </li>
+
+                    <li class="quotes">
+                        <span class="quotes__ticket">PETR4 </span>
+                        <span class="quotes__price">R$ 12,34</span>
+                        <span
+                            class="quotes__variation quotes__variation--positive"
+                            >+0,12%</span
+                        >
+                    </li>
+
+                    <li class="quotes">
+                        <span class="quotes__ticket">PETR4 </span>
+                        <span class="quotes__price">R$ 12,34</span>
+                        <span
+                            class="quotes__variation quotes__variation--negative"
+                            >-0,12%</span
+                        >
+                    </li>
+
+                    <li class="quotes">
+                        <span class="quotes__ticket">PETR4 </span>
+                        <span class="quotes__price">R$ 12,34</span>
+                        <span
+                            class="quotes__variation quotes__variation--positive"
+                            >+0,12%</span
+                        >
+                    </li>
+
+                    <li class="quotes">
+                        <span class="quotes__ticket">PETR4 </span>
+                        <span class="quotes__price">R$ 12,34</span>
+                        <span
+                            class="quotes__variation quotes__variation--negative"
+                            >-0,12%</span
+                        >
+                    </li>
+                </ul>
+            </section>
+
+            <section class="recent-news-section">
+                <div class="skl-container">
+                    <div class="recent-news-section__container">
+                        <div class="recent-news-section__last-news">
+                            <a href="#" class="skl-news-card">
+                                <div class="skl-news-card__content">
+                                    <div class="skl-news-card__category-date">
+                                        <span class="skl-category"
+                                            >Notícias</span
+                                        >
+                                        <span
+                                            class="skl-news-card__separator"
+                                        ></span>
+                                        <span class="skl-news-card__date"
+                                            >02/05/2025 05h00</span
+                                        >
+                                    </div>
+
+                                    <h3 class="skl-news-card__title">
+                                        Berkshire Hathaway, a empresa de Warren
+                                        Buffett que vale mais de US$ 1 trilhão
+                                    </h3>
+                                </div>
+
+                                <div class="skl-news-card__thumbnail">
+                                    <img
+                                        src="./images/thumbnail.png"
+                                        alt="News Card"
+                                    />
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="recent-news-section__news">
+                            <a href="#" class="skl-news-card">
+                                <div class="skl-news-card__content">
+                                    <div class="skl-news-card__category-date">
+                                        <span class="skl-category"
+                                            >Notícias</span
+                                        >
+                                        <span
+                                            class="skl-news-card__separator"
+                                        ></span>
+                                        <span class="skl-news-card__date"
+                                            >02/05/2025 05h00</span
+                                        >
+                                    </div>
+
+                                    <h3 class="skl-news-card__title">
+                                        Berkshire Hathaway, a empresa de Warren
+                                        Buffett que vale mais de US$ 1 trilhão
+                                    </h3>
+
+                                    <p class="skl-news-card__excerpt">
+                                        Os 131 itens isentos valem cerca de US$
+                                        40 bilhões em importações - cerca de 24%
+                                        das importações ...
+                                    </p>
+                                </div>
+
+                                <div class="skl-news-card__thumbnail">
+                                    <img
+                                        src="./images/thumbnail.png"
+                                        alt="News Card"
+                                    />
+                                </div>
+                            </a>
+
+                            <a href="#" class="skl-news-card">
+                                <div class="skl-news-card__content">
+                                    <div class="skl-news-card__category-date">
+                                        <span class="skl-category"
+                                            >Notícias</span
+                                        >
+                                        <span
+                                            class="skl-news-card__separator"
+                                        ></span>
+                                        <span class="skl-news-card__date"
+                                            >02/05/2025 05h00</span
+                                        >
+                                    </div>
+
+                                    <h3 class="skl-news-card__title">
+                                        Berkshire Hathaway, a empresa de Warren
+                                        Buffett que vale mais de US$ 1 trilhão
+                                    </h3>
+
+                                    <p class="skl-news-card__excerpt">
+                                        Os 131 itens isentos valem cerca de US$
+                                        40 bilhões em importações - cerca de 24%
+                                        das importações ...
+                                    </p>
+                                </div>
+
+                                <div class="skl-news-card__thumbnail">
+                                    <img
+                                        src="./images/thumbnail.png"
+                                        alt="News Card"
+                                    />
+                                </div>
+                            </a>
+
+                            <a href="#" class="skl-news-card">
+                                <div class="skl-news-card__content">
+                                    <div class="skl-news-card__category-date">
+                                        <span class="skl-category"
+                                            >Notícias</span
+                                        >
+                                        <span
+                                            class="skl-news-card__separator"
+                                        ></span>
+                                        <span class="skl-news-card__date"
+                                            >02/05/2025 05h00</span
+                                        >
+                                    </div>
+
+                                    <h3 class="skl-news-card__title">
+                                        Berkshire Hathaway, a empresa de Warren
+                                        Buffett que vale mais de US$ 1 trilhão
+                                    </h3>
+
+                                    <p class="skl-news-card__excerpt">
+                                        Os 131 itens isentos valem cerca de US$
+                                        40 bilhões em importações - cerca de 24%
+                                        das importações ...
+                                    </p>
+                                </div>
+
+                                <div class="skl-news-card__thumbnail">
+                                    <img
+                                        src="./images/thumbnail.png"
+                                        alt="News Card"
+                                    />
+                                </div>
+                            </a>
+
+                            <a href="#" class="skl-news-card">
+                                <div class="skl-news-card__content">
+                                    <div class="skl-news-card__category-date">
+                                        <span class="skl-category"
+                                            >Notícias</span
+                                        >
+                                        <span
+                                            class="skl-news-card__separator"
+                                        ></span>
+                                        <span class="skl-news-card__date"
+                                            >02/05/2025 05h00</span
+                                        >
+                                    </div>
+
+                                    <h3 class="skl-news-card__title">
+                                        Berkshire Hathaway, a empresa de Warren
+                                        Buffett que vale mais de US$ 1 trilhão
+                                    </h3>
+
+                                    <p class="skl-news-card__excerpt">
+                                        Os 131 itens isentos valem cerca de US$
+                                        40 bilhões em importações - cerca de 24%
+                                        das importações ...
+                                    </p>
+                                </div>
+
+                                <div class="skl-news-card__thumbnail">
+                                    <img
+                                        src="./images/thumbnail.png"
+                                        alt="News Card"
+                                    />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="category-news-section">
+                <div class="skl-container">
+                    <div class="category-news-section__container">
+                        <h2>Mais lidas</h2>
+
+                        <div class="category-news-section__news">
+                            <a href="#" class="skl-news-card">
+                                <div class="skl-news-card__content">
+                                    <div class="skl-news-card__category-date">
+                                        <span class="skl-category"
+                                            >Notícias</span
+                                        >
+                                        <span
+                                            class="skl-news-card__separator"
+                                        ></span>
+                                        <span class="skl-news-card__date"
+                                            >02/05/2025 05h00</span
+                                        >
+                                    </div>
+
+                                    <h3 class="skl-news-card__title">
+                                        Berkshire Hathaway, a empresa de Warren
+                                        Buffett que vale mais de US$ 1 trilhão
+                                    </h3>
+                                </div>
+
+                                <div class="skl-news-card__thumbnail">
+                                    <img
+                                        src="./images/thumbnail.png"
+                                        alt="News Card"
+                                    />
+                                </div>
+                            </a>
+
+                            <a href="#" class="skl-news-card">
+                                <div class="skl-news-card__content">
+                                    <div class="skl-news-card__category-date">
+                                        <span class="skl-category"
+                                            >Notícias</span
+                                        >
+                                        <span
+                                            class="skl-news-card__separator"
+                                        ></span>
+                                        <span class="skl-news-card__date"
+                                            >02/05/2025 05h00</span
+                                        >
+                                    </div>
+
+                                    <h3 class="skl-news-card__title">
+                                        Berkshire Hathaway, a empresa de Warren
+                                        Buffett que vale mais de US$ 1 trilhão
+                                    </h3>
+                                </div>
+
+                                <div class="skl-news-card__thumbnail">
+                                    <img
+                                        src="./images/thumbnail.png"
+                                        alt="News Card"
+                                    />
+                                </div>
+                            </a>
+
+                            <a href="#" class="skl-news-card">
+                                <div class="skl-news-card__content">
+                                    <div class="skl-news-card__category-date">
+                                        <span class="skl-category"
+                                            >Notícias</span
+                                        >
+                                        <span
+                                            class="skl-news-card__separator"
+                                        ></span>
+                                        <span class="skl-news-card__date"
+                                            >02/05/2025 05h00</span
+                                        >
+                                    </div>
+
+                                    <h3 class="skl-news-card__title">
+                                        Berkshire Hathaway, a empresa de Warren
+                                        Buffett que vale mais de US$ 1 trilhão
+                                    </h3>
+                                </div>
+
+                                <div class="skl-news-card__thumbnail">
+                                    <img
+                                        src="./images/thumbnail.png"
+                                        alt="News Card"
+                                    />
+                                </div>
+                            </a>
+
+                            <a href="#" class="skl-news-card">
+                                <div class="skl-news-card__content">
+                                    <div class="skl-news-card__category-date">
+                                        <span class="skl-category"
+                                            >Notícias</span
+                                        >
+                                        <span
+                                            class="skl-news-card__separator"
+                                        ></span>
+                                        <span class="skl-news-card__date"
+                                            >02/05/2025 05h00</span
+                                        >
+                                    </div>
+
+                                    <h3 class="skl-news-card__title">
+                                        Berkshire Hathaway, a empresa de Warren
+                                        Buffett que vale mais de US$ 1 trilhão
+                                    </h3>
+                                </div>
+
+                                <div class="skl-news-card__thumbnail">
+                                    <img
+                                        src="./images/thumbnail.png"
+                                        alt="News Card"
+                                    />
+                                </div>
+                            </a>
+                        </div>
+
+                        <a href="#" class="skl-btn skl-btn--text">
+                            Ver mais
+                            <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M6.46654 11.5333C6.34431 11.4111 6.2832 11.2555 6.2832 11.0667C6.2832 10.8778 6.34431 10.7222 6.46654 10.6L9.06654 7.99999L6.46654 5.39999C6.34431 5.27777 6.2832 5.12221 6.2832 4.93333C6.2832 4.74444 6.34431 4.58888 6.46654 4.46666C6.58876 4.34444 6.74431 4.28333 6.9332 4.28333C7.12209 4.28333 7.27765 4.34444 7.39987 4.46666L10.4665 7.53333C10.5332 7.59999 10.5805 7.67221 10.6085 7.74999C10.6361 7.82777 10.6499 7.9111 10.6499 7.99999C10.6499 8.08888 10.6361 8.17221 10.6085 8.24999C10.5805 8.32777 10.5332 8.39999 10.4665 8.46666L7.39987 11.5333C7.27765 11.6555 7.12209 11.7167 6.9332 11.7167C6.74431 11.7167 6.58876 11.6555 6.46654 11.5333V11.5333Z"
+                                    fill="currentColor"
+                                />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="indicators-section">
+                <div class="skl-container">
+                    <div class="indicators-section__container">
+                        <div class="currencies">
+                            <h4>Moedas</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Compra</th>
+                                        <th>Compra</th>
+                                        <th>Venda</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="currencies__currency">
+                                                <strong>Dólar Comercial</strong>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="currencies__value">
+                                                R$ <strong>5,649</strong>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="currencies__value">
+                                                R$ <strong>5,650</strong>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="currencies__currency">
+                                                <strong>Dólar Turismo</strong>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="currencies__value">
+                                                R$ <strong>5,696</strong>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="currencies__value">
+                                                R$ <strong>5,876</strong>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="currencies__currency">
+                                                <strong>Euro</strong>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="currencies__value">
+                                                R$ <strong>6,382</strong>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="currencies__value">
+                                                R$ <strong>6,383</strong>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="cryptos">
+                            <h4>Criptoativos</h4>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="cryptos__crypto">
+                                                Bitcoin
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span
+                                                class="cryptos__variation cryptos__variation--positive"
+                                            >
+                                                +0.12%
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="cryptos__value">
+                                                R$ <strong>549.975,00</strong>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="cryptos__crypto">
+                                                Ethereum
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span
+                                                class="cryptos__variation cryptos__variation--negative"
+                                            >
+                                                -0.62%
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="cryptos__value">
+                                                R$ <strong>10.459,61</strong>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="feature-news-section">
+                <div class="skl-container">
+                    <div class="feature-news-card">
+                        <img
+                            class="feature-news-card__thumbnail"
+                            src="./images/thumbnail.png"
+                            alt=""
+                        />
+                        <div class="feature-news-card__content">
+                            <h3 class="feature-news-card__title">
+                                Notícias Destaque
+                            </h3>
+                            <p class="feature-news-card__excerpt">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Quisquam, quod.
+                            </p>
+                            <a
+                                href="#"
+                                class="skl-btn skl-btn--primary feature-news-card__btn"
+                                >Conferir</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="skl-footer">
+            <div class="skl-container">
+                <div class="skl-footer__container">
+                    <span>® 2025 Company. Todos os direitos reservados</span>
+                </div>
+            </div>
+        </footer>
+
+        <script src="./scripts/search-bar.js"></script>
+    </body>
+</html>

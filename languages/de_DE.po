@@ -1,0 +1,211 @@
+# Copyright (C) 2024 Skallar Theme
+# This file is distributed under the same license as the Skallar Theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00:00+00:00\n"
+"PO-Revision-Date: 2024-01-01 00:00:00+00:00\n"
+"Last-Translator: \n"
+"Language-Team: German (Germany)\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/ThemeOptions.php:89
+msgid "Header Menu"
+msgstr "Kopfzeilen-Menü"
+
+#: includes/ThemeOptions.php:90
+msgid "Bottom Menu"
+msgstr "Unteres Menü"
+
+#: includes/ThemeOptions.php:205
+msgid "Theme Settings"
+msgstr "Theme-Einstellungen"
+
+#: includes/ThemeOptions.php:206
+msgid "Skallar Theme"
+msgstr "Skallar Theme"
+
+#: includes/ThemeOptions.php:217
+msgid "General Settings"
+msgstr "Allgemeine Einstellungen"
+
+#: includes/ThemeOptions.php:313
+msgid "General Theme Settings"
+msgstr "Allgemeine Theme-Einstellungen"
+
+#: includes/ThemeOptions.php:320
+msgid "Display Elements"
+msgstr "Anzeigeelemente"
+
+#: includes/ThemeOptions.php:325
+msgid "Show stock exchange quotes on homepage"
+msgstr "Börsenkurse auf der Startseite anzeigen"
+
+#: includes/ThemeOptions.php:328
+msgid "Check this option to display the stock exchange quotes section (skl-stock-exchange-quotes) on the homepage."
+msgstr "Aktivieren Sie diese Option, um den Börsenkurse-Bereich (skl-stock-exchange-quotes) auf der Startseite anzuzeigen."
+
+#: includes/ThemeOptions.php:341
+msgid "Theme version:"
+msgstr "Theme-Version:"
+
+#: includes/ThemeOptions.php:342
+msgid "Developed by:"
+msgstr "Entwickelt von:"
+
+#: includes/ThemeOptions.php:342
+msgid "Your Company"
+msgstr "Ihr Unternehmen"
+
+#: includes/ThemeOptions.php:238
+msgid "Color Settings"
+msgstr "Farbeinstellungen"
+
+#: includes/ThemeOptions.php:238
+msgid "Colors"
+msgstr "Farben"
+
+#: includes/ThemeOptions.php:371
+msgid "Primary Color"
+msgstr "Primärfarbe"
+
+#: includes/ThemeOptions.php:374
+msgid "Used for buttons, links, and accent elements. Default: #fd5e04"
+msgstr "Verwendet für Schaltflächen, Links und Akzentelemente. Standard: #fd5e04"
+
+#: includes/ThemeOptions.php:380
+msgid "Secondary Color"
+msgstr "Sekundärfarbe"
+
+#: includes/ThemeOptions.php:383
+msgid "Used for secondary elements and light backgrounds. Default: #fef2e6"
+msgstr "Verwendet für sekundäre Elemente und helle Hintergründe. Standard: #fef2e6"
+
+#: includes/ThemeOptions.php:389
+msgid "Text Color"
+msgstr "Textfarbe"
+
+#: includes/ThemeOptions.php:392
+msgid "Main text color used throughout the site. Default: #1d2433"
+msgstr "Haupttextfarbe, die auf der gesamten Website verwendet wird. Standard: #1d2433"
+
+#: includes/ThemeOptions.php:398
+msgid "Background Color"
+msgstr "Hintergrundfarbe"
+
+#: includes/ThemeOptions.php:401
+msgid "Main background color of the site. Default: #f8f9fc"
+msgstr "Haupthintergrundfarbe der Website. Standard: #f8f9fc"
+
+#: includes/ThemeOptions.php:407
+msgid "Success Color"
+msgstr "Erfolgsfarbe"
+
+#: includes/ThemeOptions.php:410
+msgid "Used for success messages and positive indicators. Default: #08875d"
+msgstr "Verwendet für Erfolgsmeldungen und positive Indikatoren. Standard: #08875d"
+
+#: includes/ThemeOptions.php:416
+msgid "Danger Color"
+msgstr "Warnfarbe"
+
+#: includes/ThemeOptions.php:419
+msgid "Used for error messages and warning indicators. Default: #e02d3c"
+msgstr "Verwendet für Fehlermeldungen und Warnindikatoren. Standard: #e02d3c"
+
+#: includes/ThemeOptions.php:428
+msgid "Reset to Defaults"
+msgstr "Auf Standards zurücksetzen"
+
+#: includes/ThemeOptions.php:429
+msgid "Click the button below to reset all colors to their default values."
+msgstr "Klicken Sie auf die Schaltfläche unten, um alle Farben auf ihre Standardwerte zurückzusetzen."
+
+#: includes/ThemeOptions.php:433
+msgid "Reset Colors"
+msgstr "Farben zurücksetzen"
+
+#: includes/ThemeOptions.php:434
+msgid "Are you sure you want to reset all colors to default values?"
+msgstr "Sind Sie sicher, dass Sie alle Farben auf die Standardwerte zurücksetzen möchten?"
+
+#: includes/ThemeOptions.php:462
+msgid "Colors have been reset to default values."
+msgstr "Die Farben wurden auf die Standardwerte zurückgesetzt."
+
+#: includes/ThemeOptions.php:247
+msgid "Language Settings"
+msgstr "Spracheinstellungen"
+
+#: includes/ThemeOptions.php:248
+msgid "Language"
+msgstr "Sprache"
+
+#: includes/ThemeOptions.php:504
+msgid "Site Language"
+msgstr "Website-Sprache"
+
+#: includes/ThemeOptions.php:516
+msgid "Portuguese (Brazil)"
+msgstr "Portugiesisch (Brasilien)"
+
+#: includes/ThemeOptions.php:519
+msgid "English (United States)"
+msgstr "Englisch (Vereinigte Staaten)"
+
+#: includes/ThemeOptions.php:522
+msgid "Spanish (Spain)"
+msgstr "Spanisch (Spanien)"
+
+#: includes/ThemeOptions.php:525
+msgid "French (France)"
+msgstr "Französisch (Frankreich)"
+
+#: includes/ThemeOptions.php:528
+msgid "German (Germany)"
+msgstr "Deutsch (Deutschland)"
+
+#: includes/ThemeOptions.php:495
+msgid "Language changed to %s. The site will display in the new language."
+msgstr "Sprache geändert zu %s. Die Website wird in der neuen Sprache angezeigt."
+
+#: includes/ThemeOptions.php:492
+msgid "Language settings have been reset to default (Portuguese - Brazil)."
+msgstr "Spracheinstellungen wurden auf Standard zurückgesetzt (Portugiesisch - Brasilien)."
+
+#: includes/ThemeOptions.php:585
+msgid "Reset Language Settings"
+msgstr "Spracheinstellungen zurücksetzen"
+
+#: includes/ThemeOptions.php:590
+msgid "Reset to Default Language"
+msgstr "Auf Standardsprache zurücksetzen"
+
+#: includes/ThemeOptions.php:591
+msgid "Are you sure you want to reset the language to Portuguese (Brazil)?"
+msgstr "Sind Sie sicher, dass Sie die Sprache auf Portugiesisch (Brasilien) zurücksetzen möchten?"
+
+#: includes/ThemeOptions.php:611
+msgid "Use the dropdown above to select your preferred language"
+msgstr "Verwenden Sie das Dropdown-Menü oben, um Ihre bevorzugte Sprache auszuwählen"
+
+#: includes/ThemeOptions.php:612
+msgid "Or use the quick buttons for instant language switching"
+msgstr "Oder verwenden Sie die Schnellschaltflächen für sofortigen Sprachwechsel"
+
+#: includes/ThemeOptions.php:613
+msgid "The change affects both the admin panel and front-end of your site"
+msgstr "Die Änderung betrifft sowohl das Admin-Panel als auch das Frontend Ihrer Website"
+
+#: includes/ThemeOptions.php:614
+msgid "All theme text will be displayed in the selected language"
+msgstr "Der gesamte Theme-Text wird in der ausgewählten Sprache angezeigt"
+
+#: includes/ThemeOptions.php:615
+msgid "Use the reset button if you encounter any language-related issues"
+msgstr "Verwenden Sie die Reset-Schaltfläche, wenn Sie sprachbezogene Probleme haben"

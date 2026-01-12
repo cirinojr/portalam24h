@@ -1,0 +1,279 @@
+# Copyright (C) 2024 Skallar Theme
+# This file is distributed under the same license as the Skallar Theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00:00+00:00\n"
+"PO-Revision-Date: 2024-01-01 00:00:00+00:00\n"
+"Last-Translator: \n"
+"Language-Team: Hindi (India)\n"
+"Language: hi_IN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/ThemeOptions.php:89
+msgid "Header Menu"
+msgstr "हेडर मेनू"
+
+#: includes/ThemeOptions.php:90
+msgid "Bottom Menu"
+msgstr "बॉटम मेनू"
+
+#: includes/ThemeOptions.php:205
+msgid "Theme Settings"
+msgstr "थीम सेटिंग्स"
+
+#: includes/ThemeOptions.php:206
+msgid "Skallar Theme"
+msgstr "स्कालर थीम"
+
+#: includes/ThemeOptions.php:217
+msgid "General Settings"
+msgstr "सामान्य सेटिंग्स"
+
+#: includes/ThemeOptions.php:279
+msgid "Color Settings"
+msgstr "रंग सेटिंग्स"
+
+#: includes/ThemeOptions.php:280
+msgid "Language Settings"
+msgstr "भाषा सेटिंग्स"
+
+#: includes/ThemeOptions.php:291
+msgid "Primary Color"
+msgstr "प्राथमिक रंग"
+
+#: includes/ThemeOptions.php:295
+msgid "Secondary Color"
+msgstr "द्वितीयक रंग"
+
+#: includes/ThemeOptions.php:299
+msgid "Text Color"
+msgstr "टेक्स्ट रंग"
+
+#: includes/ThemeOptions.php:303
+msgid "Background Color"
+msgstr "बैकग्राउंड रंग"
+
+#: includes/ThemeOptions.php:307
+msgid "Success Color"
+msgstr "सफलता रंग"
+
+#: includes/ThemeOptions.php:311
+msgid "Danger Color"
+msgstr "खतरे का रंग"
+
+#: includes/ThemeOptions.php:354
+msgid "Language Settings"
+msgstr "भाषा सेटिंग्स"
+
+#: includes/ThemeOptions.php:358
+msgid "Current Language:"
+msgstr "वर्तमान भाषा:"
+
+#: includes/ThemeOptions.php:368
+msgid "Site Language"
+msgstr "साइट भाषा"
+
+#: includes/ThemeOptions.php:371
+msgid "Portuguese (Brazil)"
+msgstr "पुर्तगाली (ब्राजील)"
+
+#: includes/ThemeOptions.php:374
+msgid "English (United States)"
+msgstr "अंग्रेजी (संयुक्त राज्य अमेरिका)"
+
+#: includes/ThemeOptions.php:377
+msgid "Spanish (Spain)"
+msgstr "स्पेनिश (स्पेन)"
+
+#: includes/ThemeOptions.php:380
+msgid "French (France)"
+msgstr "फ्रांसीसी (फ्रांस)"
+
+#: includes/ThemeOptions.php:383
+msgid "German (Germany)"
+msgstr "जर्मन (जर्मनी)"
+
+#: includes/ThemeOptions.php:386
+msgid "Korean (South Korea)"
+msgstr "कोरियाई (दक्षिण कोरिया)"
+
+#: includes/ThemeOptions.php:389
+msgid "Danish (Denmark)"
+msgstr "डेनिश (डेनमार्क)"
+
+#: includes/ThemeOptions.php:392
+msgid "Arabic"
+msgstr "अरबी"
+
+#: includes/ThemeOptions.php:395
+msgid "Dutch (Netherlands)"
+msgstr "डच (नीदरलैंड)"
+
+#: includes/ThemeOptions.php:398
+msgid "Hungarian (Hungary)"
+msgstr "हंगेरियन (हंगरी)"
+
+#: includes/ThemeOptions.php:401
+msgid "Hindi (India)"
+msgstr "हिंदी (भारत)"
+
+#: includes/ThemeOptions.php:404
+msgid "Indonesian (Indonesia)"
+msgstr "इंडोनेशियाई (इंडोनेशिया)"
+
+#: includes/ThemeOptions.php:407
+msgid "Italian (Italy)"
+msgstr "इतालवी (इटली)"
+
+#: includes/ThemeOptions.php:410
+msgid "Japanese (Japan)"
+msgstr "जापानी (जापान)"
+
+#: includes/ThemeOptions.php:413
+msgid "Norwegian (Norway)"
+msgstr "नॉर्वेजियन (नॉर्वे)"
+
+#: includes/ThemeOptions.php:416
+msgid "Polish (Poland)"
+msgstr "पोलिश (पोलैंड)"
+
+#: includes/ThemeOptions.php:419
+msgid "Portuguese (Portugal)"
+msgstr "पुर्तगाली (पुर्तगाल)"
+
+#: includes/ThemeOptions.php:422
+msgid "Swedish (Sweden)"
+msgstr "स्वीडिश (स्वीडन)"
+
+#: includes/ThemeOptions.php:425
+msgid "Turkish (Turkey)"
+msgstr "तुर्की (तुर्की)"
+
+#: includes/ThemeOptions.php:428
+msgid "Filipino (Philippines)"
+msgstr "फिलिपिनो (फिलीपींस)"
+
+#: includes/ThemeOptions.php:431
+msgid "Finnish (Finland)"
+msgstr "फिनिश (फिनलैंड)"
+
+#: includes/ThemeOptions.php:434
+msgid "Thai (Thailand)"
+msgstr "थाई (थाईलैंड)"
+
+#: includes/ThemeOptions.php:437
+msgid "Greek (Greece)"
+msgstr "ग्रीक (ग्रीस)"
+
+#: includes/ThemeOptions.php:440
+msgid "Czech (Czech Republic)"
+msgstr "चेक (चेक गणराज्य)"
+
+#: includes/ThemeOptions.php:443
+msgid "Luxembourgish (Luxembourg)"
+msgstr "लक्जमबर्गी (लक्जमबर्ग)"
+
+#: includes/ThemeOptions.php:446
+msgid "Romanian (Romania)"
+msgstr "रोमानियन (रोमानिया)"
+
+#: includes/ThemeOptions.php:449
+msgid "Serbian (Serbia)"
+msgstr "सर्बियन (सर्बिया)"
+
+#: includes/ThemeOptions.php:452
+msgid "Bulgarian (Bulgaria)"
+msgstr "बल्गेरियन (बल्गारिया)"
+
+#: includes/ThemeOptions.php:456
+msgid "Select the language for your site. This will change the language of the theme interface and content."
+msgstr "अपनी साइट के लिए भाषा चुनें। यह थीम इंटरफेस और कंटेंट की भाषा बदल देगा।"
+
+#: includes/ThemeOptions.php:465
+msgid "Quick Language Switch"
+msgstr "त्वरित भाषा स्विच"
+
+#: includes/ThemeOptions.php:466
+msgid "Click on a language below to change it immediately:"
+msgstr "तुरंत बदलने के लिए नीचे किसी भाषा पर क्लिक करें:"
+
+#: includes/ThemeOptions.php:472
+msgid "Portuguese"
+msgstr "पुर्तगाली"
+
+#: includes/ThemeOptions.php:473
+msgid "Current"
+msgstr "वर्तमान"
+
+#: includes/ThemeOptions.php:481
+msgid "English"
+msgstr "अंग्रेजी"
+
+#: includes/ThemeOptions.php:489
+msgid "Spanish"
+msgstr "स्पेनिश"
+
+#: includes/ThemeOptions.php:497
+msgid "French"
+msgstr "फ्रांसीसी"
+
+#: includes/ThemeOptions.php:508
+msgid "Reset Language Settings"
+msgstr "भाषा सेटिंग्स रीसेट करें"
+
+#: includes/ThemeOptions.php:513
+msgid "Reset to Default Language"
+msgstr "डिफ़ॉल्ट भाषा पर रीसेट करें"
+
+#: includes/ThemeOptions.php:520
+msgid "Language Information"
+msgstr "भाषा जानकारी"
+
+#: includes/ThemeOptions.php:523
+msgid "Language Code:"
+msgstr "भाषा कोड:"
+
+#: includes/ThemeOptions.php:527
+msgid "Available Languages:"
+msgstr "उपलब्ध भाषाएं:"
+
+#: includes/ThemeOptions.php:533
+msgid "Translation Files:"
+msgstr "अनुवाद फाइलें:"
+
+#: includes/ThemeOptions.php:542
+msgid "Available"
+msgstr "उपलब्ध"
+
+#: includes/ThemeOptions.php:543
+msgid "Missing"
+msgstr "अनुपस्थित"
+
+#: includes/ThemeOptions.php:553
+msgid "Instructions"
+msgstr "निर्देश"
+
+#: includes/ThemeOptions.php:556
+msgid "Use the dropdown above to select your preferred language"
+msgstr "अपनी पसंदीदा भाषा चुनने के लिए ऊपर का ड्रॉपडाउन उपयोग करें"
+
+#: includes/ThemeOptions.php:557
+msgid "Or use the quick buttons for instant language switching"
+msgstr "या तत्काल भाषा बदलने के लिए त्वरित बटन का उपयोग करें"
+
+#: includes/ThemeOptions.php:558
+msgid "The change affects both the admin panel and front-end of your site"
+msgstr "यह बदलाव आपकी साइट के एडमिन पैनल और फ्रंट-एंड दोनों को प्रभावित करता है"
+
+#: includes/ThemeOptions.php:559
+msgid "All theme text will be displayed in the selected language"
+msgstr "सभी थीम टेक्स्ट चुनी गई भाषा में प्रदर्शित होगा"
+
+#: includes/ThemeOptions.php:560
+msgid "Use the reset button if you encounter any language-related issues"
+msgstr "यदि आप किसी भाषा संबंधी समस्या का सामना करते हैं तो रीसेट बटन का उपयोग करें"

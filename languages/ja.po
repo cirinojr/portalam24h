@@ -1,0 +1,299 @@
+# Copyright (C) 2024 Skallar Theme
+# This file is distributed under the same license as the Skallar Theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00:00+00:00\n"
+"PO-Revision-Date: 2024-01-01 00:00:00+00:00\n"
+"Last-Translator: \n"
+"Language-Team: Japanese (Japan)\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: includes/ThemeOptions.php:89
+msgid "Header Menu"
+msgstr "ヘッダーメニュー"
+
+#: includes/ThemeOptions.php:90
+msgid "Bottom Menu"
+msgstr "ボトムメニュー"
+
+#: includes/ThemeOptions.php:205
+msgid "Theme Settings"
+msgstr "テーマ設定"
+
+#: includes/ThemeOptions.php:206
+msgid "Skallar Theme"
+msgstr "スカラーテーマ"
+
+#: includes/ThemeOptions.php:217
+msgid "General Settings"
+msgstr "一般設定"
+
+#: includes/ThemeOptions.php:279
+msgid "Color Settings"
+msgstr "色設定"
+
+#: includes/ThemeOptions.php:280
+msgid "Language Settings"
+msgstr "言語設定"
+
+#: includes/ThemeOptions.php:291
+msgid "Primary Color"
+msgstr "プライマリーカラー"
+
+#: includes/ThemeOptions.php:295
+msgid "Secondary Color"
+msgstr "セカンダリーカラー"
+
+#: includes/ThemeOptions.php:299
+msgid "Text Color"
+msgstr "テキストカラー"
+
+#: includes/ThemeOptions.php:303
+msgid "Background Color"
+msgstr "背景色"
+
+#: includes/ThemeOptions.php:307
+msgid "Success Color"
+msgstr "成功色"
+
+#: includes/ThemeOptions.php:311
+msgid "Danger Color"
+msgstr "危険色"
+
+#: includes/ThemeOptions.php:328
+msgid "Colors have been reset to default values."
+msgstr "色がデフォルト値にリセットされました。"
+
+#: includes/ThemeOptions.php:340
+msgid "Language settings have been reset to default (Portuguese - Brazil)."
+msgstr "言語設定がデフォルト（ポルトガル語 - ブラジル）にリセットされました。"
+
+#: includes/ThemeOptions.php:347
+msgid "Language changed to %s. The site will display in the new language."
+msgstr "言語が %s に変更されました。サイトは新しい言語で表示されます。"
+
+#: includes/ThemeOptions.php:354
+msgid "Language Settings"
+msgstr "言語設定"
+
+#: includes/ThemeOptions.php:358
+msgid "Current Language:"
+msgstr "現在の言語："
+
+#: includes/ThemeOptions.php:368
+msgid "Site Language"
+msgstr "サイト言語"
+
+#: includes/ThemeOptions.php:371
+msgid "Portuguese (Brazil)"
+msgstr "ポルトガル語（ブラジル）"
+
+#: includes/ThemeOptions.php:374
+msgid "English (United States)"
+msgstr "英語（アメリカ）"
+
+#: includes/ThemeOptions.php:377
+msgid "Spanish (Spain)"
+msgstr "スペイン語（スペイン）"
+
+#: includes/ThemeOptions.php:380
+msgid "French (France)"
+msgstr "フランス語（フランス）"
+
+#: includes/ThemeOptions.php:383
+msgid "German (Germany)"
+msgstr "ドイツ語（ドイツ）"
+
+#: includes/ThemeOptions.php:386
+msgid "Korean (South Korea)"
+msgstr "韓国語（韓国）"
+
+#: includes/ThemeOptions.php:389
+msgid "Danish (Denmark)"
+msgstr "デンマーク語（デンマーク）"
+
+#: includes/ThemeOptions.php:392
+msgid "Arabic"
+msgstr "アラビア語"
+
+#: includes/ThemeOptions.php:395
+msgid "Dutch (Netherlands)"
+msgstr "オランダ語（オランダ）"
+
+#: includes/ThemeOptions.php:398
+msgid "Hungarian (Hungary)"
+msgstr "ハンガリー語（ハンガリー）"
+
+#: includes/ThemeOptions.php:401
+msgid "Hindi (India)"
+msgstr "ヒンディー語（インド）"
+
+#: includes/ThemeOptions.php:404
+msgid "Indonesian (Indonesia)"
+msgstr "インドネシア語（インドネシア）"
+
+#: includes/ThemeOptions.php:407
+msgid "Italian (Italy)"
+msgstr "イタリア語（イタリア）"
+
+#: includes/ThemeOptions.php:410
+msgid "Japanese (Japan)"
+msgstr "日本語（日本）"
+
+#: includes/ThemeOptions.php:413
+msgid "Norwegian (Norway)"
+msgstr "ノルウェー語（ノルウェー）"
+
+#: includes/ThemeOptions.php:416
+msgid "Polish (Poland)"
+msgstr "ポーランド語（ポーランド）"
+
+#: includes/ThemeOptions.php:419
+msgid "Portuguese (Portugal)"
+msgstr "ポルトガル語（ポルトガル）"
+
+#: includes/ThemeOptions.php:422
+msgid "Swedish (Sweden)"
+msgstr "スウェーデン語（スウェーデン）"
+
+#: includes/ThemeOptions.php:425
+msgid "Turkish (Turkey)"
+msgstr "トルコ語（トルコ）"
+
+#: includes/ThemeOptions.php:428
+msgid "Filipino (Philippines)"
+msgstr "フィリピン語（フィリピン）"
+
+#: includes/ThemeOptions.php:431
+msgid "Finnish (Finland)"
+msgstr "フィンランド語（フィンランド）"
+
+#: includes/ThemeOptions.php:434
+msgid "Thai (Thailand)"
+msgstr "タイ語（タイ）"
+
+#: includes/ThemeOptions.php:437
+msgid "Greek (Greece)"
+msgstr "ギリシャ語（ギリシャ）"
+
+#: includes/ThemeOptions.php:440
+msgid "Czech (Czech Republic)"
+msgstr "チェコ語（チェコ）"
+
+#: includes/ThemeOptions.php:443
+msgid "Luxembourgish (Luxembourg)"
+msgstr "ルクセンブルク語（ルクセンブルク）"
+
+#: includes/ThemeOptions.php:446
+msgid "Romanian (Romania)"
+msgstr "ルーマニア語（ルーマニア）"
+
+#: includes/ThemeOptions.php:449
+msgid "Serbian (Serbia)"
+msgstr "セルビア語（セルビア）"
+
+#: includes/ThemeOptions.php:452
+msgid "Bulgarian (Bulgaria)"
+msgstr "ブルガリア語（ブルガリア）"
+
+#: includes/ThemeOptions.php:456
+msgid "Select the language for your site. This will change the language of the theme interface and content."
+msgstr "サイトの言語を選択してください。これによりテーマインターフェイスとコンテンツの言語が変更されます。"
+
+#: includes/ThemeOptions.php:465
+msgid "Quick Language Switch"
+msgstr "クイック言語切り替え"
+
+#: includes/ThemeOptions.php:466
+msgid "Click on a language below to change it immediately:"
+msgstr "すぐに変更するには、以下の言語をクリックしてください："
+
+#: includes/ThemeOptions.php:472
+msgid "Portuguese"
+msgstr "ポルトガル語"
+
+#: includes/ThemeOptions.php:473
+msgid "Current"
+msgstr "現在"
+
+#: includes/ThemeOptions.php:481
+msgid "English"
+msgstr "英語"
+
+#: includes/ThemeOptions.php:489
+msgid "Spanish"
+msgstr "スペイン語"
+
+#: includes/ThemeOptions.php:497
+msgid "French"
+msgstr "フランス語"
+
+#: includes/ThemeOptions.php:508
+msgid "Reset Language Settings"
+msgstr "言語設定リセット"
+
+#: includes/ThemeOptions.php:509
+msgid "If you are experiencing issues with the language settings, you can reset them to default values."
+msgstr "言語設定に問題がある場合、デフォルト値にリセットできます。"
+
+#: includes/ThemeOptions.php:513
+msgid "Reset to Default Language"
+msgstr "デフォルト言語にリセット"
+
+#: includes/ThemeOptions.php:514
+msgid "Are you sure you want to reset the language to Portuguese (Brazil)?"
+msgstr "言語をポルトガル語（ブラジル）にリセットしてもよろしいですか？"
+
+#: includes/ThemeOptions.php:520
+msgid "Language Information"
+msgstr "言語情報"
+
+#: includes/ThemeOptions.php:523
+msgid "Language Code:"
+msgstr "言語コード："
+
+#: includes/ThemeOptions.php:527
+msgid "Available Languages:"
+msgstr "利用可能な言語："
+
+#: includes/ThemeOptions.php:533
+msgid "Translation Files:"
+msgstr "翻訳ファイル："
+
+#: includes/ThemeOptions.php:542
+msgid "Available"
+msgstr "利用可能"
+
+#: includes/ThemeOptions.php:543
+msgid "Missing"
+msgstr "不足"
+
+#: includes/ThemeOptions.php:553
+msgid "Instructions"
+msgstr "手順"
+
+#: includes/ThemeOptions.php:556
+msgid "Use the dropdown above to select your preferred language"
+msgstr "上記のドロップダウンを使用して希望の言語を選択してください"
+
+#: includes/ThemeOptions.php:557
+msgid "Or use the quick buttons for instant language switching"
+msgstr "または即座の言語切り替えには、クイックボタンを使用してください"
+
+#: includes/ThemeOptions.php:558
+msgid "The change affects both the admin panel and front-end of your site"
+msgstr "変更は管理パネルとサイトのフロントエンドの両方に影響します"
+
+#: includes/ThemeOptions.php:559
+msgid "All theme text will be displayed in the selected language"
+msgstr "すべてのテーマテキストが選択した言語で表示されます"
+
+#: includes/ThemeOptions.php:560
+msgid "Use the reset button if you encounter any language-related issues"
+msgstr "言語関連の問題が発生した場合は、リセットボタンを使用してください"

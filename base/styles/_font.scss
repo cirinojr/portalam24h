@@ -1,0 +1,29 @@
+// Caminho base onde estão suas fontes
+$font-path: "../font"; // Caminho correto para as fontes
+
+// Mixin para facilitar a importação das fontes
+@mixin font-face($name, $file, $weight, $style: normal) {
+    @font-face {
+        font-family: "#{$name}";
+        src: url("#{$font-path}/#{$file}.OTF") format("opentype");
+        font-weight: #{$weight};
+        font-style: #{$style};
+        font-display: swap;
+    }
+}
+
+// Importando cada variação
+@include font-face("SF Pro Display", "SFPRODISPLAYBLACKITALIC", 900, italic);
+@include font-face("SF Pro Display", "SFPRODISPLAYBOLD", 700, normal);
+@include font-face("SF Pro Display", "SFPRODISPLAYHEAVYITALIC", 800, italic);
+@include font-face("SF Pro Display", "SFPRODISPLAYLIGHTITALIC", 300, italic);
+@include font-face("SF Pro Display", "SFPRODISPLAYMEDIUM", 500, normal);
+@include font-face("SF Pro Display", "SFPRODISPLAYREGULAR", 400, normal);
+@include font-face("SF Pro Display", "SFPRODISPLAYSEMIBOLDITALIC", 600, italic);
+@include font-face("SF Pro Display", "SFPRODISPLAYTHINITALIC", 100, italic);
+@include font-face(
+    "SF Pro Display",
+    "SFPRODISPLAYULTRALIGHTITALIC",
+    200,
+    italic
+);

@@ -1,0 +1,113 @@
+# Luxembourgish (Luxembourg) - lb_LU.po
+msgid ""
+msgstr ""
+"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Language: lb_LU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/ThemeOptions.php:89
+msgid "Header Menu"
+msgstr "Header Menu"
+
+#: includes/ThemeOptions.php:90
+msgid "Bottom Menu"
+msgstr "Bottom Menu"
+
+#: includes/ThemeOptions.php:205
+msgid "Theme Settings"
+msgstr "Theme Astellungen"
+
+#: includes/ThemeOptions.php:206
+msgid "Skallar Theme"
+msgstr "Skallar Theme"
+
+#: includes/ThemeOptions.php:217
+msgid "General Settings"
+msgstr "Allgemeng Astellungen"
+
+#: includes/ThemeOptions.php:279
+msgid "Color Settings"
+msgstr "Faarwen Astellungen"
+
+#: includes/ThemeOptions.php:280
+msgid "Language Settings"
+msgstr "Sprooch Astellungen"
+
+#: includes/ThemeOptions.php:354
+msgid "Language Settings"
+msgstr "Sprooch Astellungen"
+
+#: includes/ThemeOptions.php:358
+msgid "Current Language:"
+msgstr "Aktuell Sprooch:"
+
+#: includes/ThemeOptions.php:368
+msgid "Site Language"
+msgstr "Site Sprooch"
+
+#: includes/ThemeOptions.php:443
+msgid "Luxembourgish (Luxembourg)"
+msgstr "Lëtzebuergesch (Lëtzebuerg)"
+
+#: includes/ThemeOptions.php:456
+msgid "Select the language for your site. This will change the language of the theme interface and content."
+msgstr "Wielt d'Sprooch fir äert Site. Dëst wäert d'Sprooch vum Theme Interface an dem Contenu änneren."
+
+#: includes/ThemeOptions.php:465
+msgid "Quick Language Switch"
+msgstr "Séier Sprooch Wissel"
+
+#: includes/ThemeOptions.php:466
+msgid "Click on a language below to change it immediately:"
+msgstr "Klickt op eng Sprooch ënnendrënner fir et direkt ze änneren:"
+
+#: includes/ThemeOptions.php:472
+msgid "Portuguese"
+msgstr "Portugisesch"
+
+#: includes/ThemeOptions.php:473
+msgid "Current"
+msgstr "Aktuell"
+
+#: includes/ThemeOptions.php:481
+msgid "English"
+msgstr "Englesch"
+
+#: includes/ThemeOptions.php:508
+msgid "Reset Language Settings"
+msgstr "Sprooch Astellungen Zrécksetzen"
+
+#: includes/ThemeOptions.php:513
+msgid "Reset to Default Language"
+msgstr "Op Standard Sprooch Zrécksetzen"
+
+#: includes/ThemeOptions.php:520
+msgid "Language Information"
+msgstr "Sprooch Informatioun"
+
+#: includes/ThemeOptions.php:523
+msgid "Language Code:"
+msgstr "Sprooch Code:"
+
+#: includes/ThemeOptions.php:527
+msgid "Available Languages:"
+msgstr "Verfügbar Sproochen:"
+
+#: includes/ThemeOptions.php:533
+msgid "Translation Files:"
+msgstr "Iwwersetzungs Fichieren:"
+
+#: includes/ThemeOptions.php:542
+msgid "Available"
+msgstr "Verfügbar"
+
+#: includes/ThemeOptions.php:543
+msgid "Missing"
+msgstr "Feelt"
+
+#: includes/ThemeOptions.php:553
+msgid "Instructions"
+msgstr "Instruktiounen"

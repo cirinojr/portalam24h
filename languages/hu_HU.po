@@ -1,0 +1,339 @@
+# Copyright (C) 2024 Skallar Theme
+# This file is distributed under the same license as the Skallar Theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00:00+00:00\n"
+"PO-Revision-Date: 2024-01-01 00:00:00+00:00\n"
+"Last-Translator: \n"
+"Language-Team: Hungarian (Hungary)\n"
+"Language: hu_HU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/ThemeOptions.php:89
+msgid "Header Menu"
+msgstr "Fejléc Menü"
+
+#: includes/ThemeOptions.php:90
+msgid "Bottom Menu"
+msgstr "Alsó Menü"
+
+#: includes/ThemeOptions.php:205
+msgid "Theme Settings"
+msgstr "Téma Beállítások"
+
+#: includes/ThemeOptions.php:206
+msgid "Skallar Theme"
+msgstr "Skallar Téma"
+
+#: includes/ThemeOptions.php:217
+msgid "General Settings"
+msgstr "Általános Beállítások"
+
+#: includes/ThemeOptions.php:251
+msgid "Configure Header Bottom Menu"
+msgstr "Fejléc Alsó Menü Beállítása"
+
+#: includes/ThemeOptions.php:258
+msgid "Menu Items"
+msgstr "Menü Elemek"
+
+#: includes/ThemeOptions.php:262
+msgid "Format:"
+msgstr "Formátum:"
+
+#: includes/ThemeOptions.php:262
+msgid "One item per line in format:"
+msgstr "Egy elem soronként a következő formátumban:"
+
+#: includes/ThemeOptions.php:264
+msgid "Link Text | URL"
+msgstr "Link Szöveg | URL"
+
+#: includes/ThemeOptions.php:265
+msgid "Example:"
+msgstr "Példa:"
+
+#: includes/ThemeOptions.php:266
+msgid "Home | /"
+msgstr "Kezdőlap | /"
+
+#: includes/ThemeOptions.php:267
+msgid "About | /about"
+msgstr "Rólunk | /rolunk"
+
+#: includes/ThemeOptions.php:268
+msgid "Contact | /contact"
+msgstr "Kapcsolat | /kapcsolat"
+
+#: includes/ThemeOptions.php:279
+msgid "Color Settings"
+msgstr "Szín Beállítások"
+
+#: includes/ThemeOptions.php:280
+msgid "Language Settings"
+msgstr "Nyelv Beállítások"
+
+#: includes/ThemeOptions.php:291
+msgid "Primary Color"
+msgstr "Elsődleges Szín"
+
+#: includes/ThemeOptions.php:295
+msgid "Secondary Color"
+msgstr "Másodlagos Szín"
+
+#: includes/ThemeOptions.php:299
+msgid "Text Color"
+msgstr "Szöveg Szín"
+
+#: includes/ThemeOptions.php:303
+msgid "Background Color"
+msgstr "Háttér Szín"
+
+#: includes/ThemeOptions.php:307
+msgid "Success Color"
+msgstr "Sikeres Szín"
+
+#: includes/ThemeOptions.php:311
+msgid "Danger Color"
+msgstr "Veszély Szín"
+
+#: includes/ThemeOptions.php:328
+msgid "Colors have been reset to default values."
+msgstr "A színek visszaállítva az alapértelmezett értékekre."
+
+#: includes/ThemeOptions.php:340
+msgid "Language settings have been reset to default (Portuguese - Brazil)."
+msgstr "A nyelvi beállítások visszaállítva az alapértelmezett értékre (Portugál - Brazília)."
+
+#: includes/ThemeOptions.php:347
+msgid "Language changed to %s. The site will display in the new language."
+msgstr "Nyelv módosítva %s-ra. Az oldal az új nyelven fog megjelenni."
+
+#: includes/ThemeOptions.php:354
+msgid "Language Settings"
+msgstr "Nyelv Beállítások"
+
+#: includes/ThemeOptions.php:358
+msgid "Current Language:"
+msgstr "Jelenlegi Nyelv:"
+
+#: includes/ThemeOptions.php:368
+msgid "Site Language"
+msgstr "Oldal Nyelve"
+
+#: includes/ThemeOptions.php:371
+msgid "Portuguese (Brazil)"
+msgstr "Portugál (Brazília)"
+
+#: includes/ThemeOptions.php:374
+msgid "English (United States)"
+msgstr "Angol (Egyesült Államok)"
+
+#: includes/ThemeOptions.php:377
+msgid "Spanish (Spain)"
+msgstr "Spanyol (Spanyolország)"
+
+#: includes/ThemeOptions.php:380
+msgid "French (France)"
+msgstr "Francia (Franciaország)"
+
+#: includes/ThemeOptions.php:383
+msgid "German (Germany)"
+msgstr "Német (Németország)"
+
+#: includes/ThemeOptions.php:386
+msgid "Korean (South Korea)"
+msgstr "Koreai (Dél-Korea)"
+
+#: includes/ThemeOptions.php:389
+msgid "Danish (Denmark)"
+msgstr "Dán (Dánia)"
+
+#: includes/ThemeOptions.php:392
+msgid "Arabic"
+msgstr "Arab"
+
+#: includes/ThemeOptions.php:395
+msgid "Dutch (Netherlands)"
+msgstr "Holland (Hollandia)"
+
+#: includes/ThemeOptions.php:398
+msgid "Hungarian (Hungary)"
+msgstr "Magyar (Magyarország)"
+
+#: includes/ThemeOptions.php:401
+msgid "Hindi (India)"
+msgstr "Hindi (India)"
+
+#: includes/ThemeOptions.php:404
+msgid "Indonesian (Indonesia)"
+msgstr "Indonéz (Indonézia)"
+
+#: includes/ThemeOptions.php:407
+msgid "Italian (Italy)"
+msgstr "Olasz (Olaszország)"
+
+#: includes/ThemeOptions.php:410
+msgid "Japanese (Japan)"
+msgstr "Japán (Japán)"
+
+#: includes/ThemeOptions.php:413
+msgid "Norwegian (Norway)"
+msgstr "Norvég (Norvégia)"
+
+#: includes/ThemeOptions.php:416
+msgid "Polish (Poland)"
+msgstr "Lengyel (Lengyelország)"
+
+#: includes/ThemeOptions.php:419
+msgid "Portuguese (Portugal)"
+msgstr "Portugál (Portugália)"
+
+#: includes/ThemeOptions.php:422
+msgid "Swedish (Sweden)"
+msgstr "Svéd (Svédország)"
+
+#: includes/ThemeOptions.php:425
+msgid "Turkish (Turkey)"
+msgstr "Török (Törökország)"
+
+#: includes/ThemeOptions.php:428
+msgid "Filipino (Philippines)"
+msgstr "Filippínó (Fülöp-szigetek)"
+
+#: includes/ThemeOptions.php:431
+msgid "Finnish (Finland)"
+msgstr "Finn (Finnország)"
+
+#: includes/ThemeOptions.php:434
+msgid "Thai (Thailand)"
+msgstr "Thai (Thaiföld)"
+
+#: includes/ThemeOptions.php:437
+msgid "Greek (Greece)"
+msgstr "Görög (Görögország)"
+
+#: includes/ThemeOptions.php:440
+msgid "Czech (Czech Republic)"
+msgstr "Cseh (Cseh Köztársaság)"
+
+#: includes/ThemeOptions.php:443
+msgid "Luxembourgish (Luxembourg)"
+msgstr "Luxemburgi (Luxemburg)"
+
+#: includes/ThemeOptions.php:446
+msgid "Romanian (Romania)"
+msgstr "Román (Románia)"
+
+#: includes/ThemeOptions.php:449
+msgid "Serbian (Serbia)"
+msgstr "Szerb (Szerbia)"
+
+#: includes/ThemeOptions.php:452
+msgid "Bulgarian (Bulgaria)"
+msgstr "Bolgár (Bulgária)"
+
+#: includes/ThemeOptions.php:456
+msgid "Select the language for your site. This will change the language of the theme interface and content."
+msgstr "Válassza ki az oldal nyelvét. Ez megváltoztatja a téma felület és tartalom nyelvét."
+
+#: includes/ThemeOptions.php:465
+msgid "Quick Language Switch"
+msgstr "Gyors Nyelvváltás"
+
+#: includes/ThemeOptions.php:466
+msgid "Click on a language below to change it immediately:"
+msgstr "Kattintson az alábbi nyelvre a azonnali váltáshoz:"
+
+#: includes/ThemeOptions.php:472
+msgid "Portuguese"
+msgstr "Portugál"
+
+#: includes/ThemeOptions.php:473
+msgid "Current"
+msgstr "Jelenlegi"
+
+#: includes/ThemeOptions.php:481
+msgid "English"
+msgstr "Angol"
+
+#: includes/ThemeOptions.php:489
+msgid "Spanish"
+msgstr "Spanyol"
+
+#: includes/ThemeOptions.php:497
+msgid "French"
+msgstr "Francia"
+
+#: includes/ThemeOptions.php:508
+msgid "Reset Language Settings"
+msgstr "Nyelv Beállítások Visszaállítása"
+
+#: includes/ThemeOptions.php:509
+msgid "If you are experiencing issues with the language settings, you can reset them to default values."
+msgstr "Ha problémákat tapasztal a nyelvi beállításokkal, visszaállíthatja őket az alapértelmezett értékekre."
+
+#: includes/ThemeOptions.php:513
+msgid "Reset to Default Language"
+msgstr "Alapértelmezett Nyelvre Visszaállítás"
+
+#: includes/ThemeOptions.php:514
+msgid "Are you sure you want to reset the language to Portuguese (Brazil)?"
+msgstr "Biztos benne, hogy vissza szeretné állítani a nyelvet portugálra (Brazília)?"
+
+#: includes/ThemeOptions.php:520
+msgid "Language Information"
+msgstr "Nyelv Információk"
+
+#: includes/ThemeOptions.php:523
+msgid "Language Code:"
+msgstr "Nyelv Kód:"
+
+#: includes/ThemeOptions.php:527
+msgid "Available Languages:"
+msgstr "Elérhető Nyelvek:"
+
+#: includes/ThemeOptions.php:529
+msgid "Portuguese (Brazil), English (United States), Spanish (Spain), French (France), German (Germany), Korean (South Korea), Danish (Denmark), Arabic, Dutch (Netherlands), Hungarian (Hungary), Hindi (India), Indonesian (Indonesia), Italian (Italy), Japanese (Japan), Norwegian (Norway), Polish (Poland), Portuguese (Portugal), Swedish (Sweden), Turkish (Turkey), Filipino (Philippines), Finnish (Finland), Thai (Thailand), Greek (Greece), Czech (Czech Republic), Luxembourgish (Luxembourg), Romanian (Romania), Serbian (Serbia), Bulgarian (Bulgaria)"
+msgstr "Portugál (Brazília), Angol (Egyesült Államok), Spanyol (Spanyolország), Francia (Franciaország), Német (Németország), Koreai (Dél-Korea), Dán (Dánia), Arab, Holland (Hollandia), Magyar (Magyarország), Hindi (India), Indonéz (Indonézia), Olasz (Olaszország), Japán (Japán), Norvég (Norvégia), Lengyel (Lengyelország), Portugál (Portugália), Svéd (Svédország), Török (Törökország), Filippínó (Fülöp-szigetek), Finn (Finnország), Thai (Thaiföld), Görög (Görögország), Cseh (Cseh Köztársaság), Luxemburgi (Luxemburg), Román (Románia), Szerb (Szerbia), Bolgár (Bulgária)"
+
+#: includes/ThemeOptions.php:533
+msgid "Translation Files:"
+msgstr "Fordítási Fájlok:"
+
+#: includes/ThemeOptions.php:542
+msgid "Available"
+msgstr "Elérhető"
+
+#: includes/ThemeOptions.php:543
+msgid "Missing"
+msgstr "Hiányzik"
+
+#: includes/ThemeOptions.php:553
+msgid "Instructions"
+msgstr "Utasítások"
+
+#: includes/ThemeOptions.php:556
+msgid "Use the dropdown above to select your preferred language"
+msgstr "Használja a fenti legördülő menüt a kívánt nyelv kiválasztásához"
+
+#: includes/ThemeOptions.php:557
+msgid "Or use the quick buttons for instant language switching"
+msgstr "Vagy használja a gyors gombokat az azonnali nyelvváltáshoz"
+
+#: includes/ThemeOptions.php:558
+msgid "The change affects both the admin panel and front-end of your site"
+msgstr "A változás mind az admin panelt, mind az oldal előlapját érinti"
+
+#: includes/ThemeOptions.php:559
+msgid "All theme text will be displayed in the selected language"
+msgstr "Az összes téma szöveg a kiválasztott nyelven fog megjelenni"
+
+#: includes/ThemeOptions.php:560
+msgid "Use the reset button if you encounter any language-related issues"
+msgstr "Használja a visszaállítás gombot, ha nyelvi problémákba ütközik"

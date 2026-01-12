@@ -1,0 +1,19 @@
+@use "./font";
+@use "./global";
+
+@use "./components/button";
+@use "./components/category";
+
+@use "./components/news-card";
+@use "./components/search-bar";
+@use "./components/header";
+@use "./components/footer";
+@use "./components/pagination";
+
+@use "./components/stock-exchange-quotes";
+@use "./components/section-posts";
+
+@use "./pages/home";
+@use "./pages/single";
+@use "./pages/archive";
+@use "./pages/search";

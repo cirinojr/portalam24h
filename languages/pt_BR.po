@@ -1,0 +1,420 @@
+# Copyright (C) 2024 Skallar Theme
+# This file is distributed under the same license as the Skallar Theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00:00+00:00\n"
+"PO-Revision-Date: 2024-01-01 00:00:00+00:00\n"
+"Last-Translator: \n"
+"Language-Team: Portuguese (Brazil)\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/ThemeOptions.php:89
+msgid "Header Menu"
+msgstr "Menu do Cabeçalho"
+
+#: includes/ThemeOptions.php:90
+msgid "Bottom Menu"
+msgstr "Menu Inferior"
+
+#: includes/ThemeOptions.php:205
+msgid "Theme Settings"
+msgstr "Configurações do Tema"
+
+#: includes/ThemeOptions.php:206
+msgid "Skallar Theme"
+msgstr "Tema Skallar"
+
+#: includes/ThemeOptions.php:217
+msgid "General Settings"
+msgstr "Configurações Gerais"
+
+#: includes/ThemeOptions.php:251
+msgid "Configure Header Bottom Menu"
+msgstr "Configurar Menu do Cabeçalho Inferior"
+
+#: includes/ThemeOptions.php:258
+msgid "Menu Items"
+msgstr "Itens do Menu"
+
+#: includes/ThemeOptions.php:262
+msgid "Format:"
+msgstr "Formato:"
+
+#: includes/ThemeOptions.php:262
+msgid "One item per line in format:"
+msgstr "Um item por linha no formato:"
+
+#: includes/ThemeOptions.php:262
+msgid "Title|URL"
+msgstr "Título|URL"
+
+#: includes/ThemeOptions.php:263
+msgid "Examples:"
+msgstr "Exemplos:"
+
+#: includes/ThemeOptions.php:264
+msgid "Education|/category/education/"
+msgstr "Educação|/category/educacao/"
+
+#: includes/ThemeOptions.php:265
+msgid "News|/category/news/"
+msgstr "Notícias|/category/noticias/"
+
+#: includes/ThemeOptions.php:266
+msgid "About Us|/about/"
+msgstr "Sobre Nós|/sobre/"
+
+#: includes/ThemeOptions.php:267
+msgid "Contact|/contact/"
+msgstr "Contato|/contato/"
+
+#: includes/ThemeOptions.php:269
+msgid "Tip:"
+msgstr "Dica:"
+
+#: includes/ThemeOptions.php:269
+msgid "For categories use"
+msgstr "Para categorias use"
+
+#: includes/ThemeOptions.php:270
+msgid "For pages use"
+msgstr "Para páginas use"
+
+#: includes/ThemeOptions.php:281
+msgid "Available Pages"
+msgstr "Páginas Disponíveis"
+
+#: includes/ThemeOptions.php:282
+msgid "Copy and paste the items you want in the field above:"
+msgstr "Copie e cole os itens que desejar no campo acima:"
+
+#: includes/ThemeOptions.php:292
+msgid "Available Categories"
+msgstr "Categorias Disponíveis"
+
+#: includes/ThemeOptions.php:313
+msgid "General Theme Settings"
+msgstr "Configurações Gerais do Tema"
+
+#: includes/ThemeOptions.php:320
+msgid "Display Elements"
+msgstr "Elementos de Exibição"
+
+#: includes/ThemeOptions.php:325
+msgid "Show stock exchange quotes on homepage"
+msgstr "Exibir cotações da bolsa na página inicial"
+
+#: includes/ThemeOptions.php:328
+msgid "Check this option to display the stock exchange quotes section (skl-stock-exchange-quotes) on the homepage."
+msgstr "Marque esta opção para exibir a seção de cotações da bolsa (skl-stock-exchange-quotes) na página inicial."
+
+#: includes/ThemeOptions.php:340
+msgid "Information"
+msgstr "Informações"
+
+#: includes/ThemeOptions.php:341
+msgid "Theme version:"
+msgstr "Versão do tema:"
+
+#: includes/ThemeOptions.php:342
+msgid "Developed by:"
+msgstr "Desenvolvido por:"
+
+#: includes/ThemeOptions.php:342
+msgid "Your Company"
+msgstr "Sua Empresa"
+
+#: includes/ThemeOptions.php:170
+msgid "Education"
+msgstr "Educação"
+
+#: includes/ThemeOptions.php:171
+msgid "News"
+msgstr "Notícias"
+
+#: includes/ThemeOptions.php:172
+msgid "International"
+msgstr "Internacional"
+
+#: includes/ThemeOptions.php:173
+msgid "Finance"
+msgstr "Finanças"
+
+#: includes/ThemeOptions.php:174
+msgid "Curiosities"
+msgstr "Curiosidades"
+
+#: includes/ThemeOptions.php:175
+msgid "Tools"
+msgstr "Ferramentas"
+
+#: includes/ThemeOptions.php:377
+msgid "Skallar Theme:"
+msgstr "Tema Skallar:"
+
+#: includes/ThemeOptions.php:379
+msgid "Settings available at %s in the sidebar menu."
+msgstr "Configurações disponíveis em %s no menu lateral."
+
+#: includes/ThemeOptions.php:238
+msgid "Color Settings"
+msgstr "Configurações de Cores"
+
+#: includes/ThemeOptions.php:238
+msgid "Colors"
+msgstr "Cores"
+
+#: includes/ThemeOptions.php:371
+msgid "Primary Color"
+msgstr "Cor Primária"
+
+#: includes/ThemeOptions.php:374
+msgid "Used for buttons, links, and accent elements. Default: #fd5e04"
+msgstr "Usada para botões, links e elementos de destaque. Padrão: #fd5e04"
+
+#: includes/ThemeOptions.php:380
+msgid "Secondary Color"
+msgstr "Cor Secundária"
+
+#: includes/ThemeOptions.php:383
+msgid "Used for secondary elements and light backgrounds. Default: #fef2e6"
+msgstr "Usada para elementos secundários e fundos claros. Padrão: #fef2e6"
+
+#: includes/ThemeOptions.php:389
+msgid "Text Color"
+msgstr "Cor do Texto"
+
+#: includes/ThemeOptions.php:392
+msgid "Main text color used throughout the site. Default: #1d2433"
+msgstr "Cor principal do texto usada em todo o site. Padrão: #1d2433"
+
+#: includes/ThemeOptions.php:398
+msgid "Background Color"
+msgstr "Cor de Fundo"
+
+#: includes/ThemeOptions.php:401
+msgid "Main background color of the site. Default: #f8f9fc"
+msgstr "Cor principal de fundo do site. Padrão: #f8f9fc"
+
+#: includes/ThemeOptions.php:407
+msgid "Success Color"
+msgstr "Cor de Sucesso"
+
+#: includes/ThemeOptions.php:410
+msgid "Used for success messages and positive indicators. Default: #08875d"
+msgstr "Usada para mensagens de sucesso e indicadores positivos. Padrão: #08875d"
+
+#: includes/ThemeOptions.php:416
+msgid "Danger Color"
+msgstr "Cor de Perigo"
+
+#: includes/ThemeOptions.php:419
+msgid "Used for error messages and warning indicators. Default: #e02d3c"
+msgstr "Usada para mensagens de erro e indicadores de aviso. Padrão: #e02d3c"
+
+#: includes/ThemeOptions.php:428
+msgid "Reset to Defaults"
+msgstr "Restaurar Padrões"
+
+#: includes/ThemeOptions.php:429
+msgid "Click the button below to reset all colors to their default values."
+msgstr "Clique no botão abaixo para restaurar todas as cores aos valores padrão."
+
+#: includes/ThemeOptions.php:433
+msgid "Reset Colors"
+msgstr "Restaurar Cores"
+
+#: includes/ThemeOptions.php:434
+msgid "Are you sure you want to reset all colors to default values?"
+msgstr "Tem certeza de que deseja restaurar todas as cores aos valores padrão?"
+
+#: includes/ThemeOptions.php:462
+msgid "Colors have been reset to default values."
+msgstr "As cores foram restauradas aos valores padrão."
+
+#: includes/ThemeOptions.php:247
+msgid "Language Settings"
+msgstr "Configurações de Idioma"
+
+#: includes/ThemeOptions.php:248
+msgid "Language"
+msgstr "Idioma"
+
+#: includes/ThemeOptions.php:495
+msgid "Language changed to %s. The site will display in the new language."
+msgstr "Idioma alterado para %s. O site será exibido no novo idioma."
+
+#: includes/ThemeOptions.php:504
+msgid "Site Language"
+msgstr "Idioma do Site"
+
+#: includes/ThemeOptions.php:516
+msgid "Portuguese (Brazil)"
+msgstr "Português (Brasil)"
+
+#: includes/ThemeOptions.php:519
+msgid "English (United States)"
+msgstr "Inglês (Estados Unidos)"
+
+#: includes/ThemeOptions.php:522
+msgid "Spanish (Spain)"
+msgstr "Espanhol (Espanha)"
+
+#: includes/ThemeOptions.php:525
+msgid "French (France)"
+msgstr "Francês (França)"
+
+#: includes/ThemeOptions.php:528
+msgid "German (Germany)"
+msgstr "Alemão (Alemanha)"
+
+#: includes/ThemeOptions.php:529
+msgid "Korean (South Korea)"
+msgstr "Coreano (Coreia do Sul)"
+
+#: includes/ThemeOptions.php:530
+msgid "Danish (Denmark)"
+msgstr "Dinamarquês (Dinamarca)"
+
+#: includes/ThemeOptions.php:531
+msgid "Arabic"
+msgstr "Árabe"
+
+#: includes/ThemeOptions.php:532
+msgid "Dutch (Netherlands)"
+msgstr "Holandês (Países Baixos)"
+
+#: includes/ThemeOptions.php:533
+msgid "Hungarian (Hungary)"
+msgstr "Húngaro (Hungria)"
+
+#: includes/ThemeOptions.php:534
+msgid "Hindi (India)"
+msgstr "Hindi (Índia)"
+
+#: includes/ThemeOptions.php:535
+msgid "Indonesian (Indonesia)"
+msgstr "Indonésio (Indonésia)"
+
+#: includes/ThemeOptions.php:536
+msgid "Italian (Italy)"
+msgstr "Italiano (Itália)"
+
+#: includes/ThemeOptions.php:537
+msgid "Japanese (Japan)"
+msgstr "Japonês (Japão)"
+
+#: includes/ThemeOptions.php:538
+msgid "Norwegian (Norway)"
+msgstr "Norueguês (Noruega)"
+
+#: includes/ThemeOptions.php:539
+msgid "Polish (Poland)"
+msgstr "Polonês (Polônia)"
+
+#: includes/ThemeOptions.php:540
+msgid "Portuguese (Portugal)"
+msgstr "Português (Portugal)"
+
+#: includes/ThemeOptions.php:541
+msgid "Swedish (Sweden)"
+msgstr "Sueco (Suécia)"
+
+#: includes/ThemeOptions.php:542
+msgid "Turkish (Turkey)"
+msgstr "Turco (Turquia)"
+
+#: includes/ThemeOptions.php:543
+msgid "Filipino (Philippines)"
+msgstr "Filipino (Filipinas)"
+
+#: includes/ThemeOptions.php:544
+msgid "Finnish (Finland)"
+msgstr "Finlandês (Finlândia)"
+
+#: includes/ThemeOptions.php:545
+msgid "Thai (Thailand)"
+msgstr "Tailandês (Tailândia)"
+
+#: includes/ThemeOptions.php:546
+msgid "Greek (Greece)"
+msgstr "Grego (Grécia)"
+
+#: includes/ThemeOptions.php:547
+msgid "Czech (Czech Republic)"
+msgstr "Tcheco (República Tcheca)"
+
+#: includes/ThemeOptions.php:548
+msgid "Luxembourgish (Luxembourg)"
+msgstr "Luxemburguês (Luxemburgo)"
+
+#: includes/ThemeOptions.php:549
+msgid "Romanian (Romania)"
+msgstr "Romeno (Romênia)"
+
+#: includes/ThemeOptions.php:550
+msgid "Serbian (Serbia)"
+msgstr "Sérvio (Sérvia)"
+
+#: includes/ThemeOptions.php:551
+msgid "Bulgarian (Bulgaria)"
+msgstr "Búlgaro (Bulgária)"
+
+#: includes/ThemeOptions.php:553
+msgid "Select the language for your site. This will change the language of the theme interface and content."
+msgstr "Selecione o idioma para seu site. Isso mudará o idioma da interface do tema e do conteúdo."
+
+#: includes/ThemeOptions.php:557
+msgid "Quick Language Switch"
+msgstr "Mudança Rápida de Idioma"
+
+#: includes/ThemeOptions.php:558
+msgid "Click on a language below to change it immediately:"
+msgstr "Clique em um idioma abaixo para mudá-lo imediatamente:"
+
+#: includes/ThemeOptions.php:573
+msgid "Current"
+msgstr "Atual"
+
+#: includes/ThemeOptions.php:586
+msgid "If you are experiencing issues with the language settings, you can reset them to default values."
+msgstr "Se você estiver enfrentando problemas com as configurações de idioma, pode restaurá-las aos valores padrão."
+
+#: includes/ThemeOptions.php:594
+msgid "Translation Files:"
+msgstr "Arquivos de Tradução:"
+
+#: includes/ThemeOptions.php:599
+msgid "Available"
+msgstr "Disponível"
+
+#: includes/ThemeOptions.php:600
+msgid "Missing"
+msgstr "Ausente"
+
+#: includes/ThemeOptions.php:553
+msgid "Portuguese (Brazil), English (United States), Spanish (Spain), French (France), German (Germany), Korean (South Korea), Danish (Denmark), Arabic, Dutch (Netherlands), Hungarian (Hungary), Hindi (India), Indonesian (Indonesia), Italian (Italy), Japanese (Japan), Norwegian (Norway), Polish (Poland), Portuguese (Portugal), Swedish (Sweden), Turkish (Turkey), Filipino (Philippines), Finnish (Finland), Thai (Thailand), Greek (Greece), Czech (Czech Republic), Luxembourgish (Luxembourg), Romanian (Romania), Serbian (Serbia), Bulgarian (Bulgaria)"
+msgstr "Português (Brasil), Inglês (Estados Unidos), Espanhol (Espanha), Francês (França), Alemão (Alemanha), Coreano (Coreia do Sul), Dinamarquês (Dinamarca), Árabe, Holandês (Países Baixos), Húngaro (Hungria), Hindi (Índia), Indonésio (Indonésia), Italiano (Itália), Japonês (Japão), Norueguês (Noruega), Polonês (Polônia), Português (Portugal), Sueco (Suécia), Turco (Turquia), Filipino (Filipinas), Finlandês (Finlândia), Tailandês (Tailândia), Grego (Grécia), Tcheco (República Tcheca), Luxemburguês (Luxemburgo), Romeno (Romênia), Sérvio (Sérvia), Búlgaro (Bulgária)"
+
+#: includes/ThemeOptions.php:615
+msgid "Use the reset button if you encounter any language-related issues"
+msgstr "Use o botão de restaurar se encontrar qualquer problema relacionado ao idioma"
+
+# Dynamic titles
+msgid "Mais lidas"
+msgstr "Mais lidas"
+
+msgid "Últimas notícias"
+msgstr "Últimas notícias"
+
+msgid "Mais lidas de %s"
+msgstr "Mais lidas de %s"
+
+msgid "categoria"
+msgstr "categoria"

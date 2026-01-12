@@ -1,0 +1,339 @@
+# Copyright (C) 2024 Skallar Theme
+# This file is distributed under the same license as the Skallar Theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00:00+00:00\n"
+"PO-Revision-Date: 2024-01-01 00:00:00+00:00\n"
+"Last-Translator: \n"
+"Language-Team: Dutch (Netherlands)\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/ThemeOptions.php:89
+msgid "Header Menu"
+msgstr "Kop Menu"
+
+#: includes/ThemeOptions.php:90
+msgid "Bottom Menu"
+msgstr "Onderste Menu"
+
+#: includes/ThemeOptions.php:205
+msgid "Theme Settings"
+msgstr "Thema Instellingen"
+
+#: includes/ThemeOptions.php:206
+msgid "Skallar Theme"
+msgstr "Skallar Thema"
+
+#: includes/ThemeOptions.php:217
+msgid "General Settings"
+msgstr "Algemene Instellingen"
+
+#: includes/ThemeOptions.php:251
+msgid "Configure Header Bottom Menu"
+msgstr "Configureer Kop Onderste Menu"
+
+#: includes/ThemeOptions.php:258
+msgid "Menu Items"
+msgstr "Menu Items"
+
+#: includes/ThemeOptions.php:262
+msgid "Format:"
+msgstr "Formaat:"
+
+#: includes/ThemeOptions.php:262
+msgid "One item per line in format:"
+msgstr "Één item per regel in formaat:"
+
+#: includes/ThemeOptions.php:264
+msgid "Link Text | URL"
+msgstr "Link Tekst | URL"
+
+#: includes/ThemeOptions.php:265
+msgid "Example:"
+msgstr "Voorbeeld:"
+
+#: includes/ThemeOptions.php:266
+msgid "Home | /"
+msgstr "Home | /"
+
+#: includes/ThemeOptions.php:267
+msgid "About | /about"
+msgstr "Over | /over"
+
+#: includes/ThemeOptions.php:268
+msgid "Contact | /contact"
+msgstr "Contact | /contact"
+
+#: includes/ThemeOptions.php:279
+msgid "Color Settings"
+msgstr "Kleur Instellingen"
+
+#: includes/ThemeOptions.php:280
+msgid "Language Settings"
+msgstr "Taal Instellingen"
+
+#: includes/ThemeOptions.php:291
+msgid "Primary Color"
+msgstr "Primaire Kleur"
+
+#: includes/ThemeOptions.php:295
+msgid "Secondary Color"
+msgstr "Secundaire Kleur"
+
+#: includes/ThemeOptions.php:299
+msgid "Text Color"
+msgstr "Tekst Kleur"
+
+#: includes/ThemeOptions.php:303
+msgid "Background Color"
+msgstr "Achtergrond Kleur"
+
+#: includes/ThemeOptions.php:307
+msgid "Success Color"
+msgstr "Succes Kleur"
+
+#: includes/ThemeOptions.php:311
+msgid "Danger Color"
+msgstr "Gevaar Kleur"
+
+#: includes/ThemeOptions.php:328
+msgid "Colors have been reset to default values."
+msgstr "Kleuren zijn teruggezet naar standaard waarden."
+
+#: includes/ThemeOptions.php:340
+msgid "Language settings have been reset to default (Portuguese - Brazil)."
+msgstr "Taal instellingen zijn teruggezet naar standaard (Portugees - Brazilië)."
+
+#: includes/ThemeOptions.php:347
+msgid "Language changed to %s. The site will display in the new language."
+msgstr "Taal veranderd naar %s. De site zal worden weergegeven in de nieuwe taal."
+
+#: includes/ThemeOptions.php:354
+msgid "Language Settings"
+msgstr "Taal Instellingen"
+
+#: includes/ThemeOptions.php:358
+msgid "Current Language:"
+msgstr "Huidige Taal:"
+
+#: includes/ThemeOptions.php:368
+msgid "Site Language"
+msgstr "Site Taal"
+
+#: includes/ThemeOptions.php:371
+msgid "Portuguese (Brazil)"
+msgstr "Portugees (Brazilië)"
+
+#: includes/ThemeOptions.php:374
+msgid "English (United States)"
+msgstr "Engels (Verenigde Staten)"
+
+#: includes/ThemeOptions.php:377
+msgid "Spanish (Spain)"
+msgstr "Spaans (Spanje)"
+
+#: includes/ThemeOptions.php:380
+msgid "French (France)"
+msgstr "Frans (Frankrijk)"
+
+#: includes/ThemeOptions.php:383
+msgid "German (Germany)"
+msgstr "Duits (Duitsland)"
+
+#: includes/ThemeOptions.php:386
+msgid "Korean (South Korea)"
+msgstr "Koreaans (Zuid-Korea)"
+
+#: includes/ThemeOptions.php:389
+msgid "Danish (Denmark)"
+msgstr "Deens (Denemarken)"
+
+#: includes/ThemeOptions.php:392
+msgid "Arabic"
+msgstr "Arabisch"
+
+#: includes/ThemeOptions.php:395
+msgid "Dutch (Netherlands)"
+msgstr "Nederlands (Nederland)"
+
+#: includes/ThemeOptions.php:398
+msgid "Hungarian (Hungary)"
+msgstr "Hongaars (Hongarije)"
+
+#: includes/ThemeOptions.php:401
+msgid "Hindi (India)"
+msgstr "Hindi (India)"
+
+#: includes/ThemeOptions.php:404
+msgid "Indonesian (Indonesia)"
+msgstr "Indonesisch (Indonesië)"
+
+#: includes/ThemeOptions.php:407
+msgid "Italian (Italy)"
+msgstr "Italiaans (Italië)"
+
+#: includes/ThemeOptions.php:410
+msgid "Japanese (Japan)"
+msgstr "Japans (Japan)"
+
+#: includes/ThemeOptions.php:413
+msgid "Norwegian (Norway)"
+msgstr "Noors (Noorwegen)"
+
+#: includes/ThemeOptions.php:416
+msgid "Polish (Poland)"
+msgstr "Pools (Polen)"
+
+#: includes/ThemeOptions.php:419
+msgid "Portuguese (Portugal)"
+msgstr "Portugees (Portugal)"
+
+#: includes/ThemeOptions.php:422
+msgid "Swedish (Sweden)"
+msgstr "Zweeds (Zweden)"
+
+#: includes/ThemeOptions.php:425
+msgid "Turkish (Turkey)"
+msgstr "Turks (Turkije)"
+
+#: includes/ThemeOptions.php:428
+msgid "Filipino (Philippines)"
+msgstr "Filipijns (Filipijnen)"
+
+#: includes/ThemeOptions.php:431
+msgid "Finnish (Finland)"
+msgstr "Fins (Finland)"
+
+#: includes/ThemeOptions.php:434
+msgid "Thai (Thailand)"
+msgstr "Thai (Thailand)"
+
+#: includes/ThemeOptions.php:437
+msgid "Greek (Greece)"
+msgstr "Grieks (Griekenland)"
+
+#: includes/ThemeOptions.php:440
+msgid "Czech (Czech Republic)"
+msgstr "Tsjechisch (Tsjechische Republiek)"
+
+#: includes/ThemeOptions.php:443
+msgid "Luxembourgish (Luxembourg)"
+msgstr "Luxemburgs (Luxemburg)"
+
+#: includes/ThemeOptions.php:446
+msgid "Romanian (Romania)"
+msgstr "Roemeens (Roemenië)"
+
+#: includes/ThemeOptions.php:449
+msgid "Serbian (Serbia)"
+msgstr "Servisch (Servië)"
+
+#: includes/ThemeOptions.php:452
+msgid "Bulgarian (Bulgaria)"
+msgstr "Bulgaars (Bulgarije)"
+
+#: includes/ThemeOptions.php:456
+msgid "Select the language for your site. This will change the language of the theme interface and content."
+msgstr "Selecteer de taal voor uw site. Dit zal de taal van de thema interface en content veranderen."
+
+#: includes/ThemeOptions.php:465
+msgid "Quick Language Switch"
+msgstr "Snelle Taalwisseling"
+
+#: includes/ThemeOptions.php:466
+msgid "Click on a language below to change it immediately:"
+msgstr "Klik op een taal hieronder om het direct te veranderen:"
+
+#: includes/ThemeOptions.php:472
+msgid "Portuguese"
+msgstr "Portugees"
+
+#: includes/ThemeOptions.php:473
+msgid "Current"
+msgstr "Huidige"
+
+#: includes/ThemeOptions.php:481
+msgid "English"
+msgstr "Engels"
+
+#: includes/ThemeOptions.php:489
+msgid "Spanish"
+msgstr "Spaans"
+
+#: includes/ThemeOptions.php:497
+msgid "French"
+msgstr "Frans"
+
+#: includes/ThemeOptions.php:508
+msgid "Reset Language Settings"
+msgstr "Taal Instellingen Resetten"
+
+#: includes/ThemeOptions.php:509
+msgid "If you are experiencing issues with the language settings, you can reset them to default values."
+msgstr "Als u problemen ondervindt met de taal instellingen, kunt u ze terugzetten naar standaard waarden."
+
+#: includes/ThemeOptions.php:513
+msgid "Reset to Default Language"
+msgstr "Terug naar Standaard Taal"
+
+#: includes/ThemeOptions.php:514
+msgid "Are you sure you want to reset the language to Portuguese (Brazil)?"
+msgstr "Weet u zeker dat u de taal wilt terugzetten naar Portugees (Brazilië)?"
+
+#: includes/ThemeOptions.php:520
+msgid "Language Information"
+msgstr "Taal Informatie"
+
+#: includes/ThemeOptions.php:523
+msgid "Language Code:"
+msgstr "Taal Code:"
+
+#: includes/ThemeOptions.php:527
+msgid "Available Languages:"
+msgstr "Beschikbare Talen:"
+
+#: includes/ThemeOptions.php:529
+msgid "Portuguese (Brazil), English (United States), Spanish (Spain), French (France), German (Germany), Korean (South Korea), Danish (Denmark), Arabic, Dutch (Netherlands), Hungarian (Hungary), Hindi (India), Indonesian (Indonesia), Italian (Italy), Japanese (Japan), Norwegian (Norway), Polish (Poland), Portuguese (Portugal), Swedish (Sweden), Turkish (Turkey), Filipino (Philippines), Finnish (Finland), Thai (Thailand), Greek (Greece), Czech (Czech Republic), Luxembourgish (Luxembourg), Romanian (Romania), Serbian (Serbia), Bulgarian (Bulgaria)"
+msgstr "Portugees (Brazilië), Engels (Verenigde Staten), Spaans (Spanje), Frans (Frankrijk), Duits (Duitsland), Koreaans (Zuid-Korea), Deens (Denemarken), Arabisch, Nederlands (Nederland), Hongaars (Hongarije), Hindi (India), Indonesisch (Indonesië), Italiaans (Italië), Japans (Japan), Noors (Noorwegen), Pools (Polen), Portugees (Portugal), Zweeds (Zweden), Turks (Turkije), Filipijns (Filipijnen), Fins (Finland), Thai (Thailand), Grieks (Griekenland), Tsjechisch (Tsjechische Republiek), Luxemburgs (Luxemburg), Roemeens (Roemenië), Servisch (Servië), Bulgaars (Bulgarije)"
+
+#: includes/ThemeOptions.php:533
+msgid "Translation Files:"
+msgstr "Vertaling Bestanden:"
+
+#: includes/ThemeOptions.php:542
+msgid "Available"
+msgstr "Beschikbaar"
+
+#: includes/ThemeOptions.php:543
+msgid "Missing"
+msgstr "Ontbreekt"
+
+#: includes/ThemeOptions.php:553
+msgid "Instructions"
+msgstr "Instructies"
+
+#: includes/ThemeOptions.php:556
+msgid "Use the dropdown above to select your preferred language"
+msgstr "Gebruik de dropdown hierboven om uw voorkeurtaal te selecteren"
+
+#: includes/ThemeOptions.php:557
+msgid "Or use the quick buttons for instant language switching"
+msgstr "Of gebruik de snelle knoppen voor directe taalwisseling"
+
+#: includes/ThemeOptions.php:558
+msgid "The change affects both the admin panel and front-end of your site"
+msgstr "De verandering beïnvloedt zowel het admin paneel als de voorkant van uw site"
+
+#: includes/ThemeOptions.php:559
+msgid "All theme text will be displayed in the selected language"
+msgstr "Alle thema tekst zal worden weergegeven in de geselecteerde taal"
+
+#: includes/ThemeOptions.php:560
+msgid "Use the reset button if you encounter any language-related issues"
+msgstr "Gebruik de reset knop als u taal-gerelateerde problemen ondervindt"

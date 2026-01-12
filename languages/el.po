@@ -1,0 +1,113 @@
+# Greek (Greece) - el.po
+msgid ""
+msgstr ""
+"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/ThemeOptions.php:89
+msgid "Header Menu"
+msgstr "Μενού Κεφαλίδας"
+
+#: includes/ThemeOptions.php:90
+msgid "Bottom Menu"
+msgstr "Κάτω Μενού"
+
+#: includes/ThemeOptions.php:205
+msgid "Theme Settings"
+msgstr "Ρυθμίσεις Θέματος"
+
+#: includes/ThemeOptions.php:206
+msgid "Skallar Theme"
+msgstr "Θέμα Skallar"
+
+#: includes/ThemeOptions.php:217
+msgid "General Settings"
+msgstr "Γενικές Ρυθμίσεις"
+
+#: includes/ThemeOptions.php:279
+msgid "Color Settings"
+msgstr "Ρυθμίσεις Χρώματος"
+
+#: includes/ThemeOptions.php:280
+msgid "Language Settings"
+msgstr "Ρυθμίσεις Γλώσσας"
+
+#: includes/ThemeOptions.php:354
+msgid "Language Settings"
+msgstr "Ρυθμίσεις Γλώσσας"
+
+#: includes/ThemeOptions.php:358
+msgid "Current Language:"
+msgstr "Τρέχουσα Γλώσσα:"
+
+#: includes/ThemeOptions.php:368
+msgid "Site Language"
+msgstr "Γλώσσα Ιστότοπου"
+
+#: includes/ThemeOptions.php:437
+msgid "Greek (Greece)"
+msgstr "Ελληνικά (Ελλάδα)"
+
+#: includes/ThemeOptions.php:456
+msgid "Select the language for your site. This will change the language of the theme interface and content."
+msgstr "Επιλέξτε τη γλώσσα για τον ιστότοπό σας. Αυτό θα αλλάξει τη γλώσσα της διεπαφής θέματος και του περιεχομένου."
+
+#: includes/ThemeOptions.php:465
+msgid "Quick Language Switch"
+msgstr "Γρήγορη Αλλαγή Γλώσσας"
+
+#: includes/ThemeOptions.php:466
+msgid "Click on a language below to change it immediately:"
+msgstr "Κάντε κλικ σε μια γλώσσα παρακάτω για να την αλλάξετε αμέσως:"
+
+#: includes/ThemeOptions.php:472
+msgid "Portuguese"
+msgstr "Πορτογαλικά"
+
+#: includes/ThemeOptions.php:473
+msgid "Current"
+msgstr "Τρέχουσα"
+
+#: includes/ThemeOptions.php:481
+msgid "English"
+msgstr "Αγγλικά"
+
+#: includes/ThemeOptions.php:508
+msgid "Reset Language Settings"
+msgstr "Επαναφορά Ρυθμίσεων Γλώσσας"
+
+#: includes/ThemeOptions.php:513
+msgid "Reset to Default Language"
+msgstr "Επαναφορά στην Προεπιλεγμένη Γλώσσα"
+
+#: includes/ThemeOptions.php:520
+msgid "Language Information"
+msgstr "Πληροφορίες Γλώσσας"
+
+#: includes/ThemeOptions.php:523
+msgid "Language Code:"
+msgstr "Κώδικας Γλώσσας:"
+
+#: includes/ThemeOptions.php:527
+msgid "Available Languages:"
+msgstr "Διαθέσιμες Γλώσσες:"
+
+#: includes/ThemeOptions.php:533
+msgid "Translation Files:"
+msgstr "Αρχεία Μετάφρασης:"
+
+#: includes/ThemeOptions.php:542
+msgid "Available"
+msgstr "Διαθέσιμο"
+
+#: includes/ThemeOptions.php:543
+msgid "Missing"
+msgstr "Λείπει"
+
+#: includes/ThemeOptions.php:553
+msgid "Instructions"
+msgstr "Οδηγίες"

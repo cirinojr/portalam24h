@@ -1,0 +1,339 @@
+# Copyright (C) 2024 Skallar Theme
+# This file is distributed under the same license as the Skallar Theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00:00+00:00\n"
+"PO-Revision-Date: 2024-01-01 00:00:00+00:00\n"
+"Last-Translator: \n"
+"Language-Team: Danish (Denmark)\n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/ThemeOptions.php:89
+msgid "Header Menu"
+msgstr "Header Menu"
+
+#: includes/ThemeOptions.php:90
+msgid "Bottom Menu"
+msgstr "Bundmenu"
+
+#: includes/ThemeOptions.php:205
+msgid "Theme Settings"
+msgstr "Tema Indstillinger"
+
+#: includes/ThemeOptions.php:206
+msgid "Skallar Theme"
+msgstr "Skallar Tema"
+
+#: includes/ThemeOptions.php:217
+msgid "General Settings"
+msgstr "Generelle Indstillinger"
+
+#: includes/ThemeOptions.php:251
+msgid "Configure Header Bottom Menu"
+msgstr "Konfigurer Header Bundmenu"
+
+#: includes/ThemeOptions.php:258
+msgid "Menu Items"
+msgstr "Menu Punkter"
+
+#: includes/ThemeOptions.php:262
+msgid "Format:"
+msgstr "Format:"
+
+#: includes/ThemeOptions.php:262
+msgid "One item per line in format:"
+msgstr "Et element per linje i format:"
+
+#: includes/ThemeOptions.php:264
+msgid "Link Text | URL"
+msgstr "Link Tekst | URL"
+
+#: includes/ThemeOptions.php:265
+msgid "Example:"
+msgstr "Eksempel:"
+
+#: includes/ThemeOptions.php:266
+msgid "Home | /"
+msgstr "Hjem | /"
+
+#: includes/ThemeOptions.php:267
+msgid "About | /about"
+msgstr "Om | /om"
+
+#: includes/ThemeOptions.php:268
+msgid "Contact | /contact"
+msgstr "Kontakt | /kontakt"
+
+#: includes/ThemeOptions.php:279
+msgid "Color Settings"
+msgstr "Farve Indstillinger"
+
+#: includes/ThemeOptions.php:280
+msgid "Language Settings"
+msgstr "Sprog Indstillinger"
+
+#: includes/ThemeOptions.php:291
+msgid "Primary Color"
+msgstr "Primær Farve"
+
+#: includes/ThemeOptions.php:295
+msgid "Secondary Color"
+msgstr "Sekundær Farve"
+
+#: includes/ThemeOptions.php:299
+msgid "Text Color"
+msgstr "Tekst Farve"
+
+#: includes/ThemeOptions.php:303
+msgid "Background Color"
+msgstr "Baggrund Farve"
+
+#: includes/ThemeOptions.php:307
+msgid "Success Color"
+msgstr "Succes Farve"
+
+#: includes/ThemeOptions.php:311
+msgid "Danger Color"
+msgstr "Fare Farve"
+
+#: includes/ThemeOptions.php:328
+msgid "Colors have been reset to default values."
+msgstr "Farver er blevet nulstillet til standardværdier."
+
+#: includes/ThemeOptions.php:340
+msgid "Language settings have been reset to default (Portuguese - Brazil)."
+msgstr "Sprog indstillinger er blevet nulstillet til standard (portugisisk - Brasilien)."
+
+#: includes/ThemeOptions.php:347
+msgid "Language changed to %s. The site will display in the new language."
+msgstr "Sprog ændret til %s. Siden vil blive vist på det nye sprog."
+
+#: includes/ThemeOptions.php:354
+msgid "Language Settings"
+msgstr "Sprog Indstillinger"
+
+#: includes/ThemeOptions.php:358
+msgid "Current Language:"
+msgstr "Nuværende Sprog:"
+
+#: includes/ThemeOptions.php:368
+msgid "Site Language"
+msgstr "Site Sprog"
+
+#: includes/ThemeOptions.php:371
+msgid "Portuguese (Brazil)"
+msgstr "Portugisisk (Brasilien)"
+
+#: includes/ThemeOptions.php:374
+msgid "English (United States)"
+msgstr "Engelsk (USA)"
+
+#: includes/ThemeOptions.php:377
+msgid "Spanish (Spain)"
+msgstr "Spansk (Spanien)"
+
+#: includes/ThemeOptions.php:380
+msgid "French (France)"
+msgstr "Fransk (Frankrig)"
+
+#: includes/ThemeOptions.php:383
+msgid "German (Germany)"
+msgstr "Tysk (Tyskland)"
+
+#: includes/ThemeOptions.php:386
+msgid "Korean (South Korea)"
+msgstr "Koreansk (Sydkorea)"
+
+#: includes/ThemeOptions.php:389
+msgid "Danish (Denmark)"
+msgstr "Dansk (Danmark)"
+
+#: includes/ThemeOptions.php:392
+msgid "Arabic"
+msgstr "Arabisk"
+
+#: includes/ThemeOptions.php:395
+msgid "Dutch (Netherlands)"
+msgstr "Hollandsk (Holland)"
+
+#: includes/ThemeOptions.php:398
+msgid "Hungarian (Hungary)"
+msgstr "Ungarsk (Ungarn)"
+
+#: includes/ThemeOptions.php:401
+msgid "Hindi (India)"
+msgstr "Hindi (Indien)"
+
+#: includes/ThemeOptions.php:404
+msgid "Indonesian (Indonesia)"
+msgstr "Indonesisk (Indonesien)"
+
+#: includes/ThemeOptions.php:407
+msgid "Italian (Italy)"
+msgstr "Italiensk (Italien)"
+
+#: includes/ThemeOptions.php:410
+msgid "Japanese (Japan)"
+msgstr "Japansk (Japan)"
+
+#: includes/ThemeOptions.php:413
+msgid "Norwegian (Norway)"
+msgstr "Norsk (Norge)"
+
+#: includes/ThemeOptions.php:416
+msgid "Polish (Poland)"
+msgstr "Polsk (Polen)"
+
+#: includes/ThemeOptions.php:419
+msgid "Portuguese (Portugal)"
+msgstr "Portugisisk (Portugal)"
+
+#: includes/ThemeOptions.php:422
+msgid "Swedish (Sweden)"
+msgstr "Svensk (Sverige)"
+
+#: includes/ThemeOptions.php:425
+msgid "Turkish (Turkey)"
+msgstr "Tyrkisk (Tyrkiet)"
+
+#: includes/ThemeOptions.php:428
+msgid "Filipino (Philippines)"
+msgstr "Filippinsk (Filippinerne)"
+
+#: includes/ThemeOptions.php:431
+msgid "Finnish (Finland)"
+msgstr "Finsk (Finland)"
+
+#: includes/ThemeOptions.php:434
+msgid "Thai (Thailand)"
+msgstr "Thai (Thailand)"
+
+#: includes/ThemeOptions.php:437
+msgid "Greek (Greece)"
+msgstr "Græsk (Grækenland)"
+
+#: includes/ThemeOptions.php:440
+msgid "Czech (Czech Republic)"
+msgstr "Tjekkisk (Tjekkiet)"
+
+#: includes/ThemeOptions.php:443
+msgid "Luxembourgish (Luxembourg)"
+msgstr "Luxembourgsk (Luxembourg)"
+
+#: includes/ThemeOptions.php:446
+msgid "Romanian (Romania)"
+msgstr "Rumænsk (Rumænien)"
+
+#: includes/ThemeOptions.php:449
+msgid "Serbian (Serbia)"
+msgstr "Serbisk (Serbien)"
+
+#: includes/ThemeOptions.php:452
+msgid "Bulgarian (Bulgaria)"
+msgstr "Bulgarsk (Bulgarien)"
+
+#: includes/ThemeOptions.php:456
+msgid "Select the language for your site. This will change the language of the theme interface and content."
+msgstr "Vælg sproget for dit site. Dette vil ændre sproget for tema grænsefladen og indholdet."
+
+#: includes/ThemeOptions.php:465
+msgid "Quick Language Switch"
+msgstr "Hurtig Sprogskifte"
+
+#: includes/ThemeOptions.php:466
+msgid "Click on a language below to change it immediately:"
+msgstr "Klik på et sprog nedenfor for at ændre det med det samme:"
+
+#: includes/ThemeOptions.php:472
+msgid "Portuguese"
+msgstr "Portugisisk"
+
+#: includes/ThemeOptions.php:473
+msgid "Current"
+msgstr "Nuværende"
+
+#: includes/ThemeOptions.php:481
+msgid "English"
+msgstr "Engelsk"
+
+#: includes/ThemeOptions.php:489
+msgid "Spanish"
+msgstr "Spansk"
+
+#: includes/ThemeOptions.php:497
+msgid "French"
+msgstr "Fransk"
+
+#: includes/ThemeOptions.php:508
+msgid "Reset Language Settings"
+msgstr "Nulstil Sprog Indstillinger"
+
+#: includes/ThemeOptions.php:509
+msgid "If you are experiencing issues with the language settings, you can reset them to default values."
+msgstr "Hvis du oplever problemer med sprogindstillingerne, kan du nulstille dem til standardværdier."
+
+#: includes/ThemeOptions.php:513
+msgid "Reset to Default Language"
+msgstr "Nulstil til Standardsprog"
+
+#: includes/ThemeOptions.php:514
+msgid "Are you sure you want to reset the language to Portuguese (Brazil)?"
+msgstr "Er du sikker på, at du vil nulstille sproget til portugisisk (Brasilien)?"
+
+#: includes/ThemeOptions.php:520
+msgid "Language Information"
+msgstr "Sprog Information"
+
+#: includes/ThemeOptions.php:523
+msgid "Language Code:"
+msgstr "Sprogkode:"
+
+#: includes/ThemeOptions.php:527
+msgid "Available Languages:"
+msgstr "Tilgængelige Sprog:"
+
+#: includes/ThemeOptions.php:529
+msgid "Portuguese (Brazil), English (United States), Spanish (Spain), French (France), German (Germany), Korean (South Korea), Danish (Denmark), Arabic, Dutch (Netherlands), Hungarian (Hungary), Hindi (India), Indonesian (Indonesia), Italian (Italy), Japanese (Japan), Norwegian (Norway), Polish (Poland), Portuguese (Portugal), Swedish (Sweden), Turkish (Turkey), Filipino (Philippines), Finnish (Finland), Thai (Thailand), Greek (Greece), Czech (Czech Republic), Luxembourgish (Luxembourg), Romanian (Romania), Serbian (Serbia), Bulgarian (Bulgaria)"
+msgstr "Portugisisk (Brasilien), Engelsk (USA), Spansk (Spanien), Fransk (Frankrig), Tysk (Tyskland), Koreansk (Sydkorea), Dansk (Danmark), Arabisk, Hollandsk (Holland), Ungarsk (Ungarn), Hindi (Indien), Indonesisk (Indonesien), Italiensk (Italien), Japansk (Japan), Norsk (Norge), Polsk (Polen), Portugisisk (Portugal), Svensk (Sverige), Tyrkisk (Tyrkiet), Filippinsk (Filippinerne), Finsk (Finland), Thai (Thailand), Græsk (Grækenland), Tjekkisk (Tjekkiet), Luxembourgsk (Luxembourg), Rumænsk (Rumænien), Serbisk (Serbien), Bulgarsk (Bulgarien)"
+
+#: includes/ThemeOptions.php:533
+msgid "Translation Files:"
+msgstr "Oversættelsesfiler:"
+
+#: includes/ThemeOptions.php:542
+msgid "Available"
+msgstr "Tilgængelig"
+
+#: includes/ThemeOptions.php:543
+msgid "Missing"
+msgstr "Manglende"
+
+#: includes/ThemeOptions.php:553
+msgid "Instructions"
+msgstr "Instruktioner"
+
+#: includes/ThemeOptions.php:556
+msgid "Use the dropdown above to select your preferred language"
+msgstr "Brug dropdown ovenfor til at vælge dit foretrukne sprog"
+
+#: includes/ThemeOptions.php:557
+msgid "Or use the quick buttons for instant language switching"
+msgstr "Eller brug de hurtige knapper til øjeblikkelig sprogskifte"
+
+#: includes/ThemeOptions.php:558
+msgid "The change affects both the admin panel and front-end of your site"
+msgstr "Ændringen påvirker både admin panelet og front-end af dit site"
+
+#: includes/ThemeOptions.php:559
+msgid "All theme text will be displayed in the selected language"
+msgstr "Al tematekst vil blive vist på det valgte sprog"
+
+#: includes/ThemeOptions.php:560
+msgid "Use the reset button if you encounter any language-related issues"
+msgstr "Brug nulstillingsknappen hvis du støder på sprogbaserede problemer"

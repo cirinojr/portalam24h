@@ -1,0 +1,379 @@
+# Copyright (C) 2024 Skallar Theme
+# This file is distributed under the same license as the Skallar Theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00:00+00:00\n"
+"PO-Revision-Date: 2024-01-01 00:00:00+00:00\n"
+"Last-Translator: \n"
+"Language-Team: Spanish\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/ThemeOptions.php:89
+msgid "Header Menu"
+msgstr "Menú del Encabezado"
+
+#: includes/ThemeOptions.php:90
+msgid "Bottom Menu"
+msgstr "Menú Inferior"
+
+#: includes/ThemeOptions.php:205
+msgid "Theme Settings"
+msgstr "Configuración del Tema"
+
+#: includes/ThemeOptions.php:206
+msgid "Skallar Theme"
+msgstr "Tema Skallar"
+
+#: includes/ThemeOptions.php:217
+msgid "General Settings"
+msgstr "Configuración General"
+
+#: includes/ThemeOptions.php:251
+msgid "Configure Header Bottom Menu"
+msgstr "Configurar Menú Inferior del Encabezado"
+
+#: includes/ThemeOptions.php:258
+msgid "Menu Items"
+msgstr "Elementos del Menú"
+
+#: includes/ThemeOptions.php:262
+msgid "Format:"
+msgstr "Formato:"
+
+#: includes/ThemeOptions.php:262
+msgid "One item per line in format:"
+msgstr "Un elemento por línea en formato:"
+
+#: includes/ThemeOptions.php:262
+msgid "Title|URL"
+msgstr "Título|URL"
+
+#: includes/ThemeOptions.php:263
+msgid "Examples:"
+msgstr "Ejemplos:"
+
+#: includes/ThemeOptions.php:264
+msgid "Education|/category/education/"
+msgstr "Educación|/category/educacion/"
+
+#: includes/ThemeOptions.php:265
+msgid "News|/category/news/"
+msgstr "Noticias|/category/noticias/"
+
+#: includes/ThemeOptions.php:266
+msgid "About Us|/about/"
+msgstr "Sobre Nosotros|/sobre/"
+
+#: includes/ThemeOptions.php:267
+msgid "Contact|/contact/"
+msgstr "Contacto|/contacto/"
+
+#: includes/ThemeOptions.php:269
+msgid "Tip:"
+msgstr "Consejo:"
+
+#: includes/ThemeOptions.php:269
+msgid "For categories use"
+msgstr "Para categorías use"
+
+#: includes/ThemeOptions.php:270
+msgid "For pages use"
+msgstr "Para páginas use"
+
+#: includes/ThemeOptions.php:281
+msgid "Available Pages"
+msgstr "Páginas Disponibles"
+
+#: includes/ThemeOptions.php:282
+msgid "Copy and paste the items you want in the field above:"
+msgstr "Copie y pegue los elementos que desee en el campo anterior:"
+
+#: includes/ThemeOptions.php:292
+msgid "Available Categories"
+msgstr "Categorías Disponibles"
+
+#: includes/ThemeOptions.php:313
+msgid "General Theme Settings"
+msgstr "Configuración General del Tema"
+
+#: includes/ThemeOptions.php:320
+msgid "Display Elements"
+msgstr "Elementos de Visualización"
+
+#: includes/ThemeOptions.php:325
+msgid "Show stock exchange quotes on homepage"
+msgstr "Mostrar cotizaciones bursátiles en la página de inicio"
+
+#: includes/ThemeOptions.php:328
+msgid "Check this option to display the stock exchange quotes section (skl-stock-exchange-quotes) on the homepage."
+msgstr "Marque esta opción para mostrar la sección de cotizaciones bursátiles (skl-stock-exchange-quotes) en la página de inicio."
+
+#: includes/ThemeOptions.php:340
+msgid "Information"
+msgstr "Información"
+
+#: includes/ThemeOptions.php:341
+msgid "Theme version:"
+msgstr "Versión del tema:"
+
+#: includes/ThemeOptions.php:342
+msgid "Developed by:"
+msgstr "Desarrollado por:"
+
+#: includes/ThemeOptions.php:342
+msgid "Your Company"
+msgstr "Su Empresa"
+
+#: includes/ThemeOptions.php:170
+msgid "Education"
+msgstr "Educación"
+
+#: includes/ThemeOptions.php:171
+msgid "News"
+msgstr "Noticias"
+
+#: includes/ThemeOptions.php:172
+msgid "International"
+msgstr "Internacional"
+
+#: includes/ThemeOptions.php:173
+msgid "Finance"
+msgstr "Finanzas"
+
+#: includes/ThemeOptions.php:174
+msgid "Curiosities"
+msgstr "Curiosidades"
+
+#: includes/ThemeOptions.php:175
+msgid "Tools"
+msgstr "Herramientas"
+
+#: includes/ThemeOptions.php:377
+msgid "Skallar Theme:"
+msgstr "Tema Skallar:"
+
+#: includes/ThemeOptions.php:379
+msgid "Settings available at %s in the sidebar menu."
+msgstr "Configuración disponible en %s en el menú lateral."
+
+#: includes/ThemeOptions.php:238
+msgid "Color Settings"
+msgstr "Configuración de Colores"
+
+#: includes/ThemeOptions.php:238
+msgid "Colors"
+msgstr "Colores"
+
+#: includes/ThemeOptions.php:371
+msgid "Primary Color"
+msgstr "Color Primario"
+
+#: includes/ThemeOptions.php:374
+msgid "Used for buttons, links, and accent elements. Default: #fd5e04"
+msgstr "Usado para botones, enlaces y elementos de acento. Predeterminado: #fd5e04"
+
+#: includes/ThemeOptions.php:380
+msgid "Secondary Color"
+msgstr "Color Secundario"
+
+#: includes/ThemeOptions.php:383
+msgid "Used for secondary elements and light backgrounds. Default: #fef2e6"
+msgstr "Usado para elementos secundarios y fondos claros. Predeterminado: #fef2e6"
+
+#: includes/ThemeOptions.php:389
+msgid "Text Color"
+msgstr "Color del Texto"
+
+#: includes/ThemeOptions.php:392
+msgid "Main text color used throughout the site. Default: #1d2433"
+msgstr "Color principal del texto usado en todo el sitio. Predeterminado: #1d2433"
+
+#: includes/ThemeOptions.php:398
+msgid "Background Color"
+msgstr "Color de Fondo"
+
+#: includes/ThemeOptions.php:401
+msgid "Main background color of the site. Default: #f8f9fc"
+msgstr "Color principal de fondo del sitio. Predeterminado: #f8f9fc"
+
+#: includes/ThemeOptions.php:407
+msgid "Success Color"
+msgstr "Color de Éxito"
+
+#: includes/ThemeOptions.php:410
+msgid "Used for success messages and positive indicators. Default: #08875d"
+msgstr "Usado para mensajes de éxito e indicadores positivos. Predeterminado: #08875d"
+
+#: includes/ThemeOptions.php:416
+msgid "Danger Color"
+msgstr "Color de Peligro"
+
+#: includes/ThemeOptions.php:419
+msgid "Used for error messages and warning indicators. Default: #e02d3c"
+msgstr "Usado para mensajes de error e indicadores de advertencia. Predeterminado: #e02d3c"
+
+#: includes/ThemeOptions.php:428
+msgid "Reset to Defaults"
+msgstr "Restablecer a Predeterminados"
+
+#: includes/ThemeOptions.php:429
+msgid "Click the button below to reset all colors to their default values."
+msgstr "Haga clic en el botón de abajo para restablecer todos los colores a sus valores predeterminados."
+
+#: includes/ThemeOptions.php:433
+msgid "Reset Colors"
+msgstr "Restablecer Colores"
+
+#: includes/ThemeOptions.php:434
+msgid "Are you sure you want to reset all colors to default values?"
+msgstr "¿Está seguro de que desea restablecer todos los colores a los valores predeterminados?"
+
+#: includes/ThemeOptions.php:462
+msgid "Colors have been reset to default values."
+msgstr "Los colores se han restablecido a los valores predeterminados."
+
+#: includes/ThemeOptions.php:247
+msgid "Language Settings"
+msgstr "Configuración de Idioma"
+
+#: includes/ThemeOptions.php:248
+msgid "Language"
+msgstr "Idioma"
+
+#: includes/ThemeOptions.php:495
+msgid "Language changed to %s. The site will display in the new language."
+msgstr "Idioma cambiado a %s. El sitio se mostrará en el nuevo idioma."
+
+#: includes/ThemeOptions.php:504
+msgid "Site Language"
+msgstr "Idioma del Sitio"
+
+#: includes/ThemeOptions.php:516
+msgid "Portuguese (Brazil)"
+msgstr "Portugués (Brasil)"
+
+#: includes/ThemeOptions.php:519
+msgid "English (United States)"
+msgstr "Inglés (Estados Unidos)"
+
+#: includes/ThemeOptions.php:522
+msgid "Spanish (Spain)"
+msgstr "Español (España)"
+
+#: includes/ThemeOptions.php:525
+msgid "French (France)"
+msgstr "Francés (Francia)"
+
+#: includes/ThemeOptions.php:529
+msgid "Select the language for your site. This will change the language of the theme interface and content."
+msgstr "Seleccione el idioma para su sitio. Esto cambiará el idioma de la interfaz del tema y el contenido."
+
+#: includes/ThemeOptions.php:536
+msgid "Quick Language Switch"
+msgstr "Cambio Rápido de Idioma"
+
+#: includes/ThemeOptions.php:537
+msgid "Click on a language below to change it immediately:"
+msgstr "Haga clic en un idioma a continuación para cambiarlo inmediatamente:"
+
+#: includes/ThemeOptions.php:544
+msgid "Portuguese"
+msgstr "Portugués"
+
+#: includes/ThemeOptions.php:545
+msgid "Current"
+msgstr "Actual"
+
+#: includes/ThemeOptions.php:554
+msgid "English"
+msgstr "Inglés"
+
+#: includes/ThemeOptions.php:563
+msgid "Spanish"
+msgstr "Español"
+
+#: includes/ThemeOptions.php:572
+msgid "French"
+msgstr "Francés"
+
+#: includes/ThemeOptions.php:580
+msgid "Language Information"
+msgstr "Información del Idioma"
+
+#: includes/ThemeOptions.php:582
+msgid "Current Language:"
+msgstr "Idioma Actual:"
+
+#: includes/ThemeOptions.php:585
+msgid "Language Code:"
+msgstr "Código del Idioma:"
+
+#: includes/ThemeOptions.php:588
+msgid "Available Languages:"
+msgstr "Idiomas Disponibles:"
+
+#: includes/ThemeOptions.php:591
+msgid "Portuguese (Brazil), English (United States), Spanish (Spain), French (France)"
+msgstr "Portugués (Brasil), Inglés (Estados Unidos), Español (España), Francés (Francia)"
+
+#: includes/ThemeOptions.php:594
+msgid "Translation Files:"
+msgstr "Archivos de Traducción:"
+
+#: includes/ThemeOptions.php:599
+msgid "Available"
+msgstr "Disponible"
+
+#: includes/ThemeOptions.php:600
+msgid "Missing"
+msgstr "Faltante"
+
+#: includes/ThemeOptions.php:608
+msgid "Instructions"
+msgstr "Instrucciones"
+
+#: includes/ThemeOptions.php:611
+msgid "Use the dropdown above to select your preferred language"
+msgstr "Use el menú desplegable de arriba para seleccionar su idioma preferido"
+
+#: includes/ThemeOptions.php:612
+msgid "Or use the quick buttons for instant language switching"
+msgstr "O use los botones rápidos para cambio instantáneo de idioma"
+
+#: includes/ThemeOptions.php:613
+msgid "The change affects both the admin panel and front-end of your site"
+msgstr "El cambio afecta tanto el panel de administración como el front-end de su sitio"
+
+#: includes/ThemeOptions.php:614
+msgid "All theme text will be displayed in the selected language"
+msgstr "Todo el texto del tema se mostrará en el idioma seleccionado"
+
+#: includes/ThemeOptions.php:492
+msgid "Language settings have been reset to default (Portuguese - Brazil)."
+msgstr "Las configuraciones de idioma han sido restauradas al valor predeterminado (Portugués - Brasil)."
+
+#: includes/ThemeOptions.php:585
+msgid "Reset Language Settings"
+msgstr "Restaurar Configuraciones de Idioma"
+
+#: includes/ThemeOptions.php:586
+msgid "If you are experiencing issues with the language settings, you can reset them to default values."
+msgstr "Si está experimentando problemas con las configuraciones de idioma, puede restaurarlas a los valores predeterminados."
+
+#: includes/ThemeOptions.php:590
+msgid "Reset to Default Language"
+msgstr "Restaurar al Idioma Predeterminado"
+
+#: includes/ThemeOptions.php:591
+msgid "Are you sure you want to reset the language to Portuguese (Brazil)?"
+msgstr "¿Está seguro de que desea restaurar el idioma al Portugués (Brasil)?"
+
+#: includes/ThemeOptions.php:615
+msgid "Use the reset button if you encounter any language-related issues"
+msgstr "Use el botón de restaurar si encuentra cualquier problema relacionado con el idioma"

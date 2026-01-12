@@ -1,0 +1,113 @@
+# Thai (Thailand) - th.po
+msgid ""
+msgstr ""
+"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: includes/ThemeOptions.php:89
+msgid "Header Menu"
+msgstr "เมนูส่วนหัว"
+
+#: includes/ThemeOptions.php:90
+msgid "Bottom Menu"
+msgstr "เมนูส่วนล่าง"
+
+#: includes/ThemeOptions.php:205
+msgid "Theme Settings"
+msgstr "การตั้งค่าธีม"
+
+#: includes/ThemeOptions.php:206
+msgid "Skallar Theme"
+msgstr "ธีม Skallar"
+
+#: includes/ThemeOptions.php:217
+msgid "General Settings"
+msgstr "การตั้งค่าทั่วไป"
+
+#: includes/ThemeOptions.php:279
+msgid "Color Settings"
+msgstr "การตั้งค่าสี"
+
+#: includes/ThemeOptions.php:280
+msgid "Language Settings"
+msgstr "การตั้งค่าภาษา"
+
+#: includes/ThemeOptions.php:354
+msgid "Language Settings"
+msgstr "การตั้งค่าภาษา"
+
+#: includes/ThemeOptions.php:358
+msgid "Current Language:"
+msgstr "ภาษาปัจจุบัน:"
+
+#: includes/ThemeOptions.php:368
+msgid "Site Language"
+msgstr "ภาษาเว็บไซต์"
+
+#: includes/ThemeOptions.php:434
+msgid "Thai (Thailand)"
+msgstr "ไทย (ประเทศไทย)"
+
+#: includes/ThemeOptions.php:456
+msgid "Select the language for your site. This will change the language of the theme interface and content."
+msgstr "เลือกภาษาสำหรับเว็บไซต์ของคุณ นี่จะเปลี่ยนภาษาของอินเทอร์เฟซธีมและเนื้อหา"
+
+#: includes/ThemeOptions.php:465
+msgid "Quick Language Switch"
+msgstr "เปลี่ยนภาษาอย่างรวดเร็ว"
+
+#: includes/ThemeOptions.php:466
+msgid "Click on a language below to change it immediately:"
+msgstr "คลิกที่ภาษาด้านล่างเพื่อเปลี่ยนทันที:"
+
+#: includes/ThemeOptions.php:472
+msgid "Portuguese"
+msgstr "โปรตุเกส"
+
+#: includes/ThemeOptions.php:473
+msgid "Current"
+msgstr "ปัจจุบัน"
+
+#: includes/ThemeOptions.php:481
+msgid "English"
+msgstr "อังกฤษ"
+
+#: includes/ThemeOptions.php:508
+msgid "Reset Language Settings"
+msgstr "รีเซ็ตการตั้งค่าภาษา"
+
+#: includes/ThemeOptions.php:513
+msgid "Reset to Default Language"
+msgstr "รีเซ็ตเป็นภาษาเริ่มต้น"
+
+#: includes/ThemeOptions.php:520
+msgid "Language Information"
+msgstr "ข้อมูลภาษา"
+
+#: includes/ThemeOptions.php:523
+msgid "Language Code:"
+msgstr "รหัสภาษา:"
+
+#: includes/ThemeOptions.php:527
+msgid "Available Languages:"
+msgstr "ภาษาที่มีอยู่:"
+
+#: includes/ThemeOptions.php:533
+msgid "Translation Files:"
+msgstr "ไฟล์แปลภาษา:"
+
+#: includes/ThemeOptions.php:542
+msgid "Available"
+msgstr "มีอยู่"
+
+#: includes/ThemeOptions.php:543
+msgid "Missing"
+msgstr "ขาดหายไป"
+
+#: includes/ThemeOptions.php:553
+msgid "Instructions"
+msgstr "คำแนะนำ"

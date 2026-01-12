@@ -1,0 +1,292 @@
+/*
+ * CSS Crítico - Tema Skallar
+ * Contém apenas os estilos essenciais para a renderização inicial
+ * Para ser carregado inline no <head> para melhor performance
+ */
+
+/* Reset básico e tipografia */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+/* Variáveis CSS essenciais */
+:root {
+  --skl-container-padding-x: 1.6rem;
+  --skl-container-max-width: calc(1216px + var(--skl-container-padding-x) * 2);
+  --skl-color-white: #fff;
+  --skl-color-neutral-100: #f8f9fc;
+  --skl-color-neutral-200: #f1f3f9;
+  --skl-color-neutral-700: #3f444d;
+  --skl-color-neutral-800: #1f242d;
+  --skl-color-neutral-900: #1b1f27;
+  --skl-color-black: #1d2433;
+  --skl-color-primary-600: #fd5e04;
+  --skl-color-primary-800: #983801;
+}
+
+/* HTML e Body básicos */
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "SF Pro Display", sans-serif;
+  background-color: var(--skl-color-neutral-100);
+  color: var(--skl-color-black);
+}
+
+/* Elementos básicos */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Container principal */
+.skl-container {
+  width: 100%;
+  max-width: var(--skl-container-max-width);
+  padding: 0 var(--skl-container-padding-x);
+  margin: 0 auto;
+}
+
+/* Header crítico */
+.skl-header {
+  display: flex;
+  flex-direction: column;
+  background: var(--skl-color-neutral-900);
+}
+
+.skl-header__top {
+  padding: 2.4rem 0;
+}
+
+.skl-header__top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skl-header__left {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.skl-header__logo {
+  width: 10rem;
+}
+
+.skl-header__logo img {
+  width: 100%;
+  height: auto;
+}
+
+.skl-header__bottom {
+  padding: 0.8rem 0;
+  background: var(--skl-color-neutral-800);
+}
+
+.skl-header__bottom-container {
+  overflow-x: auto;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: nowrap;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.skl-header__bottom-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Menu horizontal do header */
+.skl-header__top-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.skl-header__top-menu a,
+.skl-header__bottom-menu a {
+  color: var(--skl-color-white);
+  padding: 0.8rem 1.6rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.skl-header__top-menu a:hover,
+.skl-header__bottom-menu a:hover {
+  background-color: var(--skl-color-primary-600);
+}
+
+/* Botões essenciais */
+.skl-btn {
+  width: fit-content;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.skl-btn--primary {
+  background-color: var(--skl-color-primary-600);
+  color: var(--skl-color-white);
+  text-align: center;
+  border-radius: 8px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: 0.32px;
+  text-transform: capitalize;
+  padding: 1.2rem 1.6rem;
+}
+
+.skl-btn--primary:hover {
+  background-color: var(--skl-color-primary-800);
+}
+
+/* Cards de notícia - layout básico */
+.skl-news-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.4rem;
+  cursor: pointer;
+}
+
+.skl-news-card__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.skl-news-card__title {
+  color: var(--skl-color-black);
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 2rem;
+}
+
+.skl-news-card__excerpt {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 3em;
+  line-height: 1.5;
+  color: var(--skl-color-neutral-700);
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+/* Categoria */
+.skl-category {
+  display: flex;
+  padding: 0.4rem 1.2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 4px;
+  background: var(--skl-color-primary-600);
+  color: var(--skl-color-white);
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.6rem;
+  letter-spacing: 0.28px;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+/* Layout básico das páginas */
+.skl-home,
+.skl-single,
+.skl-archive {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer básico */
+.skl-footer {
+  margin-top: auto;
+  padding: 2rem 0;
+  background-color: var(--skl-color-neutral-900);
+}
+
+.skl-footer__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skl-footer__container span {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2rem;
+}
+
+/* Responsividade básica */
+@media (min-width: 768px) {
+  .skl-header__bottom-container {
+    justify-content: space-between;
+  }
+  
+  .skl-header__top-menu {
+    display: flex;
+  }
+}
+
+@media (max-width: 767px) {
+  .skl-header__top-menu {
+    display: none;
+  }
+  
+  .skl-container {
+    padding: 0 1rem;
+  }
+}
+
+/* Prevenção de flash de conteúdo não estilizado */
+[v-cloak],
+.no-js {
+  display: none;
+}
+
+/* Loading state para imagens */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+img[loading="lazy"].loaded,
+img:not([loading="lazy"]) {
+  opacity: 1;
+}

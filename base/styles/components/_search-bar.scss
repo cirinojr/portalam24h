@@ -1,0 +1,127 @@
+.skl-input {
+    width: 100%;
+    display: flex;
+    border-radius: 8px;
+    border: 1px solid var(--skl-color-neutral-700);
+    background-color: var(--skl-color-white);
+    min-height: 4rem;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+
+    &:focus-within {
+        border-color: var(--skl-color-primary-700);
+    }
+
+    &__btn-submit {
+        color: rgba(29, 36, 51, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease-in-out;
+        padding: 0.8rem 1.6rem;
+        border-right: 1px solid #bcbcbc;
+
+        &:hover {
+            background-color: var(--skl-color-primary-700);
+            color: var(--skl-color-white);
+        }
+
+        svg {
+            flex: 0 0 1.6rem;
+        }
+    }
+
+    & > input {
+        width: 100%;
+        border: none;
+        outline: none;
+        color: var(--skl-color-black);
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 150%;
+        background-color: transparent;
+        padding-left: 0.8rem;
+        padding-right: 1.6rem;
+
+        &::placeholder {
+            color: rgba(29, 36, 51, 0.8);
+        }
+    }
+}
+
+.skl-search-bar {
+    display: flex;
+    gap: 0.8rem;
+
+    form {
+        display: flex;
+        gap: 0.8rem;
+        background: var(--skl-color-neutral-900);
+
+        padding: 2.4rem var(--skl-container-padding-x);
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateX(100%);
+        transition: all 0.3s ease-in-out;
+        user-select: none;
+        pointer-events: none;
+        z-index: 9;
+    }
+
+    &__trigger {
+        display: flex;
+        user-select: all;
+        pointer-events: all;
+    }
+
+    &.active {
+        form {
+            transform: translateX(0);
+            user-select: all;
+            pointer-events: all;
+        }
+
+        > .skl-search-bar__trigger {
+            display: none;
+            user-select: none;
+            pointer-events: none;
+        }
+    }
+
+    @media (min-width: 768px) {
+        &__trigger {
+            display: none;
+        }
+
+        form {
+            position: static;
+            transform: translateX(0);
+            user-select: all;
+            pointer-events: all;
+            padding: 0;
+
+            .skl-btn {
+                display: none;
+            }
+        }
+
+        .skl-input {
+            background-color: transparent;
+
+            &__btn-submit {
+                color: var(--skl-color-white);
+                border-right: 1px solid var(--skl-color-neutral-700);
+            }
+
+            & > input {
+                color: var(--skl-color-white);
+
+                &::placeholder {
+                    color: rgba(255, 255, 255, 0.75);
+                }
+            }
+        }
+    }
+}

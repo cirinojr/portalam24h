@@ -1,0 +1,279 @@
+# Copyright (C) 2024 Skallar Theme
+# This file is distributed under the same license as the Skallar Theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00:00+00:00\n"
+"PO-Revision-Date: 2024-01-01 00:00:00+00:00\n"
+"Last-Translator: \n"
+"Language-Team: Finnish (Finland)\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/ThemeOptions.php:89
+msgid "Header Menu"
+msgstr "Ylätunnisteen Valikko"
+
+#: includes/ThemeOptions.php:90
+msgid "Bottom Menu"
+msgstr "Alavalikko"
+
+#: includes/ThemeOptions.php:205
+msgid "Theme Settings"
+msgstr "Teeman Asetukset"
+
+#: includes/ThemeOptions.php:206
+msgid "Skallar Theme"
+msgstr "Skallar Teema"
+
+#: includes/ThemeOptions.php:217
+msgid "General Settings"
+msgstr "Yleiset Asetukset"
+
+#: includes/ThemeOptions.php:279
+msgid "Color Settings"
+msgstr "Väriasetukset"
+
+#: includes/ThemeOptions.php:280
+msgid "Language Settings"
+msgstr "Kieliasetukset"
+
+#: includes/ThemeOptions.php:291
+msgid "Primary Color"
+msgstr "Pääväri"
+
+#: includes/ThemeOptions.php:295
+msgid "Secondary Color"
+msgstr "Toissijainen Väri"
+
+#: includes/ThemeOptions.php:299
+msgid "Text Color"
+msgstr "Tekstin Väri"
+
+#: includes/ThemeOptions.php:303
+msgid "Background Color"
+msgstr "Taustaväri"
+
+#: includes/ThemeOptions.php:307
+msgid "Success Color"
+msgstr "Onnistumisen Väri"
+
+#: includes/ThemeOptions.php:311
+msgid "Danger Color"
+msgstr "Vaaran Väri"
+
+#: includes/ThemeOptions.php:354
+msgid "Language Settings"
+msgstr "Kieliasetukset"
+
+#: includes/ThemeOptions.php:358
+msgid "Current Language:"
+msgstr "Nykyinen Kieli:"
+
+#: includes/ThemeOptions.php:368
+msgid "Site Language"
+msgstr "Sivuston Kieli"
+
+#: includes/ThemeOptions.php:371
+msgid "Portuguese (Brazil)"
+msgstr "Portugali (Brasilia)"
+
+#: includes/ThemeOptions.php:374
+msgid "English (United States)"
+msgstr "Englanti (Yhdysvallat)"
+
+#: includes/ThemeOptions.php:377
+msgid "Spanish (Spain)"
+msgstr "Espanja (Espanja)"
+
+#: includes/ThemeOptions.php:380
+msgid "French (France)"
+msgstr "Ranska (Ranska)"
+
+#: includes/ThemeOptions.php:383
+msgid "German (Germany)"
+msgstr "Saksa (Saksa)"
+
+#: includes/ThemeOptions.php:386
+msgid "Korean (South Korea)"
+msgstr "Korea (Etelä-Korea)"
+
+#: includes/ThemeOptions.php:389
+msgid "Danish (Denmark)"
+msgstr "Tanska (Tanska)"
+
+#: includes/ThemeOptions.php:392
+msgid "Arabic"
+msgstr "Arabia"
+
+#: includes/ThemeOptions.php:395
+msgid "Dutch (Netherlands)"
+msgstr "Hollanti (Alankomaat)"
+
+#: includes/ThemeOptions.php:398
+msgid "Hungarian (Hungary)"
+msgstr "Unkari (Unkari)"
+
+#: includes/ThemeOptions.php:401
+msgid "Hindi (India)"
+msgstr "Hindi (Intia)"
+
+#: includes/ThemeOptions.php:404
+msgid "Indonesian (Indonesia)"
+msgstr "Indonesia (Indonesia)"
+
+#: includes/ThemeOptions.php:407
+msgid "Italian (Italy)"
+msgstr "Italia (Italia)"
+
+#: includes/ThemeOptions.php:410
+msgid "Japanese (Japan)"
+msgstr "Japani (Japani)"
+
+#: includes/ThemeOptions.php:413
+msgid "Norwegian (Norway)"
+msgstr "Norja (Norja)"
+
+#: includes/ThemeOptions.php:416
+msgid "Polish (Poland)"
+msgstr "Puola (Puola)"
+
+#: includes/ThemeOptions.php:419
+msgid "Portuguese (Portugal)"
+msgstr "Portugali (Portugali)"
+
+#: includes/ThemeOptions.php:422
+msgid "Swedish (Sweden)"
+msgstr "Ruotsi (Ruotsi)"
+
+#: includes/ThemeOptions.php:425
+msgid "Turkish (Turkey)"
+msgstr "Turkki (Turkki)"
+
+#: includes/ThemeOptions.php:428
+msgid "Filipino (Philippines)"
+msgstr "Filipino (Filippiinit)"
+
+#: includes/ThemeOptions.php:431
+msgid "Finnish (Finland)"
+msgstr "Suomi (Suomi)"
+
+#: includes/ThemeOptions.php:434
+msgid "Thai (Thailand)"
+msgstr "Thai (Thaimaa)"
+
+#: includes/ThemeOptions.php:437
+msgid "Greek (Greece)"
+msgstr "Kreikka (Kreikka)"
+
+#: includes/ThemeOptions.php:440
+msgid "Czech (Czech Republic)"
+msgstr "Tšekki (Tšekin tasavalta)"
+
+#: includes/ThemeOptions.php:443
+msgid "Luxembourgish (Luxembourg)"
+msgstr "Luxemburg (Luxemburg)"
+
+#: includes/ThemeOptions.php:446
+msgid "Romanian (Romania)"
+msgstr "Romania (Romania)"
+
+#: includes/ThemeOptions.php:449
+msgid "Serbian (Serbia)"
+msgstr "Serbia (Serbia)"
+
+#: includes/ThemeOptions.php:452
+msgid "Bulgarian (Bulgaria)"
+msgstr "Bulgaria (Bulgaria)"
+
+#: includes/ThemeOptions.php:456
+msgid "Select the language for your site. This will change the language of the theme interface and content."
+msgstr "Valitse sivustosi kieli. Tämä muuttaa teeman käyttöliittymän ja sisällön kielen."
+
+#: includes/ThemeOptions.php:465
+msgid "Quick Language Switch"
+msgstr "Nopea Kielenvaihto"
+
+#: includes/ThemeOptions.php:466
+msgid "Click on a language below to change it immediately:"
+msgstr "Vaihda kieli heti klikkaamalla alla olevaa kieltä:"
+
+#: includes/ThemeOptions.php:472
+msgid "Portuguese"
+msgstr "Portugali"
+
+#: includes/ThemeOptions.php:473
+msgid "Current"
+msgstr "Nykyinen"
+
+#: includes/ThemeOptions.php:481
+msgid "English"
+msgstr "Englanti"
+
+#: includes/ThemeOptions.php:489
+msgid "Spanish"
+msgstr "Espanja"
+
+#: includes/ThemeOptions.php:497
+msgid "French"
+msgstr "Ranska"
+
+#: includes/ThemeOptions.php:508
+msgid "Reset Language Settings"
+msgstr "Nollaa Kieliasetukset"
+
+#: includes/ThemeOptions.php:513
+msgid "Reset to Default Language"
+msgstr "Nollaa Oletuskieleen"
+
+#: includes/ThemeOptions.php:520
+msgid "Language Information"
+msgstr "Kielitiedot"
+
+#: includes/ThemeOptions.php:523
+msgid "Language Code:"
+msgstr "Kielikoodi:"
+
+#: includes/ThemeOptions.php:527
+msgid "Available Languages:"
+msgstr "Saatavilla Olevat Kielet:"
+
+#: includes/ThemeOptions.php:533
+msgid "Translation Files:"
+msgstr "Käännöstiedostot:"
+
+#: includes/ThemeOptions.php:542
+msgid "Available"
+msgstr "Saatavilla"
+
+#: includes/ThemeOptions.php:543
+msgid "Missing"
+msgstr "Puuttuu"
+
+#: includes/ThemeOptions.php:553
+msgid "Instructions"
+msgstr "Ohjeet"
+
+#: includes/ThemeOptions.php:556
+msgid "Use the dropdown above to select your preferred language"
+msgstr "Käytä yllä olevaa pudotusvalikkoa valitaksesi haluamasi kieli"
+
+#: includes/ThemeOptions.php:557
+msgid "Or use the quick buttons for instant language switching"
+msgstr "Tai käytä pikavalintapainikkeita välittömään kielenvaihtoon"
+
+#: includes/ThemeOptions.php:558
+msgid "The change affects both the admin panel and front-end of your site"
+msgstr "Muutos vaikuttaa sekä hallintapaneeliin että sivustosi etupuoleen"
+
+#: includes/ThemeOptions.php:559
+msgid "All theme text will be displayed in the selected language"
+msgstr "Kaikki teeman teksti näytetään valitulla kielellä"
+
+#: includes/ThemeOptions.php:560
+msgid "Use the reset button if you encounter any language-related issues"
+msgstr "Käytä nollauspainiketta, jos kohtaat kieliin liittyviä ongelmia"

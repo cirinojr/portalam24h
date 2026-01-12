@@ -1,0 +1,339 @@
+# Copyright (C) 2024 Skallar Theme
+# This file is distributed under the same license as the Skallar Theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00:00+00:00\n"
+"PO-Revision-Date: 2024-01-01 00:00:00+00:00\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+
+#: includes/ThemeOptions.php:89
+msgid "Header Menu"
+msgstr "قائمة الرأس"
+
+#: includes/ThemeOptions.php:90
+msgid "Bottom Menu"
+msgstr "القائمة السفلية"
+
+#: includes/ThemeOptions.php:205
+msgid "Theme Settings"
+msgstr "إعدادات القالب"
+
+#: includes/ThemeOptions.php:206
+msgid "Skallar Theme"
+msgstr "قالب سكالار"
+
+#: includes/ThemeOptions.php:217
+msgid "General Settings"
+msgstr "الإعدادات العامة"
+
+#: includes/ThemeOptions.php:251
+msgid "Configure Header Bottom Menu"
+msgstr "تكوين قائمة أسفل الرأس"
+
+#: includes/ThemeOptions.php:258
+msgid "Menu Items"
+msgstr "عناصر القائمة"
+
+#: includes/ThemeOptions.php:262
+msgid "Format:"
+msgstr "التنسيق:"
+
+#: includes/ThemeOptions.php:262
+msgid "One item per line in format:"
+msgstr "عنصر واحد في كل سطر بالتنسيق:"
+
+#: includes/ThemeOptions.php:264
+msgid "Link Text | URL"
+msgstr "نص الرابط | الرابط"
+
+#: includes/ThemeOptions.php:265
+msgid "Example:"
+msgstr "مثال:"
+
+#: includes/ThemeOptions.php:266
+msgid "Home | /"
+msgstr "الرئيسية | /"
+
+#: includes/ThemeOptions.php:267
+msgid "About | /about"
+msgstr "حول | /حول"
+
+#: includes/ThemeOptions.php:268
+msgid "Contact | /contact"
+msgstr "اتصل بنا | /اتصل"
+
+#: includes/ThemeOptions.php:279
+msgid "Color Settings"
+msgstr "إعدادات الألوان"
+
+#: includes/ThemeOptions.php:280
+msgid "Language Settings"
+msgstr "إعدادات اللغة"
+
+#: includes/ThemeOptions.php:291
+msgid "Primary Color"
+msgstr "اللون الأساسي"
+
+#: includes/ThemeOptions.php:295
+msgid "Secondary Color"
+msgstr "اللون الثانوي"
+
+#: includes/ThemeOptions.php:299
+msgid "Text Color"
+msgstr "لون النص"
+
+#: includes/ThemeOptions.php:303
+msgid "Background Color"
+msgstr "لون الخلفية"
+
+#: includes/ThemeOptions.php:307
+msgid "Success Color"
+msgstr "لون النجاح"
+
+#: includes/ThemeOptions.php:311
+msgid "Danger Color"
+msgstr "لون الخطر"
+
+#: includes/ThemeOptions.php:328
+msgid "Colors have been reset to default values."
+msgstr "تم إعادة تعيين الألوان إلى القيم الافتراضية."
+
+#: includes/ThemeOptions.php:340
+msgid "Language settings have been reset to default (Portuguese - Brazil)."
+msgstr "تم إعادة تعيين إعدادات اللغة إلى الافتراضية (البرتغالية - البرازيل)."
+
+#: includes/ThemeOptions.php:347
+msgid "Language changed to %s. The site will display in the new language."
+msgstr "تم تغيير اللغة إلى %s. سيتم عرض الموقع باللغة الجديدة."
+
+#: includes/ThemeOptions.php:354
+msgid "Language Settings"
+msgstr "إعدادات اللغة"
+
+#: includes/ThemeOptions.php:358
+msgid "Current Language:"
+msgstr "اللغة الحالية:"
+
+#: includes/ThemeOptions.php:368
+msgid "Site Language"
+msgstr "لغة الموقع"
+
+#: includes/ThemeOptions.php:371
+msgid "Portuguese (Brazil)"
+msgstr "البرتغالية (البرازيل)"
+
+#: includes/ThemeOptions.php:374
+msgid "English (United States)"
+msgstr "الإنجليزية (الولايات المتحدة)"
+
+#: includes/ThemeOptions.php:377
+msgid "Spanish (Spain)"
+msgstr "الإسبانية (إسبانيا)"
+
+#: includes/ThemeOptions.php:380
+msgid "French (France)"
+msgstr "الفرنسية (فرنسا)"
+
+#: includes/ThemeOptions.php:383
+msgid "German (Germany)"
+msgstr "الألمانية (ألمانيا)"
+
+#: includes/ThemeOptions.php:386
+msgid "Korean (South Korea)"
+msgstr "الكورية (كوريا الجنوبية)"
+
+#: includes/ThemeOptions.php:389
+msgid "Danish (Denmark)"
+msgstr "الدنماركية (الدنمارك)"
+
+#: includes/ThemeOptions.php:392
+msgid "Arabic"
+msgstr "العربية"
+
+#: includes/ThemeOptions.php:395
+msgid "Dutch (Netherlands)"
+msgstr "الهولندية (هولندا)"
+
+#: includes/ThemeOptions.php:398
+msgid "Hungarian (Hungary)"
+msgstr "المجرية (المجر)"
+
+#: includes/ThemeOptions.php:401
+msgid "Hindi (India)"
+msgstr "الهندية (الهند)"
+
+#: includes/ThemeOptions.php:404
+msgid "Indonesian (Indonesia)"
+msgstr "الإندونيسية (إندونيسيا)"
+
+#: includes/ThemeOptions.php:407
+msgid "Italian (Italy)"
+msgstr "الإيطالية (إيطاليا)"
+
+#: includes/ThemeOptions.php:410
+msgid "Japanese (Japan)"
+msgstr "اليابانية (اليابان)"
+
+#: includes/ThemeOptions.php:413
+msgid "Norwegian (Norway)"
+msgstr "النرويجية (النرويج)"
+
+#: includes/ThemeOptions.php:416
+msgid "Polish (Poland)"
+msgstr "البولندية (بولندا)"
+
+#: includes/ThemeOptions.php:419
+msgid "Portuguese (Portugal)"
+msgstr "البرتغالية (البرتغال)"
+
+#: includes/ThemeOptions.php:422
+msgid "Swedish (Sweden)"
+msgstr "السويدية (السويد)"
+
+#: includes/ThemeOptions.php:425
+msgid "Turkish (Turkey)"
+msgstr "التركية (تركيا)"
+
+#: includes/ThemeOptions.php:428
+msgid "Filipino (Philippines)"
+msgstr "الفلبينية (الفلبين)"
+
+#: includes/ThemeOptions.php:431
+msgid "Finnish (Finland)"
+msgstr "الفنلندية (فنلندا)"
+
+#: includes/ThemeOptions.php:434
+msgid "Thai (Thailand)"
+msgstr "التايلاندية (تايلاند)"
+
+#: includes/ThemeOptions.php:437
+msgid "Greek (Greece)"
+msgstr "اليونانية (اليونان)"
+
+#: includes/ThemeOptions.php:440
+msgid "Czech (Czech Republic)"
+msgstr "التشيكية (جمهورية التشيك)"
+
+#: includes/ThemeOptions.php:443
+msgid "Luxembourgish (Luxembourg)"
+msgstr "اللوكسمبرغية (لوكسمبرغ)"
+
+#: includes/ThemeOptions.php:446
+msgid "Romanian (Romania)"
+msgstr "الرومانية (رومانيا)"
+
+#: includes/ThemeOptions.php:449
+msgid "Serbian (Serbia)"
+msgstr "الصربية (صربيا)"
+
+#: includes/ThemeOptions.php:452
+msgid "Bulgarian (Bulgaria)"
+msgstr "البلغارية (بلغاريا)"
+
+#: includes/ThemeOptions.php:456
+msgid "Select the language for your site. This will change the language of the theme interface and content."
+msgstr "اختر لغة موقعك. سيؤدي هذا إلى تغيير لغة واجهة القالب والمحتوى."
+
+#: includes/ThemeOptions.php:465
+msgid "Quick Language Switch"
+msgstr "تبديل سريع للغة"
+
+#: includes/ThemeOptions.php:466
+msgid "Click on a language below to change it immediately:"
+msgstr "انقر على لغة أدناه لتغييرها فوراً:"
+
+#: includes/ThemeOptions.php:472
+msgid "Portuguese"
+msgstr "البرتغالية"
+
+#: includes/ThemeOptions.php:473
+msgid "Current"
+msgstr "الحالية"
+
+#: includes/ThemeOptions.php:481
+msgid "English"
+msgstr "الإنجليزية"
+
+#: includes/ThemeOptions.php:489
+msgid "Spanish"
+msgstr "الإسبانية"
+
+#: includes/ThemeOptions.php:497
+msgid "French"
+msgstr "الفرنسية"
+
+#: includes/ThemeOptions.php:508
+msgid "Reset Language Settings"
+msgstr "إعادة تعيين إعدادات اللغة"
+
+#: includes/ThemeOptions.php:509
+msgid "If you are experiencing issues with the language settings, you can reset them to default values."
+msgstr "إذا كنت تواجه مشاكل مع إعدادات اللغة، يمكنك إعادة تعيينها إلى القيم الافتراضية."
+
+#: includes/ThemeOptions.php:513
+msgid "Reset to Default Language"
+msgstr "إعادة تعيين إلى اللغة الافتراضية"
+
+#: includes/ThemeOptions.php:514
+msgid "Are you sure you want to reset the language to Portuguese (Brazil)?"
+msgstr "هل أنت متأكد من أنك تريد إعادة تعيين اللغة إلى البرتغالية (البرازيل)؟"
+
+#: includes/ThemeOptions.php:520
+msgid "Language Information"
+msgstr "معلومات اللغة"
+
+#: includes/ThemeOptions.php:523
+msgid "Language Code:"
+msgstr "رمز اللغة:"
+
+#: includes/ThemeOptions.php:527
+msgid "Available Languages:"
+msgstr "اللغات المتاحة:"
+
+#: includes/ThemeOptions.php:529
+msgid "Portuguese (Brazil), English (United States), Spanish (Spain), French (France), German (Germany), Korean (South Korea), Danish (Denmark), Arabic, Dutch (Netherlands), Hungarian (Hungary), Hindi (India), Indonesian (Indonesia), Italian (Italy), Japanese (Japan), Norwegian (Norway), Polish (Poland), Portuguese (Portugal), Swedish (Sweden), Turkish (Turkey), Filipino (Philippines), Finnish (Finland), Thai (Thailand), Greek (Greece), Czech (Czech Republic), Luxembourgish (Luxembourg), Romanian (Romania), Serbian (Serbia), Bulgarian (Bulgaria)"
+msgstr "البرتغالية (البرازيل), الإنجليزية (الولايات المتحدة), الإسبانية (إسبانيا), الفرنسية (فرنسا), الألمانية (ألمانيا), الكورية (كوريا الجنوبية), الدنماركية (الدنمارك), العربية, الهولندية (هولندا), المجرية (المجر), الهندية (الهند), الإندونيسية (إندونيسيا), الإيطالية (إيطاليا), اليابانية (اليابان), النرويجية (النرويج), البولندية (بولندا), البرتغالية (البرتغال), السويدية (السويد), التركية (تركيا), الفلبينية (الفلبين), الفنلندية (فنلندا), التايلاندية (تايلاند), اليونانية (اليونان), التشيكية (جمهورية التشيك), اللوكسمبرغية (لوكسمبرغ), الرومانية (رومانيا), الصربية (صربيا), البلغارية (بلغاريا)"
+
+#: includes/ThemeOptions.php:533
+msgid "Translation Files:"
+msgstr "ملفات الترجمة:"
+
+#: includes/ThemeOptions.php:542
+msgid "Available"
+msgstr "متاح"
+
+#: includes/ThemeOptions.php:543
+msgid "Missing"
+msgstr "مفقود"
+
+#: includes/ThemeOptions.php:553
+msgid "Instructions"
+msgstr "التعليمات"
+
+#: includes/ThemeOptions.php:556
+msgid "Use the dropdown above to select your preferred language"
+msgstr "استخدم القائمة المنسدلة أعلاه لاختيار اللغة المفضلة"
+
+#: includes/ThemeOptions.php:557
+msgid "Or use the quick buttons for instant language switching"
+msgstr "أو استخدم الأزرار السريعة للتبديل الفوري للغة"
+
+#: includes/ThemeOptions.php:558
+msgid "The change affects both the admin panel and front-end of your site"
+msgstr "التغيير يؤثر على كل من لوحة الإدارة والواجهة الأمامية لموقعك"
+
+#: includes/ThemeOptions.php:559
+msgid "All theme text will be displayed in the selected language"
+msgstr "سيتم عرض جميع نصوص القالب باللغة المحددة"
+
+#: includes/ThemeOptions.php:560
+msgid "Use the reset button if you encounter any language-related issues"
+msgstr "استخدم زر إعادة التعيين إذا واجهت أي مشاكل متعلقة باللغة"

@@ -1,0 +1,113 @@
+# Czech (Czech Republic) - cs_CZ.po
+msgid ""
+msgstr ""
+"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Language: cs_CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: includes/ThemeOptions.php:89
+msgid "Header Menu"
+msgstr "Menu Záhlaví"
+
+#: includes/ThemeOptions.php:90
+msgid "Bottom Menu"
+msgstr "Spodní Menu"
+
+#: includes/ThemeOptions.php:205
+msgid "Theme Settings"
+msgstr "Nastavení Tématu"
+
+#: includes/ThemeOptions.php:206
+msgid "Skallar Theme"
+msgstr "Téma Skallar"
+
+#: includes/ThemeOptions.php:217
+msgid "General Settings"
+msgstr "Obecná Nastavení"
+
+#: includes/ThemeOptions.php:279
+msgid "Color Settings"
+msgstr "Nastavení Barev"
+
+#: includes/ThemeOptions.php:280
+msgid "Language Settings"
+msgstr "Nastavení Jazyka"
+
+#: includes/ThemeOptions.php:354
+msgid "Language Settings"
+msgstr "Nastavení Jazyka"
+
+#: includes/ThemeOptions.php:358
+msgid "Current Language:"
+msgstr "Současný Jazyk:"
+
+#: includes/ThemeOptions.php:368
+msgid "Site Language"
+msgstr "Jazyk Webu"
+
+#: includes/ThemeOptions.php:440
+msgid "Czech (Czech Republic)"
+msgstr "Čeština (Česká republika)"
+
+#: includes/ThemeOptions.php:456
+msgid "Select the language for your site. This will change the language of the theme interface and content."
+msgstr "Vyberte jazyk pro váš web. Toto změní jazyk rozhraní tématu a obsahu."
+
+#: includes/ThemeOptions.php:465
+msgid "Quick Language Switch"
+msgstr "Rychlá Změna Jazyka"
+
+#: includes/ThemeOptions.php:466
+msgid "Click on a language below to change it immediately:"
+msgstr "Kliknutím na jazyk níže jej okamžitě změníte:"
+
+#: includes/ThemeOptions.php:472
+msgid "Portuguese"
+msgstr "Portugalština"
+
+#: includes/ThemeOptions.php:473
+msgid "Current"
+msgstr "Současný"
+
+#: includes/ThemeOptions.php:481
+msgid "English"
+msgstr "Angličtina"
+
+#: includes/ThemeOptions.php:508
+msgid "Reset Language Settings"
+msgstr "Obnovit Nastavení Jazyka"
+
+#: includes/ThemeOptions.php:513
+msgid "Reset to Default Language"
+msgstr "Obnovit na Výchozí Jazyk"
+
+#: includes/ThemeOptions.php:520
+msgid "Language Information"
+msgstr "Informace o Jazyce"
+
+#: includes/ThemeOptions.php:523
+msgid "Language Code:"
+msgstr "Kód Jazyka:"
+
+#: includes/ThemeOptions.php:527
+msgid "Available Languages:"
+msgstr "Dostupné Jazyky:"
+
+#: includes/ThemeOptions.php:533
+msgid "Translation Files:"
+msgstr "Překladové Soubory:"
+
+#: includes/ThemeOptions.php:542
+msgid "Available"
+msgstr "Dostupné"
+
+#: includes/ThemeOptions.php:543
+msgid "Missing"
+msgstr "Chybí"
+
+#: includes/ThemeOptions.php:553
+msgid "Instructions"
+msgstr "Pokyny"

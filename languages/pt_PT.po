@@ -1,0 +1,279 @@
+# Copyright (C) 2024 Skallar Theme
+# This file is distributed under the same license as the Skallar Theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00:00+00:00\n"
+"PO-Revision-Date: 2024-01-01 00:00:00+00:00\n"
+"Last-Translator: \n"
+"Language-Team: Portuguese (Portugal)\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/ThemeOptions.php:89
+msgid "Header Menu"
+msgstr "Menu do Cabeçalho"
+
+#: includes/ThemeOptions.php:90
+msgid "Bottom Menu"
+msgstr "Menu Inferior"
+
+#: includes/ThemeOptions.php:205
+msgid "Theme Settings"
+msgstr "Configurações do Tema"
+
+#: includes/ThemeOptions.php:206
+msgid "Skallar Theme"
+msgstr "Tema Skallar"
+
+#: includes/ThemeOptions.php:217
+msgid "General Settings"
+msgstr "Configurações Gerais"
+
+#: includes/ThemeOptions.php:279
+msgid "Color Settings"
+msgstr "Configurações de Cores"
+
+#: includes/ThemeOptions.php:280
+msgid "Language Settings"
+msgstr "Configurações de Idioma"
+
+#: includes/ThemeOptions.php:291
+msgid "Primary Color"
+msgstr "Cor Primária"
+
+#: includes/ThemeOptions.php:295
+msgid "Secondary Color"
+msgstr "Cor Secundária"
+
+#: includes/ThemeOptions.php:299
+msgid "Text Color"
+msgstr "Cor do Texto"
+
+#: includes/ThemeOptions.php:303
+msgid "Background Color"
+msgstr "Cor de Fundo"
+
+#: includes/ThemeOptions.php:307
+msgid "Success Color"
+msgstr "Cor de Sucesso"
+
+#: includes/ThemeOptions.php:311
+msgid "Danger Color"
+msgstr "Cor de Perigo"
+
+#: includes/ThemeOptions.php:354
+msgid "Language Settings"
+msgstr "Configurações de Idioma"
+
+#: includes/ThemeOptions.php:358
+msgid "Current Language:"
+msgstr "Idioma Atual:"
+
+#: includes/ThemeOptions.php:368
+msgid "Site Language"
+msgstr "Idioma do Site"
+
+#: includes/ThemeOptions.php:371
+msgid "Portuguese (Brazil)"
+msgstr "Português (Brasil)"
+
+#: includes/ThemeOptions.php:374
+msgid "English (United States)"
+msgstr "Inglês (Estados Unidos)"
+
+#: includes/ThemeOptions.php:377
+msgid "Spanish (Spain)"
+msgstr "Espanhol (Espanha)"
+
+#: includes/ThemeOptions.php:380
+msgid "French (France)"
+msgstr "Francês (França)"
+
+#: includes/ThemeOptions.php:383
+msgid "German (Germany)"
+msgstr "Alemão (Alemanha)"
+
+#: includes/ThemeOptions.php:386
+msgid "Korean (South Korea)"
+msgstr "Coreano (Coreia do Sul)"
+
+#: includes/ThemeOptions.php:389
+msgid "Danish (Denmark)"
+msgstr "Dinamarquês (Dinamarca)"
+
+#: includes/ThemeOptions.php:392
+msgid "Arabic"
+msgstr "Árabe"
+
+#: includes/ThemeOptions.php:395
+msgid "Dutch (Netherlands)"
+msgstr "Holandês (Holanda)"
+
+#: includes/ThemeOptions.php:398
+msgid "Hungarian (Hungary)"
+msgstr "Húngaro (Hungria)"
+
+#: includes/ThemeOptions.php:401
+msgid "Hindi (India)"
+msgstr "Hindi (Índia)"
+
+#: includes/ThemeOptions.php:404
+msgid "Indonesian (Indonesia)"
+msgstr "Indonésio (Indonésia)"
+
+#: includes/ThemeOptions.php:407
+msgid "Italian (Italy)"
+msgstr "Italiano (Itália)"
+
+#: includes/ThemeOptions.php:410
+msgid "Japanese (Japan)"
+msgstr "Japonês (Japão)"
+
+#: includes/ThemeOptions.php:413
+msgid "Norwegian (Norway)"
+msgstr "Norueguês (Noruega)"
+
+#: includes/ThemeOptions.php:416
+msgid "Polish (Poland)"
+msgstr "Polaco (Polónia)"
+
+#: includes/ThemeOptions.php:419
+msgid "Portuguese (Portugal)"
+msgstr "Português (Portugal)"
+
+#: includes/ThemeOptions.php:422
+msgid "Swedish (Sweden)"
+msgstr "Sueco (Suécia)"
+
+#: includes/ThemeOptions.php:425
+msgid "Turkish (Turkey)"
+msgstr "Turco (Turquia)"
+
+#: includes/ThemeOptions.php:428
+msgid "Filipino (Philippines)"
+msgstr "Filipino (Filipinas)"
+
+#: includes/ThemeOptions.php:431
+msgid "Finnish (Finland)"
+msgstr "Finlandês (Finlândia)"
+
+#: includes/ThemeOptions.php:434
+msgid "Thai (Thailand)"
+msgstr "Tailandês (Tailândia)"
+
+#: includes/ThemeOptions.php:437
+msgid "Greek (Greece)"
+msgstr "Grego (Grécia)"
+
+#: includes/ThemeOptions.php:440
+msgid "Czech (Czech Republic)"
+msgstr "Checo (República Checa)"
+
+#: includes/ThemeOptions.php:443
+msgid "Luxembourgish (Luxembourg)"
+msgstr "Luxemburguês (Luxemburgo)"
+
+#: includes/ThemeOptions.php:446
+msgid "Romanian (Romania)"
+msgstr "Romeno (Roménia)"
+
+#: includes/ThemeOptions.php:449
+msgid "Serbian (Serbia)"
+msgstr "Sérvio (Sérvia)"
+
+#: includes/ThemeOptions.php:452
+msgid "Bulgarian (Bulgaria)"
+msgstr "Búlgaro (Bulgária)"
+
+#: includes/ThemeOptions.php:456
+msgid "Select the language for your site. This will change the language of the theme interface and content."
+msgstr "Selecione o idioma do seu site. Isto irá alterar o idioma da interface do tema e conteúdo."
+
+#: includes/ThemeOptions.php:465
+msgid "Quick Language Switch"
+msgstr "Mudança Rápida de Idioma"
+
+#: includes/ThemeOptions.php:466
+msgid "Click on a language below to change it immediately:"
+msgstr "Clique num idioma abaixo para alterá-lo imediatamente:"
+
+#: includes/ThemeOptions.php:472
+msgid "Portuguese"
+msgstr "Português"
+
+#: includes/ThemeOptions.php:473
+msgid "Current"
+msgstr "Atual"
+
+#: includes/ThemeOptions.php:481
+msgid "English"
+msgstr "Inglês"
+
+#: includes/ThemeOptions.php:489
+msgid "Spanish"
+msgstr "Espanhol"
+
+#: includes/ThemeOptions.php:497
+msgid "French"
+msgstr "Francês"
+
+#: includes/ThemeOptions.php:508
+msgid "Reset Language Settings"
+msgstr "Redefinir Configurações de Idioma"
+
+#: includes/ThemeOptions.php:513
+msgid "Reset to Default Language"
+msgstr "Redefinir para Idioma Padrão"
+
+#: includes/ThemeOptions.php:520
+msgid "Language Information"
+msgstr "Informações do Idioma"
+
+#: includes/ThemeOptions.php:523
+msgid "Language Code:"
+msgstr "Código do Idioma:"
+
+#: includes/ThemeOptions.php:527
+msgid "Available Languages:"
+msgstr "Idiomas Disponíveis:"
+
+#: includes/ThemeOptions.php:533
+msgid "Translation Files:"
+msgstr "Ficheiros de Tradução:"
+
+#: includes/ThemeOptions.php:542
+msgid "Available"
+msgstr "Disponível"
+
+#: includes/ThemeOptions.php:543
+msgid "Missing"
+msgstr "Em Falta"
+
+#: includes/ThemeOptions.php:553
+msgid "Instructions"
+msgstr "Instruções"
+
+#: includes/ThemeOptions.php:556
+msgid "Use the dropdown above to select your preferred language"
+msgstr "Use o menu suspenso acima para selecionar o seu idioma preferido"
+
+#: includes/ThemeOptions.php:557
+msgid "Or use the quick buttons for instant language switching"
+msgstr "Ou use os botões rápidos para mudança instantânea de idioma"
+
+#: includes/ThemeOptions.php:558
+msgid "The change affects both the admin panel and front-end of your site"
+msgstr "A mudança afeta tanto o painel de administração quanto o front-end do seu site"
+
+#: includes/ThemeOptions.php:559
+msgid "All theme text will be displayed in the selected language"
+msgstr "Todo o texto do tema será exibido no idioma selecionado"
+
+#: includes/ThemeOptions.php:560
+msgid "Use the reset button if you encounter any language-related issues"
+msgstr "Use o botão de redefinir se encontrar problemas relacionados ao idioma"
