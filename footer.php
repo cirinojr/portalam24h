@@ -9,7 +9,7 @@
                         if ($logo['type'] === 'text') {
                             echo '<span class="skl-footer-logo-text">' . esc_html($logo['content']) . '</span>';
                         } else {
-                            echo '<img src="' . esc_url($logo['content']) . '" alt="' . esc_attr(get_bloginfo('name')) . '" class="skl-footer-logo-image" />';
+                            echo '<img src="' . esc_url($logo['content']) . '" alt="' . esc_attr(get_bloginfo('name')) . '" class="skl-footer-logo-image" loading="lazy" decoding="async" />';
                         }
                         ?>
                     </a>

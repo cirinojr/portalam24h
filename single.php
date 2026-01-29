@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying single posts
  *
@@ -36,13 +37,6 @@ get_header();
                                 <?php the_title(); ?>
                             </h1>
 
-                            <?php if (get_the_excerpt()) : ?>
-                                <p class="skl-single__post-excerpt">
-                                    <?php echo wp_kses_post(get_the_excerpt()); ?>
-                                </p>
-                            <?php endif; ?>
-
-
                             <span class="skl-single__post-metadata">
                                 <?php
                                 $published_time = get_the_time('U');
@@ -65,7 +59,7 @@ get_header();
                             <?php if (has_post_thumbnail()) : ?>
                                 <?php $image_id = get_post_thumbnail_id(); ?>
                                 <figure class="skl-single__post-thumbnail">
-                                    <?php echo wp_get_attachment_image($image_id, 'medium'); ?>
+                                    <?php echo wp_get_attachment_image($image_id, 'medium', false, array('loading' => 'lazy', 'decoding' => 'async')); ?>
 
                                     <?php if (get_the_post_thumbnail_caption()) : ?>
                                         <figcaption>

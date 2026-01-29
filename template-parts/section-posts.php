@@ -32,7 +32,7 @@ $see_more_url = isset($args['see_more_url']) ? $args['see_more_url'] : '';
 
             <?php if ($see_more_url) : ?>
                 <a href="<?php echo esc_url($see_more_url); ?>" class="skl-btn skl-btn--text">
-                    <?php echo esc_html__('See more', 'skallar'); ?>
+                    <?php echo esc_html__('Veja mais', 'skallar'); ?>
                     <svg
                         width="16"
                         height="16"

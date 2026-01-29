@@ -28,7 +28,7 @@
                                 if ($logo['type'] === 'text') {
                                     echo '<span class="skl-logo-text">' . esc_html($logo['content']) . '</span>';
                                 } else {
-                                    echo '<img src="' . esc_url($logo['content']) . '" alt="' . esc_attr(get_bloginfo('name')) . '" class="skl-logo-image" />';
+                                    echo '<img src="' . esc_url($logo['content']) . '" alt="' . esc_attr(get_bloginfo('name')) . '" class="skl-logo-image" loading="lazy" decoding="async" />';
                                 }
                                 ?>
                             </a>
