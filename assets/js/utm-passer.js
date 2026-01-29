@@ -5,19 +5,7 @@
  */
 
 (function () {
-    // Wait for the DOM to be fully loaded
-    function ready(fn) {
-        if (
-            document.attachEvent
-                ? document.readyState === "complete"
-                : document.readyState !== "loading"
-        ) {
-            fn();
-        } else {
-            document.addEventListener("DOMContentLoaded", fn);
-        }
-    }
-
+   
     // Helper function to parse URL parameters
     function getUrlParams() {
         var match,

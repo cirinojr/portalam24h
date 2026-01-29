@@ -92,7 +92,7 @@ get_header();
 
     get_template_part('template-parts/section', 'posts', array(
         'posts' => $latest_posts,
-        'title' => esc_html__('Related posts', 'skallar'),
+        'title' => esc_html__('Notícias relacionadas', 'skallar'),
         'see_more_url' => $see_more_url,
     ));
     ?>
