@@ -280,13 +280,4 @@ button {
   display: none;
 }
 
-/* Loading state para imagens */
-img[loading="lazy"] {
-  opacity: 0;
-  transition: opacity 0.3s;
-}
 
-img[loading="lazy"].loaded,
-img:not([loading="lazy"]) {
-  opacity: 1;
-}
