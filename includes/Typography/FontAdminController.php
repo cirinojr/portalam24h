@@ -79,6 +79,7 @@ class Am24h_FontAdminController
 
     public function render_page(): void
     {
+        $page = isset($_GET['page']) ? sanitize_key(wp_unslash($_GET['page'])) : 'am24h-typography';
         $query = isset($_GET['font_query']) ? sanitize_text_field(wp_unslash($_GET['font_query'])) : '';
         $selected_family = isset($_GET['font_family']) ? $this->validator->sanitize_family_name(wp_unslash($_GET['font_family'])) : '';
         $results = $this->provider->search_families($query, 20);
@@ -89,10 +90,13 @@ class Am24h_FontAdminController
         <div class="wrap am24h-panel">
             <div class="am24h-panel-grid">
                 <aside class="am24h-panel-nav">
-                    <a href="<?php echo esc_url(admin_url('admin.php?page=am24h-theme')); ?>"><?php esc_html_e('General', 'am24h'); ?></a>
-                    <a href="<?php echo esc_url(admin_url('admin.php?page=am24h-colors')); ?>"><?php esc_html_e('Colors', 'am24h'); ?></a>
-                    <a href="<?php echo esc_url(admin_url('admin.php?page=am24h-language')); ?>"><?php esc_html_e('Language', 'am24h'); ?></a>
-                    <a href="<?php echo esc_url(admin_url('admin.php?page=am24h-typography')); ?>" class="am24h-active"><?php esc_html_e('Typography', 'am24h'); ?></a>
+                    <a href="<?php echo esc_url(admin_url('admin.php?page=am24h-theme')); ?>" class="<?php echo $page === 'am24h-theme' ? 'am24h-active' : ''; ?>"><?php esc_html_e('General', 'am24h'); ?></a>
+                    <a href="<?php echo esc_url(admin_url('admin.php?page=am24h-cookies')); ?>" class="<?php echo $page === 'am24h-cookies' ? 'am24h-active' : ''; ?>"><?php esc_html_e('LGPD / Cookies', 'am24h'); ?></a>
+                    <a href="<?php echo esc_url(admin_url('admin.php?page=am24h-share-bar')); ?>" class="<?php echo $page === 'am24h-share-bar' ? 'am24h-active' : ''; ?>"><?php esc_html_e('Share Bar', 'am24h'); ?></a>
+                    <a href="<?php echo esc_url(admin_url('admin.php?page=am24h-accessibility')); ?>" class="<?php echo $page === 'am24h-accessibility' ? 'am24h-active' : ''; ?>"><?php esc_html_e('Accessibility', 'am24h'); ?></a>
+                    <a href="<?php echo esc_url(admin_url('admin.php?page=am24h-colors')); ?>" class="<?php echo $page === 'am24h-colors' ? 'am24h-active' : ''; ?>"><?php esc_html_e('Colors', 'am24h'); ?></a>
+                    <a href="<?php echo esc_url(admin_url('admin.php?page=am24h-language')); ?>" class="<?php echo $page === 'am24h-language' ? 'am24h-active' : ''; ?>"><?php esc_html_e('Language', 'am24h'); ?></a>
+                    <a href="<?php echo esc_url(admin_url('admin.php?page=am24h-typography')); ?>" class="<?php echo $page === 'am24h-typography' ? 'am24h-active' : ''; ?>"><?php esc_html_e('Typography', 'am24h'); ?></a>
                 </aside>
 
                 <main class="am24h-panel-main">

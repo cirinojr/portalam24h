@@ -418,3 +418,136 @@ msgstr "Mais lidas de %s"
 
 msgid "categoria"
 msgstr "categoria"
+
+#: includes/Front/AccessibilityPopup.php
+#: includes/Support/ThemeOptionsRepository.php
+msgid "Accessibility Help"
+msgstr "Ajuda de acessibilidade"
+
+#: includes/Front/AccessibilityPopup.php
+#: includes/Support/ThemeOptionsRepository.php
+msgid "Use keyboard navigation and skip links to move through the page quickly."
+msgstr "Use a navegacao por teclado e os links de salto para navegar pela pagina com mais rapidez."
+
+#: includes/Front/AccessibilityPopup.php
+#: includes/Support/ThemeOptionsRepository.php
+msgid "Choose tools that make reading and navigation more comfortable for you."
+msgstr "Escolha ferramentas que tornem a leitura e a navegacao mais confortaveis para voce."
+
+#: includes/Front/AccessibilityPopup.php
+#: includes/Support/ThemeOptionsRepository.php
+msgid "Accessibility"
+msgstr "Acessibilidade"
+
+#: includes/Front/AccessibilityPopup.php
+#: includes/Support/ThemeOptionsRepository.php
+msgid "Close"
+msgstr "Fechar"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "Accessibility adjustments"
+msgstr "Ajustes de acessibilidade"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "Font Controls"
+msgstr "Controles de fonte"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "Decrease font size"
+msgstr "Diminuir tamanho da fonte"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "Increase font size"
+msgstr "Aumentar tamanho da fonte"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "Reset font size"
+msgstr "Redefinir tamanho da fonte"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "Increase line height"
+msgstr "Aumentar altura da linha"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "Increase letter spacing"
+msgstr "Aumentar espacamento entre letras"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "Readable font"
+msgstr "Fonte legivel"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "Navigation"
+msgstr "Navegacao"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "Reading mode"
+msgstr "Modo de leitura"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "Reading guide"
+msgstr "Guia de leitura"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "Reading mask"
+msgstr "Mascara de leitura"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "Highlight links"
+msgstr "Destacar links"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "Highlight headings"
+msgstr "Destacar titulos"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "Hide images"
+msgstr "Ocultar imagens"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "Pause animations"
+msgstr "Pausar animacoes"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "Color Controls"
+msgstr "Controles de cor"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "High contrast"
+msgstr "Alto contraste"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "Reduced saturation"
+msgstr "Saturacao reduzida"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "Grayscale"
+msgstr "Escala de cinza"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "Reset controls"
+msgstr "Redefinir controles"
+
+#: includes/Front/AccessibilityPopup.php
+msgid "Reset Accessibility Settings"
+msgstr "Redefinir ajustes de acessibilidade"
+
+#: includes/Support/ThemeOptionsRepository.php
+msgid "Use Tab and Shift+Tab to navigate focusable elements.\nPress Enter or Space to activate controls.\nPress Escape to close dialogs and overlays."
+msgstr "Use Tab e Shift+Tab para navegar entre elementos focaveis.\nPressione Enter ou Espaco para ativar controles.\nPressione Esc para fechar dialogs e sobreposicoes."
+
+#: includes/Admin/ThemeSettingsPage.php
+msgid "Accessibility Adjustments"
+msgstr "Ajustes de acessibilidade"
+
+#: includes/Admin/ThemeSettingsPage.php
+msgid "Configure an optional lightweight floating launcher and accessibility tools for frontend users."
+msgstr "Configure um botao flutuante leve opcional e ferramentas de acessibilidade para os usuarios no frontend."
+
+#: includes/Admin/ThemeSettingsPage.php
+msgid "Launcher Settings"
+msgstr "Configuracoes do botao flutuante"
+
+#: includes/Admin/ThemeSettingsPage.php
+msgid "Enable floating accessibility launcher"
+msgstr "Ativar botao flutuante de acessibilidade"

@@ -2,6 +2,14 @@
 
 class Am24h_ThemeOptionsRepository
 {
+    private const ACCESSIBILITY_LEGACY_DEFAULTS = array(
+        'title' => 'Accessibility Help',
+        'description' => 'Use keyboard navigation and skip links to move through the page quickly.',
+        'trigger_label' => 'Accessibility',
+        'close_label' => 'Close',
+        'features' => "Use Tab and Shift+Tab to navigate focusable elements.\nPress Enter or Space to activate controls.\nPress Escape to close dialogs and overlays.",
+    );
+
     private const DEFAULTS = array(
         'am24h_home_categories' => array(),
         'am24h_cleanup_emojis'  => 1,
@@ -28,10 +36,10 @@ class Am24h_ThemeOptionsRepository
         'am24h_cookie_consent_variant' => 'light',
         'am24h_cookie_consent_mode' => 'choice',
         'am24h_accessibility_popup_enabled' => 0,
-        'am24h_accessibility_popup_title' => 'Accessibility Help',
-        'am24h_accessibility_popup_description' => 'Use keyboard navigation and skip links to move through the page quickly.',
-        'am24h_accessibility_popup_trigger_label' => 'Accessibility',
-        'am24h_accessibility_popup_close_label' => 'Close',
+        'am24h_accessibility_popup_title' => '',
+        'am24h_accessibility_popup_description' => '',
+        'am24h_accessibility_popup_trigger_label' => '',
+        'am24h_accessibility_popup_close_label' => '',
         'am24h_accessibility_popup_trigger_position' => 'bottom-right',
         'am24h_accessibility_tool_font_size' => 1,
         'am24h_accessibility_tool_line_height' => 1,
@@ -47,7 +55,7 @@ class Am24h_ThemeOptionsRepository
         'am24h_accessibility_tool_high_contrast' => 1,
         'am24h_accessibility_tool_reduced_saturation' => 1,
         'am24h_accessibility_tool_grayscale' => 1,
-        'am24h_accessibility_popup_features' => "Use Tab and Shift+Tab to navigate focusable elements.\nPress Enter or Space to activate controls.\nPress Escape to close dialogs and overlays.",
+        'am24h_accessibility_popup_features' => '',
         'am24h_share_bar_enabled' => 1,
         'am24h_share_bar_alignment' => 'center',
         'am24h_share_bar_icon_source' => 'inline',
@@ -170,12 +178,18 @@ class Am24h_ThemeOptionsRepository
      */
     public function get_accessibility_popup_settings(): array
     {
+        $title = $this->normalize_accessibility_text('title', (string) $this->get('am24h_accessibility_popup_title'));
+        $description = $this->normalize_accessibility_text('description', (string) $this->get('am24h_accessibility_popup_description'));
+        $trigger_label = $this->normalize_accessibility_text('trigger_label', (string) $this->get('am24h_accessibility_popup_trigger_label'));
+        $close_label = $this->normalize_accessibility_text('close_label', (string) $this->get('am24h_accessibility_popup_close_label'));
+        $features = $this->normalize_accessibility_text('features', (string) $this->get('am24h_accessibility_popup_features'));
+
         return array(
             'enabled' => $this->get_bool('am24h_accessibility_popup_enabled'),
-            'title' => (string) $this->get('am24h_accessibility_popup_title'),
-            'description' => (string) $this->get('am24h_accessibility_popup_description'),
-            'trigger_label' => (string) $this->get('am24h_accessibility_popup_trigger_label'),
-            'close_label' => (string) $this->get('am24h_accessibility_popup_close_label'),
+            'title' => $title,
+            'description' => $description,
+            'trigger_label' => $trigger_label,
+            'close_label' => $close_label,
             'trigger_position' => (string) $this->get('am24h_accessibility_popup_trigger_position'),
             'tools' => array(
                 'font_size' => $this->get_bool('am24h_accessibility_tool_font_size'),
@@ -193,7 +207,37 @@ class Am24h_ThemeOptionsRepository
                 'reduced_saturation' => $this->get_bool('am24h_accessibility_tool_reduced_saturation'),
                 'grayscale' => $this->get_bool('am24h_accessibility_tool_grayscale'),
             ),
-            'features' => (string) $this->get('am24h_accessibility_popup_features'),
+            'features' => $features,
+        );
+    }
+
+    /**
+     * Normalize legacy hardcoded defaults so UI follows the active locale.
+     */
+    private function normalize_accessibility_text(string $key, string $value): string
+    {
+        $clean = trim($value);
+        $translated_defaults = $this->accessibility_translated_defaults();
+        $legacy = isset(self::ACCESSIBILITY_LEGACY_DEFAULTS[$key]) ? self::ACCESSIBILITY_LEGACY_DEFAULTS[$key] : '';
+
+        if ($clean === '' || $clean === $legacy) {
+            return isset($translated_defaults[$key]) ? $translated_defaults[$key] : $clean;
+        }
+
+        return $clean;
+    }
+
+    /**
+     * @return array{title: string, description: string, trigger_label: string, close_label: string, features: string}
+     */
+    private function accessibility_translated_defaults(): array
+    {
+        return array(
+            'title' => __('Accessibility Help', 'am24h'),
+            'description' => __('Use keyboard navigation and skip links to move through the page quickly.', 'am24h'),
+            'trigger_label' => __('Accessibility', 'am24h'),
+            'close_label' => __('Close', 'am24h'),
+            'features' => __('Use Tab and Shift+Tab to navigate focusable elements.\nPress Enter or Space to activate controls.\nPress Escape to close dialogs and overlays.', 'am24h'),
         );
     }
 

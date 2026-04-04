@@ -27,26 +27,57 @@
 
                 <nav class="cc-footer__nav">
                     <?php
+                    $resolve_footer_link_label = static function (string $raw_label, string $url): string {
+                        $label = trim(wp_strip_all_tags($raw_label));
+
+                        if ($label !== '') {
+                            return $label;
+                        }
+
+                        $path = wp_parse_url($url, PHP_URL_PATH);
+
+                        if (is_string($path) && $path !== '') {
+                            $path = trim($path, '/');
+
+                            if ($path !== '') {
+                                return sprintf(
+                                    /* translators: %s: URL path slug for fallback menu label. */
+                                    __('Page %s', 'am24h'),
+                                    str_replace('-', ' ', $path)
+                                );
+                            }
+                        }
+
+                        return __('Menu link', 'am24h');
+                    };
+
                     if (has_nav_menu('bottom-menu')) {
                         wp_nav_menu(array(
                             'theme_location' => 'bottom-menu',
                             'menu_class' => 'cc-footer__menu',
                             'container' => false,
                             'fallback_cb' => false,
-                            'walker' => new class extends Walker_Nav_Menu {
+                            'walker' => new class($resolve_footer_link_label) extends Walker_Nav_Menu {
+                                /** @var callable */
+                                private $resolveLabel;
+
+                                public function __construct(callable $resolve_label)
+                                {
+                                    $this->resolveLabel = $resolve_label;
+                                }
+
                                 public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
-                                    $label = trim(wp_strip_all_tags((string) $item->title));
+                                    $item_url = is_string($item->url) ? $item->url : '';
+                                    $label_source = (string) $item->title;
 
-                                    if ($label === '') {
-                                        $label = trim(sanitize_text_field((string) $item->attr_title));
+                                    if (trim($label_source) === '') {
+                                        $label_source = (string) $item->attr_title;
                                     }
 
-                                    if ($label === '') {
-                                        $label = __('Menu link', 'am24h');
-                                    }
+                                    $label = call_user_func($this->resolveLabel, $label_source, $item_url);
 
                                     $output .= '<li class="cc-footer__menu-item">';
-                                    $output .= '<a href="' . esc_url($item->url) . '" class="cc-footer__menu-link" aria-label="' . esc_attr($label) . '">';
+                                    $output .= '<a href="' . esc_url($item_url) . '" class="cc-footer__menu-link" aria-label="' . esc_attr($label) . '">';
                                     $output .= esc_html($label);
                                     $output .= '</a>';
                                     $output .= '</li>';
@@ -76,7 +107,8 @@
                                 continue;
                             }
 
-                            echo '<li class="cc-footer__menu-item"><a href="' . esc_url($page_url) . '" class="cc-footer__menu-link">' . esc_html($page->post_title) . '</a></li>';
+                            $page_label = $resolve_footer_link_label((string) $page->post_title, $page_url);
+                            echo '<li class="cc-footer__menu-item"><a href="' . esc_url($page_url) . '" class="cc-footer__menu-link" aria-label="' . esc_attr($page_label) . '">' . esc_html($page_label) . '</a></li>';
                         }
 
                         if (is_string($privacy_url) && $privacy_url !== '') {

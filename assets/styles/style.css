@@ -386,8 +386,8 @@ hr {
   gap: 2.4rem;
 }
 .cc-header__logo {
-  aspect-ratio: 2/1;
-  width: 15rem;
+  aspect-ratio: 160 / 68;
+  width: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
