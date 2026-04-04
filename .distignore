@@ -1,0 +1,17 @@
+.git/
+.gitignore
+.vscode/
+vendor/
+node_modules/
+composer.json
+composer.lock
+phpcs.xml.dist
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+*.swo
+base/
+*.zip
+assets/font/

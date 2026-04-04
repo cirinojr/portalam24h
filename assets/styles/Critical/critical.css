@@ -1,10 +1,10 @@
 /*
- * CSS Crítico - Tema Skallar
- * Contém apenas os estilos essenciais para a renderização inicial
- * Para ser carregado inline no <head> para melhor performance
+ * Critical CSS - Am24h Theme
+ * Contains only the essential styles for initial rendering
+ * Intended to be loaded inline in <head> for better performance
  */
 
-/* Reset básico e tipografia */
+/* Basic reset and typography */
 *,
 *::before,
 *::after {
@@ -14,22 +14,34 @@
   box-sizing: border-box;
 }
 
-/* Variáveis CSS essenciais */
+/* Essential CSS variables */
 :root {
-  --skl-container-padding-x: 1.6rem;
-  --skl-container-max-width: calc(1216px + var(--skl-container-padding-x) * 2);
-  --skl-color-white: #fff;
-  --skl-color-neutral-100: #f8f9fc;
-  --skl-color-neutral-200: #f1f3f9;
-  --skl-color-neutral-700: #3f444d;
-  --skl-color-neutral-800: #1f242d;
-  --skl-color-neutral-900: #1b1f27;
-  --skl-color-black: #1d2433;
-  --skl-color-primary-600: #fd5e04;
-  --skl-color-primary-800: #983801;
+  --cc-font-family-base: Arial, system-ui, sans-serif;
+  --cc-container-padding-x: 1.6rem;
+  --cc-container-max-width: calc(1216px + var(--cc-container-padding-x) * 2);
+  --cc-color-white: #fff;
+  --cc-color-neutral-100: #f8f9fc;
+  --cc-color-neutral-200: #f1f3f9;
+  --cc-color-neutral-700: #3f444d;
+  --cc-color-neutral-800: #1f242d;
+  --cc-color-neutral-900: #1b1f27;
+  --cc-color-black: #1d2433;
+  --cc-color-primary-600: #fd5e04;
+  --cc-color-primary-800: #983801;
+  --cc-container-padding-x: var(--cc-container-padding-x);
+  --cc-container-max-width: var(--cc-container-max-width);
+  --cc-color-white: var(--cc-color-white);
+  --cc-color-neutral-100: var(--cc-color-neutral-100);
+  --cc-color-neutral-200: var(--cc-color-neutral-200);
+  --cc-color-neutral-700: var(--cc-color-neutral-700);
+  --cc-color-neutral-800: var(--cc-color-neutral-800);
+  --cc-color-neutral-900: var(--cc-color-neutral-900);
+  --cc-color-black: var(--cc-color-black);
+  --cc-color-primary-600: var(--cc-color-primary-600);
+  --cc-color-primary-800: var(--cc-color-primary-800);
 }
 
-/* HTML e Body básicos */
+/* Basic HTML and Body */
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
@@ -37,12 +49,12 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: "SF Pro Display", sans-serif;
-  background-color: var(--skl-color-neutral-100);
-  color: var(--skl-color-black);
+  font-family: var(--cc-font-family-base);
+  background-color: var(--cc-color-neutral-100);
+  color: var(--cc-color-black);
 }
 
-/* Elementos básicos */
+/* Basic elements */
 img {
   max-width: 100%;
   height: auto;
@@ -59,52 +71,104 @@ button {
   cursor: pointer;
 }
 
-/* Container principal */
-.skl-container {
+/* Main container */
+.cc-container {
   width: 100%;
-  max-width: var(--skl-container-max-width);
-  padding: 0 var(--skl-container-padding-x);
+  max-width: var(--cc-container-max-width);
+  padding: 0 var(--cc-container-padding-x);
   margin: 0 auto;
 }
 
-/* Header crítico */
-.skl-header {
+.cc-container {
+  width: 100%;
+  max-width: var(--cc-container-max-width);
+  padding: 0 var(--cc-container-padding-x);
+  margin: 0 auto;
+}
+
+/* Critical header */
+.cc-header {
   display: flex;
   flex-direction: column;
-  background: var(--skl-color-neutral-900);
+  background: var(--cc-color-neutral-900);
 }
 
-.skl-header__top {
+.cc-header {
+  display: flex;
+  flex-direction: column;
+  background: var(--cc-color-neutral-900);
+}
+
+.cc-header__top {
   padding: 2.4rem 0;
+  min-height: 8.8rem;
 }
 
-.skl-header__top-container {
+.cc-header__top {
+  padding: 2.4rem 0;
+  min-height: 8.8rem;
+}
+
+.cc-header__top-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.skl-header__left {
+.cc-header__top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cc-header__left {
   display: flex;
   align-items: center;
   gap: 2.4rem;
 }
 
-.skl-header__logo {
-  width: 10rem;
+.cc-header__left {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
 }
 
-.skl-header__logo img {
+.cc-header__logo {
+  width: 10rem;
+  aspect-ratio: 160 / 68;
+}
+
+.cc-header__logo {
+  width: 10rem;
+  aspect-ratio: 160 / 68;
+}
+
+.cc-header__logo img {
   width: 100%;
   height: auto;
 }
 
-.skl-header__bottom {
-  padding: 0.8rem 0;
-  background: var(--skl-color-neutral-800);
+.cc-header__logo img,
+.cc-logo-image,
+.cc-logo-image {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.skl-header__bottom-container {
+.cc-header__bottom {
+  padding: 0.8rem 0;
+  background: var(--cc-color-neutral-800);
+  min-height: 4.8rem;
+}
+
+.cc-header__bottom {
+  padding: 0.8rem 0;
+  background: var(--cc-color-neutral-800);
+  min-height: 4.8rem;
+}
+
+.cc-header__bottom-container {
   overflow-x: auto;
   display: flex;
   gap: 0.8rem;
@@ -114,20 +178,40 @@ button {
   -ms-overflow-style: none;
 }
 
-.skl-header__bottom-container::-webkit-scrollbar {
+.cc-header__bottom-container {
+  overflow-x: auto;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: nowrap;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.cc-header__bottom-container::-webkit-scrollbar {
   display: none;
 }
 
-/* Menu horizontal do header */
-.skl-header__top-menu {
+.cc-header__bottom-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Header horizontal menu */
+.cc-header__top-menu {
   display: flex;
   gap: 2rem;
   align-items: center;
 }
 
-.skl-header__top-menu a,
-.skl-header__bottom-menu a {
-  color: var(--skl-color-white);
+.cc-header__top-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.cc-header__top-menu a,
+.cc-header__bottom-menu a {
+  color: var(--cc-color-white);
   padding: 0.8rem 1.6rem;
   font-size: 1.4rem;
   font-weight: 500;
@@ -136,13 +220,29 @@ button {
   white-space: nowrap;
 }
 
-.skl-header__top-menu a:hover,
-.skl-header__bottom-menu a:hover {
-  background-color: var(--skl-color-primary-600);
+.cc-header__top-menu a,
+.cc-header__bottom-menu a {
+  color: var(--cc-color-white);
+  padding: 0.8rem 1.6rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
 }
 
-/* Botões essenciais */
-.skl-btn {
+.cc-header__top-menu a:hover,
+.cc-header__bottom-menu a:hover {
+  background-color: var(--cc-color-primary-600);
+}
+
+.cc-header__top-menu a:hover,
+.cc-header__bottom-menu a:hover {
+  background-color: var(--cc-color-primary-600);
+}
+
+/* Essential buttons */
+.cc-btn {
   width: fit-content;
   border: 1px solid transparent;
   display: flex;
@@ -153,9 +253,9 @@ button {
   cursor: pointer;
 }
 
-.skl-btn--primary {
-  background-color: var(--skl-color-primary-600);
-  color: var(--skl-color-white);
+.cc-btn--primary {
+  background-color: var(--cc-color-primary-600);
+  color: var(--cc-color-white);
   text-align: center;
   border-radius: 8px;
   font-size: 1.6rem;
@@ -166,33 +266,33 @@ button {
   padding: 1.2rem 1.6rem;
 }
 
-.skl-btn--primary:hover {
-  background-color: var(--skl-color-primary-800);
+.cc-btn--primary:hover {
+  background-color: var(--cc-color-primary-800);
 }
 
-/* Cards de notícia - layout básico */
-.skl-news-card {
+/* News cards - basic layout */
+.cc-news-card {
   display: flex;
   align-items: flex-start;
   gap: 2.4rem;
   cursor: pointer;
 }
 
-.skl-news-card__content {
+.cc-news-card__content {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 }
 
-.skl-news-card__title {
-  color: var(--skl-color-black);
+.cc-news-card__title {
+  color: var(--cc-color-black);
   font-size: 1.4rem;
   font-weight: 600;
   line-height: 2rem;
 }
 
-.skl-news-card__excerpt {
+.cc-news-card__excerpt {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
@@ -201,21 +301,21 @@ button {
   text-overflow: ellipsis;
   max-height: 3em;
   line-height: 1.5;
-  color: var(--skl-color-neutral-700);
+  color: var(--cc-color-neutral-700);
   font-size: 1.4rem;
   font-weight: 400;
 }
 
-/* Categoria */
-.skl-category {
+/* Category */
+.cc-category {
   display: flex;
   padding: 0.4rem 1.2rem;
   justify-content: center;
   align-items: center;
   gap: 0.4rem;
   border-radius: 4px;
-  background: var(--skl-color-primary-600);
-  color: var(--skl-color-white);
+  background: var(--cc-color-primary-700);
+  color: var(--cc-color-white);
   font-size: 1.4rem;
   font-weight: 600;
   line-height: 1.6rem;
@@ -224,57 +324,57 @@ button {
   text-align: center;
 }
 
-/* Layout básico das páginas */
-.skl-home,
-.skl-single,
-.skl-archive {
+/* Basic page layout */
+.cc-home,
+.cc-single,
+.cc-archive {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* Footer básico */
-.skl-footer {
+/* Basic footer */
+.cc-footer {
   margin-top: auto;
   padding: 2rem 0;
-  background-color: var(--skl-color-neutral-900);
+  background-color: var(--cc-color-neutral-900);
 }
 
-.skl-footer__container {
+.cc-footer__container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.skl-footer__container span {
+.cc-footer__container span {
   color: #fff;
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 2rem;
 }
 
-/* Responsividade básica */
+/* Basic responsiveness */
 @media (min-width: 768px) {
-  .skl-header__bottom-container {
+  .cc-header__bottom-container {
     justify-content: space-between;
   }
   
-  .skl-header__top-menu {
+  .cc-header__top-menu {
     display: flex;
   }
 }
 
 @media (max-width: 767px) {
-  .skl-header__top-menu {
+  .cc-header__top-menu {
     display: none;
   }
   
-  .skl-container {
+  .cc-container {
     padding: 0 1rem;
   }
 }
 
-/* Prevenção de flash de conteúdo não estilizado */
+/* Prevent flash of unstyled content */
 [v-cloak],
 .no-js {
   display: none;

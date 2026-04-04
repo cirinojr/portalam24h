@@ -1,8 +1,8 @@
-# Copyright (C) 2024 Skallar Theme
-# This file is distributed under the same license as the Skallar Theme package.
+# Copyright (C) 2024 Am24h Theme
+# This file is distributed under the same license as the Am24h Theme package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Project-Id-Version: Am24h Theme 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-01 00:00:00+00:00\n"
 "PO-Revision-Date: 2024-01-01 00:00:00+00:00\n"
@@ -27,8 +27,8 @@ msgid "Theme Settings"
 msgstr "Tema Indstillinger"
 
 #: includes/ThemeOptions.php:206
-msgid "Skallar Theme"
-msgstr "Skallar Tema"
+msgid "Am24h Theme"
+msgstr "Am24h Tema"
 
 #: includes/ThemeOptions.php:217
 msgid "General Settings"

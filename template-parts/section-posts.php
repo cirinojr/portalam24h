@@ -4,23 +4,24 @@ $posts = isset($args['posts']) ? $args['posts'] : null;
 $see_more_url = isset($args['see_more_url']) ? $args['see_more_url'] : '';
 ?>
 
-<section class="skl-section-posts">
-    <div class="skl-container">
-        <div class="skl-section-posts__container">
+<section class="cc-section-posts">
+    <div class="cc-container">
+        <div class="cc-section-posts__container">
             <?php if ($title) : ?>
                 <h2><?php echo esc_html($title); ?></h2>
             <?php endif; ?>
 
             <?php if ($posts instanceof WP_Query && $posts->have_posts()) : ?>
-                <div class="skl-section-posts__posts">
+                <div class="cc-section-posts__posts">
                     <?php
                     while ($posts->have_posts()) {
                         $posts->the_post();
                         get_template_part('template-parts/news-card', null, array(
+                            'post_id' => get_the_ID(),
                             'category' => get_the_category(),
                             'date' => get_the_date('d/m/Y H\hi'),
                             'title' => get_the_title(),
-                            'excerpt' => skallar_limit_excerpt(get_the_excerpt()),
+                            'excerpt' => am24h_limit_excerpt(get_the_excerpt()),
                             'thumbnail' => get_the_post_thumbnail(),
                             'link' => get_the_permalink(),
                         ));
@@ -31,8 +32,8 @@ $see_more_url = isset($args['see_more_url']) ? $args['see_more_url'] : '';
             <?php endif; ?>
 
             <?php if ($see_more_url) : ?>
-                <a href="<?php echo esc_url($see_more_url); ?>" class="skl-btn skl-btn--text">
-                    <?php echo esc_html__('Veja mais', 'skallar'); ?>
+                <a href="<?php echo esc_url($see_more_url); ?>" class="cc-btn cc-btn--text">
+                    <?php echo esc_html__('Veja mais', 'am24h'); ?>
                     <svg
                         width="16"
                         height="16"

@@ -1,0 +1,119 @@
+.am24h-cookie-consent {
+    position: fixed;
+    z-index: 9999;
+    box-sizing: border-box;
+    width: min(100%, 960px);
+    padding: 14px 16px;
+    border: 1px solid #d8dee8;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(8, 21, 41, 0.12);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.am24h-cookie-consent[hidden] {
+    display: none !important;
+}
+
+.am24h-cookie-consent--light {
+    background: #ffffff;
+    color: #1d2433;
+}
+
+.am24h-cookie-consent--dark {
+    background: #1d2433;
+    color: #f7f9fc;
+    border-color: #2f3a4f;
+}
+
+.am24h-cookie-consent--bottom-full,
+.am24h-cookie-consent--top-full {
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+}
+
+.am24h-cookie-consent--bottom-full {
+    bottom: 0;
+}
+
+.am24h-cookie-consent--top-full {
+    top: 0;
+}
+
+.am24h-cookie-consent--bottom-left {
+    left: 16px;
+    bottom: 16px;
+}
+
+.am24h-cookie-consent--bottom-right {
+    right: 16px;
+    bottom: 16px;
+}
+
+.am24h-cookie-consent--bottom-center {
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+}
+
+.am24h-cookie-consent__content {
+    margin-bottom: 12px;
+}
+
+.am24h-cookie-consent__message,
+.am24h-cookie-consent__policy {
+    margin: 0;
+}
+
+.am24h-cookie-consent__policy {
+    margin-top: 6px;
+}
+
+.am24h-cookie-consent__policy a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.am24h-cookie-consent__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.am24h-cookie-consent__btn {
+    border: 1px solid currentColor;
+    border-radius: 6px;
+    padding: 6px 12px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+
+.am24h-cookie-consent__btn--primary {
+    background: #fd5e04;
+    border-color: #fd5e04;
+    color: #ffffff;
+}
+
+.am24h-cookie-consent__btn:focus,
+.am24h-cookie-consent__policy a:focus {
+    outline: 2px solid #fd5e04;
+    outline-offset: 2px;
+}
+
+@media (max-width: 767px) {
+    .am24h-cookie-consent--bottom-left,
+    .am24h-cookie-consent--bottom-right,
+    .am24h-cookie-consent--bottom-center {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        width: auto;
+        transform: none;
+    }
+}

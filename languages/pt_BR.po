@@ -1,8 +1,8 @@
-# Copyright (C) 2024 Skallar Theme
-# This file is distributed under the same license as the Skallar Theme package.
+# Copyright (C) 2024 Am24h Theme
+# This file is distributed under the same license as the Am24h Theme package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Project-Id-Version: Am24h Theme 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-01 00:00:00+00:00\n"
 "PO-Revision-Date: 2024-01-01 00:00:00+00:00\n"
@@ -27,8 +27,8 @@ msgid "Theme Settings"
 msgstr "Configurações do Tema"
 
 #: includes/ThemeOptions.php:206
-msgid "Skallar Theme"
-msgstr "Tema Skallar"
+msgid "Am24h Theme"
+msgstr "Tema Am24h"
 
 #: includes/ThemeOptions.php:217
 msgid "General Settings"
@@ -111,8 +111,8 @@ msgid "Show stock exchange quotes on homepage"
 msgstr "Exibir cotações da bolsa na página inicial"
 
 #: includes/ThemeOptions.php:328
-msgid "Check this option to display the stock exchange quotes section (skl-stock-exchange-quotes) on the homepage."
-msgstr "Marque esta opção para exibir a seção de cotações da bolsa (skl-stock-exchange-quotes) na página inicial."
+msgid "Check this option to display the stock exchange quotes section (cc-stock-exchange-quotes) on the homepage."
+msgstr "Marque esta opção para exibir a seção de cotações da bolsa (cc-stock-exchange-quotes) na página inicial."
 
 #: includes/ThemeOptions.php:340
 msgid "Information"
@@ -155,8 +155,8 @@ msgid "Tools"
 msgstr "Ferramentas"
 
 #: includes/ThemeOptions.php:377
-msgid "Skallar Theme:"
-msgstr "Tema Skallar:"
+msgid "Am24h Theme:"
+msgstr "Tema Am24h:"
 
 #: includes/ThemeOptions.php:379
 msgid "Settings available at %s in the sidebar menu."

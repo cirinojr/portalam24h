@@ -2,8 +2,8 @@
 
 $defaults = array(
     'mid_size'  => 2,
-    'prev_text' => __('Anterior', 'skallar'),
-    'next_text' => __('Próximo', 'skallar'),
+    'prev_text' => esc_html__('Previous', 'am24h'),
+    'next_text' => esc_html__('Next', 'am24h'),
     'type'      => 'array',
     'current'   => max(1, get_query_var('paged')),
     'total'     => $GLOBALS['wp_query']->max_num_pages,
@@ -14,18 +14,18 @@ $links = paginate_links($args);
 if (!$links) return;
 ?>
 
-<nav class="skl-pagination" aria-label="<?php esc_attr_e('Navegação de posts', 'skallar'); ?>">
-    <ul class="skl-pagination__list">
+<nav class="cc-pagination" aria-label="<?php esc_attr_e('Posts navigation', 'am24h'); ?>">
+    <ul class="cc-pagination__list">
         <?php foreach ($links as $key => $link):
-            $class = 'skl-pagination__item';
+            $class = 'cc-pagination__item';
             if (strpos($link, 'current') !== false) {
-                $class .= ' skl-pagination__item--active';
+                $class .= ' cc-pagination__item--active';
             } elseif (strpos($link, 'dots') !== false) {
-                $class .= ' skl-pagination__item--dots';
+                $class .= ' cc-pagination__item--dots';
             }
         ?>
             <li class="<?php echo esc_attr($class) ?>">
-                <?php echo $link ?>
+                <?php echo wp_kses_post($link); ?>
             </li>
         <?php endforeach; ?>
     </ul>

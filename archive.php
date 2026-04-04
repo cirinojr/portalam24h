@@ -14,12 +14,12 @@ if (is_category()) {
     $latest_posts = new WP_Query(array_merge($default_args, array(
         'category__in'   => get_queried_object_id(),
     )));
-} else if (is_tag()) {
+} elseif (is_tag()) {
     $title = single_tag_title('', false);
     $latest_posts = new WP_Query(array_merge($default_args, array(
         'tag__in'        => get_queried_object_id(),
     )));
-} else if (is_tax()) {
+} elseif (is_tax()) {
     $title = single_term_title('', false);
     $latest_posts = new WP_Query(array_merge($default_args, array(
         'tax_query' => array(
@@ -30,13 +30,14 @@ if (is_category()) {
             )
         )
     )));
-} else if (is_author()) {
+} elseif (is_author()) {
     $title = get_the_author_meta('display_name', get_query_var('author'));
     $latest_posts = new WP_Query(array_merge($default_args, array(
         'author' => get_query_var('author'),
     )));
-} else if (is_day()) {
-    $title = the_date();
+} elseif (is_day()) {
+    $timestamp = mktime(0, 0, 0, (int) get_query_var('monthnum'), (int) get_query_var('day'), (int) get_query_var('year'));
+    $title = wp_date(get_option('date_format'), $timestamp);
     $latest_posts = new WP_Query(array_merge($default_args, array(
         'date_query'     => array(
             array(
@@ -46,8 +47,9 @@ if (is_category()) {
             ),
         ),
     )));
-} else if (is_month()) {
-    $title = the_date('F Y');
+} elseif (is_month()) {
+    $timestamp = mktime(0, 0, 0, (int) get_query_var('monthnum'), 1, (int) get_query_var('year'));
+    $title = wp_date('F Y', $timestamp);
     $latest_posts = new WP_Query(array_merge($default_args, array(
         'date_query'     => array(
             array(
@@ -56,8 +58,8 @@ if (is_category()) {
             ),
         ),
     )));
-} else if (is_year()) {
-    $title = the_date('Y');
+} elseif (is_year()) {
+    $title = (string) get_query_var('year');
     $latest_posts = new WP_Query(array_merge($default_args, array(
         'date_query'     => array(
             array(
@@ -72,22 +74,30 @@ if (is_category()) {
 
 get_header(); ?>
 
-<main class="skl-archive">
-    <div class="skl-archive__content skl-container">
-        <div class="skl-archive__title">
-            <span>Você está em</span>
-            <h1>Últimas notícias de: <span><?php echo esc_html($title); ?></span></h1>
+<main class="cc-archive">
+    <div class="cc-archive__content cc-container">
+        <div class="cc-archive__title">
+            <span><?php esc_html_e('You are in', 'am24h'); ?></span>
+            <h1>
+                <?php
+                printf(
+                    esc_html__('Latest news from: %s', 'am24h'),
+                    '<span>' . esc_html($title) . '</span>'
+                );
+                ?>
+            </h1>
         </div>
 
         <?php if ($latest_posts->have_posts()) : ?>
-            <section class="skl-archive__posts-list">
+            <section class="cc-archive__posts-list">
                 <?php while ($latest_posts->have_posts()) {
                     $latest_posts->the_post();
                     get_template_part('template-parts/news-card', null, array(
+                        'post_id' => get_the_ID(),
                         'category' => get_the_category(),
                         'date' => get_the_date('d/m/Y H\hi'),
                         'title' => get_the_title(),
-                        'excerpt' => skallar_limit_excerpt(get_the_excerpt()),
+                        'excerpt' => am24h_limit_excerpt(get_the_excerpt()),
                         'thumbnail' => get_the_post_thumbnail(),
                         'link' => get_the_permalink(),
                     ));

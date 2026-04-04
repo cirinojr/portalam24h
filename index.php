@@ -1,6 +1,6 @@
 <?php
 
-// Busca as 5 últimas notícias
+// Fetch the 5 latest posts.
 $latest_posts = new WP_Query(array(
     'post_type'      => 'post',
     'posts_per_page' => 5,
@@ -15,7 +15,7 @@ $categories = get_categories(array(
 ));
 
 // Get selected categories
-$selected_categories = get_option('skallar_home_categories', array());
+$selected_categories = get_option('am24h_home_categories', array());
 
 $categories_to_show;
 if (empty($selected_categories)) {
@@ -28,20 +28,21 @@ if (empty($selected_categories)) {
 
 get_header(); ?>
 
-<main class="skl-home">
+<main class="cc-home">
     <?php if ($latest_posts->have_posts()) : ?>
         <section class="recent-news-section">
-            <div class="skl-container">
+            <div class="cc-container">
                 <div class="recent-news-section__container">
                     <div class="recent-news-section__last-news">
                         <?php
                         if ($latest_posts->have_posts()) {
                             $latest_posts->the_post();
                             get_template_part('template-parts/news-card', null, array(
+                                'post_id' => get_the_ID(),
                                 'category' => get_the_category(),
                                 'date' => get_the_date('d/m/Y H\hi'),
                                 'title' => get_the_title(),
-                                'excerpt' => skallar_limit_excerpt(get_the_excerpt()),
+                                'excerpt' => am24h_limit_excerpt(get_the_excerpt()),
                                 'thumbnail' => get_the_post_thumbnail(),
                                 'link' => get_the_permalink(),
                             ));
@@ -54,10 +55,11 @@ get_header(); ?>
                         while ($latest_posts->have_posts()) {
                             $latest_posts->the_post();
                             get_template_part('template-parts/news-card', null, array(
+                                'post_id' => get_the_ID(),
                                 'category' => get_the_category(),
                                 'date' => get_the_date('d/m/Y H\hi'),
                                 'title' => get_the_title(),
-                                'excerpt' => skallar_limit_excerpt(get_the_excerpt()),
+                                'excerpt' => am24h_limit_excerpt(get_the_excerpt()),
                                 'thumbnail' => get_the_post_thumbnail(),
                                 'link' => get_the_permalink(),
                             ));

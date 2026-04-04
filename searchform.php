@@ -1,7 +1,7 @@
-<div action="" class="skl-search-bar">
-    <form action="<?php echo esc_url(home_url('/')); ?>" method="get" role="search">
-        <div class="skl-input">
-            <button type="submit" class="skl-input__btn-submit">
+<div class="cc-search-bar">
+    <form action="<?php echo esc_url(home_url('/')); ?>" method="get" role="search" aria-label="<?php esc_attr_e('Site search form', 'am24h'); ?>">
+        <div class="cc-input">
+            <button type="submit" class="cc-input__btn-submit" aria-label="<?php esc_attr_e('Submit search', 'am24h'); ?>">
                 <svg
                     viewBox="0 0 16 16"
                     fill="none"
@@ -15,12 +15,15 @@
             <input
                 type="text"
                 name="s"
-                placeholder="Search..." />
+                value="<?php echo esc_attr(get_search_query()); ?>"
+                placeholder="<?php esc_attr_e('Search...', 'am24h'); ?>"
+                aria-label="<?php esc_attr_e('Search keywords', 'am24h'); ?>" />
         </div>
 
         <button
             type="button"
-            class="skl-btn skl-btn--icon skl-search-bar__trigger">
+            class="cc-btn cc-btn--icon cc-search-bar__trigger"
+            aria-label="<?php esc_attr_e('Open search', 'am24h'); ?>">
             <svg
                 width="17"
                 height="17"
@@ -36,7 +39,8 @@
 
     <button
         type="button"
-        class="skl-btn skl-btn--icon skl-search-bar__trigger">
+        class="cc-btn cc-btn--icon cc-search-bar__trigger"
+        aria-label="<?php esc_attr_e('Open search', 'am24h'); ?>">
         <svg
             viewBox="0 0 16 16"
             fill="none"

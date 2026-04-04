@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<ruleset name="Portal Am24h Theme">
+    <description>WPCS + VIPCS baseline for production-oriented theme review.</description>
+
+    <arg name="basepath" value="."/>
+    <arg name="colors"/>
+    <arg value="p"/>
+
+    <file>functions.php</file>
+    <file>header.php</file>
+    <file>footer.php</file>
+    <file>archive.php</file>
+    <file>index.php</file>
+    <file>page.php</file>
+    <file>search.php</file>
+    <file>searchform.php</file>
+    <file>single.php</file>
+    <file>includes</file>
+    <file>template-parts</file>
+
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/assets/styles/Critical/critical.min.css</exclude-pattern>
+
+    <rule ref="WordPress-Core"/>
+    <rule ref="WordPress-Docs"/>
+    <rule ref="WordPress-Extra"/>
+    <rule ref="WordPress-Utils"/>
+    <rule ref="WordPress-VIP-Go"/>
+    <rule ref="PHPCompatibilityWP"/>
+
+    <config name="text_domain" value="am24h"/>
+    <config name="minimum_supported_wp_version" value="6.4"/>
+    <config name="testVersion" value="8.1-"/>
+</ruleset>

@@ -1,7 +1,7 @@
 # Luxembourgish (Luxembourg) - lb_LU.po
 msgid ""
 msgstr ""
-"Project-Id-Version: Skallar Theme 1.0.0\n"
+"Project-Id-Version: Am24h Theme 1.0.0\n"
 "Language: lb_LU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,8 +21,8 @@ msgid "Theme Settings"
 msgstr "Theme Astellungen"
 
 #: includes/ThemeOptions.php:206
-msgid "Skallar Theme"
-msgstr "Skallar Theme"
+msgid "Am24h Theme"
+msgstr "Am24h Theme"
 
 #: includes/ThemeOptions.php:217
 msgid "General Settings"

@@ -1,0 +1,12 @@
+# Editor / temp artifacts
+*.swp
+*.log
+.DS_Store
+Thumbs.db
+
+# Local IDE settings
+.vscode/
+
+# Dependency directories not required at theme runtime
+node_modules/
+vendor/

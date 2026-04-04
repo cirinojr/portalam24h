@@ -1,67 +1,79 @@
-# Skallar Digital Theme
-Skallar Digital is a WordPress theme engineered for editorial and news-driven sites that need configurable branding, language flexibility, and responsive navigation.
-The codebase emphasizes reusable template parts, critical CSS delivery, and admin tooling so newsroom teams can iterate quickly without custom plugins.
+# Portal AM24h: High-Performance Editorial WordPress Theme
 
-## Key Features
-- Theme options for logo mode, stock quote ticker, and home category curation via the Skallar Theme menu with General, Colors, and Language tabs ([includes/ThemeOptions.php](includes/ThemeOptions.php)).
-- Inline critical CSS plus async-preloaded main stylesheet to reduce render-blocking payload ([includes/ThemeOptions.php](includes/ThemeOptions.php), [assets/styles/Critical/critical.min.css](assets/styles/Critical/critical.min.css), [base/styles/style.css](base/styles/style.css)).
-- Responsive header with custom navigation walker, search overlay, and mobile drawer governed by vanilla JS ([header.php](header.php), [base/scripts/search-bar.js](base/scripts/search-bar.js)).
-- Optional block and global style dequeuing behind the SKALLAR_DISABLE_BLOCK_STYLES constant and filter for lean front-end payloads ([includes/ThemeOptions.php](includes/ThemeOptions.php)).
-- Structured card and pagination components reused across archive, search, and home sections ([template-parts/news-card.php](template-parts/news-card.php), [template-parts/pagination.php](template-parts/pagination.php), [template-parts/section-posts.php](template-parts/section-posts.php)).
-- Meta box to hide titles per post type, custom excerpt trimming, and headline-first single layout helpers ([includes/ThemeOptions.php](includes/ThemeOptions.php), [single.php](single.php)).
-- UTM propagation utility that keeps campaign tags across internal navigation without third-party dependencies ([assets/js/utm-passer.js](assets/js/utm-passer.js)).
+## Overview
+Portal AM24h is a custom WordPress theme for editorial and news publishing. It is built with a performance-conscious frontend, a modular PHP architecture, and a maintainability-first code organization for long-term project ownership.
 
-## Performance Philosophy
-- Scripts are enqueued with file modification timestamps for cache busting while keeping browser caches warm ([includes/ThemeOptions.php](includes/ThemeOptions.php)).
-- Critical CSS is inlined early, the primary stylesheet is preloaded and converted to a stylesheet post-load, and the fallback noscript tag preserves coverage ([includes/ThemeOptions.php](includes/ThemeOptions.php)).
-- Default theme styles and legacy head tags are optionally removed to avoid duplicate CSS and unnecessary markup ([includes/ThemeOptions.php](includes/ThemeOptions.php)).
-- Global WP styles are dequeued only when SKALLAR_DISABLE_BLOCK_STYLES or the skallar_disable_block_styles filter is enabled, allowing precise payload control ([includes/ThemeOptions.php](includes/ThemeOptions.php)).
+## Key Characteristics
+- Modular codebase split by responsibility (Core, Admin, Performance, Typography, Content, Support).
+- Minimal frontend footprint with controlled asset output.
+- Layered CSS delivery with clear separation of critical and non-critical styling.
+- Self-hosted font workflow with local files only (WOFF2 preferred).
+- Predictable first render based on stable fallback typography.
+- Optional Gutenberg cleanup strategy with on-demand core block style loading.
+- Deterministic hook registration and no monolithic theme controller.
 
-### How to verify performance
-- Run Lighthouse in Chrome DevTools on key templates and record First Contentful Paint, Largest Contentful Paint, and Total Blocking Time.
-- Schedule WebPageTest runs against archive and single URLs to validate repeat-visit caching with the versioned assets.
-- Monitor Core Web Vitals through Search Console or CrUX to ensure real-user metrics stay within recommended thresholds.
+## Architecture
+The theme boots through a single entrypoint in `functions.php`, which loads `includes/Core/Bootstrap.php`. Bootstrap wires focused modules, and each module registers only its own hooks.
 
-## Tech Stack / Requirements
-- Tested on WordPress 6.4 and newer; validate in your target hosting stack if you require older versions.
-- Requires PHP 7.4+; confirm compatibility when deploying to managed hosts.
-- Relies solely on core WordPress APIs and vanilla JavaScript—no bundler or front-end framework is required.
+Responsibilities are intentionally separated: setup and assets in Core, settings in Admin, rendering behavior in Performance and Front, font management in Typography, and shared utilities in Support. This keeps classes small, testable, and readable.
+
+## Performance Strategy
+- Critical CSS is inlined for the initial render path.
+- The main stylesheet is loaded separately through standard enqueue flow.
+- Font preload is optional and limited to a primary local WOFF2 file.
+- `font-display: swap` is used for custom font rendering behavior.
+- Custom fonts are not embedded into critical CSS.
+- Initial render uses a stable fallback stack (`Arial, system-ui, sans-serif`).
+- Custom font styles are applied after load as a non-critical enhancement layer.
+
+Preload is treated as an optimization layer, not a guaranteed improvement. Its value depends on page structure, connection profile, and real measurements.
+
+## Typography Strategy
+- Fonts are installed locally from approved sources and served from uploads.
+- Runtime font conversion is intentionally not part of the theme.
+- WOFF2 is the preferred production format.
+- WOFF can be used as a secondary fallback when necessary.
+- TTF and OTF are not recommended for this theme's production delivery strategy.
+- Font files are stored under uploads, not inside the theme directory.
+- Fallback system fonts are used during initial render to preserve stability.
+
+## Gutenberg Strategy
+The theme does not blindly remove core block styles by default. It supports WordPress-native on-demand loading for core block assets to reduce unnecessary CSS on pages that do not render specific blocks.
+
+An advanced full-disable cleanup option is available for tightly controlled environments, but it should only be used when block styling is fully covered by the theme.
+
+## Cookie Consent Banner
+- The theme includes an optional LGPD/GDPR-style cookie consent banner.
+- It is disabled by default.
+- It is configurable from the theme options panel (message, labels, policy link, position, and style variant).
+- It supports multiple positions (top/bottom full width and floating bottom layouts).
+- It is a lightweight consent notice with local state persistence, not a full legal compliance platform.
+
+## Accessibility Popup
+- The theme includes an optional accessibility adjustments popup.
+- It is disabled by default.
+- It is implemented with PHP, vanilla JavaScript, and CSS only (no external libraries).
+- It provides lightweight visual controls (font size, contrast, reading background, and link highlighting) with user preference persistence.
+- It is not a substitute for accessible design, semantic markup, or proper content structure.
+
+## Security and Stability
+- Local asset hosting avoids runtime dependency on third-party font CDNs.
+- Font writes are restricted to the WordPress uploads directory.
+- Input is sanitized on write; dynamic output is escaped on render.
+- File handling uses explicit validation for extension, MIME type, and source URL.
+- Architecture is intentionally restrained to reduce failure surface.
+
+## Performance References
+- Critical rendering path and critical CSS: https://web.dev/learn/performance/understanding-the-critical-path
+- Preload: https://web.dev/articles/preload-critical-assets
+- Web font optimization: https://web.dev/articles/font-best-practices
+- Render-blocking resources: https://web.dev/articles/render-blocking-resources
+- Largest Contentful Paint (LCP): https://web.dev/articles/optimize-lcp
 
 ## Installation
-1. Clone or download this repository into wp-content/themes/skl-theme or zip the folder and upload it via Appearance → Themes → Add New.
-2. Activate “Skallar Digital” from the WordPress Themes screen.
-3. Assign the Header Menu and Footer Menu under Appearance → Menus to surface navigation.
+1. Copy the theme directory to `wp-content/themes/`.
+2. Activate the theme in WordPress Admin.
+3. Configure theme options (including typography) under the AM24h admin pages.
 
-## Configuration / Theme Options
-- Navigate to Skallar Theme in the admin sidebar to open the General, Colors, and Language panels ([includes/ThemeOptions.php](includes/ThemeOptions.php)).
-- General: toggle text or image logo, set logo URL or label, and enable the stock quotes banner shown in the header.
-- Categories: select multiple categories to feature on the home layout; selections are sanitized against existing taxonomy terms.
-- Colors: override primary, secondary, text, background, success, and danger palette entries, with a one-click reset to defaults.
-- Language: switch the front-end and back-end locale, quick-switch among common locales, and reset to Portuguese (Brazil) if needed.
-- Define SKALLAR_DISABLE_BLOCK_STYLES in wp-config.php or hook into the skallar_disable_block_styles filter to remove block and classic styles when the project does not rely on them.
-- Each public post type receives a “Ocultar título” meta box so editors can suppress the rendered title when the design requires custom hero treatments.
-
-## Development
-- Templates: archive, single, page, and search templates reside at the project root ([archive.php](archive.php), [single.php](single.php), [search.php](search.php), [page.php](page.php)).
-- Components: shared markup lives under template-parts, including cards, pagination, and sections ([template-parts](template-parts)).
-- Theme logic and admin integrations stay inside includes/ThemeOptions.php; bootstrap is handled by functions.php ([functions.php](functions.php), [includes/ThemeOptions.php](includes/ThemeOptions.php)).
-- Front-end assets are kept unminified for easy overrides in assets/ and base/ directories; no build step is required.
-- Critical CSS should be updated in assets/styles/Critical/critical.min.css to keep above-the-fold render tight.
-
-## Security & Best Practices
-- Settings use WordPress option APIs with sanitize callbacks for checkboxes, colors, URLs, and taxonomy IDs ([includes/ThemeOptions.php](includes/ThemeOptions.php)).
-- Front-end templates escape dynamic output with esc_html, esc_url, and wp_kses_post, and pagination relies on paginate_links to avoid manual link construction ([template-parts/news-card.php](template-parts/news-card.php), [template-parts/pagination.php](template-parts/pagination.php)).
-- Nonces protect meta box saves, and capability checks gate write access to options screens ([includes/ThemeOptions.php](includes/ThemeOptions.php)).
-
-## Accessibility & i18n
-- Text domain skallar is loaded on after_setup_theme, and translation files for 25+ locales are supplied under languages/ along with the skallar.pot template ([includes/ThemeOptions.php](includes/ThemeOptions.php), [languages](languages)).
-- Templates provide semantic landmarks and accessible pagination aria labels, while the search form uses role="search" to aid assistive technology ([template-parts/pagination.php](template-parts/pagination.php), [searchform.php](searchform.php)).
-- Mobile navigation toggles rely on standard buttons with keyboard handlers and Escape key support implemented in the search-bar.js controller ([base/scripts/search-bar.js](base/scripts/search-bar.js)).
-
-## Used in Production
-- portalam24h.com (verify deployment before publishing)
-- Update this list with verified deployments.
-
-## License + Credits
-- No LICENSE file is present. Add the appropriate license text for your organization before distributing the theme.
-- Based on design assets shipped in the base/ directory; ensure you have rights to redistribute bundled fonts and imagery before release.
+## Notes
+This is a custom theme built for controlled editorial environments. It is maintained as a project-specific codebase, not as a generic marketplace product.

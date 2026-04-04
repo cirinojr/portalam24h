@@ -27,17 +27,17 @@ $latest_posts = new WP_Query($related_args);
 get_header();
 ?>
 
-<main class="skl-single">
-    <section class="skl-single__content">
-        <div class="skl-container">
-            <article id="post-<?php the_ID(); ?>" class="skl-single__post">
+<main class="cc-single">
+    <section class="cc-single__content">
+        <div class="cc-container">
+            <article id="post-<?php the_ID(); ?>" class="cc-single__post">
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                        <div class="skl-single__post-header">
-                            <h1 class="skl-single__post-title">
+                        <div class="cc-single__post-header">
+                            <h1 class="cc-single__post-title">
                                 <?php the_title(); ?>
                             </h1>
 
-                            <span class="skl-single__post-metadata">
+                            <span class="cc-single__post-metadata">
                                 <?php
                                 $published_time = get_the_time('U');
                                 $modified_time = get_the_modified_time('U');
@@ -47,10 +47,10 @@ get_header();
                                 if ($published_time !== $modified_time) {
                                     printf(
                                         ' | %s %s',
-                                        esc_html__('Updated', 'skallar'),
+                                        esc_html__('Updated', 'am24h'),
                                         esc_html(human_time_diff($modified_time, $current_time))
                                     );
-                                    echo ' ' . esc_html__('ago', 'skallar');
+                                    echo ' ' . esc_html__('ago', 'am24h');
                                 }
                                 ?>
                             </span>
@@ -58,8 +58,8 @@ get_header();
 
                             <?php if (has_post_thumbnail()) : ?>
                                 <?php $image_id = get_post_thumbnail_id(); ?>
-                                <figure class="skl-single__post-thumbnail">
-                                    <?php echo wp_get_attachment_image($image_id, 'medium', false, array('loading' => 'lazy', 'decoding' => 'async')); ?>
+                                <figure class="cc-single__post-thumbnail">
+                                    <?php echo wp_get_attachment_image($image_id, 'medium', false, array('loading' => 'eager', 'fetchpriority' => 'high', 'decoding' => 'async')); ?>
 
                                     <?php if (get_the_post_thumbnail_caption()) : ?>
                                         <figcaption>
@@ -70,7 +70,7 @@ get_header();
                             <?php endif; ?>
                         </div>
 
-                        <div class="skl-single__post-content">
+                        <div class="cc-single__post-content">
                             <?php the_content(); ?>
                         </div>
                 <?php endwhile;
@@ -92,7 +92,7 @@ get_header();
 
     get_template_part('template-parts/section', 'posts', array(
         'posts' => $latest_posts,
-        'title' => esc_html__('Notícias relacionadas', 'skallar'),
+        'title' => esc_html__('Notícias relacionadas', 'am24h'),
         'see_more_url' => $see_more_url,
     ));
     ?>
