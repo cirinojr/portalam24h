@@ -206,4 +206,151 @@ class Am24h_SettingsSanitizer
 
         return substr($raw, 0, 300);
     }
+
+    public function sanitize_third_party_worker_scripts($input): array
+    {
+        return $this->sanitize_third_party_scripts($input, true);
+    }
+
+    public function sanitize_third_party_main_thread_scripts($input): array
+    {
+        return $this->sanitize_third_party_scripts($input, false);
+    }
+
+    private function sanitize_third_party_scripts($input, bool $worker_mode): array
+    {
+        if (! is_array($input)) {
+            return array();
+        }
+
+        $clean = array();
+        $seen = array();
+
+        foreach ($input as $row) {
+            if (! is_array($row)) {
+                continue;
+            }
+
+            $url = $this->sanitize_external_script_url(isset($row['url']) ? $row['url'] : '');
+
+            if ($url === '') {
+                continue;
+            }
+
+            $url_key = strtolower(trim($url));
+
+            if ($url_key === '' || isset($seen[$url_key])) {
+                continue;
+            }
+
+            $seen[$url_key] = true;
+
+            $item = array(
+                'label' => substr(sanitize_text_field((string) (isset($row['label']) ? $row['label'] : '')), 0, 80),
+                'url' => $url,
+                'inline' => $this->sanitize_inline_js_snippet(isset($row['inline']) ? $row['inline'] : ''),
+                'enabled' => $this->sanitize_checkbox(isset($row['enabled']) ? $row['enabled'] : 0),
+            );
+
+            if ($worker_mode) {
+                $item['forward'] = $this->sanitize_forward_keys(isset($row['forward']) ? $row['forward'] : '');
+            } else {
+                $item['strategy'] = $this->sanitize_main_thread_strategy(isset($row['strategy']) ? $row['strategy'] : 'defer');
+            }
+
+            $clean[] = $item;
+
+            if (count($clean) >= 20) {
+                break;
+            }
+        }
+
+        return $clean;
+    }
+
+    private function sanitize_external_script_url($input): string
+    {
+        $url = esc_url_raw((string) $input);
+
+        if ($url === '') {
+            return '';
+        }
+
+        $scheme = wp_parse_url($url, PHP_URL_SCHEME);
+        $host = wp_parse_url($url, PHP_URL_HOST);
+
+        if (! in_array($scheme, array('http', 'https'), true) || ! is_string($host) || $host === '') {
+            return '';
+        }
+
+        return $url;
+    }
+
+    private function sanitize_inline_js_snippet($input): string
+    {
+        $snippet = str_replace(array("\0", "\r"), '', (string) $input);
+        $snippet = trim($snippet);
+
+        if ($snippet === '') {
+            return '';
+        }
+
+        $snippet = preg_replace('#<\s*/?\s*script\b[^>]*>#i', '', $snippet);
+
+        if (! is_string($snippet)) {
+            return '';
+        }
+
+        $snippet = str_replace('<?', '', $snippet);
+
+        return substr($snippet, 0, 4000);
+    }
+
+    private function sanitize_forward_keys($input): array
+    {
+        $raw = '';
+
+        if (is_array($input)) {
+            $raw = implode(',', array_map('strval', $input));
+        } else {
+            $raw = (string) $input;
+        }
+
+        $parts = preg_split('/[\s,]+/', $raw);
+
+        if (! is_array($parts)) {
+            return array();
+        }
+
+        $keys = array();
+
+        foreach ($parts as $part) {
+            $key = trim(sanitize_text_field((string) $part));
+
+            if ($key === '') {
+                continue;
+            }
+
+            if (! preg_match('/^[A-Za-z_$][A-Za-z0-9_$]*(\.[A-Za-z_$][A-Za-z0-9_$]*)*$/', $key)) {
+                continue;
+            }
+
+            if (! in_array($key, $keys, true)) {
+                $keys[] = $key;
+            }
+
+            if (count($keys) >= 20) {
+                break;
+            }
+        }
+
+        return $keys;
+    }
+
+    private function sanitize_main_thread_strategy($input): string
+    {
+        $value = sanitize_key((string) $input);
+
+        return in_array($value, array('async', 'defer'), true) ? $value : 'defer';
+    }
 }

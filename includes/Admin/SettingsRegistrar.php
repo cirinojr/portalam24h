@@ -72,6 +72,8 @@ class Am24h_SettingsRegistrar
             'am24h_share_network_custom' => 'sanitize_checkbox',
             'am24h_share_network_custom_label' => 'sanitize_share_custom_label',
             'am24h_share_network_custom_url' => 'sanitize_share_custom_url_template',
+            'am24h_third_party_worker_scripts' => 'sanitize_third_party_worker_scripts',
+            'am24h_third_party_main_thread_scripts' => 'sanitize_third_party_main_thread_scripts',
         ),
         'am24h_color_settings' => array(
             'am24h_primary_color' => 'sanitize_color',

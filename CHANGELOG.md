@@ -11,10 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `docs/ARCHITECTURE.md` with detailed implementation notes on assets, critical CSS, template modularity, dependency posture, and maintainability decisions.
 - GPL-compatible `LICENSE` file suitable for WordPress theme distribution (`GPL-2.0-or-later`).
 - Technical README sections for architecture, security, i18n, workflow, and future engineering improvements.
+- `scripts/update-partytown.ps1` to update local Partytown runtime assets in a reproducible way.
+- `assets/vendor/partytown/VERSION` to lock and document the installed Partytown version in-repo.
 
 ### Changed
 - Rewrote `README.md` to reflect real architecture and practical engineering decisions.
 - Updated Composer package license metadata to `GPL-2.0-or-later`.
+- Updated `.gitignore` to keep `assets/vendor/partytown/` versioned while preserving `vendor/` ignore rules.
 
 ## [0.1.0] - 2026-04-04
 

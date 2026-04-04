@@ -100,8 +100,8 @@
     color: #ffffff;
 }
 
-.am24h-cookie-consent__btn:focus,
-.am24h-cookie-consent__policy a:focus {
+.am24h-cookie-consent__btn:focus-visible,
+.am24h-cookie-consent__policy a:focus-visible {
     outline: 2px solid #fd5e04;
     outline-offset: 2px;
 }

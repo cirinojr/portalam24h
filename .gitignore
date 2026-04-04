@@ -10,3 +10,6 @@ Thumbs.db
 # Dependency directories not required at theme runtime
 node_modules/
 vendor/
+assets/vendor/*
+!assets/vendor/partytown/
+!assets/vendor/partytown/**

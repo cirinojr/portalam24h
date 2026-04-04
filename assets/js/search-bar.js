@@ -1,15 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const searchForms = document.querySelectorAll('.cc-search-bar');
 
-    searchForms.forEach((searchForm) => {
-        const searchTriggers = searchForm.querySelectorAll('.cc-search-bar__trigger');
-
-        searchTriggers.forEach((trigger) => {
-            trigger.addEventListener('click', () => {
-                searchForm.classList.toggle('active');
-            });
-        });
-    });
+    const setSearchState = (searchForm, isOpen) => {
+        searchForm.classList.toggle('active', isOpen);
+        searchForm
+            .querySelectorAll('.cc-search-bar__trigger')
+            .forEach((trigger) => trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false'));
+    };
 
     const mobileMenuToggle = document.querySelector('.cc-mobile-menu-toggle');
     const mobileMenuClose = document.querySelector('.cc-mobile-menu-close');
@@ -32,10 +29,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         body.classList.remove('mobile-menu-open');
-        searchForms.forEach((searchForm) => {
-            searchForm.classList.remove('active');
-        });
+        searchForms.forEach((searchForm) => setSearchState(searchForm, false));
     };
+
+    document.addEventListener('click', (event) => {
+        const trigger = event.target.closest('.cc-search-bar__trigger');
+
+        if (!trigger) {
+            return;
+        }
+
+        const searchForm = trigger.closest('.cc-search-bar');
+
+        if (!searchForm) {
+            return;
+        }
+
+        event.preventDefault();
+        setSearchState(searchForm, !searchForm.classList.contains('active'));
+    });
 
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', (event) => {
@@ -64,8 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const mobileMenuLinks = document.querySelectorAll('.cc-mobile-menu__link');
-    mobileMenuLinks.forEach((link) => {
-        link.addEventListener('click', closeMobileMenu);
+    document.addEventListener('click', (event) => {
+        if (event.target.closest('.cc-mobile-menu__link')) {
+            closeMobileMenu();
+        }
     });
 });

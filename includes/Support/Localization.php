@@ -22,6 +22,10 @@ class Am24h_Localization
 
     public function apply_custom_language(string $locale): string
     {
+        if (is_admin()) {
+            return $locale;
+        }
+
         $custom_language = $this->options->get_site_language();
 
         if ($custom_language === '' || $custom_language === $locale) {

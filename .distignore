@@ -1,6 +1,10 @@
 .git/
 .gitignore
 .vscode/
+.github/
+.idea/
+.history/
+docs/
 vendor/
 node_modules/
 composer.json
@@ -13,3 +17,7 @@ Thumbs.db
 *.swp
 *.swo
 *.zip
+scripts/
+base/
+*.bak
+*.orig

@@ -224,11 +224,13 @@
         const enabledTools = parseEnabledTools(container);
         const dialog = container.querySelector('.am24h-accessibility-popup__dialog');
         const closeControls = container.querySelectorAll('[data-accessibility-close]');
-        const actionButtons = container.querySelectorAll('[data-a11y-action]');
         const readingHelpers = setupReadingHelpers();
+        const hasReadingOverlayTools = isToolEnabled(enabledTools, 'reading_guide') || isToolEnabled(enabledTools, 'reading_mask');
         const focusableSelector = 'button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])';
         let previousFocus = null;
         let state = loadState();
+        let pointerFrameRequested = false;
+        let latestPointerY = globalThis.innerHeight / 2;
 
         applyState(state);
         updateToggleButtons(container, state);
@@ -377,23 +379,43 @@
             control.addEventListener('click', closePopup);
         });
 
-        actionButtons.forEach((button) => {
-            button.addEventListener('click', () => {
-                const action = button.dataset.a11yAction;
+        container.addEventListener('click', (event) => {
+            const actionTarget = event.target.closest('[data-a11y-action]');
 
-                if (!action) {
+            if (!actionTarget) {
+                return;
+            }
+
+            const action = actionTarget.dataset.a11yAction;
+
+            if (!action) {
+                return;
+            }
+
+            handleAction(action);
+        });
+
+        if (hasReadingOverlayTools) {
+            document.addEventListener('mousemove', (event) => {
+                latestPointerY = event.clientY;
+
+                if (pointerFrameRequested) {
                     return;
                 }
 
-                handleAction(action);
+                pointerFrameRequested = true;
+                globalThis.requestAnimationFrame(() => {
+                    pointerFrameRequested = false;
+                    readingHelpers.updatePosition(latestPointerY);
+                });
             });
-        });
-
-        document.addEventListener('mousemove', (event) => {
-            readingHelpers.updatePosition(event.clientY);
-        });
+        }
 
         document.addEventListener('focusin', (event) => {
+            if (!hasReadingOverlayTools) {
+                return;
+            }
+
             if (!(event.target instanceof HTMLElement)) {
                 return;
             }

@@ -39,6 +39,12 @@ class Am24h_ThemeSettingsPage
             'menu_title' => 'Accessibility',
             'callback' => 'render_accessibility_page',
         ),
+        array(
+            'slug' => 'am24h-third-party-scripts',
+            'page_title' => 'Third-Party Scripts',
+            'menu_title' => 'Third-Party Scripts',
+            'callback' => 'render_third_party_scripts_page',
+        ),
     );
 
     private Am24h_ThemeOptionsRepository $options;
@@ -88,6 +94,10 @@ class Am24h_ThemeSettingsPage
             return;
         }
 
+        if (strtoupper((string) $_SERVER['REQUEST_METHOD']) !== 'POST') {
+            return;
+        }
+
         $action = isset($_POST['am24h_admin_action']) ? sanitize_key(wp_unslash($_POST['am24h_admin_action'])) : '';
 
         if ($action === 'reset_colors' && $this->is_valid_action_nonce('am24h_reset_colors_nonce', 'am24h_reset_colors')) {
@@ -102,7 +112,6 @@ class Am24h_ThemeSettingsPage
 
         if ($action === 'reset_language' && $this->is_valid_action_nonce('am24h_reset_language_nonce', 'am24h_reset_language')) {
             update_option('am24h_site_language', 'pt_BR');
-            update_option('WPLANG', 'pt_BR');
             add_settings_error('am24h_language_settings', 'am24h_language_reset', __('Language reset to Portuguese (Brazil).', 'am24h'), 'updated');
         }
 
@@ -110,7 +119,6 @@ class Am24h_ThemeSettingsPage
             $selected = isset($_POST['am24h_site_language']) ? wp_unslash($_POST['am24h_site_language']) : '';
             $language = $this->sanitizer->sanitize_language($selected);
             update_option('am24h_site_language', $language);
-            update_option('WPLANG', $language);
             add_settings_error(
                 'am24h_language_settings',
                 'am24h_language_changed',
@@ -670,6 +678,91 @@ class Am24h_ThemeSettingsPage
         <?php
     }
 
+    public function render_third_party_scripts_page(): void
+    {
+        $worker_scripts = $this->options->get_third_party_worker_scripts();
+        $main_scripts = $this->options->get_third_party_main_thread_scripts();
+        ?>
+        <?php $this->render_panel_start(__('Third-Party Scripts', 'am24h'), __('Register external scripts with an off-main-thread path for analytics and a main-thread path only when required.', 'am24h')); ?>
+            <?php settings_errors('am24h_theme_settings'); ?>
+
+            <form method="post" action="options.php" class="am24h-panel-form" id="am24h-third-party-form">
+                <?php settings_fields('am24h_theme_settings'); ?>
+
+                <section class="am24h-card">
+                    <h2><?php esc_html_e('Worker-Friendly Scripts (Recommended)', 'am24h'); ?></h2>
+                    <p class="description"><?php esc_html_e('Use this group for analytics, trackers, metrics, pixels, and tag managers. Keep UI-facing integrations on main thread.', 'am24h'); ?></p>
+                    <p class="description"><strong><?php esc_html_e('Warning:', 'am24h'); ?></strong> <?php esc_html_e('Do not offload scripts that render widgets, manipulate the DOM synchronously, rely on immediate event cancellation, or inject interactive embeds/forms/chats.', 'am24h'); ?></p>
+
+                    <div class="am24h-script-group" data-group="am24h_third_party_worker_scripts">
+                        <div class="am24h-script-rows" data-rows>
+                            <?php foreach ($worker_scripts as $script) : ?>
+                                <?php $this->render_third_party_worker_row($script); ?>
+                            <?php endforeach; ?>
+                        </div>
+
+                        <template data-template>
+                            <?php $this->render_third_party_worker_row(array(
+                                'label' => '',
+                                'url' => '',
+                                'inline' => '',
+                                'forward' => array(),
+                                'enabled' => true,
+                            )); ?>
+                        </template>
+
+                        <div class="am24h-actions" style="justify-content:flex-start;">
+                            <button type="button" class="button button-secondary" data-add-row><?php esc_html_e('Add worker-friendly script', 'am24h'); ?></button>
+                            <button type="button" class="button" data-add-preset="ga4"><?php esc_html_e('Add GA4 preset', 'am24h'); ?></button>
+                            <button type="button" class="button" data-add-preset="gtm"><?php esc_html_e('Add GTM preset', 'am24h'); ?></button>
+                        </div>
+                        <p class="description"><?php esc_html_e('Preset buttons add starter rows. Replace placeholder IDs before saving.', 'am24h'); ?></p>
+                    </div>
+
+                    <p class="description"><strong><?php esc_html_e('Recommended in worker mode:', 'am24h'); ?></strong> <?php esc_html_e('analytics, trackers, metrics, pixels, and tag managers.', 'am24h'); ?></p>
+                    <p class="description"><strong><?php esc_html_e('Usually not recommended in worker mode:', 'am24h'); ?></strong> <?php esc_html_e('UI widgets, forms, chat popups, consent managers tightly coupled to DOM, interactive embeds, and synchronous rendering tools.', 'am24h'); ?></p>
+                </section>
+
+                <section class="am24h-card">
+                    <h2><?php esc_html_e('Main-Thread Scripts (Use Sparingly)', 'am24h'); ?></h2>
+                    <p class="description"><?php esc_html_e('Use this only when integration requires direct synchronous access to DOM or browser APIs on the main thread.', 'am24h'); ?></p>
+                    <p class="description"><?php esc_html_e('Main-thread loading should be the exception. Prefer worker-friendly mode when script behavior allows it.', 'am24h'); ?></p>
+                    <p class="description"><?php esc_html_e('Strategy guide: defer waits for HTML parsing and preserves script order; async fetches and executes as soon as available without order guarantees.', 'am24h'); ?></p>
+
+                    <div class="am24h-script-group" data-group="am24h_third_party_main_thread_scripts">
+                        <div class="am24h-script-rows" data-rows>
+                            <?php foreach ($main_scripts as $script) : ?>
+                                <?php $this->render_third_party_main_thread_row($script); ?>
+                            <?php endforeach; ?>
+                        </div>
+
+                        <template data-template>
+                            <?php $this->render_third_party_main_thread_row(array(
+                                'label' => '',
+                                'url' => '',
+                                'inline' => '',
+                                'strategy' => 'defer',
+                                'enabled' => true,
+                            )); ?>
+                        </template>
+
+                        <div class="am24h-actions" style="justify-content:flex-start;">
+                            <button type="button" class="button button-secondary" data-add-row><?php esc_html_e('Add main-thread script', 'am24h'); ?></button>
+                        </div>
+                    </div>
+
+                    <p class="description"><strong><?php esc_html_e('Recommendation:', 'am24h'); ?></strong> <?php esc_html_e('When a main-thread script is unavoidable, choose the least blocking strategy possible.', 'am24h'); ?></p>
+                </section>
+
+                <div class="am24h-actions">
+                    <?php submit_button(__('Save Changes', 'am24h'), 'primary', 'submit', false); ?>
+                </div>
+            </form>
+
+        <?php $this->render_panel_end(); ?>
+        <?php
+    }
+
     public function enqueue_admin_assets(): void
     {
         $screen = get_current_screen();
@@ -691,6 +784,25 @@ class Am24h_ThemeSettingsPage
             array(),
             (string) filemtime($path)
         );
+
+        if (strpos((string) $screen->id, 'am24h-third-party-scripts') === false) {
+            return;
+        }
+
+        $script_relative = 'assets/js/admin-third-party-scripts.js';
+        $script_path = trailingslashit(get_template_directory()) . $script_relative;
+
+        if (! is_readable($script_path)) {
+            return;
+        }
+
+        wp_enqueue_script(
+            'am24h-admin-third-party-scripts',
+            trailingslashit(get_template_directory_uri()) . $script_relative,
+            array(),
+            (string) filemtime($script_path),
+            true
+        );
     }
 
     private function render_panel_start(string $title, string $subtitle): void
@@ -704,6 +816,7 @@ class Am24h_ThemeSettingsPage
                     <a href="<?php echo esc_url(admin_url('admin.php?page=am24h-cookies')); ?>" class="<?php echo $page === 'am24h-cookies' ? 'am24h-active' : ''; ?>"><?php esc_html_e('LGPD / Cookies', 'am24h'); ?></a>
                     <a href="<?php echo esc_url(admin_url('admin.php?page=am24h-share-bar')); ?>" class="<?php echo $page === 'am24h-share-bar' ? 'am24h-active' : ''; ?>"><?php esc_html_e('Share Bar', 'am24h'); ?></a>
                     <a href="<?php echo esc_url(admin_url('admin.php?page=am24h-accessibility')); ?>" class="<?php echo $page === 'am24h-accessibility' ? 'am24h-active' : ''; ?>"><?php esc_html_e('Accessibility', 'am24h'); ?></a>
+                    <a href="<?php echo esc_url(admin_url('admin.php?page=am24h-third-party-scripts')); ?>" class="<?php echo $page === 'am24h-third-party-scripts' ? 'am24h-active' : ''; ?>"><?php esc_html_e('Third-Party Scripts', 'am24h'); ?></a>
                     <a href="<?php echo esc_url(admin_url('admin.php?page=am24h-colors')); ?>" class="<?php echo $page === 'am24h-colors' ? 'am24h-active' : ''; ?>"><?php esc_html_e('Colors', 'am24h'); ?></a>
                     <a href="<?php echo esc_url(admin_url('admin.php?page=am24h-language')); ?>" class="<?php echo $page === 'am24h-language' ? 'am24h-active' : ''; ?>"><?php esc_html_e('Language', 'am24h'); ?></a>
                     <a href="<?php echo esc_url(admin_url('admin.php?page=am24h-typography')); ?>" class="<?php echo $page === 'am24h-typography' ? 'am24h-active' : ''; ?>"><?php esc_html_e('Typography', 'am24h'); ?></a>
@@ -877,6 +990,94 @@ class Am24h_ThemeSettingsPage
                 </div>
             </form>
         </section>
+        <?php
+    }
+
+    /**
+     * @param array{label: string, url: string, inline: string, forward: array<int, string>, enabled: bool} $script
+     */
+    private function render_third_party_worker_row(array $script): void
+    {
+        $forward_value = implode(', ', isset($script['forward']) && is_array($script['forward']) ? $script['forward'] : array());
+        ?>
+        <div class="am24h-script-row" data-script-row>
+            <div class="am24h-script-row-head">
+                <h3><?php esc_html_e('Script Entry', 'am24h'); ?></h3>
+                <button type="button" class="button-link-delete" data-remove-row><?php esc_html_e('Remove', 'am24h'); ?></button>
+            </div>
+
+            <div class="am24h-field">
+                <label><?php esc_html_e('Label / internal name', 'am24h'); ?></label>
+                <input type="text" class="regular-text" value="<?php echo esc_attr(isset($script['label']) ? $script['label'] : ''); ?>" data-field="label" maxlength="80" />
+            </div>
+
+            <div class="am24h-field">
+                <label><?php esc_html_e('External script URL', 'am24h'); ?></label>
+                <input type="url" class="regular-text" value="<?php echo esc_attr(isset($script['url']) ? $script['url'] : ''); ?>" placeholder="https://example.com/script.js" data-field="url" />
+            </div>
+
+            <div class="am24h-field">
+                <label><?php esc_html_e('Inline initialization snippet (optional)', 'am24h'); ?></label>
+                <textarea rows="4" class="large-text" data-field="inline"><?php echo esc_textarea(isset($script['inline']) ? $script['inline'] : ''); ?></textarea>
+            </div>
+
+            <div class="am24h-field">
+                <label><?php esc_html_e('Forwarding keys (optional)', 'am24h'); ?></label>
+                <input type="text" class="regular-text" value="<?php echo esc_attr($forward_value); ?>" data-field="forward" placeholder="dataLayer.push, fbq" />
+                <p class="description"><?php esc_html_e('Comma or space separated globals to forward in worker mode, such as dataLayer.push.', 'am24h'); ?></p>
+            </div>
+
+            <label class="am24h-inline-control">
+                <input type="hidden" value="0" data-field="enabled_hidden" />
+                <input type="checkbox" value="1" data-field="enabled" <?php checked(true, ! empty($script['enabled'])); ?> />
+                <span><?php esc_html_e('Enable this script', 'am24h'); ?></span>
+            </label>
+        </div>
+        <?php
+    }
+
+    /**
+     * @param array{label: string, url: string, inline: string, strategy: string, enabled: bool} $script
+     */
+    private function render_third_party_main_thread_row(array $script): void
+    {
+        $strategy = isset($script['strategy']) && in_array($script['strategy'], array('async', 'defer'), true) ? $script['strategy'] : 'defer';
+        ?>
+        <div class="am24h-script-row" data-script-row>
+            <div class="am24h-script-row-head">
+                <h3><?php esc_html_e('Script Entry', 'am24h'); ?></h3>
+                <button type="button" class="button-link-delete" data-remove-row><?php esc_html_e('Remove', 'am24h'); ?></button>
+            </div>
+
+            <div class="am24h-field">
+                <label><?php esc_html_e('Label / internal name', 'am24h'); ?></label>
+                <input type="text" class="regular-text" value="<?php echo esc_attr(isset($script['label']) ? $script['label'] : ''); ?>" data-field="label" maxlength="80" />
+            </div>
+
+            <div class="am24h-field">
+                <label><?php esc_html_e('External script URL', 'am24h'); ?></label>
+                <input type="url" class="regular-text" value="<?php echo esc_attr(isset($script['url']) ? $script['url'] : ''); ?>" placeholder="https://example.com/script.js" data-field="url" />
+            </div>
+
+            <div class="am24h-field">
+                <label><?php esc_html_e('Inline initialization snippet (optional)', 'am24h'); ?></label>
+                <textarea rows="4" class="large-text" data-field="inline"><?php echo esc_textarea(isset($script['inline']) ? $script['inline'] : ''); ?></textarea>
+            </div>
+
+            <div class="am24h-field">
+                <label><?php esc_html_e('Loading strategy', 'am24h'); ?></label>
+                <select class="am24h-select-single" data-field="strategy">
+                    <option value="defer" <?php selected($strategy, 'defer'); ?>><?php esc_html_e('defer (recommended default)', 'am24h'); ?></option>
+                    <option value="async" <?php selected($strategy, 'async'); ?>><?php esc_html_e('async (fastest fetch, unordered execution)', 'am24h'); ?></option>
+                </select>
+            </div>
+
+            <label class="am24h-inline-control">
+                <input type="hidden" value="0" data-field="enabled_hidden" />
+                <input type="checkbox" value="1" data-field="enabled" <?php checked(true, ! empty($script['enabled'])); ?> />
+                <span><?php esc_html_e('Enable this script', 'am24h'); ?></span>
+            </label>
+        </div>
         <?php
     }
 }

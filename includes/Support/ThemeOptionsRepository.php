@@ -79,6 +79,8 @@ class Am24h_ThemeOptionsRepository
         'am24h_share_network_custom' => 0,
         'am24h_share_network_custom_label' => 'Custom',
         'am24h_share_network_custom_url' => '',
+        'am24h_third_party_worker_scripts' => array(),
+        'am24h_third_party_main_thread_scripts' => array(),
         'am24h_primary_color'   => '#cc0000',
         'am24h_secondary_color' => '#f3f3f3',
         'am24h_text_color'      => '#111111',
@@ -332,5 +334,153 @@ class Am24h_ThemeOptionsRepository
             'custom_label' => $custom_label,
             'custom_url_template' => $custom_url_template,
         );
+    }
+
+    /**
+     * @return array<int, array{label: string, url: string, inline: string, forward: array<int, string>, enabled: bool}>
+     */
+    public function get_third_party_worker_scripts(): array
+    {
+        $raw = $this->get('am24h_third_party_worker_scripts');
+
+        if (! is_array($raw)) {
+            return array();
+        }
+
+        $scripts = array();
+
+        foreach ($raw as $row) {
+            if (! is_array($row)) {
+                continue;
+            }
+
+            $url = $this->normalize_external_script_url(isset($row['url']) ? $row['url'] : '');
+
+            if ($url === '') {
+                continue;
+            }
+
+            $forward = array();
+
+            if (isset($row['forward']) && is_array($row['forward'])) {
+                foreach ($row['forward'] as $key) {
+                    $token = trim(sanitize_text_field((string) $key));
+
+                    if ($token === '') {
+                        continue;
+                    }
+
+                    if (! preg_match('/^[A-Za-z_$][A-Za-z0-9_$]*(\.[A-Za-z_$][A-Za-z0-9_$]*)*$/', $token)) {
+                        continue;
+                    }
+
+                    if (! in_array($token, $forward, true)) {
+                        $forward[] = $token;
+                    }
+
+                    if (count($forward) >= 20) {
+                        break;
+                    }
+                }
+            }
+
+            $scripts[] = array(
+                'label' => substr(sanitize_text_field((string) (isset($row['label']) ? $row['label'] : '')), 0, 80),
+                'url' => $url,
+                'inline' => $this->normalize_inline_script(isset($row['inline']) ? $row['inline'] : ''),
+                'forward' => $forward,
+                'enabled' => ! empty($row['enabled']) && (int) $row['enabled'] === 1,
+            );
+
+            if (count($scripts) >= 20) {
+                break;
+            }
+        }
+
+        return $scripts;
+    }
+
+    /**
+     * @return array<int, array{label: string, url: string, inline: string, strategy: string, enabled: bool}>
+     */
+    public function get_third_party_main_thread_scripts(): array
+    {
+        $raw = $this->get('am24h_third_party_main_thread_scripts');
+
+        if (! is_array($raw)) {
+            return array();
+        }
+
+        $scripts = array();
+
+        foreach ($raw as $row) {
+            if (! is_array($row)) {
+                continue;
+            }
+
+            $url = $this->normalize_external_script_url(isset($row['url']) ? $row['url'] : '');
+
+            if ($url === '') {
+                continue;
+            }
+
+            $strategy = sanitize_key((string) (isset($row['strategy']) ? $row['strategy'] : 'defer'));
+
+            if (! in_array($strategy, array('async', 'defer'), true)) {
+                $strategy = 'defer';
+            }
+
+            $scripts[] = array(
+                'label' => substr(sanitize_text_field((string) (isset($row['label']) ? $row['label'] : '')), 0, 80),
+                'url' => $url,
+                'inline' => $this->normalize_inline_script(isset($row['inline']) ? $row['inline'] : ''),
+                'strategy' => $strategy,
+                'enabled' => ! empty($row['enabled']) && (int) $row['enabled'] === 1,
+            );
+
+            if (count($scripts) >= 20) {
+                break;
+            }
+        }
+
+        return $scripts;
+    }
+
+    private function normalize_external_script_url($value): string
+    {
+        $url = esc_url_raw((string) $value);
+
+        if ($url === '') {
+            return '';
+        }
+
+        $scheme = wp_parse_url($url, PHP_URL_SCHEME);
+        $host = wp_parse_url($url, PHP_URL_HOST);
+
+        if (! in_array($scheme, array('http', 'https'), true) || ! is_string($host) || $host === '') {
+            return '';
+        }
+
+        return $url;
+    }
+
+    private function normalize_inline_script($value): string
+    {
+        $inline = str_replace(array("\0", "\r"), '', (string) $value);
+        $inline = trim($inline);
+
+        if ($inline === '') {
+            return '';
+        }
+
+        $inline = preg_replace('#<\s*/?\s*script\b[^>]*>#i', '', $inline);
+
+        if (! is_string($inline)) {
+            return '';
+        }
+
+        $inline = str_replace('<?', '', $inline);
+
+        return substr($inline, 0, 4000);
     }
 }

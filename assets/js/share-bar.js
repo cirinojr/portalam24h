@@ -1,9 +1,9 @@
 (function () {
   'use strict';
 
-  const copyButtons = document.querySelectorAll('[data-share-copy]');
+  const hasCopyButton = document.querySelector('[data-share-copy]');
 
-  if (!copyButtons.length) {
+  if (!hasCopyButton) {
     return;
   }
 
@@ -12,14 +12,21 @@
   const successMessage = container?.dataset.copySuccess || 'Link copied';
   const fallbackMessage = container?.dataset.copyFallback || 'Press Ctrl+C to copy the link';
 
+  let announceTimer = null;
+
   const announce = (message) => {
     if (!statusElement) {
       return;
     }
 
+    if (announceTimer) {
+      globalThis.clearTimeout(announceTimer);
+    }
+
     statusElement.textContent = message;
-    globalThis.setTimeout(() => {
+    announceTimer = globalThis.setTimeout(() => {
       statusElement.textContent = '';
+      announceTimer = null;
     }, 1800);
   };
 
@@ -38,32 +45,36 @@
     return false;
   };
 
-  copyButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const shareUrl = button.dataset.shareUrl;
+  document.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-share-copy]');
 
-      if (!shareUrl) {
-        return;
-      }
+    if (!button) {
+      return;
+    }
 
-      if (navigator?.clipboard && typeof navigator.clipboard.writeText === 'function') {
-        navigator.clipboard
-          .writeText(shareUrl)
-          .then(() => {
-            announce(successMessage);
-          })
-          .catch(() => {
-            if (!focusForManualCopy(shareUrl)) {
-              announce(fallbackMessage);
-            }
-          });
+    const shareUrl = button.dataset.shareUrl;
 
-        return;
-      }
+    if (!shareUrl) {
+      return;
+    }
 
-      if (!focusForManualCopy(shareUrl)) {
-        announce(fallbackMessage);
-      }
-    });
+    if (navigator?.clipboard && typeof navigator.clipboard.writeText === 'function') {
+      navigator.clipboard
+        .writeText(shareUrl)
+        .then(() => {
+          announce(successMessage);
+        })
+        .catch(() => {
+          if (!focusForManualCopy(shareUrl)) {
+            announce(fallbackMessage);
+          }
+        });
+
+      return;
+    }
+
+    if (!focusForManualCopy(shareUrl)) {
+      announce(fallbackMessage);
+    }
   });
 })();

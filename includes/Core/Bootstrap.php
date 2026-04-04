@@ -22,6 +22,7 @@ require_once __DIR__ . '/../Admin/HideTitleMetabox.php';
 require_once __DIR__ . '/../Front/ThemeCustomCss.php';
 require_once __DIR__ . '/../Front/CookieConsentBanner.php';
 require_once __DIR__ . '/../Front/AccessibilityPopup.php';
+require_once __DIR__ . '/../Front/ThirdPartyScripts.php';
 
 require_once __DIR__ . '/../Typography/TypographySettings.php';
 require_once __DIR__ . '/../Typography/FontValidator.php';
@@ -70,6 +71,7 @@ class Am24h_Bootstrap
             new Am24h_ThemeCustomCss($this->options),
             new Am24h_CookieConsentBanner($this->options, $assets),
             new Am24h_AccessibilityPopup($this->options, $assets),
+            new Am24h_ThirdPartyScripts($this->options, $assets),
             new Am24h_FontLoader($font_registry, $typography_settings, $font_face_generator, $this->options),
             new Am24h_SettingsRegistrar($sanitizer),
             new Am24h_ThemeSettingsPage($this->options, $sanitizer),
