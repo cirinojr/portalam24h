@@ -1,79 +1,144 @@
-# Portal AM24h: High-Performance Editorial WordPress Theme
+# Portal AM24h
+
+High-performance editorial WordPress theme with modular PHP architecture, critical CSS delivery, local font management, and template-driven rendering.
+
+## Why This Project Matters
+This repository demonstrates practical senior-level theme engineering skills: performance-driven rendering decisions, modular backend architecture, security-first option handling, localization workflow, and maintainable WordPress integration without frontend framework lock-in.
 
 ## Overview
-Portal AM24h is a custom WordPress theme for editorial and news publishing. It is built with a performance-conscious frontend, a modular PHP architecture, and a maintainability-first code organization for long-term project ownership.
+Portal AM24h is built for editorial/news workloads where predictable performance and long-term maintainability are priorities.
 
-## Key Characteristics
-- Modular codebase split by responsibility (Core, Admin, Performance, Typography, Content, Support).
-- Minimal frontend footprint with controlled asset output.
-- Layered CSS delivery with clear separation of critical and non-critical styling.
-- Self-hosted font workflow with local files only (WOFF2 preferred).
-- Predictable first render based on stable fallback typography.
-- Optional Gutenberg cleanup strategy with on-demand core block style loading.
-- Deterministic hook registration and no monolithic theme controller.
+The theme avoids broad frontend dependencies and keeps runtime behavior explicit:
+- Bootstrapped through focused modules instead of one monolithic `functions.php` implementation.
+- Layered stylesheet strategy with early critical CSS and deferred non-critical layers.
+- Local font pipeline (validation, download, registry, CSS generation) to avoid external font CDNs.
+- Modular template parts for archive/home/single composition.
+
+## Key Technical Decisions
+1. Module-based bootstrapping
+The theme is initialized in `functions.php` through `Am24h_Bootstrap`, which wires classes by domain and registers hooks per module.
+
+2. Performance-first style loading
+Critical CSS (`assets/styles/Critical/critical.min.css`) is inlined in `wp_head`, while the main stylesheet is enqueued separately.
+
+3. Local assets and vanilla JS
+Frontend interactions (search bar, cookie consent, accessibility popup) are implemented with small vanilla JS files and no jQuery dependency.
+
+4. Typed, focused PHP classes
+Domain-specific classes in `includes/` keep responsibilities narrow and reduce coupling.
+
+5. Configurable cleanup behavior
+WordPress head output and block-style loading are controlled with options and filters rather than hardcoded assumptions.
 
 ## Architecture
-The theme boots through a single entrypoint in `functions.php`, which loads `includes/Core/Bootstrap.php`. Bootstrap wires focused modules, and each module registers only its own hooks.
+Runtime flow:
+1. `functions.php` loads `includes/Core/Bootstrap.php`.
+2. `Am24h_Bootstrap` instantiates module classes and shared services.
+3. Each module registers its own WordPress hooks through `register_hooks()`.
 
-Responsibilities are intentionally separated: setup and assets in Core, settings in Admin, rendering behavior in Performance and Front, font management in Typography, and shared utilities in Support. This keeps classes small, testable, and readable.
+Core module groups:
+- `Core`: setup, assets, bootstrap lifecycle.
+- `Performance`: critical CSS, head stylesheet orchestration, optional WordPress cleanup.
+- `Typography`: local font validation/storage/download/registry and generated `@font-face` output.
+- `Admin`: settings registration, sanitization, admin UI.
+- `Front`: optional cookie consent and accessibility popup rendering.
+- `Content`: content behavior helpers (excerpt and featured image logic).
+- `Support`: utility services and shared helpers.
+
+## Directory Structure
+```text
+.
+|- assets/
+|  |- font/
+|  |- images/
+|  |- js/
+|  `- styles/
+|- includes/
+|  |- Admin/
+|  |- Content/
+|  |- Core/
+|  |- Front/
+|  |- Performance/
+|  |- Support/
+|  `- Typography/
+|- languages/
+|- template-parts/
+|- functions.php
+|- style.css
+`- ...WordPress template files
+```
+
+Repository tree explanation:
+- `assets/`: static frontend resources (CSS, JS, images, theme-bundled font assets).
+- `includes/`: PHP source organized by feature area and runtime responsibility.
+- `template-parts/`: reusable rendering blocks used by templates (`index.php`, `single.php`, `archive.php`, etc.).
+- `languages/`: translation catalog files (`.pot` and localized `.po` files).
 
 ## Performance Strategy
-- Critical CSS is inlined for the initial render path.
-- The main stylesheet is loaded separately through standard enqueue flow.
-- Font preload is optional and limited to a primary local WOFF2 file.
-- `font-display: swap` is used for custom font rendering behavior.
-- Custom fonts are not embedded into critical CSS.
-- Initial render uses a stable fallback stack (`Arial, system-ui, sans-serif`).
-- Custom font styles are applied after load as a non-critical enhancement layer.
+- Inline critical CSS early (`wp_head` priority 1) with a hard byte limit guard.
+- Enqueue non-critical stylesheet separately to keep initial render path explicit.
+- Remove version query parameters from script/style URLs.
+- Keep JavaScript small and deferred when possible.
+- Use local WOFF2 preload only when configured and valid.
+- Keep block styles on-demand by default; optional aggressive dequeue remains opt-in.
 
-Preload is treated as an optimization layer, not a guaranteed improvement. Its value depends on page structure, connection profile, and real measurements.
+Notes:
+- No benchmark claims are included in this repository; validate with your own field/lab measurements.
+- Preload and cleanup settings are context-dependent and should be tested per site.
 
-## Typography Strategy
-- Fonts are installed locally from approved sources and served from uploads.
-- Runtime font conversion is intentionally not part of the theme.
-- WOFF2 is the preferred production format.
-- WOFF can be used as a secondary fallback when necessary.
-- TTF and OTF are not recommended for this theme's production delivery strategy.
-- Font files are stored under uploads, not inside the theme directory.
-- Fallback system fonts are used during initial render to preserve stability.
+## Accessibility Considerations
+- Optional accessibility popup with keyboard-operable controls and persisted user preferences.
+- ARIA labels, `aria-pressed`, focus management, and Escape-to-close behavior in popup interactions.
+- Preference controls avoid replacing semantic markup responsibilities.
+- Theme architecture supports accessible defaults but does not replace content-level accessibility work.
 
-## Gutenberg Strategy
-The theme does not blindly remove core block styles by default. It supports WordPress-native on-demand loading for core block assets to reduce unnecessary CSS on pages that do not render specific blocks.
+## Security And Sanitization Approach
+- Admin options are sanitized through dedicated methods in `includes/Admin/SettingsSanitizer.php`.
+- Theme output uses WordPress escaping helpers (`esc_html`, `esc_attr`, `esc_url`).
+- Font ingestion validates extension/MIME/source before storage.
+- Cookie and option reads are normalized/sanitized before use.
+- Local font hosting reduces third-party runtime dependencies.
 
-An advanced full-disable cleanup option is available for tightly controlled environments, but it should only be used when block styling is fully covered by the theme.
+## Internationalization
+- Text domain: `am24h`.
+- Theme translations loaded from `languages/` via `load_theme_textdomain`.
+- Locale switching can be controlled through theme options with catalog allowlisting.
+- Source catalog (`am24h.pot`) and language `.po` files are included in-repo.
 
-## Cookie Consent Banner
-- The theme includes an optional LGPD/GDPR-style cookie consent banner.
-- It is disabled by default.
-- It is configurable from the theme options panel (message, labels, policy link, position, and style variant).
-- It supports multiple positions (top/bottom full width and floating bottom layouts).
-- It is a lightweight consent notice with local state persistence, not a full legal compliance platform.
+## Development Workflow
+Requirements:
+- PHP compatible with current WordPress runtime.
+- Composer for developer tooling.
 
-## Accessibility Popup
-- The theme includes an optional accessibility adjustments popup.
-- It is disabled by default.
-- It is implemented with PHP, vanilla JavaScript, and CSS only (no external libraries).
-- It provides lightweight visual controls (font size, contrast, reading background, and link highlighting) with user preference persistence.
-- It is not a substitute for accessible design, semantic markup, or proper content structure.
+Commands:
+```bash
+composer install
+composer run lint:phpcs
+composer run lint:phpcs-full
+composer run lint:phpcbf
+```
 
-## Security and Stability
-- Local asset hosting avoids runtime dependency on third-party font CDNs.
-- Font writes are restricted to the WordPress uploads directory.
-- Input is sanitized on write; dynamic output is escaped on render.
-- File handling uses explicit validation for extension, MIME type, and source URL.
-- Architecture is intentionally restrained to reduce failure surface.
-
-## Performance References
-- Critical rendering path and critical CSS: https://web.dev/learn/performance/understanding-the-critical-path
-- Preload: https://web.dev/articles/preload-critical-assets
-- Web font optimization: https://web.dev/articles/font-best-practices
-- Render-blocking resources: https://web.dev/articles/render-blocking-resources
-- Largest Contentful Paint (LCP): https://web.dev/articles/optimize-lcp
+Workflow recommendations:
+1. Keep new logic in focused modules under `includes/`.
+2. Prefer template-part composition over large template files.
+3. Keep critical CSS small and intentionally scoped.
+4. Validate sanitization and escaping for every new option/setting.
+5. Run PHPCS checks before opening pull requests.
 
 ## Installation
-1. Copy the theme directory to `wp-content/themes/`.
-2. Activate the theme in WordPress Admin.
-3. Configure theme options (including typography) under the AM24h admin pages.
+1. Place the theme in `wp-content/themes/portal-am24h`.
+2. Activate it from WordPress admin.
+3. Configure theme options under the AM24h settings pages.
+4. If using local font features, upload/activate fonts through the provided admin controls.
 
-## Notes
-This is a custom theme built for controlled editorial environments. It is maintained as a project-specific codebase, not as a generic marketplace product.
+## License
+Recommended for WordPress distribution: `GPL-2.0-or-later`.
+
+This repository now includes a GPL-compatible `LICENSE` file. If you bundle additional third-party assets, verify they are GPL-compatible before distribution.
+
+## Suggested Future Improvements
+1. Add automated tests for option sanitization and font pipeline behavior.
+2. Add CI workflow for PHPCS and PHP compatibility checks.
+3. Add static analysis (for example PHPStan/Psalm) with a baseline policy.
+4. Add scripted translation build flow (`.po` -> `.mo`) for release packaging.
+5. Add documented browser support matrix and accessibility test checklist.

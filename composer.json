@@ -2,7 +2,7 @@
   "name": "am24h/portal-theme",
   "description": "Portal Am24h WordPress theme quality tooling",
   "type": "project",
-  "license": "proprietary",
+  "license": "GPL-2.0-or-later",
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.10",
     "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
