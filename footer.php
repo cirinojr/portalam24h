@@ -3,19 +3,26 @@
         <div class="cc-footer__container">
             <div class="cc-footer__content">
                 <div class="cc-footer__logo">
-                    <a href="<?php echo esc_url(home_url('/')) ?>">
-                        <?php
-                        if (has_custom_logo()) {
-                            $custom_logo = get_custom_logo();
-                            if (is_string($custom_logo) && $custom_logo !== '') {
-                                echo wp_kses_post($custom_logo);
-                            }
-                        } else {
-                            $logo = am24h_get_logo();
-                            echo '<span class="cc-footer-logo-text">' . esc_html($logo['content']) . '</span>';
+                    <?php
+                    $home_label = sprintf(
+                        /* translators: %s: Site name */
+                        __('Go to %s homepage', 'am24h'),
+                        get_bloginfo('name')
+                    );
+
+                    if (has_custom_logo()) {
+                        $custom_logo = get_custom_logo();
+                        if (is_string($custom_logo) && $custom_logo !== '') {
+                            $custom_logo = str_replace('class="custom-logo-link"', 'class="custom-logo-link" aria-label="' . esc_attr($home_label) . '"', $custom_logo);
+                            $custom_logo = preg_replace('/alt=""/', 'alt="' . esc_attr(get_bloginfo('name')) . '"', $custom_logo, 1);
+                            echo wp_kses_post($custom_logo);
                         }
-                        ?>
-                    </a>
+                    } else {
+                        $logo = am24h_get_logo();
+                        $logo_text = isset($logo['content']) && is_string($logo['content']) && trim($logo['content']) !== '' ? $logo['content'] : get_bloginfo('name');
+                        echo '<a href="' . esc_url(home_url('/')) . '" aria-label="' . esc_attr($home_label) . '"><span class="cc-footer-logo-text">' . esc_html($logo_text) . '</span></a>';
+                    }
+                    ?>
                 </div>
 
                 <nav class="cc-footer__nav">
@@ -28,9 +35,19 @@
                             'fallback_cb' => false,
                             'walker' => new class extends Walker_Nav_Menu {
                                 public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
+                                    $label = trim(wp_strip_all_tags((string) $item->title));
+
+                                    if ($label === '') {
+                                        $label = trim(sanitize_text_field((string) $item->attr_title));
+                                    }
+
+                                    if ($label === '') {
+                                        $label = __('Menu link', 'am24h');
+                                    }
+
                                     $output .= '<li class="cc-footer__menu-item">';
-                                    $output .= '<a href="' . esc_url($item->url) . '" class="cc-footer__menu-link">';
-                                    $output .= esc_html($item->title);
+                                    $output .= '<a href="' . esc_url($item->url) . '" class="cc-footer__menu-link" aria-label="' . esc_attr($label) . '">';
+                                    $output .= esc_html($label);
                                     $output .= '</a>';
                                     $output .= '</li>';
                                 }

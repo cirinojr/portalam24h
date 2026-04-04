@@ -15,26 +15,33 @@
             <div class="cc-container">
                 <div class="cc-header__top-container">
                     <div class="cc-header__left">
-                        <button class="cc-btn cc-btn--secondary cc-btn--icon cc-mobile-menu-toggle">
+                        <button type="button" class="cc-btn cc-btn--secondary cc-btn--icon cc-mobile-menu-toggle" aria-label="<?php esc_attr_e('Open menu', 'am24h'); ?>">
                             <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M2.66667 12C2.47778 12 2.31956 11.936 2.192 11.808C2.064 11.6804 2 11.5222 2 11.3333C2 11.1444 2.064 10.9862 2.192 10.8587C2.31956 10.7307 2.47778 10.6667 2.66667 10.6667H13.3333C13.5222 10.6667 13.6804 10.7307 13.808 10.8587C13.936 10.9862 14 11.1444 14 11.3333C14 11.5222 13.936 11.6804 13.808 11.808C13.6804 11.936 13.5222 12 13.3333 12H2.66667ZM2.66667 8.66667C2.47778 8.66667 2.31956 8.60267 2.192 8.47467C2.064 8.34711 2 8.18889 2 8C2 7.81111 2.064 7.65267 2.192 7.52467C2.31956 7.39711 2.47778 7.33333 2.66667 7.33333H13.3333C13.5222 7.33333 13.6804 7.39711 13.808 7.52467C13.936 7.65267 14 7.81111 14 8C14 8.18889 13.936 8.34711 13.808 8.47467C13.6804 8.60267 13.5222 8.66667 13.3333 8.66667H2.66667ZM2.66667 5.33333C2.47778 5.33333 2.31956 5.26956 2.192 5.142C2.064 5.014 2 4.85556 2 4.66667C2 4.47778 2.064 4.31933 2.192 4.19133C2.31956 4.06378 2.47778 4 2.66667 4H13.3333C13.5222 4 13.6804 4.06378 13.808 4.19133C13.936 4.31933 14 4.47778 14 4.66667C14 4.85556 13.936 5.014 13.808 5.142C13.6804 5.26956 13.5222 5.33333 13.3333 5.33333H2.66667Z" fill="currentColor" />
                             </svg>
                         </button>
 
                         <div class="cc-header__logo">
-                            <a href="<?php echo esc_url(home_url('/')) ?>">
-                                <?php
-                                if (has_custom_logo()) {
-                                    $custom_logo = get_custom_logo();
-                                    if (is_string($custom_logo) && $custom_logo !== '') {
-                                        echo wp_kses_post($custom_logo);
-                                    }
-                                } else {
-                                    $logo = am24h_get_logo();
-                                    echo '<span class="cc-logo-text">' . esc_html($logo['content']) . '</span>';
+                            <?php
+                            $home_label = sprintf(
+                                /* translators: %s: Site name */
+                                __('Go to %s homepage', 'am24h'),
+                                get_bloginfo('name')
+                            );
+
+                            if (has_custom_logo()) {
+                                $custom_logo = get_custom_logo();
+                                if (is_string($custom_logo) && $custom_logo !== '') {
+                                    $custom_logo = str_replace('class="custom-logo-link"', 'class="custom-logo-link" aria-label="' . esc_attr($home_label) . '"', $custom_logo);
+                                    $custom_logo = preg_replace('/alt=""/', 'alt="' . esc_attr(get_bloginfo('name')) . '"', $custom_logo, 1);
+                                    echo wp_kses_post($custom_logo);
                                 }
-                                ?>
-                            </a>
+                            } else {
+                                $logo = am24h_get_logo();
+                                $logo_text = isset($logo['content']) && is_string($logo['content']) && trim($logo['content']) !== '' ? $logo['content'] : get_bloginfo('name');
+                                echo '<a href="' . esc_url(home_url('/')) . '" aria-label="' . esc_attr($home_label) . '"><span class="cc-logo-text">' . esc_html($logo_text) . '</span></a>';
+                            }
+                            ?>
                         </div>
                     </div>
 
@@ -113,7 +120,7 @@
                         <?php get_search_form(); ?>
                     </div>
 
-                    <button class="cc-btn cc-btn--secondary cc-btn--icon cc-mobile-menu-close">
+                    <button type="button" class="cc-btn cc-btn--secondary cc-btn--icon cc-mobile-menu-close" aria-label="<?php esc_attr_e('Close menu', 'am24h'); ?>">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>

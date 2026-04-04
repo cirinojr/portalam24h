@@ -42,8 +42,6 @@ if ($thumb_id) {
             'sizes' => '(max-width: 767px) 92px, (max-width: 1023px) 172px, (max-width: 1439px) 286px, 320px',
         )
     );
-} elseif (!empty($args['thumbnail'])) {
-    $thumbnail_html = wp_kses_post($args['thumbnail']);
 }
 ?>
 

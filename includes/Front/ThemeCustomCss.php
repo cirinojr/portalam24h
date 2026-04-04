@@ -64,12 +64,12 @@ class Am24h_ThemeCustomCss
     {
         $colors = $this->options->get_color_set();
 
-        $has_overrides = $colors['primary'] !== '#fd5e04'
-            || $colors['secondary'] !== '#fef2e6'
-            || $colors['text'] !== '#1d2433'
-            || $colors['background'] !== '#f8f9fc'
-            || $colors['success'] !== '#08875d'
-            || $colors['danger'] !== '#e02d3c';
+        $has_overrides = $colors['primary'] !== '#cc0000'
+            || $colors['secondary'] !== '#f3f3f3'
+            || $colors['text'] !== '#111111'
+            || $colors['background'] !== '#f5f5f5'
+            || $colors['success'] !== '#0b7a4b'
+            || $colors['danger'] !== '#cc0000';
 
         if (! $has_overrides) {
             return '';
@@ -77,29 +77,29 @@ class Am24h_ThemeCustomCss
 
         $css = ':root{';
 
-        if ($colors['primary'] !== '#fd5e04') {
+        if ($colors['primary'] !== '#cc0000') {
             $css .= '--cc-color-primary-600:' . esc_attr($colors['primary']) . ';';
             $css .= '--cc-color-primary-700:' . esc_attr(Am24h_ColorUtils::darken($colors['primary'], 20)) . ';';
             $css .= '--cc-color-primary-800:' . esc_attr(Am24h_ColorUtils::darken($colors['primary'], 40)) . ';';
         }
 
-        if ($colors['secondary'] !== '#fef2e6') {
+        if ($colors['secondary'] !== '#f3f3f3') {
             $css .= '--cc-color-primary-100:' . esc_attr($colors['secondary']) . ';';
         }
 
-        if ($colors['text'] !== '#1d2433') {
+        if ($colors['text'] !== '#111111') {
             $css .= '--cc-color-black:' . esc_attr($colors['text']) . ';';
         }
 
-        if ($colors['background'] !== '#f8f9fc') {
+        if ($colors['background'] !== '#f5f5f5') {
             $css .= '--cc-color-neutral-100:' . esc_attr($colors['background']) . ';';
         }
 
-        if ($colors['success'] !== '#08875d') {
+        if ($colors['success'] !== '#0b7a4b') {
             $css .= '--cc-color-success-700:' . esc_attr($colors['success']) . ';';
         }
 
-        if ($colors['danger'] !== '#e02d3c') {
+        if ($colors['danger'] !== '#cc0000') {
             $css .= '--cc-color-danger-700:' . esc_attr($colors['danger']) . ';';
         }
 

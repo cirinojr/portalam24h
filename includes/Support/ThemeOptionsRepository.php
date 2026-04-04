@@ -17,6 +17,7 @@ class Am24h_ThemeOptionsRepository
         'am24h_cleanup_block_styles_on_demand' => 1,
         'am24h_cleanup_block_styles' => 0,
         'am24h_cleanup_multilingualpress_hreflang' => 1,
+        'am24h_css_asset_version_enabled' => 0,
         'am24h_cookie_consent_enabled' => 0,
         'am24h_cookie_consent_message' => 'We use cookies to improve site functionality and measure audience usage.',
         'am24h_cookie_consent_accept_label' => 'Accept',
@@ -32,13 +33,50 @@ class Am24h_ThemeOptionsRepository
         'am24h_accessibility_popup_trigger_label' => 'Accessibility',
         'am24h_accessibility_popup_close_label' => 'Close',
         'am24h_accessibility_popup_trigger_position' => 'bottom-right',
+        'am24h_accessibility_tool_font_size' => 1,
+        'am24h_accessibility_tool_line_height' => 1,
+        'am24h_accessibility_tool_letter_spacing' => 1,
+        'am24h_accessibility_tool_readable_font' => 1,
+        'am24h_accessibility_tool_reading_mode' => 1,
+        'am24h_accessibility_tool_reading_guide' => 1,
+        'am24h_accessibility_tool_reading_mask' => 1,
+        'am24h_accessibility_tool_highlight_links' => 1,
+        'am24h_accessibility_tool_highlight_headings' => 1,
+        'am24h_accessibility_tool_hide_images' => 1,
+        'am24h_accessibility_tool_pause_animations' => 1,
+        'am24h_accessibility_tool_high_contrast' => 1,
+        'am24h_accessibility_tool_reduced_saturation' => 1,
+        'am24h_accessibility_tool_grayscale' => 1,
         'am24h_accessibility_popup_features' => "Use Tab and Shift+Tab to navigate focusable elements.\nPress Enter or Space to activate controls.\nPress Escape to close dialogs and overlays.",
-        'am24h_primary_color'   => '#fd5e04',
-        'am24h_secondary_color' => '#fef2e6',
-        'am24h_text_color'      => '#1d2433',
-        'am24h_background_color' => '#f8f9fc',
-        'am24h_success_color'   => '#08875d',
-        'am24h_danger_color'    => '#e02d3c',
+        'am24h_share_bar_enabled' => 1,
+        'am24h_share_bar_alignment' => 'center',
+        'am24h_share_bar_icon_source' => 'inline',
+        'am24h_share_bar_size' => 'medium',
+        'am24h_share_bar_order' => 'whatsapp,facebook,x,linkedin,telegram,copy,reddit,pinterest,mastodon,threads,email,instagram,youtube,tiktok,custom',
+        'am24h_share_icon_library' => 'simple-icons',
+        'am24h_share_network_whatsapp' => 1,
+        'am24h_share_network_facebook' => 1,
+        'am24h_share_network_x' => 1,
+        'am24h_share_network_linkedin' => 1,
+        'am24h_share_network_telegram' => 1,
+        'am24h_share_network_copy' => 1,
+        'am24h_share_network_reddit' => 0,
+        'am24h_share_network_pinterest' => 0,
+        'am24h_share_network_mastodon' => 0,
+        'am24h_share_network_threads' => 0,
+        'am24h_share_network_email' => 0,
+        'am24h_share_network_instagram' => 0,
+        'am24h_share_network_youtube' => 0,
+        'am24h_share_network_tiktok' => 0,
+        'am24h_share_network_custom' => 0,
+        'am24h_share_network_custom_label' => 'Custom',
+        'am24h_share_network_custom_url' => '',
+        'am24h_primary_color'   => '#cc0000',
+        'am24h_secondary_color' => '#f3f3f3',
+        'am24h_text_color'      => '#111111',
+        'am24h_background_color' => '#f5f5f5',
+        'am24h_success_color'   => '#0b7a4b',
+        'am24h_danger_color'    => '#cc0000',
         'am24h_defer_visual_overrides' => 1,
         'am24h_site_language'   => 'pt_BR',
     );
@@ -128,7 +166,7 @@ class Am24h_ThemeOptionsRepository
     }
 
     /**
-     * @return array{enabled: bool, title: string, description: string, trigger_label: string, close_label: string, trigger_position: string, features: string}
+     * @return array{enabled: bool, title: string, description: string, trigger_label: string, close_label: string, trigger_position: string, tools: array<string, bool>, features: string}
      */
     public function get_accessibility_popup_settings(): array
     {
@@ -139,7 +177,116 @@ class Am24h_ThemeOptionsRepository
             'trigger_label' => (string) $this->get('am24h_accessibility_popup_trigger_label'),
             'close_label' => (string) $this->get('am24h_accessibility_popup_close_label'),
             'trigger_position' => (string) $this->get('am24h_accessibility_popup_trigger_position'),
+            'tools' => array(
+                'font_size' => $this->get_bool('am24h_accessibility_tool_font_size'),
+                'line_height' => $this->get_bool('am24h_accessibility_tool_line_height'),
+                'letter_spacing' => $this->get_bool('am24h_accessibility_tool_letter_spacing'),
+                'readable_font' => $this->get_bool('am24h_accessibility_tool_readable_font'),
+                'reading_mode' => $this->get_bool('am24h_accessibility_tool_reading_mode'),
+                'reading_guide' => $this->get_bool('am24h_accessibility_tool_reading_guide'),
+                'reading_mask' => $this->get_bool('am24h_accessibility_tool_reading_mask'),
+                'highlight_links' => $this->get_bool('am24h_accessibility_tool_highlight_links'),
+                'highlight_headings' => $this->get_bool('am24h_accessibility_tool_highlight_headings'),
+                'hide_images' => $this->get_bool('am24h_accessibility_tool_hide_images'),
+                'pause_animations' => $this->get_bool('am24h_accessibility_tool_pause_animations'),
+                'high_contrast' => $this->get_bool('am24h_accessibility_tool_high_contrast'),
+                'reduced_saturation' => $this->get_bool('am24h_accessibility_tool_reduced_saturation'),
+                'grayscale' => $this->get_bool('am24h_accessibility_tool_grayscale'),
+            ),
             'features' => (string) $this->get('am24h_accessibility_popup_features'),
+        );
+    }
+
+    /**
+     * @return array<string, string>
+     */
+    public static function share_network_labels(): array
+    {
+        return array(
+            'whatsapp' => __('WhatsApp', 'am24h'),
+            'facebook' => __('Facebook', 'am24h'),
+            'x' => __('X', 'am24h'),
+            'linkedin' => __('LinkedIn', 'am24h'),
+            'telegram' => __('Telegram', 'am24h'),
+            'copy' => __('Copy link', 'am24h'),
+            'reddit' => __('Reddit', 'am24h'),
+            'pinterest' => __('Pinterest', 'am24h'),
+            'mastodon' => __('Mastodon', 'am24h'),
+            'threads' => __('Threads', 'am24h'),
+            'email' => __('Email', 'am24h'),
+            'instagram' => __('Instagram', 'am24h'),
+            'youtube' => __('YouTube', 'am24h'),
+            'tiktok' => __('TikTok', 'am24h'),
+            'custom' => __('Custom', 'am24h'),
+        );
+    }
+
+    /**
+     * @return array{enabled: bool, alignment: string, icon_source: string, icon_library: string, size: string, order: string[], networks: array<string, bool>, custom_label: string, custom_url_template: string}
+     */
+    public function get_share_bar_settings(): array
+    {
+        $alignment = sanitize_key((string) $this->get('am24h_share_bar_alignment'));
+        $icon_source = sanitize_key((string) $this->get('am24h_share_bar_icon_source'));
+        $icon_library = sanitize_key((string) $this->get('am24h_share_icon_library'));
+        $size = sanitize_key((string) $this->get('am24h_share_bar_size'));
+        $allowed_networks = array_keys(self::share_network_labels());
+
+        if (! in_array($alignment, array('left', 'center', 'right'), true)) {
+            $alignment = 'center';
+        }
+
+        if (! in_array($icon_source, array('inline', 'local'), true)) {
+            $icon_source = 'inline';
+        }
+
+        if (! in_array($icon_library, array('simple-icons', 'custom-source'), true)) {
+            $icon_library = 'simple-icons';
+        }
+
+        if (! in_array($size, array('small', 'medium'), true)) {
+            $size = 'medium';
+        }
+
+        $raw_order = sanitize_text_field((string) $this->get('am24h_share_bar_order'));
+        $order = array_values(
+            array_unique(
+                array_intersect(
+                    array_filter(array_map('sanitize_key', array_map('trim', explode(',', $raw_order)))),
+                    $allowed_networks
+                )
+            )
+        );
+
+        foreach ($allowed_networks as $network) {
+            if (! in_array($network, $order, true)) {
+                $order[] = $network;
+            }
+        }
+
+        $networks = array();
+
+        foreach ($allowed_networks as $network) {
+            $networks[$network] = $this->get_bool('am24h_share_network_' . $network);
+        }
+
+        $custom_label = sanitize_text_field((string) $this->get('am24h_share_network_custom_label'));
+        $custom_url_template = trim(wp_strip_all_tags((string) $this->get('am24h_share_network_custom_url')));
+
+        if ($custom_label === '') {
+            $custom_label = __('Custom', 'am24h');
+        }
+
+        return array(
+            'enabled' => $this->get_bool('am24h_share_bar_enabled'),
+            'alignment' => $alignment,
+            'icon_source' => $icon_source,
+            'icon_library' => $icon_library,
+            'size' => $size,
+            'order' => $order,
+            'networks' => $networks,
+            'custom_label' => $custom_label,
+            'custom_url_template' => $custom_url_template,
         );
     }
 }

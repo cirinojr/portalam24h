@@ -138,4 +138,72 @@ class Am24h_SettingsSanitizer
 
         return implode("\n", $clean);
     }
+
+    public function sanitize_share_bar_alignment($input): string
+    {
+        $value = sanitize_key((string) $input);
+
+        return in_array($value, array('left', 'center', 'right'), true) ? $value : 'center';
+    }
+
+    public function sanitize_share_bar_icon_source($input): string
+    {
+        $value = sanitize_key((string) $input);
+
+        return in_array($value, array('inline', 'local'), true) ? $value : 'inline';
+    }
+
+    public function sanitize_share_bar_size($input): string
+    {
+        $value = sanitize_key((string) $input);
+
+        return in_array($value, array('small', 'medium'), true) ? $value : 'medium';
+    }
+
+    public function sanitize_share_bar_order($input): string
+    {
+        $allowed = array('whatsapp', 'facebook', 'x', 'linkedin', 'telegram', 'copy', 'reddit', 'pinterest', 'mastodon', 'threads', 'email', 'instagram', 'youtube', 'tiktok', 'custom');
+        $raw = sanitize_text_field((string) $input);
+        $parts = array_filter(array_map('sanitize_key', array_map('trim', explode(',', $raw))));
+        $ordered = array_values(array_unique(array_intersect($parts, $allowed)));
+
+        foreach ($allowed as $network) {
+            if (! in_array($network, $ordered, true)) {
+                $ordered[] = $network;
+            }
+        }
+
+        return implode(',', $ordered);
+    }
+
+    public function sanitize_share_icon_library($input): string
+    {
+        $value = sanitize_key((string) $input);
+
+        return in_array($value, array('simple-icons', 'bootstrap-icons', 'custom-source'), true) ? $value : 'simple-icons';
+    }
+
+    public function sanitize_share_custom_label($input): string
+    {
+        return substr(sanitize_text_field((string) $input), 0, 50);
+    }
+
+    public function sanitize_share_custom_url_template($input): string
+    {
+        $raw = trim(wp_strip_all_tags((string) $input));
+
+        if ($raw === '') {
+            return '';
+        }
+
+        $allowed_template = str_replace(array('{url}', '{title}'), array('https://example.com', 'Example'), $raw);
+        $sanitized = esc_url_raw($allowed_template);
+        $scheme = wp_parse_url($sanitized, PHP_URL_SCHEME);
+
+        if ($sanitized === '' || ! in_array($scheme, array('http', 'https'), true)) {
+            return '';
+        }
+
+        return substr($raw, 0, 300);
+    }
 }

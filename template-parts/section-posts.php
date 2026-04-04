@@ -2,6 +2,14 @@
 $title = isset($args['title']) ? $args['title'] : '';
 $posts = isset($args['posts']) ? $args['posts'] : null;
 $see_more_url = isset($args['see_more_url']) ? $args['see_more_url'] : '';
+
+$see_more_label = $title
+    ? sprintf(
+        /* translators: %s: section or category title. */
+        __('Veja mais em %s', 'am24h'),
+        $title
+    )
+    : __('Veja mais noticias', 'am24h');
 ?>
 
 <section class="cc-section-posts">
@@ -22,7 +30,6 @@ $see_more_url = isset($args['see_more_url']) ? $args['see_more_url'] : '';
                             'date' => get_the_date('d/m/Y H\hi'),
                             'title' => get_the_title(),
                             'excerpt' => am24h_limit_excerpt(get_the_excerpt()),
-                            'thumbnail' => get_the_post_thumbnail(),
                             'link' => get_the_permalink(),
                         ));
                     }
@@ -33,7 +40,7 @@ $see_more_url = isset($args['see_more_url']) ? $args['see_more_url'] : '';
 
             <?php if ($see_more_url) : ?>
                 <a href="<?php echo esc_url($see_more_url); ?>" class="cc-btn cc-btn--text">
-                    <?php echo esc_html__('Veja mais', 'am24h'); ?>
+                    <?php echo esc_html($see_more_label); ?>
                     <svg
                         width="16"
                         height="16"

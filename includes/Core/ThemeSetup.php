@@ -18,6 +18,7 @@ class Am24h_ThemeSetup
         add_image_size('thumb-desktop', 248, 387, true);
         add_image_size('thumb-mobile', 149, 232, true);
         add_image_size('news-card-thumb', 360, 240, true);
+        add_image_size('single-featured', 1200, 640, true);
 
         add_theme_support(
             'custom-logo',
@@ -73,6 +74,29 @@ class Am24h_ThemeSetup
             'am24h_accessibility_popup_close_label' => 'Close',
             'am24h_accessibility_popup_trigger_position' => 'bottom-right',
             'am24h_accessibility_popup_features' => "Use Tab and Shift+Tab to navigate focusable elements.\nPress Enter or Space to activate controls.\nPress Escape to close dialogs and overlays.",
+            'am24h_share_bar_enabled' => 1,
+            'am24h_share_bar_alignment' => 'center',
+            'am24h_share_bar_icon_source' => 'inline',
+            'am24h_share_bar_size' => 'medium',
+            'am24h_share_bar_order' => 'whatsapp,facebook,x,linkedin,telegram,copy,reddit,pinterest,mastodon,threads,email,instagram,youtube,tiktok,custom',
+            'am24h_share_icon_library' => 'simple-icons',
+            'am24h_share_network_whatsapp' => 1,
+            'am24h_share_network_facebook' => 1,
+            'am24h_share_network_x' => 1,
+            'am24h_share_network_linkedin' => 1,
+            'am24h_share_network_telegram' => 1,
+            'am24h_share_network_copy' => 1,
+            'am24h_share_network_reddit' => 0,
+            'am24h_share_network_pinterest' => 0,
+            'am24h_share_network_mastodon' => 0,
+            'am24h_share_network_threads' => 0,
+            'am24h_share_network_email' => 0,
+            'am24h_share_network_instagram' => 0,
+            'am24h_share_network_youtube' => 0,
+            'am24h_share_network_tiktok' => 0,
+            'am24h_share_network_custom' => 0,
+            'am24h_share_network_custom_label' => 'Custom',
+            'am24h_share_network_custom_url' => '',
         );
 
         foreach ($cleanup_defaults as $option_key => $value) {

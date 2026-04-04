@@ -6,8 +6,8 @@
             return;
         }
 
-        var cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value) + '; path=/; SameSite=Lax; max-age=' + String(maxAge);
-        if (window.location.protocol === 'https:') {
+        let cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)}; path=/; SameSite=Lax; max-age=${String(maxAge)}`;
+        if (globalThis.location.protocol === 'https:') {
             cookie += '; Secure';
         }
 
@@ -23,27 +23,27 @@
     }
 
     function init() {
-        var banner = document.getElementById('am24h-cookie-consent');
+        const banner = document.getElementById('am24h-cookie-consent');
 
         if (!banner) {
             return;
         }
 
-        var cookieName = banner.getAttribute('data-cookie-name') || 'am24h_cookie_consent';
-        var cookieMaxAge = parseInt(banner.getAttribute('data-cookie-max-age') || '31536000', 10);
+        const cookieName = banner.dataset.cookieName || 'am24h_cookie_consent';
+        let cookieMaxAge = Number.parseInt(banner.dataset.cookieMaxAge || '31536000', 10);
 
         if (!cookieMaxAge || cookieMaxAge < 1) {
             cookieMaxAge = 31536000;
         }
 
-        banner.addEventListener('click', function (event) {
-            var target = event.target;
+        banner.addEventListener('click', (event) => {
+            const target = event.target;
 
             if (!(target instanceof HTMLElement)) {
                 return;
             }
 
-            var action = target.getAttribute('data-consent-action');
+            const action = target.dataset.consentAction;
 
             if (!action) {
                 return;

@@ -62,7 +62,7 @@ class Am24h_Bootstrap
 
         $this->modules = array(
             new Am24h_ThemeSetup(),
-            new Am24h_Assets($assets),
+            new Am24h_Assets($assets, $this->options),
             new Am24h_Localization($this->options),
             new Am24h_Cleanup($this->options),
             new Am24h_CriticalCss($assets),

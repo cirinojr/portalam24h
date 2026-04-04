@@ -56,10 +56,60 @@ get_header();
                             </span>
                             <?php do_action('after_post_meta'); ?>
 
+                            <?php
+                            $share_settings = am24h_get_share_bar_settings();
+                            $share_items = am24h_should_render_share_bar(get_the_ID()) ? am24h_get_share_bar_items(get_the_ID()) : array();
+                            $share_title = wp_strip_all_tags((string) get_the_title());
+                            ?>
+                            <?php if (! empty($share_items)) : ?>
+                                <nav
+                                    class="cc-share-bar cc-share-bar--<?php echo esc_attr($share_settings['alignment']); ?> cc-share-bar--<?php echo esc_attr($share_settings['size']); ?>"
+                                    aria-label="<?php echo esc_attr__('Share this article', 'am24h'); ?>"
+                                    data-copy-success="<?php echo esc_attr__('Link copied.', 'am24h'); ?>"
+                                    data-copy-fallback="<?php echo esc_attr__('Unable to copy automatically. Press Ctrl+C to copy the link.', 'am24h'); ?>"
+                                >
+                                    <ul class="cc-share-bar__list">
+                                        <?php foreach ($share_items as $item) : ?>
+                                            <li>
+                                                <?php if ($item['network'] === 'copy') : ?>
+                                                    <button
+                                                        type="button"
+                                                        class="cc-share-bar__action"
+                                                        data-share-copy
+                                                        data-share-url="<?php echo esc_url($item['url']); ?>"
+                                                        aria-label="<?php echo esc_attr(sprintf(__('Copy link for %s', 'am24h'), $share_title)); ?>"
+                                                    >
+                                                        <span class="cc-share-bar__icon"><?php echo am24h_get_share_icon_markup($item['network'], $share_settings['icon_source']); ?></span>
+                                                    </button>
+                                                <?php else : ?>
+                                                    <a
+                                                        class="cc-share-bar__action"
+                                                        href="<?php echo esc_url($item['url']); ?>"
+                                                        <?php echo $item['is_external'] ? 'target="_blank" rel="noopener noreferrer nofollow"' : ''; ?>
+                                                        aria-label="<?php echo esc_attr(sprintf(__('Share on %s', 'am24h'), $item['label'])); ?>"
+                                                    >
+                                                        <span class="cc-share-bar__icon"><?php echo am24h_get_share_icon_markup($item['network'], $share_settings['icon_source']); ?></span>
+                                                    </a>
+                                                <?php endif; ?>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                    <span class="cc-share-bar__status" aria-live="polite" data-share-copy-status></span>
+                                </nav>
+                            <?php endif; ?>
+
                             <?php if (has_post_thumbnail()) : ?>
-                                <?php $image_id = get_post_thumbnail_id(); ?>
+                                <?php
+                                $image_id = get_post_thumbnail_id();
+                                $single_image_size = 'single-featured';
+                                $thumbnail_metadata = wp_get_attachment_metadata($image_id);
+
+                                if (! is_array($thumbnail_metadata) || empty($thumbnail_metadata['sizes']['single-featured'])) {
+                                    $single_image_size = 'large';
+                                }
+                                ?>
                                 <figure class="cc-single__post-thumbnail">
-                                    <?php echo wp_get_attachment_image($image_id, 'medium', false, array('loading' => 'eager', 'fetchpriority' => 'high', 'decoding' => 'async')); ?>
+                                    <?php echo wp_get_attachment_image($image_id, $single_image_size, false, array('loading' => 'eager', 'fetchpriority' => 'high', 'decoding' => 'async')); ?>
 
                                     <?php if (get_the_post_thumbnail_caption()) : ?>
                                         <figcaption>
