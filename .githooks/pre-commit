@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+
+set -eu
+
+expected_name="cirinojr"
+expected_email="azauane@gmail.com"
+
+author_ident="$(git var GIT_AUTHOR_IDENT)"
+committer_ident="$(git var GIT_COMMITTER_IDENT)"
+
+case "$author_ident" in
+  "$expected_name <$expected_email>"*) ;;
+  *)
+    echo "ERROR: author identity mismatch." >&2
+    echo "Expected: $expected_name <$expected_email>" >&2
+    echo "Actual:   $author_ident" >&2
+    echo "Fix with: git config user.name '$expected_name'; git config user.email '$expected_email'" >&2
+    exit 1
+    ;;
+esac
+
+case "$committer_ident" in
+  "$expected_name <$expected_email>"*) ;;
+  *)
+    echo "ERROR: committer identity mismatch." >&2
+    echo "Expected: $expected_name <$expected_email>" >&2
+    echo "Actual:   $committer_ident" >&2
+    echo "Fix with: git config user.name '$expected_name'; git config user.email '$expected_email'" >&2
+    exit 1
+    ;;
+esac
