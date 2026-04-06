@@ -1,117 +1,99 @@
-# Portal AM24h
+# Portal AM24h Theme
 
-Portal AM24h is a custom, performance-oriented WordPress theme for editorial/news workloads.
+Production-grade WordPress news/editorial theme focused on Core Web Vitals, efficient asset delivery, secure settings flows, and maintainable modular architecture.
 
-It is intentionally dependency-light, built around WordPress-native APIs, and organized as small domain modules instead of a large all-in-one theme file.
+## Technical Positioning
 
-## Project Profile
+Portal AM24h is intentionally built for teams that value measurable frontend performance and conservative engineering decisions over framework-heavy complexity.
 
-This repository is designed to read like a senior-level engineering theme project:
+The project emphasizes:
 
-- Modular PHP architecture with clear ownership by domain.
-- Conservative performance decisions that are measurable and testable.
-- Admin tooling with explicit sanitization and capability checks.
-- Third-party script loading designed around risk separation (worker-friendly vs main-thread).
-- Vanilla JavaScript interactions with no jQuery or frontend framework dependency.
+- Fast first render and stable layout behavior.
+- WordPress-native APIs and compatibility.
+- Strong sanitization/escaping boundaries.
+- Small, purpose-specific modules instead of monolithic theme files.
+- Low dependency surface (vanilla JavaScript, no jQuery requirement).
 
-## Core Features
+## Highlights
 
-- Modular bootstrap in [includes/Core/Bootstrap.php](includes/Core/Bootstrap.php).
-- Critical CSS inlining with file-size guardrails.
-- Main stylesheet orchestration separated from critical CSS.
-- Optional cleanup controls for WordPress head and block-style behavior.
-- Local typography pipeline (validation, download, storage, registry, generated @font-face).
-- Optional cookie consent banner.
-- Optional accessibility popup with persisted user preferences.
-- Single-post share bar with local icon tooling.
-- Third-party script management with worker-friendly path and main-thread fallback path.
-- Theme language selection with allowlisted locale handling.
+- Modular bootstrap architecture in [includes/Core/Bootstrap.php](includes/Core/Bootstrap.php).
+- Bounded critical CSS inlining in [includes/Performance/CriticalCss.php](includes/Performance/CriticalCss.php).
+- Non-critical stylesheet orchestration in [includes/Performance/HeadStyles.php](includes/Performance/HeadStyles.php).
+- Theme-scoped script/style URL filtering in [includes/Core/Assets.php](includes/Core/Assets.php).
+- Third-party script isolation path (worker-friendly vs main-thread) in [includes/Front/ThirdPartyScripts.php](includes/Front/ThirdPartyScripts.php).
+- Dedicated sanitization layer in [includes/Admin/SettingsSanitizer.php](includes/Admin/SettingsSanitizer.php).
+- Local typography pipeline (validation/download/storage/registry/font-face generation).
 
-## Architecture At A Glance
+## Architecture Overview
 
 Runtime flow:
 
-1. [functions.php](functions.php) loads the bootstrap.
-2. [includes/Core/Bootstrap.php](includes/Core/Bootstrap.php) wires services and modules.
-3. Each module registers WordPress hooks via register_hooks().
+1. [functions.php](functions.php) loads [includes/Core/Bootstrap.php](includes/Core/Bootstrap.php).
+2. Bootstrap creates shared services and feature modules.
+3. Every module registers only its own hooks via register_hooks().
 
-Main module groups:
+Domain boundaries:
 
-- Core: boot lifecycle, setup, assets.
-- Performance: critical CSS, head styles, cleanup.
-- Admin: settings registration, sanitization, admin UI.
-- Front: cookie banner, accessibility popup, custom CSS, third-party scripts.
-- Typography: local font management pipeline.
-- Content: content-specific behavior helpers.
-- Support: shared utilities and repositories.
+- Core: lifecycle, theme supports, frontend asset wiring.
+- Performance: critical CSS, head style strategy, cleanup controls.
+- Admin: settings API integration and sanitization.
+- Front: cookie banner, accessibility popup, third-party scripts, custom CSS.
+- Typography: local font pipeline.
+- Content: excerpt and featured-image behavior.
+- Support: repositories and shared utility helpers.
 
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for detailed boundaries and extension guidelines.
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Performance Strategy
 
-The theme favors predictable render behavior over aggressive tricks:
+This theme prioritizes practical performance controls that are understandable and maintainable in production:
 
-- Inline only a bounded critical CSS payload early in wp_head.
-- Load non-critical CSS as separate assets.
-- Keep frontend JS small and feature-scoped.
-- Load core block styles on demand by default.
-- Keep expensive cleanup toggles opt-in and documented.
-- Use local static assets for deterministic deploy behavior.
-
-No benchmark claims are published in this repository. Validate with your own lab and field measurements.
+- Inline only a bounded critical CSS payload for early paint.
+- Load non-critical styles as cacheable assets.
+- Keep JS feature-scoped and defer execution when appropriate.
+- Use on-demand block-style cleanup toggles instead of hard-coded removals.
+- Treat third-party scripts as an explicit performance and risk boundary.
 
 See [docs/PERFORMANCE.md](docs/PERFORMANCE.md).
 
-## Third-Party Scripts And Partytown
+## Security Practices
 
-Third-party scripts are split into two explicit groups:
+- Sanitization on write through [includes/Admin/SettingsSanitizer.php](includes/Admin/SettingsSanitizer.php).
+- Validation/normalization on read in [includes/Support/ThemeOptionsRepository.php](includes/Support/ThemeOptionsRepository.php).
+- Context-aware escaping in templates and admin rendering.
+- Nonce/capability checks in privileged admin actions.
+- Controlled URL handling for external script and asset flows.
 
-- Worker-friendly scripts: analytics, trackers, pixels, tag managers.
-- Main-thread scripts: integrations that require synchronous DOM/browser access.
+See [docs/SECURITY.md](docs/SECURITY.md).
 
-Partytown is used conservatively:
+## WordPress Best Practices Applied
 
-- It loads only when worker-friendly scripts exist and local assets are available.
-- Worker scripts are not treated as universally safe by default.
-- Missing Partytown assets trigger a safe fallback to main-thread loading.
+- Theme supports: title-tag, post-thumbnails, align-wide, responsive-embeds, editor-styles, html5, selective refresh.
+- Purposeful image sizes for editorial cards and single post hero images.
+- Featured image loading priority on single posts to improve LCP behavior.
+- Translation-ready with text domain am24h and language catalog constraints.
 
-See [docs/THIRD_PARTY_SCRIPTS.md](docs/THIRD_PARTY_SCRIPTS.md).
+## Feature Set
 
-## Accessibility, Cookie Banner, Share Bar, Typography
+- Optional cookie consent banner.
+- Optional accessibility popup with persisted user preferences.
+- Configurable single-post share bar (networks, order, icon source).
+- Third-party script manager with Partytown support and safe fallback.
+- Local typography manager for deterministic font delivery.
 
-- Accessibility popup: optional, keyboard-aware, ARIA-aware controls with localStorage persistence. See [docs/ACCESSIBILITY.md](docs/ACCESSIBILITY.md).
-- Cookie banner: optional and lightweight, suited for baseline notice workflows.
-- Share bar: configurable networks/order/icons, with local SVG handling.
-- Typography: local font validation/download and @font-face generation pipeline.
+## Stack
 
-## Why Vanilla JavaScript Here
+- PHP (WordPress theme architecture).
+- Vanilla JavaScript (no framework runtime dependency).
+- CSS with critical/non-critical split.
+- Composer for coding standards workflow.
 
-This theme intentionally stays on vanilla JavaScript instead of jQuery or frontend libraries.
+## Local Setup
 
-Practical benefits in this codebase:
-
-- Lower payload and no framework runtime overhead.
-- Fewer dependencies to patch, upgrade, and audit.
-- Simpler long-term maintenance in WordPress theme environments.
-- Better control over execution timing around render-critical paths.
-- Fewer compatibility surprises from plugin/theme script interactions.
-- Easier code auditing for performance and security-sensitive projects.
-
-## WordPress Integration Notes
-
-- Text domain: am24h.
-- Theme translations loaded from languages via load_theme_textdomain().
-- Theme locale override is intentionally limited to frontend requests.
-- Admin pages and settings use WordPress Settings API patterns.
-
-## Development
-
-Requirements:
-
-- WordPress-compatible PHP runtime.
-- Composer for coding standards tooling.
-
-Commands:
+1. Place the theme in wp-content/themes/portal-am24h.
+2. Activate it in WordPress admin.
+3. Configure options from the Portal AM24h settings pages.
+4. Install dev tooling:
 
 ```bash
 composer install
@@ -122,16 +104,80 @@ composer run lint:phpcbf
 
 See [docs/DEVELOPMENT_NOTES.md](docs/DEVELOPMENT_NOTES.md).
 
-## Installation
+## Project Structure
 
-1. Put the theme in wp-content/themes/portal-am24h.
-2. Activate it in WordPress admin.
-3. Configure options under the Portal Am24h menu.
-4. If using local typography features, configure fonts through the provided admin screen.
+Core directories:
 
-## Distribution
+- [includes/Core](includes/Core)
+- [includes/Performance](includes/Performance)
+- [includes/Admin](includes/Admin)
+- [includes/Front](includes/Front)
+- [includes/Typography](includes/Typography)
+- [includes/Content](includes/Content)
+- [includes/Support](includes/Support)
+- [assets](assets)
+- [docs](docs)
 
-Release packaging is controlled with .distignore to keep development-only files out of ZIP builds.
+## Optimization Rationale
+
+Key engineering choices and why they exist:
+
+- No jQuery/frontend framework dependency: lower payload and fewer upgrade risks.
+- Bounded critical CSS: prevents accidental head bloat.
+- Worker-vs-main-thread script split: explicit integration risk management.
+- Theme-scoped asset URL filtering: avoids breaking plugin-managed assets.
+- Default options seeded from a single source of truth: reduces configuration drift.
+
+## Performance Evidence
+
+The repository includes a real Google PageSpeed Insights screenshot for the portalam24h.com implementation, showing the measured result in that execution context.
+
+Evidence image:
+
+- [docs/images/score-portalam24h.png](docs/images/score-portalam24h.png)
+
+Rendered in this README:
+
+![Google PageSpeed evidence for portalam24h.com](docs/images/score-portalam24h.png)
+
+Important:
+
+- This is visual evidence of a real execution in a specific scenario.
+- It is not a promise of identical results across every environment.
+- Lighthouse/Core Web Vitals outcomes vary by hosting, content mix, plugins, cache/CDN setup, geography, device profile, and test methodology.
+
+## Screenshots
+
+- Add frontend screenshots under [docs/images](docs/images) to document UI and layout behavior across breakpoints.
+
+## Known Tradeoffs
+
+- Aggressive cleanup toggles may affect plugin assumptions.
+- Some third-party integrations must remain on the main thread.
+- Performance scores are environment-dependent by nature.
+
+## Suggested GitHub Identity
+
+Short description:
+
+- Production-grade WordPress editorial theme optimized for Core Web Vitals, secure settings flows, and maintainable modular architecture.
+
+Technical subtitle:
+
+- WordPress Theme Engineering: Core Web Vitals, deterministic asset delivery, and secure modular architecture for production news platforms.
+
+Suggested topics:
+
+- wordpress
+- wordpress-theme
+- gutenberg
+- performance
+- core-web-vitals
+- lighthouse
+- php
+- frontend-performance
+- technical-seo
+- web-performance
 
 ## License
 

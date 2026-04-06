@@ -42,6 +42,33 @@ function am24h_get_logo(): array
     );
 }
 
+function am24h_get_accessible_custom_logo_markup(string $home_label): string
+{
+    $custom_logo = get_custom_logo();
+
+    if (! is_string($custom_logo) || $custom_logo === '') {
+        return '';
+    }
+
+    if (strpos($custom_logo, 'class="custom-logo-link"') !== false && strpos($custom_logo, 'aria-label=') === false) {
+        $custom_logo = str_replace(
+            'class="custom-logo-link"',
+            'class="custom-logo-link" aria-label="' . esc_attr($home_label) . '"',
+            $custom_logo
+        );
+    }
+
+    if (strpos($custom_logo, 'alt=""') !== false) {
+        $custom_logo = preg_replace('/alt=""/', 'alt="' . esc_attr(get_bloginfo('name')) . '"', $custom_logo, 1);
+
+        if (! is_string($custom_logo)) {
+            return '';
+        }
+    }
+
+    return $custom_logo;
+}
+
 function am24h_theme(): Am24h_Bootstrap
 {
     return Am24h_Bootstrap::instance();

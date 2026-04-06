@@ -14,6 +14,15 @@ class Am24h_ThemeSetup
         add_theme_support('title-tag');
         add_theme_support('align-wide');
         add_theme_support('post-thumbnails');
+        add_theme_support('responsive-embeds');
+        add_theme_support('customize-selective-refresh-widgets');
+        add_theme_support('editor-styles');
+        add_theme_support(
+            'html5',
+            array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script')
+        );
+
+        add_editor_style('assets/styles/style.css');
 
         add_image_size('thumb-desktop', 248, 387, true);
         add_image_size('thumb-mobile', 149, 232, true);
@@ -44,62 +53,7 @@ class Am24h_ThemeSetup
 
     public function seed_cleanup_defaults(): void
     {
-        $cleanup_defaults = array(
-            'am24h_cleanup_emojis' => 1,
-            'am24h_cleanup_rsd' => 1,
-            'am24h_cleanup_generator' => 1,
-            'am24h_cleanup_feed_links' => 1,
-            'am24h_cleanup_wlwmanifest' => 1,
-            'am24h_cleanup_prev_next_links' => 1,
-            'am24h_cleanup_shortlink' => 1,
-            'am24h_cleanup_rest_links' => 1,
-            'am24h_cleanup_oembed_links' => 1,
-            'am24h_cleanup_admin_bar' => 1,
-            'am24h_cleanup_block_styles_on_demand' => 1,
-            'am24h_cleanup_block_styles' => 0,
-            'am24h_cleanup_multilingualpress_hreflang' => 1,
-            'am24h_cookie_consent_enabled' => 0,
-            'am24h_cookie_consent_message' => 'We use cookies to improve site functionality and measure audience usage.',
-            'am24h_cookie_consent_accept_label' => 'Accept',
-            'am24h_cookie_consent_reject_label' => 'Reject',
-            'am24h_cookie_consent_policy_url' => '',
-            'am24h_cookie_consent_policy_label' => 'Privacy Policy',
-            'am24h_cookie_consent_position' => 'bottom-full',
-            'am24h_cookie_consent_variant' => 'light',
-            'am24h_cookie_consent_mode' => 'choice',
-            'am24h_accessibility_popup_enabled' => 0,
-            'am24h_accessibility_popup_title' => '',
-            'am24h_accessibility_popup_description' => '',
-            'am24h_accessibility_popup_trigger_label' => '',
-            'am24h_accessibility_popup_close_label' => '',
-            'am24h_accessibility_popup_trigger_position' => 'bottom-right',
-            'am24h_accessibility_popup_features' => '',
-            'am24h_share_bar_enabled' => 1,
-            'am24h_share_bar_alignment' => 'center',
-            'am24h_share_bar_icon_source' => 'inline',
-            'am24h_share_bar_size' => 'medium',
-            'am24h_share_bar_order' => 'whatsapp,facebook,x,linkedin,telegram,copy,reddit,pinterest,mastodon,threads,email,instagram,youtube,tiktok,custom',
-            'am24h_share_icon_library' => 'simple-icons',
-            'am24h_share_network_whatsapp' => 1,
-            'am24h_share_network_facebook' => 1,
-            'am24h_share_network_x' => 1,
-            'am24h_share_network_linkedin' => 1,
-            'am24h_share_network_telegram' => 1,
-            'am24h_share_network_copy' => 1,
-            'am24h_share_network_reddit' => 0,
-            'am24h_share_network_pinterest' => 0,
-            'am24h_share_network_mastodon' => 0,
-            'am24h_share_network_threads' => 0,
-            'am24h_share_network_email' => 0,
-            'am24h_share_network_instagram' => 0,
-            'am24h_share_network_youtube' => 0,
-            'am24h_share_network_tiktok' => 0,
-            'am24h_share_network_custom' => 0,
-            'am24h_share_network_custom_label' => 'Custom',
-            'am24h_share_network_custom_url' => '',
-        );
-
-        foreach ($cleanup_defaults as $option_key => $value) {
+        foreach (Am24h_ThemeOptionsRepository::defaults() as $option_key => $value) {
             if (get_option($option_key, null) === null) {
                 add_option($option_key, $value);
             }

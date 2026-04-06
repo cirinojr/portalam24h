@@ -35,18 +35,22 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (event) => {
         const trigger = event.target.closest('.cc-search-bar__trigger');
 
-        if (!trigger) {
+        if (trigger) {
+            const searchForm = trigger.closest('.cc-search-bar');
+
+            if (!searchForm) {
+                return;
+            }
+
+            event.preventDefault();
+            setSearchState(searchForm, !searchForm.classList.contains('active'));
+
             return;
         }
 
-        const searchForm = trigger.closest('.cc-search-bar');
-
-        if (!searchForm) {
-            return;
+        if (event.target.closest('.cc-mobile-menu__link')) {
+            closeMobileMenu();
         }
-
-        event.preventDefault();
-        setSearchState(searchForm, !searchForm.classList.contains('active'));
     });
 
     if (mobileMenuToggle) {
@@ -76,9 +80,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    document.addEventListener('click', (event) => {
-        if (event.target.closest('.cc-mobile-menu__link')) {
-            closeMobileMenu();
-        }
-    });
 });

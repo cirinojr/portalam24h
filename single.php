@@ -3,14 +3,14 @@
 /**
  * The template for displaying single posts
  *
- * @package YourTheme
+ * @package PortalAM24h
  */
 
 $current_post_id = get_the_ID();
 $categories = get_the_category($current_post_id);
 $primary_category = !empty($categories) && $categories[0] instanceof WP_Term ? $categories[0] : null;
 
-// Get 8 latest posts from the same category, excluding the current post
+// Pull related posts from the same primary category when available.
 $related_args = array(
     'post_type'      => 'post',
     'posts_per_page' => 8,
@@ -34,7 +34,7 @@ get_header();
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                         <div class="cc-single__post-header">
                             <h1 class="cc-single__post-title">
-                                <?php the_title(); ?>
+                                <?php echo esc_html(get_the_title()); ?>
                             </h1>
 
                             <span class="cc-single__post-metadata">
@@ -85,7 +85,7 @@ get_header();
                                                     <a
                                                         class="cc-share-bar__action"
                                                         href="<?php echo esc_url($item['url']); ?>"
-                                                        <?php echo $item['is_external'] ? 'target="_blank" rel="noopener noreferrer nofollow"' : ''; ?>
+                                                        <?php if ($item['is_external']) : ?>target="_blank" rel="noopener noreferrer nofollow"<?php endif; ?>
                                                         aria-label="<?php echo esc_attr(sprintf(__('Share on %s', 'am24h'), $item['label'])); ?>"
                                                     >
                                                         <span class="cc-share-bar__icon"><?php echo am24h_get_share_icon_markup($item['network'], $share_settings['icon_source']); ?></span>
@@ -109,7 +109,7 @@ get_header();
                                 }
                                 ?>
                                 <figure class="cc-single__post-thumbnail">
-                                    <?php echo wp_get_attachment_image($image_id, $single_image_size, false, array('loading' => 'eager', 'fetchpriority' => 'high', 'decoding' => 'async')); ?>
+                                    <?php echo wp_kses_post(wp_get_attachment_image($image_id, $single_image_size, false, array('loading' => 'eager', 'fetchpriority' => 'high', 'decoding' => 'async'))); ?>
 
                                     <?php if (get_the_post_thumbnail_caption()) : ?>
                                         <figcaption>
@@ -135,7 +135,7 @@ get_header();
     $see_more_url = '';
     if ($primary_category) {
         $category_link = get_category_link($primary_category->term_id);
-        if (!is_wp_error($category_link)) {
+        if (! is_wp_error($category_link)) {
             $see_more_url = $category_link;
         }
     }

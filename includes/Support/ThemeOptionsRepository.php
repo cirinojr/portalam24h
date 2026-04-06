@@ -91,6 +91,14 @@ class Am24h_ThemeOptionsRepository
         'am24h_site_language'   => 'pt_BR',
     );
 
+    /**
+     * @return array<string, mixed>
+     */
+    public static function defaults(): array
+    {
+        return self::DEFAULTS;
+    }
+
     public function get(string $key)
     {
         $default = isset(self::DEFAULTS[$key]) ? self::DEFAULTS[$key] : '';

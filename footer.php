@@ -10,13 +10,10 @@
                         get_bloginfo('name')
                     );
 
-                    if (has_custom_logo()) {
-                        $custom_logo = get_custom_logo();
-                        if (is_string($custom_logo) && $custom_logo !== '') {
-                            $custom_logo = str_replace('class="custom-logo-link"', 'class="custom-logo-link" aria-label="' . esc_attr($home_label) . '"', $custom_logo);
-                            $custom_logo = preg_replace('/alt=""/', 'alt="' . esc_attr(get_bloginfo('name')) . '"', $custom_logo, 1);
-                            echo wp_kses_post($custom_logo);
-                        }
+                    $custom_logo = am24h_get_accessible_custom_logo_markup($home_label);
+
+                    if ($custom_logo !== '') {
+                        echo wp_kses_post($custom_logo);
                     } else {
                         $logo = am24h_get_logo();
                         $logo_text = isset($logo['content']) && is_string($logo['content']) && trim($logo['content']) !== '' ? $logo['content'] : get_bloginfo('name');
