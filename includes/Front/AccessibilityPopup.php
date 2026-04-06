@@ -27,18 +27,6 @@ class Am24h_AccessibilityPopup
             return;
         }
 
-        $style_relative = 'assets/styles/Components/accessibility-popup.css';
-
-        if ($this->assets->is_readable($style_relative)) {
-            wp_enqueue_style(
-                'am24h-accessibility-popup',
-                $this->assets->url($style_relative),
-                array(),
-                $this->assets->version($style_relative),
-                'all'
-            );
-        }
-
         $script_relative = 'assets/js/accessibility-popup.js';
 
         if (! $this->assets->is_readable($script_relative)) {
@@ -71,10 +59,12 @@ class Am24h_AccessibilityPopup
         <button
             type="button"
             class="am24h-accessibility-launcher <?php echo esc_attr($position_class); ?>"
+            data-accessibility-launcher
             data-accessibility-open
             aria-label="<?php echo esc_attr($settings['trigger_label']); ?>"
             aria-controls="<?php echo esc_attr($dialog_id); ?>"
             aria-expanded="false"
+            hidden
         >
             <span class="am24h-accessibility-launcher__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" focusable="false" role="img" aria-hidden="true">

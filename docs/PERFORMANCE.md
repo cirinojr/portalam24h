@@ -13,9 +13,31 @@ Portal AM24h uses explicit, conservative performance controls designed for maint
 
 - Critical CSS is read from assets/styles/Critical/critical.min.css and inlined early in wp_head.
 - Inline payload is bounded by a max byte guard to prevent accidental head bloat.
-- Main stylesheet is loaded separately.
+- Main stylesheet is loaded separately using preload + onload (with noscript fallback).
+- Component styles in assets/styles/Components are also loaded with preload + onload (non-critical path).
+
+Current strategy example:
+
+```html
+<link rel="preload" href="https://example.com/wp-content/themes/portal-am24h/assets/styles/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://example.com/wp-content/themes/portal-am24h/assets/styles/style.css"></noscript>
+```
+
+Notes:
+
+- Keep this pattern for the main theme stylesheet to reduce render-blocking impact.
+- Keep component stylesheet delivery in the same async model, because these layers are non-critical UI enhancements.
+- The production implementation is generated dynamically via the WordPress hook in includes/Performance/HeadStyles.php.
 
 This preserves a stable first-paint path while keeping larger style layers cacheable.
+
+## Non-Regression Rules (CSS Delivery)
+
+- Do not replace the main stylesheet preload + onload strategy with a plain blocking stylesheet tag.
+- Do not convert component stylesheets back to blocking render-path CSS.
+- Keep the noscript fallback whenever preload + onload is used.
+- Keep the implementation dynamic (WordPress hook/filter), not hardcoded in header templates.
+- If this strategy must be changed, update this document and explain the reason in CHANGELOG.md.
 
 ## JavaScript Model
 

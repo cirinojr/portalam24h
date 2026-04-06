@@ -326,6 +326,48 @@ button {
   text-align: center;
 }
 
+/* Share bar skeleton to prevent CLS before full stylesheet is applied */
+.cc-share-bar {
+  width: 100%;
+  margin: 0.4rem 0;
+}
+
+.cc-share-bar__list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cc-share-bar__action {
+  width: 4rem;
+  height: 4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.cc-share-bar--small .cc-share-bar__action {
+  width: 3.4rem;
+  height: 3.4rem;
+}
+
+.cc-share-bar__icon,
+.cc-share-bar__icon svg,
+.cc-share-bar__icon img {
+  width: 2rem;
+  height: 2rem;
+  display: block;
+}
+
+.cc-share-bar--small .cc-share-bar__icon,
+.cc-share-bar--small .cc-share-bar__icon svg,
+.cc-share-bar--small .cc-share-bar__icon img {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
 /* Basic page layout */
 .cc-home,
 .cc-single,

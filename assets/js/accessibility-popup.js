@@ -221,6 +221,8 @@
             return;
         }
 
+        trigger.hidden = false;
+
         const enabledTools = parseEnabledTools(container);
         const dialog = container.querySelector('.am24h-accessibility-popup__dialog');
         const closeControls = container.querySelectorAll('[data-accessibility-close]');
@@ -457,10 +459,10 @@
         });
     }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initAccessibilityPopup);
+    if (document.readyState === 'complete') {
+        initAccessibilityPopup();
         return;
     }
 
-    initAccessibilityPopup();
+    globalThis.addEventListener('load', initAccessibilityPopup, { once: true });
 })();
