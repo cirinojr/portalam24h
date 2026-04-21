@@ -17,8 +17,17 @@ class Am24h_AccessibilityPopup
             return;
         }
 
+        add_action('wp_body_open', array($this, 'render_initial_state_bootstrap'), 1);
         add_action('wp_enqueue_scripts', array($this, 'enqueue_assets'), 35);
         add_action('wp_footer', array($this, 'render_popup'), 26);
+    }
+
+    /**
+     * Apply persisted accessibility state before main content renders to avoid CLS.
+     */
+    public function render_initial_state_bootstrap(): void
+    {
+        echo '<script id="am24h-a11y-initial-state">(function(){try{var k="am24hAccessibilityPrefs";var raw=localStorage.getItem(k);if(!raw){return;}var s=JSON.parse(raw);if(!s||typeof s!=="object"){return;}var d=document.documentElement;var b=document.body;if(!d||!b){return;}var n=parseInt(String(s.fontStep),10);if(isNaN(n)){n=0;}if(n<-1){n=-1;}if(n>2){n=2;}d.style.fontSize=(62.5+(n*4))+"%";b.dataset.am24hA11yFontStep=String(n);var map=[["lineHeight","am24h-a11y-line-height"],["letterSpacing","am24h-a11y-letter-spacing"],["readableFont","am24h-a11y-readable-font"],["readingMode","am24h-a11y-reading-mode"],["readingGuide","am24h-a11y-reading-guide"],["readingMask","am24h-a11y-reading-mask"],["highlightLinks","am24h-a11y-highlight-links"],["highlightHeadings","am24h-a11y-highlight-headings"],["hideImages","am24h-a11y-hide-images"],["pauseAnimations","am24h-a11y-pause-animations"],["highContrast","am24h-a11y-high-contrast"],["reducedSaturation","am24h-a11y-reduced-saturation"],["grayscale","am24h-a11y-grayscale"]];for(var i=0;i<map.length;i++){if(!!s[map[i][0]]){b.classList.add(map[i][1]);}}}catch(e){}})();</script>';
     }
 
     public function enqueue_assets(): void

@@ -10,7 +10,7 @@
                         get_bloginfo('name')
                     );
 
-                    $custom_logo = am24h_get_accessible_custom_logo_markup($home_label);
+                    $custom_logo = am24h_get_accessible_custom_logo_markup($home_label, false);
 
                     if ($custom_logo !== '') {
                         echo wp_kses_post($custom_logo);

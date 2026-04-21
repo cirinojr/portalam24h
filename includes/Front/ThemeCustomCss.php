@@ -2,7 +2,7 @@
 
 class Am24h_ThemeCustomCss
 {
-    private const HEAD_HELPER_CSS = '.cc-logo-image{width:100%;height:100%;object-fit:contain;display:block;}.cc-news-card__excerpt{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;max-height:3em;line-height:1.5;}@media (min-width:768px){.cc-header__bottom-container{display:flex;justify-content:center;align-items:center;gap:1rem;flex-wrap:nowrap;}.cc-header__bottom-menu{display:flex;align-items:center;gap:1rem;list-style:none;margin:0;padding:0;}.cc-header__bottom-menu li{margin:0;padding:0;}}';
+    private const HEAD_HELPER_CSS = '.cc-logo-image{width:100%;height:100%;object-fit:contain;display:block;}.cc-news-card__excerpt{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;max-height:3em;line-height:1.5;}';
 
     private Am24h_ThemeOptionsRepository $options;
 
@@ -25,7 +25,7 @@ class Am24h_ThemeCustomCss
 
         wp_add_inline_style('am24h-main-style', am24h_sanitize_inline_css(self::HEAD_HELPER_CSS));
 
-        if (! $this->options->should_defer_visual_overrides()) {
+        if (! $this->should_defer_visual_overrides_for_request()) {
             $css = $this->build_visual_overrides_css();
 
             if ($css !== '') {
@@ -36,7 +36,7 @@ class Am24h_ThemeCustomCss
 
     public function output_deferred_visual_css(): void
     {
-        if (! $this->options->should_defer_visual_overrides()) {
+        if (! $this->should_defer_visual_overrides_for_request()) {
             return;
         }
 
@@ -58,6 +58,20 @@ class Am24h_ThemeCustomCss
         }
 
         echo '<style id="' . esc_attr($id) . '">' . am24h_sanitize_inline_css($css) . '</style>';
+    }
+
+    private function should_defer_visual_overrides_for_request(): bool
+    {
+        if (! $this->options->should_defer_visual_overrides()) {
+            return false;
+        }
+
+        // Avoid late style injection on single posts where CLS sensitivity is higher.
+        if (is_singular('post')) {
+            return false;
+        }
+
+        return true;
     }
 
     private function build_visual_overrides_css(): string

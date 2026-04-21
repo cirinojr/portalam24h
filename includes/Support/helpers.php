@@ -42,31 +42,67 @@ function am24h_get_logo(): array
     );
 }
 
-function am24h_get_accessible_custom_logo_markup(string $home_label): string
+function am24h_get_accessible_custom_logo_markup(string $home_label, bool $is_above_fold = false): string
 {
-    $custom_logo = get_custom_logo();
+    $logo_id = (int) get_theme_mod('custom_logo');
 
-    if (! is_string($custom_logo) || $custom_logo === '') {
+    if ($logo_id <= 0) {
         return '';
     }
 
-    if (strpos($custom_logo, 'class="custom-logo-link"') !== false && strpos($custom_logo, 'aria-label=') === false) {
-        $custom_logo = str_replace(
-            'class="custom-logo-link"',
-            'class="custom-logo-link" aria-label="' . esc_attr($home_label) . '"',
-            $custom_logo
-        );
+    $logo_src = wp_get_attachment_image_src($logo_id, 'full');
+
+    if (! is_array($logo_src) || ! isset($logo_src[1], $logo_src[2])) {
+        return '';
     }
 
-    if (strpos($custom_logo, 'alt=""') !== false) {
-        $custom_logo = preg_replace('/alt=""/', 'alt="' . esc_attr(get_bloginfo('name')) . '"', $custom_logo, 1);
+    $logo_width = (int) $logo_src[1];
+    $logo_height = (int) $logo_src[2];
 
-        if (! is_string($custom_logo)) {
-            return '';
+    if ($logo_width <= 0 || $logo_height <= 0) {
+        $logo_metadata = wp_get_attachment_metadata($logo_id);
+
+        if (is_array($logo_metadata)) {
+            $logo_width = isset($logo_metadata['width']) ? (int) $logo_metadata['width'] : 0;
+            $logo_height = isset($logo_metadata['height']) ? (int) $logo_metadata['height'] : 0;
         }
     }
 
-    return $custom_logo;
+    if ($logo_width <= 0 || $logo_height <= 0) {
+        return '';
+    }
+
+    $logo_alt = trim((string) get_post_meta($logo_id, '_wp_attachment_image_alt', true));
+
+    if ($logo_alt === '') {
+        $logo_alt = get_bloginfo('name');
+    }
+
+    $logo_html = wp_get_attachment_image(
+        $logo_id,
+        'full',
+        false,
+        array(
+            'class' => 'custom-logo',
+            'alt' => $logo_alt,
+            'width' => (string) $logo_width,
+            'height' => (string) $logo_height,
+            'loading' => $is_above_fold ? 'eager' : 'lazy',
+            'fetchpriority' => $is_above_fold ? 'high' : 'auto',
+            'decoding' => 'async',
+        )
+    );
+
+    if (! is_string($logo_html) || $logo_html === '') {
+        return '';
+    }
+
+    return sprintf(
+        '<a href="%1$s" class="custom-logo-link" rel="home" aria-label="%2$s">%3$s</a>',
+        esc_url(home_url('/')),
+        esc_attr($home_label),
+        $logo_html
+    );
 }
 
 function am24h_theme(): Am24h_Bootstrap

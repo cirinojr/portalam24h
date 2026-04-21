@@ -42,7 +42,18 @@ class Am24h_AssetLocator
         }
 
         if (! (defined('WP_DEBUG') && WP_DEBUG)) {
-            return (string) wp_get_theme()->get('Version');
+            $theme_version = (string) wp_get_theme()->get('Version');
+            $asset_mtime = (string) filemtime($path);
+
+            if ($theme_version !== '' && $asset_mtime !== '') {
+                return $theme_version . '.' . $asset_mtime;
+            }
+
+            if ($theme_version !== '') {
+                return $theme_version;
+            }
+
+            return $asset_mtime !== '' ? $asset_mtime : null;
         }
 
         return (string) filemtime($path);

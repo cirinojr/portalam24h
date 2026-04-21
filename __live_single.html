@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="pt-BR" prefix="og: https://ogp.me/ns#">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style id="critical-css">*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;font-family:inherit}:root{--cc-font-family-base:Arial,system-ui,sans-serif;--cc-container-padding-x:1.6rem;--cc-container-max-width:calc(1216px + var(--cc-container-padding-x) * 2);--cc-color-white:#fff;--cc-color-neutral-100:#f8f9fc;--cc-color-neutral-200:#f1f3f9;--cc-color-neutral-300:#e1e6ef;--cc-color-neutral-700:#3f444d;--cc-color-neutral-800:#1f242d;--cc-color-neutral-900:#1b1f27;--cc-color-black:#111111;--cc-color-primary-100:#f3f3f3;--cc-color-primary-600:#cc0000;--cc-color-primary-700:#a30000;--cc-color-primary-800:#800000;--cc-color-primary-900:#660000}html{scroll-behavior:smooth;font-size:62.5%}body{min-height:100vh;font-size:1.6rem;font-family:var(--cc-font-family-base);background-color:var(--cc-color-neutral-100);color:var(--cc-color-black)}button{border:none;background:none;cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--cc-color-primary-600);outline-offset:2px}img{max-width:100%;height:auto}a{text-decoration:none;color:inherit}.cc-container{width:100%;max-width:var(--cc-container-max-width);padding:0 var(--cc-container-padding-x);margin:0 auto}.cc-btn{width:fit-content;border:1px solid transparent;display:flex;align-items:center;justify-content:center;gap:0.8rem;transition:all 0.3s ease-in-out}.cc-btn--secondary{background-color:transparent;color:var(--cc-color-white);border-radius:8px}.cc-btn--icon{padding:1.2rem;border-radius:8px;aspect-ratio:1;border:1px solid var(--cc-color-neutral-700)}.cc-btn--icon svg{width:1.6rem;height:1.6rem}.cc-btn--small{padding:1rem 1.2rem;gap:0.4rem;font-size:1.2rem;font-weight:600;line-height:100%;letter-spacing:0.024rem;text-transform:capitalize}.cc-input{width:100%;min-height:4rem;display:flex;border-radius:8px;border:1px solid var(--cc-color-neutral-700);background-color:var(--cc-color-white);overflow:hidden}.cc-input__btn-submit{color:rgba(29,36,51,0.8);display:flex;align-items:center;justify-content:center;padding:0.8rem 1.6rem;border-right:1px solid #bcbcbc}.cc-input > input{width:100%;border:none;outline:none;color:var(--cc-color-black);background-color:transparent;font-size:1.6rem;line-height:150%;padding-left:0.8rem;padding-right:1.6rem}.cc-search-bar{display:flex;gap:0.8rem}.cc-search-bar form{width:100%;display:flex;gap:0.8rem;background:var(--cc-color-black);padding:2.4rem var(--cc-container-padding-x);position:fixed;top:0;left:0;transform:translateX(100%);pointer-events:none;z-index:9}.cc-search-bar__trigger{display:flex;color:var(--cc-color-white);background-color:var(--cc-color-primary-700);border-color:var(--cc-color-primary-700)}.cc-search-bar.active form{transform:translateX(0);pointer-events:all}.cc-search-bar.active > .cc-search-bar__trigger{display:none}.cc-news-card{display:flex;align-items:flex-start;gap:2.4rem}.cc-news-card__content{flex:1;display:flex;flex-direction:column;gap:0.8rem;overflow:hidden}.cc-news-card__title{color:var(--cc-color-black);font-size:1.6rem;font-weight:600;line-height:125%}.cc-news-card__thumbnail{width:100%;flex:0 0 92px;aspect-ratio:3 / 2;border-radius:8px;overflow:hidden;background-color:var(--cc-color-neutral-300)}.cc-news-card__thumbnail a,.cc-news-card__thumbnail img{width:100%;height:100%;display:block}.cc-news-card__thumbnail img{object-fit:cover}.cc-section-posts__container{display:flex;flex-direction:column;gap:2.4rem;padding:2.4rem 0}.cc-section-posts__container > .cc-btn{margin-left:auto;margin-top:0.8rem}.cc-section-posts__posts{display:flex;flex-direction:column}.cc-section-posts__posts .cc-news-card{padding:2.4rem 0;border-top:1px solid rgba(0,0,0,0.08)}.cc-section-posts__posts .cc-news-card:first-child{padding-top:0;border-top:none}.cc-section-posts__posts .cc-news-card:last-child{padding-bottom:0}.cc-section-posts__posts .cc-news-card__excerpt{display:none}.cc-header{display:flex;flex-direction:column;background:var(--cc-color-black)}.cc-header__top{padding:2.4rem 0;min-height:11.6rem}.cc-header__top-container{display:flex;justify-content:space-between;align-items:center}.cc-header__left{display:flex;align-items:center;gap:2.4rem}.cc-header__logo{width:10rem;aspect-ratio:160 / 68;display:flex;justify-content:center;align-items:center}.cc-header__logo a,.cc-header__logo img{width:100%}.cc-header__logo .custom-logo-link{width:100%;display:block;line-height:0}.cc-header__logo .custom-logo{width:100%;height:auto;display:block}.cc-logo-text,.cc-footer-logo-text{font-size:1.5rem;font-weight:700;color:var(--cc-color-white);display:inline-block}.cc-header__top-menu{display:flex;gap:2rem;margin:0;padding:0;list-style:none}.cc-header__top-menu li a{color:var(--cc-color-neutral-100);padding:0.8rem 1.6rem;border-radius:4px}.cc-header__bottom{padding:0.8rem 0;background:var(--cc-color-primary-700)}.cc-header__bottom-container{overflow-x:auto;display:flex;gap:0.8rem;flex-wrap:nowrap;scrollbar-width:none;-ms-overflow-style:none}.cc-header__bottom-container::-webkit-scrollbar{display:none}.cc-header__bottom-menu{width:100%;display:flex;gap:0.8rem;flex-wrap:nowrap;margin:0;padding:0;list-style:none}.cc-header__bottom-menu li{flex-shrink:0}.cc-header__bottom-menu a{color:var(--cc-color-white);white-space:nowrap}.cc-mobile-menu{position:fixed;inset:0;z-index:9999;visibility:hidden;opacity:0}.cc-mobile-menu__content{position:absolute;top:0;right:0;width:80%;max-width:320px;height:100%;transform:translateX(100%)}.cc-share-bar{width:100%;margin:0.4rem 0}.cc-share-bar__list{list-style:none;display:flex;flex-wrap:wrap;gap:1rem}.cc-share-bar__action{width:4rem;height:4rem;display:inline-flex;align-items:center;justify-content:center;border-radius:50%}.cc-share-bar--small .cc-share-bar__action{width:3.4rem;height:3.4rem}.cc-share-bar__icon,.cc-share-bar__icon svg,.cc-share-bar__icon img{width:2rem;height:2rem;display:block}.cc-share-bar--small .cc-share-bar__icon,.cc-share-bar--small .cc-share-bar__icon svg,.cc-share-bar--small .cc-share-bar__icon img{width:1.8rem;height:1.8rem}.cc-home,.cc-single,.cc-archive{min-height:100vh;display:flex;flex-direction:column}.cc-single__content{padding:3.2rem 0}.cc-single__content aside{display:none}.cc-single__post{width:100%;display:flex;flex-direction:column}.cc-single__post h2,.cc-single__post h3,.cc-single__post h4,.cc-single__post h5,.cc-single__post h6{color:#000}.cc-single__post h2{font-size:3.2rem;font-weight:600;line-height:125%;letter-spacing:-1px}.cc-single__post h3{font-size:2.4rem;font-weight:600;line-height:3.2rem;letter-spacing:-1px}.cc-single__post-header{display:flex;flex-direction:column;gap:1.6rem;padding-bottom:3.2rem}.cc-single__post-title{color:var(--cc-color-black);font-size:2.4rem;font-weight:700;line-height:3.2rem}.cc-single__post-metadata{color:rgba(29,36,51,0.65);font-size:1.2rem;font-weight:400;line-height:1.6rem}.cc-single__post-thumbnail{width:100%;margin-top:0.8rem}.cc-single__post-thumbnail img{width:100%;height:100%;aspect-ratio:343 / 250;border-radius:8px;object-fit:cover;overflow:hidden}.cc-single__post-thumbnail figcaption{color:rgba(29,36,51,0.651);text-align:center;font-size:10px;font-weight:400;line-height:140%}.cc-single__post-content{color:rgba(29,36,51,0.8);font-size:1.6rem;font-weight:400;line-height:150%;padding:1.6rem 0}.cc-single__post-content p,.cc-single__post-content ol,.cc-single__post-content ul{margin-bottom:2.4rem}.cc-single__post-content ol,.cc-single__post-content ul{list-style-position:inside}.cc-single__post-content li + li{margin-top:1rem}.cc-single__post-content h1,.cc-single__post-content h2,.cc-single__post-content h3,.cc-single__post-content h4,.cc-single__post-content h5,.cc-single__post-content h6{margin-bottom:3rem}.cc-footer{margin-top:auto;padding:2rem 0;background-color:var(--cc-color-neutral-900)}.cc-footer__container{display:flex;justify-content:center;align-items:center}.cc-footer__container span{color:#fff;font-size:1.4rem;line-height:2rem}@media (min-width:768px){.cc-search-bar__trigger{display:none}.cc-search-bar form{position:static;transform:translateX(0);pointer-events:all;padding:0}.cc-search-bar form .cc-btn{display:none}.cc-search-bar .cc-input{background-color:transparent}.cc-search-bar .cc-input__btn-submit{color:var(--cc-color-white);border-right:1px solid var(--cc-color-neutral-700)}.cc-search-bar .cc-input > input{color:var(--cc-color-white)}.cc-search-bar .cc-input > input::placeholder{color:var(--cc-color-neutral-200)}.cc-header__bottom-container,.cc-header__bottom-menu{justify-content:space-between}.cc-header .cc-mobile-menu-toggle{display:none}.cc-mobile-menu{display:none}.cc-section-posts .cc-section-posts__container{padding:4.8rem 0;display:grid}.cc-section-posts .cc-section-posts__container h2{font-size:3.6rem;font-weight:600;line-height:4.8rem;letter-spacing:-1px}.cc-section-posts .cc-section-posts__container > .cc-btn{grid-column:2 / 3;margin-top:0;align-self:center}.cc-section-posts .cc-section-posts__posts{display:grid;grid-column:1 / 3;grid-row:2 / 3;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2.4rem}.cc-section-posts .cc-section-posts__posts .cc-news-card{flex-direction:column-reverse;justify-content:flex-end;align-items:stretch;border:none;padding:0}.cc-single .cc-container{display:flex;gap:2.4rem;justify-content:center}.cc-single__content{padding-bottom:4.8rem}.cc-single__content aside{display:block}.cc-single__post{max-width:728px}.cc-single__post-title{font-size:3.6rem;font-weight:600;line-height:4.8rem}.cc-single__post-thumbnail{margin-bottom:3.2rem}.cc-single__post-thumbnail img{aspect-ratio:728 / 388}}@media (max-width:767px){.cc-header__bottom{display:none}.cc-container{padding:0 1rem}}[v-cloak],.no-js{display:none}[data-accessibility-launcher][hidden]{display:none !important}.am24h-accessibility-launcher{position:fixed;right:20px;bottom:20px;z-index:9998;display:inline-flex;min-height:48px}</style>
+<!-- Otimização para mecanismos de pesquisa pelo Rank Math - https://rankmath.com/ -->
+<title>Barco afunda na orla de Manacapuru durante forte chuva no município - Portal Am24h</title>
+<meta name="description" content="O barco identificado como sendo &quot;C. Nel Tavares&quot;, naufragou por conta das fortes ondas que se formaram no rio durante a chuva do final de semana."/>
+<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+<link rel="canonical" href="https://www.portalam24h.com/barco-afunda-na-orla-de-manacapuru-durante-forte-chuva-no-municipio/" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Barco afunda na orla de Manacapuru durante forte chuva no município - Portal Am24h" />
+<meta property="og:description" content="O barco identificado como sendo &quot;C. Nel Tavares&quot;, naufragou por conta das fortes ondas que se formaram no rio durante a chuva do final de semana." />
+<meta property="og:url" content="https://www.portalam24h.com/barco-afunda-na-orla-de-manacapuru-durante-forte-chuva-no-municipio/" />
+<meta property="og:site_name" content="Portal Am24h" />
+<meta property="article:publisher" content="https://www.facebook.com/portalam24h/" />
+<meta property="article:author" content="https://www.facebook.com/portalam24h" />
+<meta property="article:tag" content="afunda" />
+<meta property="article:tag" content="água" />
+<meta property="article:tag" content="Amazonas" />
+<meta property="article:tag" content="embarcação" />
+<meta property="article:tag" content="rio" />
+<meta property="article:section" content="Cidades" />
+<meta property="og:updated_time" content="2026-04-06T09:22:54-04:00" />
+<meta property="fb:app_id" content="100000556900134" />
+<meta property="og:image" content="https://www.portalam24h.com/wp-content/uploads/2026/04/barco-manacapuru.webp" />
+<meta property="og:image:secure_url" content="https://www.portalam24h.com/wp-content/uploads/2026/04/barco-manacapuru.webp" />
+<meta property="og:image:width" content="397" />
+<meta property="og:image:height" content="271" />
+<meta property="og:image:alt" content="Barco" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="article:published_time" content="2026-04-06T09:22:30-04:00" />
+<meta property="article:modified_time" content="2026-04-06T09:22:54-04:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Barco afunda na orla de Manacapuru durante forte chuva no município - Portal Am24h" />
+<meta name="twitter:description" content="O barco identificado como sendo &quot;C. Nel Tavares&quot;, naufragou por conta das fortes ondas que se formaram no rio durante a chuva do final de semana." />
+<meta name="twitter:site" content="@portalam24h" />
+<meta name="twitter:creator" content="@portalam24h" />
+<meta name="twitter:image" content="https://www.portalam24h.com/wp-content/uploads/2026/04/barco-manacapuru.webp" />
+<meta name="twitter:label1" content="Escrito por" />
+<meta name="twitter:data1" content="Alessandro Pereira" />
+<meta name="twitter:label2" content="Tempo para leitura" />
+<meta name="twitter:data2" content="Menos de um minuto" />
+<script type="application/ld+json" class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":["Person","Organization"],"@id":"https://www.portalam24h.com/#person","name":"Portal Am24h","sameAs":["https://www.facebook.com/portalam24h/","https://twitter.com/portalam24h"],"logo":{"@type":"ImageObject","@id":"https://www.portalam24h.com/#logo","url":"https://www.portalam24h.com/wp-content/uploads/2020/06/logo_am24h-1.png","contentUrl":"https://www.portalam24h.com/wp-content/uploads/2020/06/logo_am24h-1.png","caption":"Portal Am24h","inLanguage":"pt-BR","width":"160","height":"68"},"image":{"@type":"ImageObject","@id":"https://www.portalam24h.com/#logo","url":"https://www.portalam24h.com/wp-content/uploads/2020/06/logo_am24h-1.png","contentUrl":"https://www.portalam24h.com/wp-content/uploads/2020/06/logo_am24h-1.png","caption":"Portal Am24h","inLanguage":"pt-BR","width":"160","height":"68"}},{"@type":"WebSite","@id":"https://www.portalam24h.com/#website","url":"https://www.portalam24h.com","name":"Portal Am24h","publisher":{"@id":"https://www.portalam24h.com/#person"},"inLanguage":"pt-BR"},{"@type":"ImageObject","@id":"https://www.portalam24h.com/wp-content/uploads/2026/04/barco-manacapuru.webp","url":"https://www.portalam24h.com/wp-content/uploads/2026/04/barco-manacapuru.webp","width":"397","height":"271","inLanguage":"pt-BR"},{"@type":"WebPage","@id":"https://www.portalam24h.com/barco-afunda-na-orla-de-manacapuru-durante-forte-chuva-no-municipio/#webpage","url":"https://www.portalam24h.com/barco-afunda-na-orla-de-manacapuru-durante-forte-chuva-no-municipio/","name":"Barco afunda na orla de Manacapuru durante forte chuva no munic\u00edpio - Portal Am24h","datePublished":"2026-04-06T09:22:30-04:00","dateModified":"2026-04-06T09:22:54-04:00","isPartOf":{"@id":"https://www.portalam24h.com/#website"},"primaryImageOfPage":{"@id":"https://www.portalam24h.com/wp-content/uploads/2026/04/barco-manacapuru.webp"},"inLanguage":"pt-BR"},{"@type":"Person","@id":"https://www.portalam24h.com/author/alessandro/","name":"Alessandro Pereira","url":"https://www.portalam24h.com/author/alessandro/","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/956adfcb4651d0e8c44a480ea3c798f47c18f80267c42ff46596b60d6c1be412?s=96&amp;d=mm&amp;r=g","url":"https://secure.gravatar.com/avatar/956adfcb4651d0e8c44a480ea3c798f47c18f80267c42ff46596b60d6c1be412?s=96&amp;d=mm&amp;r=g","caption":"Alessandro Pereira","inLanguage":"pt-BR"},"sameAs":["http://portalam24h.com"]},{"@type":"BlogPosting","headline":"Barco afunda na orla de Manacapuru durante forte chuva no munic\u00edpio - Portal Am24h","keywords":"Barco","datePublished":"2026-04-06T09:22:30-04:00","dateModified":"2026-04-06T09:22:54-04:00","author":{"@id":"https://www.portalam24h.com/author/alessandro/","name":"Alessandro Pereira"},"publisher":{"@id":"https://www.portalam24h.com/#person"},"description":"O barco identificado como sendo &quot;C. Nel Tavares&quot;, naufragou por conta das fortes ondas que se formaram no rio durante a chuva do final de semana.","name":"Barco afunda na orla de Manacapuru durante forte chuva no munic\u00edpio - Portal Am24h","@id":"https://www.portalam24h.com/barco-afunda-na-orla-de-manacapuru-durante-forte-chuva-no-municipio/#richSnippet","isPartOf":{"@id":"https://www.portalam24h.com/barco-afunda-na-orla-de-manacapuru-durante-forte-chuva-no-municipio/#webpage"},"image":{"@id":"https://www.portalam24h.com/wp-content/uploads/2026/04/barco-manacapuru.webp"},"inLanguage":"pt-BR","mainEntityOfPage":{"@id":"https://www.portalam24h.com/barco-afunda-na-orla-de-manacapuru-durante-forte-chuva-no-municipio/#webpage"}}]}</script>
+<!-- /Plugin de SEO Rank Math para WordPress -->
+
+
+<style id='wp-img-auto-sizes-contain-inline-css'>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link rel="preload" href="https://www.portalam24h.com/wp-content/themes/portal-am24h/assets/styles/style.css?ver=1.0" as="style" onload="this.onload=null;this.rel='stylesheet'" media="all" />
+<noscript><link rel="stylesheet" href="https://www.portalam24h.com/wp-content/themes/portal-am24h/assets/styles/style.css?ver=1.0" media="all" /></noscript>
+<style id='am24h-main-style-inline-css'>
+.cc-logo-image{width:100%;height:100%;object-fit:contain;display:block;}.cc-news-card__excerpt{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;max-height:3em;line-height:1.5;}@media (min-width:768px){.cc-header__bottom-container{display:flex;justify-content:center;align-items:center;gap:1rem;flex-wrap:nowrap;}.cc-header__bottom-menu{display:flex;align-items:center;gap:1rem;list-style:none;margin:0;padding:0;}.cc-header__bottom-menu li{margin:0;padding:0;}}
+/*# sourceURL=am24h-main-style-inline-css */
+</style>
+<script>
+partytown = {"lib":"https://www.portalam24h.com/wp-content/themes/portal-am24h/assets/vendor/partytown/","forward":["dataLayer.push","gtag"]};
+</script>
+<script src="https://www.portalam24h.com/wp-content/themes/portal-am24h/assets/vendor/partytown/partytown.js" defer></script>
+<script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-WQB0JSXL4W"></script>
+<script type="text/partytown">
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag("js", new Date());
+gtag("config", "G-WQB0JSXL4W");
+</script>
+<link rel="icon" href="https://www.portalam24h.com/wp-content/uploads/2020/06/cropped-logo_am24h-e1591562280978-32x32.webp" sizes="32x32" />
+<link rel="icon" href="https://www.portalam24h.com/wp-content/uploads/2020/06/cropped-logo_am24h-e1591562280978-192x192.webp" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.portalam24h.com/wp-content/uploads/2020/06/cropped-logo_am24h-e1591562280978-180x180.webp" />
+<meta name="msapplication-TileImage" content="https://www.portalam24h.com/wp-content/uploads/2020/06/cropped-logo_am24h-e1591562280978-270x270.png" />
+<style id='wp-block-image-inline-css'>
+.wp-block-image>a,.wp-block-image>figure>a{display:inline-block}.wp-block-image img{box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom}@media not (prefers-reduced-motion){.wp-block-image img.hide{visibility:hidden}.wp-block-image img.show{animation:show-content-image .4s}}.wp-block-image[style*=border-radius] img,.wp-block-image[style*=border-radius]>a{border-radius:inherit}.wp-block-image.has-custom-border img{box-sizing:border-box}.wp-block-image.aligncenter{text-align:center}.wp-block-image.alignfull>a,.wp-block-image.alignwide>a{width:100%}.wp-block-image.alignfull img,.wp-block-image.alignwide img{height:auto;width:100%}.wp-block-image .aligncenter,.wp-block-image .alignleft,.wp-block-image .alignright,.wp-block-image.aligncenter,.wp-block-image.alignleft,.wp-block-image.alignright{display:table}.wp-block-image .aligncenter>figcaption,.wp-block-image .alignleft>figcaption,.wp-block-image .alignright>figcaption,.wp-block-image.aligncenter>figcaption,.wp-block-image.alignleft>figcaption,.wp-block-image.alignright>figcaption{caption-side:bottom;display:table-caption}.wp-block-image .alignleft{float:left;margin:.5em 1em .5em 0}.wp-block-image .alignright{float:right;margin:.5em 0 .5em 1em}.wp-block-image .aligncenter{margin-left:auto;margin-right:auto}.wp-block-image :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-image.is-style-circle-mask img{border-radius:9999px}@supports ((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none){.wp-block-image.is-style-circle-mask img{border-radius:0;-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-mode:alpha;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}}:root :where(.wp-block-image.is-style-rounded img,.wp-block-image .is-style-rounded img){border-radius:9999px}.wp-block-image figure{margin:0}.wp-lightbox-container{display:flex;flex-direction:column;position:relative}.wp-lightbox-container img{cursor:zoom-in}.wp-lightbox-container img:hover+button{opacity:1}.wp-lightbox-container button{align-items:center;backdrop-filter:blur(16px) saturate(180%);background-color:#5a5a5a40;border:none;border-radius:4px;cursor:zoom-in;display:flex;height:20px;justify-content:center;opacity:0;padding:0;position:absolute;right:16px;text-align:center;top:16px;width:20px;z-index:100}@media not (prefers-reduced-motion){.wp-lightbox-container button{transition:opacity .2s ease}}.wp-lightbox-container button:focus-visible{outline:3px auto #5a5a5a40;outline:3px auto -webkit-focus-ring-color;outline-offset:3px}.wp-lightbox-container button:hover{cursor:pointer;opacity:1}.wp-lightbox-container button:focus{opacity:1}.wp-lightbox-container button:focus,.wp-lightbox-container button:hover,.wp-lightbox-container button:not(:hover):not(:active):not(.has-background){background-color:#5a5a5a40;border:none}.wp-lightbox-overlay{box-sizing:border-box;cursor:zoom-out;height:100vh;left:0;overflow:hidden;position:fixed;top:0;visibility:hidden;width:100%;z-index:100000}.wp-lightbox-overlay .close-button{align-items:center;cursor:pointer;display:flex;justify-content:center;min-height:40px;min-width:40px;padding:0;position:absolute;right:calc(env(safe-area-inset-right) + 16px);top:calc(env(safe-area-inset-top) + 16px);z-index:5000000}.wp-lightbox-overlay .close-button:focus,.wp-lightbox-overlay .close-button:hover,.wp-lightbox-overlay .close-button:not(:hover):not(:active):not(.has-background){background:none;border:none}.wp-lightbox-overlay .lightbox-image-container{height:var(--wp--lightbox-container-height);left:50%;overflow:hidden;position:absolute;top:50%;transform:translate(-50%,-50%);transform-origin:top left;width:var(--wp--lightbox-container-width);z-index:9999999999}.wp-lightbox-overlay .wp-block-image{align-items:center;box-sizing:border-box;display:flex;height:100%;justify-content:center;margin:0;position:relative;transform-origin:0 0;width:100%;z-index:3000000}.wp-lightbox-overlay .wp-block-image img{height:var(--wp--lightbox-image-height);min-height:var(--wp--lightbox-image-height);min-width:var(--wp--lightbox-image-width);width:var(--wp--lightbox-image-width)}.wp-lightbox-overlay .wp-block-image figcaption{display:none}.wp-lightbox-overlay button{background:none;border:none}.wp-lightbox-overlay .scrim{background-color:#fff;height:100%;opacity:.9;position:absolute;width:100%;z-index:2000000}.wp-lightbox-overlay.active{visibility:visible}@media not (prefers-reduced-motion){.wp-lightbox-overlay.active{animation:turn-on-visibility .25s both}.wp-lightbox-overlay.active img{animation:turn-on-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active){animation:turn-off-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active) img{animation:turn-off-visibility .25s both}.wp-lightbox-overlay.zoom.active{animation:none;opacity:1;visibility:visible}.wp-lightbox-overlay.zoom.active .lightbox-image-container{animation:lightbox-zoom-in .4s}.wp-lightbox-overlay.zoom.active .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.active .scrim{animation:turn-on-visibility .4s forwards}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active){animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container{animation:lightbox-zoom-out .4s}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .scrim{animation:turn-off-visibility .4s forwards}}@keyframes show-content-image{0%{visibility:hidden}99%{visibility:hidden}to{visibility:visible}}@keyframes turn-on-visibility{0%{opacity:0}to{opacity:1}}@keyframes turn-off-visibility{0%{opacity:1;visibility:visible}99%{opacity:0;visibility:visible}to{opacity:0;visibility:hidden}}@keyframes lightbox-zoom-in{0%{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale))}to{transform:translate(-50%,-50%) scale(1)}}@keyframes lightbox-zoom-out{0%{transform:translate(-50%,-50%) scale(1);visibility:visible}99%{visibility:visible}to{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));visibility:hidden}}
+/*# sourceURL=https://www.portalam24h.com/wp-includes/blocks/image/style.min.css */
+</style>
+<style id='wp-block-video-inline-css'>
+.wp-block-video{box-sizing:border-box}.wp-block-video video{height:auto;vertical-align:middle;width:100%}@supports (position:sticky){.wp-block-video [poster]{object-fit:cover}}.wp-block-video.aligncenter{text-align:center}.wp-block-video :where(figcaption){margin-bottom:1em;margin-top:.5em}
+/*# sourceURL=https://www.portalam24h.com/wp-includes/blocks/video/style.min.css */
+</style>
+<style id='wp-block-paragraph-inline-css'>
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+/*# sourceURL=https://www.portalam24h.com/wp-includes/blocks/paragraph/style.min.css */
+</style>
+<style id='global-styles-inline-css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<meta name="generator" content="WP Rocket 3.20.5" data-wpr-features="wpr_cache_webp wpr_preload_links wpr_desktop" /></head>
+
+<body class="wp-singular post-template-default single single-post postid-35263 single-format-standard wp-custom-logo wp-embed-responsive wp-theme-portal-am24h">
+    <script id="am24h-a11y-initial-state">(function(){try{var k="am24hAccessibilityPrefs";var raw=localStorage.getItem(k);if(!raw){return;}var s=JSON.parse(raw);if(!s||typeof s!=="object"){return;}var d=document.documentElement;var b=document.body;if(!d||!b){return;}var n=parseInt(String(s.fontStep),10);if(isNaN(n)){n=0;}if(n<-1){n=-1;}if(n>2){n=2;}d.style.fontSize=(62.5+(n*4))+"%";b.dataset.am24hA11yFontStep=String(n);var map=[["lineHeight","am24h-a11y-line-height"],["letterSpacing","am24h-a11y-letter-spacing"],["readableFont","am24h-a11y-readable-font"],["readingMode","am24h-a11y-reading-mode"],["readingGuide","am24h-a11y-reading-guide"],["readingMask","am24h-a11y-reading-mask"],["highlightLinks","am24h-a11y-highlight-links"],["highlightHeadings","am24h-a11y-highlight-headings"],["hideImages","am24h-a11y-hide-images"],["pauseAnimations","am24h-a11y-pause-animations"],["highContrast","am24h-a11y-high-contrast"],["reducedSaturation","am24h-a11y-reduced-saturation"],["grayscale","am24h-a11y-grayscale"]];for(var i=0;i<map.length;i++){if(!!s[map[i][0]]){b.classList.add(map[i][1]);}}}catch(e){}})();</script>    <header data-rocket-location-hash="021cdc22010e227c6e7358d15582ba94" class="cc-header">
+        <div data-rocket-location-hash="ffc21814eb503845cc3ccb058b6bab27" class="cc-header__top ">
+            <div data-rocket-location-hash="b5572bda4b9e202dc144ab8bca22dfc1" class="cc-container">
+                <div class="cc-header__top-container">
+                    <div class="cc-header__left">
+                        <button type="button" class="cc-btn cc-btn--secondary cc-btn--icon cc-mobile-menu-toggle" aria-label="Open menu">
+                            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.66667 12C2.47778 12 2.31956 11.936 2.192 11.808C2.064 11.6804 2 11.5222 2 11.3333C2 11.1444 2.064 10.9862 2.192 10.8587C2.31956 10.7307 2.47778 10.6667 2.66667 10.6667H13.3333C13.5222 10.6667 13.6804 10.7307 13.808 10.8587C13.936 10.9862 14 11.1444 14 11.3333C14 11.5222 13.936 11.6804 13.808 11.808C13.6804 11.936 13.5222 12 13.3333 12H2.66667ZM2.66667 8.66667C2.47778 8.66667 2.31956 8.60267 2.192 8.47467C2.064 8.34711 2 8.18889 2 8C2 7.81111 2.064 7.65267 2.192 7.52467C2.31956 7.39711 2.47778 7.33333 2.66667 7.33333H13.3333C13.5222 7.33333 13.6804 7.39711 13.808 7.52467C13.936 7.65267 14 7.81111 14 8C14 8.18889 13.936 8.34711 13.808 8.47467C13.6804 8.60267 13.5222 8.66667 13.3333 8.66667H2.66667ZM2.66667 5.33333C2.47778 5.33333 2.31956 5.26956 2.192 5.142C2.064 5.014 2 4.85556 2 4.66667C2 4.47778 2.064 4.31933 2.192 4.19133C2.31956 4.06378 2.47778 4 2.66667 4H13.3333C13.5222 4 13.6804 4.06378 13.808 4.19133C13.936 4.31933 14 4.47778 14 4.66667C14 4.85556 13.936 5.014 13.808 5.142C13.6804 5.26956 13.5222 5.33333 13.3333 5.33333H2.66667Z" fill="currentColor" />
+                            </svg>
+                        </button>
+
+                        <div class="cc-header__logo">
+                            <a href="https://www.portalam24h.com/" class="custom-logo-link" aria-label="Go to Portal Am24h homepage" rel="home"><img width="300" height="128" src="https://www.portalam24h.com/wp-content/uploads/2026/04/logo_am24h-300w.webp" class="custom-logo" alt="Portal Am24h" /></a>                        </div>
+                    </div>
+
+                    <div class="cc-search-bar">
+    <form action="https://www.portalam24h.com/" method="get" role="search" aria-label="Site search form">
+        <div class="cc-input">
+            <button type="submit" class="cc-input__btn-submit" aria-label="Submit search">
+                <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12.6 13.5333L8.86667 9.8C8.53333 10.0667 8.15 10.2778 7.71667 10.4333C7.28333 10.5889 6.82222 10.6667 6.33333 10.6667C5.12222 10.6667 4.09733 10.2473 3.25867 9.40867C2.41956 8.56956 2 7.54444 2 6.33333C2 5.12222 2.41956 4.09711 3.25867 3.258C4.09733 2.41933 5.12222 2 6.33333 2C7.54444 2 8.56956 2.41933 9.40867 3.258C10.2473 4.09711 10.6667 5.12222 10.6667 6.33333C10.6667 6.82222 10.5889 7.28333 10.4333 7.71667C10.2778 8.15 10.0667 8.53333 9.8 8.86667L13.55 12.6167C13.6722 12.7389 13.7333 12.8889 13.7333 13.0667C13.7333 13.2444 13.6667 13.4 13.5333 13.5333C13.4111 13.6556 13.2556 13.7167 13.0667 13.7167C12.8778 13.7167 12.7222 13.6556 12.6 13.5333V13.5333ZM6.33333 9.33333C7.16667 9.33333 7.87511 9.04178 8.45867 8.45867C9.04178 7.87511 9.33333 7.16667 9.33333 6.33333C9.33333 5.5 9.04178 4.79156 8.45867 4.208C7.87511 3.62489 7.16667 3.33333 6.33333 3.33333C5.5 3.33333 4.79156 3.62489 4.208 4.208C3.62489 4.79156 3.33333 5.5 3.33333 6.33333C3.33333 7.16667 3.62489 7.87511 4.208 8.45867C4.79156 9.04178 5.5 9.33333 6.33333 9.33333Z"
+                        fill="currentColor" />
+                </svg>
+            </button>
+
+            <input
+                type="text"
+                name="s"
+                value=""
+                placeholder="Search..."
+                aria-label="Search keywords" />
+        </div>
+
+        <button
+            type="button"
+            class="cc-btn cc-btn--icon cc-search-bar__trigger"
+            aria-label="Open search">
+            <svg
+                width="17"
+                height="17"
+                viewBox="0 0 17 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M7.62223 3.28303C7.86632 3.03894 8.25264 3.02353 8.51449 3.23713L8.56494 3.28303L13.2316 7.9497C13.492 8.21004 13.492 8.63205 13.2316 8.8924L8.56494 13.5591C8.30459 13.8194 7.88258 13.8194 7.62223 13.5591C7.36188 13.2987 7.36188 12.8767 7.62223 12.6164L11.1509 9.08772H3.42692C3.05873 9.08772 2.76025 8.78924 2.76025 8.42105C2.76025 8.05286 3.05873 7.75438 3.42692 7.75438H11.1509L7.62223 4.22574L7.57633 4.17528C7.36274 3.91343 7.37814 3.52712 7.62223 3.28303Z"
+                    fill="white" />
+            </svg>
+        </button>
+    </form>
+
+    <button
+        type="button"
+        class="cc-btn cc-btn--icon cc-search-bar__trigger"
+        aria-label="Open search">
+        <svg
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M12.6 13.5333L8.86667 9.8C8.53333 10.0667 8.15 10.2778 7.71667 10.4333C7.28333 10.5889 6.82222 10.6667 6.33333 10.6667C5.12222 10.6667 4.09733 10.2473 3.25867 9.40867C2.41956 8.56956 2 7.54444 2 6.33333C2 5.12222 2.41956 4.09711 3.25867 3.258C4.09733 2.41933 5.12222 2 6.33333 2C7.54444 2 8.56956 2.41933 9.40867 3.258C10.2473 4.09711 10.6667 5.12222 10.6667 6.33333C10.6667 6.82222 10.5889 7.28333 10.4333 7.71667C10.2778 8.15 10.0667 8.53333 9.8 8.86667L13.55 12.6167C13.6722 12.7389 13.7333 12.8889 13.7333 13.0667C13.7333 13.2444 13.6667 13.4 13.5333 13.5333C13.4111 13.6556 13.2556 13.7167 13.0667 13.7167C12.8778 13.7167 12.7222 13.6556 12.6 13.5333V13.5333ZM6.33333 9.33333C7.16667 9.33333 7.87511 9.04178 8.45867 8.45867C9.04178 7.87511 9.33333 7.16667 9.33333 6.33333C9.33333 5.5 9.04178 4.79156 8.45867 4.208C7.87511 3.62489 7.16667 3.33333 6.33333 3.33333C5.5 3.33333 4.79156 3.62489 4.208 4.208C3.62489 4.79156 3.33333 5.5 3.33333 6.33333C3.33333 7.16667 3.62489 7.87511 4.208 8.45867C4.79156 9.04178 5.5 9.33333 6.33333 9.33333Z"
+                fill="white" />
+        </svg>
+    </button>
+</div>                </div>
+            </div>
+        </div>
+
+        <div data-rocket-location-hash="6b675ee6b3ada3cd347f0fa3b89aa110" class="cc-header__bottom">
+            <div data-rocket-location-hash="3b87c7c4a064e48f7594132648f9551e" class="cc-container">
+                <div class="cc-header__bottom-container">
+                    <ul id="menu-td-demo-header-menu" class="cc-header__bottom-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-377"><a href="https://www.portalam24h.com/category/policia/" class="cc-btn cc-btn--small cc-btn--secondary">Polícia</a></li>
+
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-378"><a href="https://www.portalam24h.com/category/politica/" class="cc-btn cc-btn--small cc-btn--secondary">Política</a></li>
+
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-373"><a href="https://www.portalam24h.com/category/cidades/" class="cc-btn cc-btn--small cc-btn--secondary">Cidades</a></li>
+
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-376"><a href="https://www.portalam24h.com/category/esportes/" class="cc-btn cc-btn--small cc-btn--secondary">Esportes</a></li>
+
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-380"><a href="https://www.portalam24h.com/category/tecnologia/" class="cc-btn cc-btn--small cc-btn--secondary">Tecnologia</a></li>
+</ul>                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div data-rocket-location-hash="6bd122088c3357da60fc0b7d2388133b" class="cc-mobile-menu">
+            <div data-rocket-location-hash="fa60ce77b84e9f78b3ba5d9d90da6daa" class="cc-mobile-menu__overlay"></div>
+            <div data-rocket-location-hash="0cc9a2707f0e8feca631cde9d318488c" class="cc-mobile-menu__content">
+                <div class="cc-mobile-menu__header">
+                    <div class="cc-mobile-menu__search">
+                        <div class="cc-search-bar">
+    <form action="https://www.portalam24h.com/" method="get" role="search" aria-label="Site search form">
+        <div class="cc-input">
+            <button type="submit" class="cc-input__btn-submit" aria-label="Submit search">
+                <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12.6 13.5333L8.86667 9.8C8.53333 10.0667 8.15 10.2778 7.71667 10.4333C7.28333 10.5889 6.82222 10.6667 6.33333 10.6667C5.12222 10.6667 4.09733 10.2473 3.25867 9.40867C2.41956 8.56956 2 7.54444 2 6.33333C2 5.12222 2.41956 4.09711 3.25867 3.258C4.09733 2.41933 5.12222 2 6.33333 2C7.54444 2 8.56956 2.41933 9.40867 3.258C10.2473 4.09711 10.6667 5.12222 10.6667 6.33333C10.6667 6.82222 10.5889 7.28333 10.4333 7.71667C10.2778 8.15 10.0667 8.53333 9.8 8.86667L13.55 12.6167C13.6722 12.7389 13.7333 12.8889 13.7333 13.0667C13.7333 13.2444 13.6667 13.4 13.5333 13.5333C13.4111 13.6556 13.2556 13.7167 13.0667 13.7167C12.8778 13.7167 12.7222 13.6556 12.6 13.5333V13.5333ZM6.33333 9.33333C7.16667 9.33333 7.87511 9.04178 8.45867 8.45867C9.04178 7.87511 9.33333 7.16667 9.33333 6.33333C9.33333 5.5 9.04178 4.79156 8.45867 4.208C7.87511 3.62489 7.16667 3.33333 6.33333 3.33333C5.5 3.33333 4.79156 3.62489 4.208 4.208C3.62489 4.79156 3.33333 5.5 3.33333 6.33333C3.33333 7.16667 3.62489 7.87511 4.208 8.45867C4.79156 9.04178 5.5 9.33333 6.33333 9.33333Z"
+                        fill="currentColor" />
+                </svg>
+            </button>
+
+            <input
+                type="text"
+                name="s"
+                value=""
+                placeholder="Search..."
+                aria-label="Search keywords" />
+        </div>
+
+        <button
+            type="button"
+            class="cc-btn cc-btn--icon cc-search-bar__trigger"
+            aria-label="Open search">
+            <svg
+                width="17"
+                height="17"
+                viewBox="0 0 17 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M7.62223 3.28303C7.86632 3.03894 8.25264 3.02353 8.51449 3.23713L8.56494 3.28303L13.2316 7.9497C13.492 8.21004 13.492 8.63205 13.2316 8.8924L8.56494 13.5591C8.30459 13.8194 7.88258 13.8194 7.62223 13.5591C7.36188 13.2987 7.36188 12.8767 7.62223 12.6164L11.1509 9.08772H3.42692C3.05873 9.08772 2.76025 8.78924 2.76025 8.42105C2.76025 8.05286 3.05873 7.75438 3.42692 7.75438H11.1509L7.62223 4.22574L7.57633 4.17528C7.36274 3.91343 7.37814 3.52712 7.62223 3.28303Z"
+                    fill="white" />
+            </svg>
+        </button>
+    </form>
+
+    <button
+        type="button"
+        class="cc-btn cc-btn--icon cc-search-bar__trigger"
+        aria-label="Open search">
+        <svg
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M12.6 13.5333L8.86667 9.8C8.53333 10.0667 8.15 10.2778 7.71667 10.4333C7.28333 10.5889 6.82222 10.6667 6.33333 10.6667C5.12222 10.6667 4.09733 10.2473 3.25867 9.40867C2.41956 8.56956 2 7.54444 2 6.33333C2 5.12222 2.41956 4.09711 3.25867 3.258C4.09733 2.41933 5.12222 2 6.33333 2C7.54444 2 8.56956 2.41933 9.40867 3.258C10.2473 4.09711 10.6667 5.12222 10.6667 6.33333C10.6667 6.82222 10.5889 7.28333 10.4333 7.71667C10.2778 8.15 10.0667 8.53333 9.8 8.86667L13.55 12.6167C13.6722 12.7389 13.7333 12.8889 13.7333 13.0667C13.7333 13.2444 13.6667 13.4 13.5333 13.5333C13.4111 13.6556 13.2556 13.7167 13.0667 13.7167C12.8778 13.7167 12.7222 13.6556 12.6 13.5333V13.5333ZM6.33333 9.33333C7.16667 9.33333 7.87511 9.04178 8.45867 8.45867C9.04178 7.87511 9.33333 7.16667 9.33333 6.33333C9.33333 5.5 9.04178 4.79156 8.45867 4.208C7.87511 3.62489 7.16667 3.33333 6.33333 3.33333C5.5 3.33333 4.79156 3.62489 4.208 4.208C3.62489 4.79156 3.33333 5.5 3.33333 6.33333C3.33333 7.16667 3.62489 7.87511 4.208 8.45867C4.79156 9.04178 5.5 9.33333 6.33333 9.33333Z"
+                fill="white" />
+        </svg>
+    </button>
+</div>                    </div>
+
+                    <button type="button" class="cc-btn cc-btn--secondary cc-btn--icon cc-mobile-menu-close" aria-label="Close menu">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+
+                <nav class="cc-mobile-menu__nav">
+                    <ul id="menu-td-demo-header-menu-1" class="cc-mobile-menu__list"><li class="cc-mobile-menu__item"><a href="https://www.portalam24h.com/category/policia/" class="cc-mobile-menu__link">Polícia</a></li><li class="cc-mobile-menu__item"><a href="https://www.portalam24h.com/category/politica/" class="cc-mobile-menu__link">Política</a></li><li class="cc-mobile-menu__item"><a href="https://www.portalam24h.com/category/cidades/" class="cc-mobile-menu__link">Cidades</a></li><li class="cc-mobile-menu__item"><a href="https://www.portalam24h.com/category/esportes/" class="cc-mobile-menu__link">Esportes</a></li><li class="cc-mobile-menu__item"><a href="https://www.portalam24h.com/category/tecnologia/" class="cc-mobile-menu__link">Tecnologia</a></li></ul>                </nav>
+            </div>
+        </div>
+    </header>
+
+    
+<main data-rocket-location-hash="b4f132a09e0b7a904c0dffa8e0d03702" class="cc-single">
+    <section data-rocket-location-hash="193fd6fb0ff53016b8e20bcc062b8cb4" class="cc-single__content">
+        <div data-rocket-location-hash="f29d5279ad647c76f1633f060a49e07e" class="cc-container">
+            <article id="post-35263" class="cc-single__post">
+                                        <div class="cc-single__post-header">
+                            <h1 class="cc-single__post-title">
+                                Barco afunda na orla de Manacapuru durante forte chuva no município                            </h1>
+
+                            <span class="cc-single__post-metadata">
+                                06/04/2026 09h22 | Updated 2 dias ago                            </span>
+                            
+                                                                                        <nav
+                                    class="cc-share-bar cc-share-bar--center cc-share-bar--medium"
+                                    aria-label="Share this article"
+                                    data-copy-success="Link copied."
+                                    data-copy-fallback="Unable to copy automatically. Press Ctrl+C to copy the link."
+                                >
+                                    <ul class="cc-share-bar__list">
+                                                                                    <li>
+                                                                                                    <a
+                                                        class="cc-share-bar__action"
+                                                        href="https://api.whatsapp.com/send?text=Barco%20afunda%20na%20orla%20de%20Manacapuru%20durante%20forte%20chuva%20no%20munic%C3%ADpio%20https%3A%2F%2Fwww.portalam24h.com%2Fbarco-afunda-na-orla-de-manacapuru-durante-forte-chuva-no-municipio%2F"
+                                                        target="_blank" rel="noopener noreferrer nofollow"                                                        aria-label="Share on WhatsApp"
+                                                    >
+                                                        <span class="cc-share-bar__icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Zm0 16.3a7.3 7.3 0 0 1-3.7-1l-.3-.2-2.8.7.7-2.7-.2-.3A7.3 7.3 0 1 1 12 19.3Zm4.1-5.6c-.2-.1-1.3-.7-1.5-.7-.2-.1-.3-.1-.5.1l-.4.5c-.1.2-.3.2-.5.1a6 6 0 0 1-2.9-2.5c-.1-.2 0-.3.1-.4l.3-.4.2-.3a.5.5 0 0 0 0-.4l-.7-1.6c-.1-.2-.3-.2-.4-.2h-.4a.8.8 0 0 0-.6.3c-.2.2-.8.7-.8 1.8s.9 2 1 2.2a8.4 8.4 0 0 0 3.3 2.9c2 .8 2 .5 2.4.5.4 0 1.3-.5 1.4-1.1.2-.5.2-1 .1-1.1-.1 0-.3-.1-.5-.2Z" fill="currentColor" /></svg></span>
+                                                    </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                                                                    <a
+                                                        class="cc-share-bar__action"
+                                                        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.portalam24h.com%2Fbarco-afunda-na-orla-de-manacapuru-durante-forte-chuva-no-municipio%2F"
+                                                        target="_blank" rel="noopener noreferrer nofollow"                                                        aria-label="Share on Facebook"
+                                                    >
+                                                        <span class="cc-share-bar__icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><path d="M13.7 21v-8h2.6l.4-3h-3V8.1c0-.9.3-1.5 1.6-1.5H17V4a18 18 0 0 0-2.5-.1c-2.5 0-4.1 1.5-4.1 4.3V10H8v3h2.4v8h3.3Z" fill="currentColor" /></svg></span>
+                                                    </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                                                                    <a
+                                                        class="cc-share-bar__action"
+                                                        href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.portalam24h.com%2Fbarco-afunda-na-orla-de-manacapuru-durante-forte-chuva-no-municipio%2F&#038;text=Barco%20afunda%20na%20orla%20de%20Manacapuru%20durante%20forte%20chuva%20no%20munic%C3%ADpio"
+                                                        target="_blank" rel="noopener noreferrer nofollow"                                                        aria-label="Share on X"
+                                                    >
+                                                        <span class="cc-share-bar__icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><path d="M18.9 4H21l-4.6 5.2L22 20h-4.4l-3.4-4.8L10 20H7.9l4.9-5.7L2 4h4.5L9.6 8.5 13.5 4h2.1Zm-1.5 14.3h1.2L5.8 5.6H4.5l12.9 12.7Z" fill="currentColor" /></svg></span>
+                                                    </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                                                                    <a
+                                                        class="cc-share-bar__action"
+                                                        href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.portalam24h.com%2Fbarco-afunda-na-orla-de-manacapuru-durante-forte-chuva-no-municipio%2F"
+                                                        target="_blank" rel="noopener noreferrer nofollow"                                                        aria-label="Share on LinkedIn"
+                                                    >
+                                                        <span class="cc-share-bar__icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><path d="M6.2 8.5a1.9 1.9 0 1 1 0-3.8 1.9 1.9 0 0 1 0 3.8ZM4.6 20V10h3.2v10H4.6Zm5.3 0V10H13v1.4h.1c.4-.8 1.5-1.7 3.1-1.7 3.3 0 3.9 2.2 3.9 5V20H17v-4.6c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V20H9.9Z" fill="currentColor" /></svg></span>
+                                                    </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                                                                    <a
+                                                        class="cc-share-bar__action"
+                                                        href="https://t.me/share/url?url=https%3A%2F%2Fwww.portalam24h.com%2Fbarco-afunda-na-orla-de-manacapuru-durante-forte-chuva-no-municipio%2F&#038;text=Barco%20afunda%20na%20orla%20de%20Manacapuru%20durante%20forte%20chuva%20no%20munic%C3%ADpio"
+                                                        target="_blank" rel="noopener noreferrer nofollow"                                                        aria-label="Share on Telegram"
+                                                    >
+                                                        <span class="cc-share-bar__icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><path d="M20.6 4.5 3.7 11c-1.2.5-1.2 1.2-.2 1.5l4.4 1.4 1.7 5.2c.2.6.1.8.8.8.5 0 .8-.2 1.1-.5l2.1-2 4.4 3.2c.8.4 1.4.2 1.6-.8L22 6c.3-1.2-.4-1.8-1.4-1.5Zm-3.1 3.1-6.4 5.8-.2 2.1-.9-2.8 8.4-5.1c.4-.3.8.2.4.4Z" fill="currentColor" /></svg></span>
+                                                    </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                                                                    <button
+                                                        type="button"
+                                                        class="cc-share-bar__action"
+                                                        data-share-copy
+                                                        data-share-url="https://www.portalam24h.com/barco-afunda-na-orla-de-manacapuru-durante-forte-chuva-no-municipio/"
+                                                        aria-label="Copy link for Barco afunda na orla de Manacapuru durante forte chuva no município"
+                                                    >
+                                                        <span class="cc-share-bar__icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><path d="M8 7a3 3 0 0 1 3-3h6a3 3 0 0 1 0 6h-2V8h2a1 1 0 1 0 0-2h-6a1 1 0 0 0-1 1v2H8V7Zm-1 4h2v2H7a1 1 0 1 0 0 2h6a1 1 0 0 0 1-1v-2h2v2a3 3 0 0 1-3 3H7a3 3 0 0 1 0-6Zm2 1h6v2H9v-2Z" fill="currentColor" /></svg></span>
+                                                    </button>
+                                                                                            </li>
+                                                                                    <li>
+                                                                                                    <a
+                                                        class="cc-share-bar__action"
+                                                        href="https://www.threads.net/intent/post?text=Barco%20afunda%20na%20orla%20de%20Manacapuru%20durante%20forte%20chuva%20no%20munic%C3%ADpio%20https%3A%2F%2Fwww.portalam24h.com%2Fbarco-afunda-na-orla-de-manacapuru-durante-forte-chuva-no-municipio%2F"
+                                                        target="_blank" rel="noopener noreferrer nofollow"                                                        aria-label="Share on Threads"
+                                                    >
+                                                        <span class="cc-share-bar__icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><path d="M16.5 11.3a4.9 4.9 0 0 0-.4-2c-.8-1.8-2.5-2.7-4.9-2.7-2.2 0-4 .9-5 2.5l1.9 1.3c.7-1.1 1.7-1.6 3.1-1.6 1.5 0 2.5.5 3 1.5.2.4.3.9.3 1.4a20 20 0 0 0-3.3.2c-2.4.4-3.8 1.7-3.8 3.6 0 2.1 1.7 3.5 4.2 3.5 2 0 3.4-.8 4.1-2.2.5-1 .8-2.3.8-3.8.8.4 1.2 1 1.2 1.8 0 1.8-1.7 3.2-4.6 3.2-3.8 0-6.3-2.4-6.3-6.1 0-3.8 2.5-6.2 6.2-6.2 3.6 0 6 2.2 6.1 5.7h2.2C20.2 7.5 17 4.6 12.7 4.6c-5 0-8.4 3.3-8.4 8.3 0 4.8 3.4 8.2 8.5 8.2 4.3 0 7-2.1 7-5.2 0-2.3-1.4-3.9-3.3-4.6Zm-2.3 3.2c0 1.8-.9 2.9-2.5 2.9-1.2 0-2-.6-2-1.5 0-.8.6-1.5 2-1.8.8-.2 1.6-.2 2.5-.2v.6Z" fill="currentColor" /></svg></span>
+                                                    </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                                                                    <a class="cc-share-bar__action" href="/cdn-cgi/l/email-protection#dae5a9afb8b0bfb9aee798bba8b9b5ffe8eabbbcafb4bebbffe8eab4bbffe8eab5a8b6bbffe8eabebfffe8ea97bbb4bbb9bbaaafa8afffe8eabeafa8bbb4aebfffe8eabcb5a8aebfffe8eab9b2afacbbffe8eab4b5ffe8eab7afb4b3b9ff99e9ff9b9eaab3b5fcf9eae9e2e1b8b5bea3e7b2aeaeaaa9ffe99bffe89cffe89cadadadf4aab5a8aebbb6bbb7e8eeb2f4b9b5b7ffe89cb8bba8b9b5f7bbbcafb4bebbf7b4bbf7b5a8b6bbf7bebff7b7bbb4bbb9bbaaafa8aff7beafa8bbb4aebff7bcb5a8aebff7b9b2afacbbf7b4b5f7b7afb4b3b9b3aab3b5ffe89c" aria-label="Share on Email">
+                                                        <span class="cc-share-bar__icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Zm0 2v.2l8 4.8 8-4.8V8H4Zm16 8V10.5l-7.5 4.5a1 1 0 0 1-1 0L4 10.5V16h16Z" fill="currentColor" /></svg></span>
+                                                    </a>
+                                                                                            </li>
+                                                                            </ul>
+                                    <span class="cc-share-bar__status" aria-live="polite" data-share-copy-status></span>
+                                </nav>
+                            
+                                                                                            <figure class="cc-single__post-thumbnail">
+                                                                            <img
+                                            src="https://www.portalam24h.com/wp-content/uploads/2026/04/barco-manacapuru.webp"
+                                            width="397"
+                                            height="271"
+                                            alt="Barco afunda na orla de Manacapuru durante forte chuva no município"
+                                            loading="eager"
+                                            fetchpriority="high"
+                                            decoding="async"
+                                            srcset="https://www.portalam24h.com/wp-content/uploads/2026/04/barco-manacapuru.webp 397w, https://www.portalam24h.com/wp-content/uploads/2026/04/barco-manacapuru-300x205.webp 300w"                                            sizes="(max-width: 397px) 100vw, 397px"                                        />
+                                    
+                                                                    </figure>
+                                                    </div>
+
+                        <div class="cc-single__post-content">
+                            
+<p>Durante a forte chuva que caiu no último sábado (04/04), naufragou uma embarcação na orla do município de Manacapuru, no interior do Amazonas.</p>
+
+
+
+<p>O barco identificado como sendo &#8220;C. Nel Tavares&#8221;, naufragou por conta das fortes ondas que se formaram no rio durante a chuva do final de semana.</p>
+
+
+
+<p>As condições climáticas adversas, com chuva intensa e ventos, podem ter contribuído para o naufrágio.</p>
+
+
+
+<p>Vídeos que circulam nas redes sociais mostram o momento em que a embarcação começa a inclinar, pouco antes de afundar.</p>
+
+
+
+<p>De acordo com informações preliminares, não havia pessoas a bordo no momento do incidente, e não há registro de feridos.</p>
+
+
+
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="800" height="466" src="https://www.portalam24h.com/wp-content/uploads/2026/04/ed6b5e743ed057ebbdc936fb5c0b18c3_1000520897.webp" alt="" class="wp-image-35266" srcset="https://www.portalam24h.com/wp-content/uploads/2026/04/ed6b5e743ed057ebbdc936fb5c0b18c3_1000520897.webp 800w, https://www.portalam24h.com/wp-content/uploads/2026/04/ed6b5e743ed057ebbdc936fb5c0b18c3_1000520897-300x175.webp 300w, https://www.portalam24h.com/wp-content/uploads/2026/04/ed6b5e743ed057ebbdc936fb5c0b18c3_1000520897-768x447.webp 768w" sizes="(max-width: 800px) 100vw, 800px" /></figure>
+
+
+
+<figure class="wp-block-video"><video height="850" style="aspect-ratio: 478 / 850;" width="478" controls src="https://www.portalam24h.com/wp-content/uploads/2026/04/WhatsApp-Video-2026-04-04-at-16.29.16.mp4"></video></figure>
+                        </div>
+                            </article>
+
+            <aside></aside>
+        </div>
+    </section>
+
+    
+<section data-rocket-location-hash="2218255ddc0d2ec1d90407a25f39d914" class="cc-section-posts">
+    <div data-rocket-location-hash="4a52d94413f4076fe62ea16f6de51379" class="cc-container">
+        <div class="cc-section-posts__container">
+                            <h2>Notícias relacionadas</h2>
+            
+                            <div class="cc-section-posts__posts">
+                    
+<div class="cc-news-card">
+    <div class="cc-news-card__content">
+        <div class="cc-news-card__category-date">
+                            <a href="https://www.portalam24h.com/category/cidades/" class="cc-category">
+                    Cidades                </a>
+            
+                            <span class="cc-news-card__separator"></span>
+            
+                            <span class="cc-news-card__date">04/04/2026 10h16</span>
+                    </div>
+
+        <h3 class="cc-news-card__title">
+            <a href="https://www.portalam24h.com/mulheres-trocam-empurroes-apos-tentativa-de-furar-fila-em-entrega-de-peixes-na-colonia-antonio-aleixo/">Mulheres trocam empurrões após tentativa de furar fila em entrega de peixes na Colônia Antônio Aleixo</a>
+        </h3>
+
+        <p class="cc-news-card__excerpt">
+            <a href="https://www.portalam24h.com/mulheres-trocam-empurroes-apos-tentativa-de-furar-fila-em-entrega-de-peixes-na-colonia-antonio-aleixo/">Na última quinta-feira (02/04), uma ação de distribuição de peixes terminou em uma grande confusão no bairro Colônia Antônio Aleixo, zona Leste da...</a>
+        </p>
+    </div>
+
+    <div class="cc-news-card__thumbnail">
+        <a href="https://www.portalam24h.com/mulheres-trocam-empurroes-apos-tentativa-de-furar-fila-em-entrega-de-peixes-na-colonia-antonio-aleixo/" aria-label="Read article: Mulheres trocam empurrões após tentativa de furar fila em entrega de peixes na Colônia Antônio Aleixo"><img width="360" height="240" src="https://www.portalam24h.com/wp-content/uploads/2026/04/porradao-360x240.webp" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" decoding="async" sizes="auto, (max-width: 767px) 92px, (max-width: 1023px) 172px, (max-width: 1439px) 286px, 320px" /></a>
+    </div>
+</div>
+
+<div class="cc-news-card">
+    <div class="cc-news-card__content">
+        <div class="cc-news-card__category-date">
+                            <a href="https://www.portalam24h.com/category/cidades/" class="cc-category">
+                    Cidades                </a>
+            
+                            <span class="cc-news-card__separator"></span>
+            
+                            <span class="cc-news-card__date">03/04/2026 09h12</span>
+                    </div>
+
+        <h3 class="cc-news-card__title">
+            <a href="https://www.portalam24h.com/paixao-de-cristo-sera-celebrada-com-vias-sacras-e-atos-de-fe-em-manaus/">Paixão de Cristo será celebrada com vias-sacras e atos de fé em Manaus</a>
+        </h3>
+
+        <p class="cc-news-card__excerpt">
+            <a href="https://www.portalam24h.com/paixao-de-cristo-sera-celebrada-com-vias-sacras-e-atos-de-fe-em-manaus/">A Igreja Católica em Manaus realiza, nesta Sexta-Feira Santa (03/04), uma programação especial dedicada à Paixão e Morte de Cristo, com celebrações...</a>
+        </p>
+    </div>
+
+    <div class="cc-news-card__thumbnail">
+        <a href="https://www.portalam24h.com/paixao-de-cristo-sera-celebrada-com-vias-sacras-e-atos-de-fe-em-manaus/" aria-label="Read article: Paixão de Cristo será celebrada com vias-sacras e atos de fé em Manaus"><img width="300" height="165" src="https://www.portalam24h.com/wp-content/uploads/2026/04/sjJJay6RZWq4VJagniU4UWH1VNgPgD0vRs9ZNroF-300x165.webp" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" decoding="async" sizes="auto, (max-width: 767px) 92px, (max-width: 1023px) 172px, (max-width: 1439px) 286px, 320px" srcset="https://www.portalam24h.com/wp-content/uploads/2026/04/sjJJay6RZWq4VJagniU4UWH1VNgPgD0vRs9ZNroF-300x165.webp 300w,https://www.portalam24h.com/wp-content/uploads/2026/04/sjJJay6RZWq4VJagniU4UWH1VNgPgD0vRs9ZNroF-768x423.webp 768w,https://www.portalam24h.com/wp-content/uploads/2026/04/sjJJay6RZWq4VJagniU4UWH1VNgPgD0vRs9ZNroF.webp 1000w" /></a>
+    </div>
+</div>
+
+<div class="cc-news-card">
+    <div class="cc-news-card__content">
+        <div class="cc-news-card__category-date">
+                            <a href="https://www.portalam24h.com/category/cidades/" class="cc-category">
+                    Cidades                </a>
+            
+                            <span class="cc-news-card__separator"></span>
+            
+                            <span class="cc-news-card__date">02/04/2026 09h20</span>
+                    </div>
+
+        <h3 class="cc-news-card__title">
+            <a href="https://www.portalam24h.com/cachorrinho-invade-peca-da-paixao-de-cristo-para-salvar-jesus-dos-soldados-romanos/">Cachorrinho invade peça da Paixão de Cristo para salvar Jesus dos soldados romanos</a>
+        </h3>
+
+        <p class="cc-news-card__excerpt">
+            <a href="https://www.portalam24h.com/cachorrinho-invade-peca-da-paixao-de-cristo-para-salvar-jesus-dos-soldados-romanos/">Um cachorrinho roubou a cena durante uma apresentação da Paixão de Cristo no último sábado (28/03), no município de Sapiranga, na Região...</a>
+        </p>
+    </div>
+
+    <div class="cc-news-card__thumbnail">
+        <a href="https://www.portalam24h.com/cachorrinho-invade-peca-da-paixao-de-cristo-para-salvar-jesus-dos-soldados-romanos/" aria-label="Read article: Cachorrinho invade peça da Paixão de Cristo para salvar Jesus dos soldados romanos"><img width="300" height="182" src="https://www.portalam24h.com/wp-content/uploads/2026/04/Captura-de-tela-2026-04-02-090254-300x182.webp" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" decoding="async" sizes="auto, (max-width: 767px) 92px, (max-width: 1023px) 172px, (max-width: 1439px) 286px, 320px" srcset="https://www.portalam24h.com/wp-content/uploads/2026/04/Captura-de-tela-2026-04-02-090254-300x182.webp 300w,https://www.portalam24h.com/wp-content/uploads/2026/04/Captura-de-tela-2026-04-02-090254-1024x622.webp 1024w,https://www.portalam24h.com/wp-content/uploads/2026/04/Captura-de-tela-2026-04-02-090254-768x466.webp 768w,https://www.portalam24h.com/wp-content/uploads/2026/04/Captura-de-tela-2026-04-02-090254.webp 1069w" /></a>
+    </div>
+</div>
+
+<div class="cc-news-card">
+    <div class="cc-news-card__content">
+        <div class="cc-news-card__category-date">
+                            <a href="https://www.portalam24h.com/category/cidades/" class="cc-category">
+                    Cidades                </a>
+            
+                            <span class="cc-news-card__separator"></span>
+            
+                            <span class="cc-news-card__date">30/03/2026 13h33</span>
+                    </div>
+
+        <h3 class="cc-news-card__title">
+            <a href="https://www.portalam24h.com/jacare-e-resgatado-em-piscina-de-plastico-na-zona-leste-de-manaus/">Jacaré é resgatado em piscina de plástico na zona Leste de Manaus</a>
+        </h3>
+
+        <p class="cc-news-card__excerpt">
+            <a href="https://www.portalam24h.com/jacare-e-resgatado-em-piscina-de-plastico-na-zona-leste-de-manaus/">O Corpo de Bombeiros foi acionado neste domingo (29/03), para resgatar um jacaré que foi encontrado em uma piscina de plástico, em um quintal de uma...</a>
+        </p>
+    </div>
+
+    <div class="cc-news-card__thumbnail">
+        <a href="https://www.portalam24h.com/jacare-e-resgatado-em-piscina-de-plastico-na-zona-leste-de-manaus/" aria-label="Read article: Jacaré é resgatado em piscina de plástico na zona Leste de Manaus"><img width="300" height="187" src="https://www.portalam24h.com/wp-content/uploads/2026/03/Captura-de-tela-2026-03-30-132200-300x187.webp" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" decoding="async" sizes="auto, (max-width: 767px) 92px, (max-width: 1023px) 172px, (max-width: 1439px) 286px, 320px" srcset="https://www.portalam24h.com/wp-content/uploads/2026/03/Captura-de-tela-2026-03-30-132200-300x187.webp 300w,https://www.portalam24h.com/wp-content/uploads/2026/03/Captura-de-tela-2026-03-30-132200.webp 642w" /></a>
+    </div>
+</div>
+
+<div class="cc-news-card">
+    <div class="cc-news-card__content">
+        <div class="cc-news-card__category-date">
+                            <a href="https://www.portalam24h.com/category/cidades/" class="cc-category">
+                    Cidades                </a>
+            
+                            <span class="cc-news-card__separator"></span>
+            
+                            <span class="cc-news-card__date">30/03/2026 08h50</span>
+                    </div>
+
+        <h3 class="cc-news-card__title">
+            <a href="https://www.portalam24h.com/arquidiocese-de-manaus-divulga-a-programacao-da-semana-santa/">Arquidiocese de Manaus divulga a programação da Semana Santa</a>
+        </h3>
+
+        <p class="cc-news-card__excerpt">
+            <a href="https://www.portalam24h.com/arquidiocese-de-manaus-divulga-a-programacao-da-semana-santa/">A Catedral Metropolitana de Manaus divulgou a programação da Semana Santa, que segue até o dia 5 de abril, reunindo fiéis em celebrações que marcam a...</a>
+        </p>
+    </div>
+
+    <div class="cc-news-card__thumbnail">
+        <a href="https://www.portalam24h.com/arquidiocese-de-manaus-divulga-a-programacao-da-semana-santa/" aria-label="Read article: Arquidiocese de Manaus divulga a programação da Semana Santa"><img width="300" height="169" src="https://www.portalam24h.com/wp-content/uploads/2026/03/x14-1024x576-1-300x169.webp" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" decoding="async" sizes="auto, (max-width: 767px) 92px, (max-width: 1023px) 172px, (max-width: 1439px) 286px, 320px" srcset="https://www.portalam24h.com/wp-content/uploads/2026/03/x14-1024x576-1-300x169.webp 300w,https://www.portalam24h.com/wp-content/uploads/2026/03/x14-1024x576-1-768x432.webp 768w,https://www.portalam24h.com/wp-content/uploads/2026/03/x14-1024x576-1.webp 1024w" /></a>
+    </div>
+</div>
+
+<div class="cc-news-card">
+    <div class="cc-news-card__content">
+        <div class="cc-news-card__category-date">
+                            <a href="https://www.portalam24h.com/category/cidades/" class="cc-category">
+                    Cidades                </a>
+            
+                            <span class="cc-news-card__separator"></span>
+            
+                            <span class="cc-news-card__date">26/03/2026 09h07</span>
+                    </div>
+
+        <h3 class="cc-news-card__title">
+            <a href="https://www.portalam24h.com/populares-registram-tromba-dagua-na-orla-do-sao-raimundo-durante-a-chuva/">Populares registram tromba d&#8217;água na orla do São Raimundo durante a chuva</a>
+        </h3>
+
+        <p class="cc-news-card__excerpt">
+            <a href="https://www.portalam24h.com/populares-registram-tromba-dagua-na-orla-do-sao-raimundo-durante-a-chuva/">Um fenômeno conhecido como trmba d&#039;água, foi registrado nesta quarta-feira (25/03), no Rio Negro, na orla do bairro de São Raimundo, zona Oeste da...</a>
+        </p>
+    </div>
+
+    <div class="cc-news-card__thumbnail">
+        <a href="https://www.portalam24h.com/populares-registram-tromba-dagua-na-orla-do-sao-raimundo-durante-a-chuva/" aria-label="Read article: Populares registram tromba d&#8217;água na orla do São Raimundo durante a chuva"><img width="300" height="200" src="https://www.portalam24h.com/wp-content/uploads/2026/03/tromba-dagua-manaus-300x200.webp" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" decoding="async" sizes="auto, (max-width: 767px) 92px, (max-width: 1023px) 172px, (max-width: 1439px) 286px, 320px" srcset="https://www.portalam24h.com/wp-content/uploads/2026/03/tromba-dagua-manaus-300x200.webp 300w,https://www.portalam24h.com/wp-content/uploads/2026/03/tromba-dagua-manaus-768x512.webp 768w,https://www.portalam24h.com/wp-content/uploads/2026/03/tromba-dagua-manaus.webp 800w" /></a>
+    </div>
+</div>
+
+<div class="cc-news-card">
+    <div class="cc-news-card__content">
+        <div class="cc-news-card__category-date">
+                            <a href="https://www.portalam24h.com/category/cidades/" class="cc-category">
+                    Cidades                </a>
+            
+                            <span class="cc-news-card__separator"></span>
+            
+                            <span class="cc-news-card__date">25/03/2026 14h15</span>
+                    </div>
+
+        <h3 class="cc-news-card__title">
+            <a href="https://www.portalam24h.com/refinaria-da-amazonia-anuncia-reducao-no-preco-da-gasolina-para-distribuidoras-do-amazonas/">Refinaria da Amazônia anuncia redução no preço da gasolina para distribuidoras do Amazonas</a>
+        </h3>
+
+        <p class="cc-news-card__excerpt">
+            <a href="https://www.portalam24h.com/refinaria-da-amazonia-anuncia-reducao-no-preco-da-gasolina-para-distribuidoras-do-amazonas/">Após dias de críticas e pressão popular, a Refinaria da Amazônia (REAM) anunciou para esta quarta-fera (25/03), a redução de R$ 0,36 no preço do...</a>
+        </p>
+    </div>
+
+    <div class="cc-news-card__thumbnail">
+        <a href="https://www.portalam24h.com/refinaria-da-amazonia-anuncia-reducao-no-preco-da-gasolina-para-distribuidoras-do-amazonas/" aria-label="Read article: Refinaria da Amazônia anuncia redução no preço da gasolina para distribuidoras do Amazonas"><img width="300" height="200" src="https://www.portalam24h.com/wp-content/uploads/2026/03/db2138e2c957439b51baed928cbbba2f_0e336a66-bae2-4b64-802b-ef6bd537eb6f-300x200.webp" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" decoding="async" sizes="auto, (max-width: 767px) 92px, (max-width: 1023px) 172px, (max-width: 1439px) 286px, 320px" srcset="https://www.portalam24h.com/wp-content/uploads/2026/03/db2138e2c957439b51baed928cbbba2f_0e336a66-bae2-4b64-802b-ef6bd537eb6f-300x200.webp 300w,https://www.portalam24h.com/wp-content/uploads/2026/03/db2138e2c957439b51baed928cbbba2f_0e336a66-bae2-4b64-802b-ef6bd537eb6f.webp 680w" /></a>
+    </div>
+</div>
+
+<div class="cc-news-card">
+    <div class="cc-news-card__content">
+        <div class="cc-news-card__category-date">
+                            <a href="https://www.portalam24h.com/category/cidades/" class="cc-category">
+                    Cidades                </a>
+            
+                            <span class="cc-news-card__separator"></span>
+            
+                            <span class="cc-news-card__date">24/03/2026 15h06</span>
+                    </div>
+
+        <h3 class="cc-news-card__title">
+            <a href="https://www.portalam24h.com/aviao-de-pequeno-porte-sai-da-pista-durante-decolagem-no-aeroclube-do-amazonas/">Avião de pequeno porte sai da pista durante decolagem no Aeroclube do Amazonas</a>
+        </h3>
+
+        <p class="cc-news-card__excerpt">
+            <a href="https://www.portalam24h.com/aviao-de-pequeno-porte-sai-da-pista-durante-decolagem-no-aeroclube-do-amazonas/">Um avião monomotor sofreu um acidente durante a forte chuva desta terça-feira (24/03), ao sair da pista do Aeroclube do Amazonas, localizado na...</a>
+        </p>
+    </div>
+
+    <div class="cc-news-card__thumbnail">
+        <a href="https://www.portalam24h.com/aviao-de-pequeno-porte-sai-da-pista-durante-decolagem-no-aeroclube-do-amazonas/" aria-label="Read article: Avião de pequeno porte sai da pista durante decolagem no Aeroclube do Amazonas"><img width="300" height="175" src="https://www.portalam24h.com/wp-content/uploads/2026/03/aviao-manaus-1-300x175.webp" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" decoding="async" sizes="auto, (max-width: 767px) 92px, (max-width: 1023px) 172px, (max-width: 1439px) 286px, 320px" srcset="https://www.portalam24h.com/wp-content/uploads/2026/03/aviao-manaus-1-300x175.webp 300w,https://www.portalam24h.com/wp-content/uploads/2026/03/aviao-manaus-1-768x447.webp 768w,https://www.portalam24h.com/wp-content/uploads/2026/03/aviao-manaus-1.webp 800w" /></a>
+    </div>
+</div>
+                </div>
+            
+                            <a href="https://www.portalam24h.com/category/cidades/" class="cc-btn cc-btn--text">
+                    Veja mais em Notícias relacionadas                    <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M6.46654 11.5333C6.34431 11.4111 6.2832 11.2555 6.2832 11.0667C6.2832 10.8778 6.34431 10.7222 6.46654 10.6L9.06654 7.99999L6.46654 5.39999C6.34431 5.27777 6.2832 5.12221 6.2832 4.93333C6.2832 4.74444 6.34431 4.58888 6.46654 4.46666C6.58876 4.34444 6.74431 4.28333 6.9332 4.28333C7.12209 4.28333 7.27765 4.34444 7.39987 4.46666L10.4665 7.53333C10.5332 7.59999 10.5805 7.67221 10.6085 7.74999C10.6361 7.82777 10.6499 7.9111 10.6499 7.99999C10.6499 8.08888 10.6361 8.17221 10.6085 8.24999C10.5805 8.32777 10.5332 8.39999 10.4665 8.46666L7.39987 11.5333C7.27765 11.6555 7.12209 11.7167 6.9332 11.7167C6.74431 11.7167 6.58876 11.6555 6.46654 11.5333V11.5333Z"
+                            fill="currentColor" />
+                    </svg>
+                </a>
+                    </div>
+    </div>
+</section>
+</main>
+
+<footer data-rocket-location-hash="f386b418e3c4330e869366c9a88e755e" class="cc-footer">
+    <div data-rocket-location-hash="ba65741b62426d2f15f44328685e1fc2" class="cc-container">
+        <div data-rocket-location-hash="8934da06d924e7b4cd2eddf0d7eb8fc7" class="cc-footer__container">
+            <div class="cc-footer__content">
+                <div class="cc-footer__logo">
+                    <a href="https://www.portalam24h.com/" class="custom-logo-link" aria-label="Go to Portal Am24h homepage" rel="home"><img width="300" height="128" src="https://www.portalam24h.com/wp-content/uploads/2026/04/logo_am24h-300w.webp" class="custom-logo" alt="Portal Am24h" /></a>                </div>
+
+                <nav class="cc-footer__nav">
+                    <ul class="cc-footer__menu"><li class="cc-footer__menu-item"><a href="https://www.portalam24h.com/" class="cc-footer__menu-link">Home</a></li><li class="cc-footer__menu-item"><a href="https://www.portalam24h.com/22846-2/" class="cc-footer__menu-link" aria-label="Page 22846 2">Page 22846 2</a></li><li class="cc-footer__menu-item"><a href="https://www.portalam24h.com/7b3c2-about/" class="cc-footer__menu-link" aria-label="About">About</a></li><li class="cc-footer__menu-item"><a href="https://www.portalam24h.com/7b3c2-blog-archive/" class="cc-footer__menu-link" aria-label="Blog Archive">Blog Archive</a></li><li class="cc-footer__menu-item"><a href="https://www.portalam24h.com/7b3c2-contact/" class="cc-footer__menu-link" aria-label="Contact">Contact</a></li><li class="cc-footer__menu-item"><a href="https://www.portalam24h.com/politica-de-privacidade/" class="cc-footer__menu-link">Privacy Policy</a></li></ul>                </nav>
+
+                <div class="cc-footer__social">
+                </div>
+            </div>
+
+            <div class="cc-footer__bottom">
+                <span class="cc-footer__copyright">
+                    Copyright 2026 Portal Am24h. All rights reserved.                </span>
+            </div>
+        </div>
+    </div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/portal-am24h/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$)|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://www.portalam24h.com","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+</script>
+<script id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+</script>
+<script src="https://www.portalam24h.com/wp-content/themes/portal-am24h/assets/js/search-bar.js" id="am24h-theme-search-bar-js" defer data-wp-strategy="defer"></script>
+<script src="https://www.portalam24h.com/wp-content/themes/portal-am24h/assets/js/share-bar.js" id="am24h-share-bar-js" defer data-wp-strategy="defer"></script>
+<script src="https://www.portalam24h.com/wp-content/themes/portal-am24h/assets/js/accessibility-popup.js" id="am24h-accessibility-popup-js" defer data-wp-strategy="defer"></script>
+        <button
+            type="button"
+            class="am24h-accessibility-launcher am24h-accessibility-launcher--bottom-right"
+            data-accessibility-launcher
+            data-accessibility-open
+            aria-label="Acessibilidade"
+            aria-controls="am24h-accessibility-popup-dialog"
+            aria-expanded="false"
+            hidden
+        >
+            <span class="am24h-accessibility-launcher__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false" role="img" aria-hidden="true">
+                    <circle cx="12" cy="4" r="2"></circle>
+                    <path d="M7.8 8.1a1 1 0 0 1 1.1-.8h6.2a1 1 0 1 1 0 2H13v3.8l4.2 6a1 1 0 0 1-1.6 1.2L12 15.3l-3.6 4.9a1 1 0 1 1-1.6-1.2l4.2-6V9.3H8.9a1 1 0 0 1-1.1-1.2Z"></path>
+                </svg>
+            </span>
+            <span class="am24h-accessibility-launcher__label">Acessibilidade</span>
+        </button>
+
+        <div class="am24h-accessibility-popup" data-accessibility-popup data-a11y-enabled-tools="[&quot;font_size&quot;,&quot;line_height&quot;,&quot;letter_spacing&quot;,&quot;readable_font&quot;,&quot;reading_mode&quot;,&quot;reading_guide&quot;,&quot;reading_mask&quot;,&quot;highlight_links&quot;,&quot;highlight_headings&quot;,&quot;hide_images&quot;,&quot;pause_animations&quot;,&quot;high_contrast&quot;,&quot;reduced_saturation&quot;,&quot;grayscale&quot;]" hidden>
+            <div data-rocket-location-hash="b558be4d2e974cb01120ff7c6d9c53ad" class="am24h-accessibility-popup__backdrop" data-accessibility-close></div>
+            <section
+                id="am24h-accessibility-popup-dialog"
+                class="am24h-accessibility-popup__dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="am24h-accessibility-popup-title"
+                aria-describedby="am24h-accessibility-popup-description"
+                tabindex="-1"
+            >
+                <header data-rocket-location-hash="96d7b4eaed4f2c7545cc1733501228fe" class="am24h-accessibility-popup__header">
+                    <h2 id="am24h-accessibility-popup-title">Ajuda de acessibilidade</h2>
+                    <button type="button" class="am24h-accessibility-popup__close" data-accessibility-close aria-label="Fechar">
+                        Fechar                    </button>
+                </header>
+
+                <p class="am24h-accessibility-popup__description" id="am24h-accessibility-popup-description">Use a navegação por teclado e os links de atalho para percorrer a página rapidamente.</p>
+
+                <div data-rocket-location-hash="3deec69b0db49d983507d7b3b8abed25" class="am24h-accessibility-popup__controls" aria-label="Accessibility adjustments">
+                    <section class="am24h-accessibility-popup__group" aria-labelledby="am24h-accessibility-group-font">
+                        <h3 id="am24h-accessibility-group-font">Font Controls</h3>
+                        <div class="am24h-accessibility-popup__control-row" role="group" aria-label="Font Controls">
+                                                                    <button
+            type="button"
+            class="am24h-accessibility-popup__action"
+            data-a11y-action="decrease-font"
+                    >
+            Decrease font size        </button>
+                                                <button
+            type="button"
+            class="am24h-accessibility-popup__action"
+            data-a11y-action="increase-font"
+                    >
+            Increase font size        </button>
+                                                <button
+            type="button"
+            class="am24h-accessibility-popup__action"
+            data-a11y-action="reset-font"
+                    >
+            Reset font size        </button>
+                                    
+                                                                    <button
+            type="button"
+            class="am24h-accessibility-popup__action"
+            data-a11y-action="toggle-line-height"
+            data-a11y-toggle="line-height" aria-pressed="false"        >
+            Increase line height        </button>
+                                    
+                                                                    <button
+            type="button"
+            class="am24h-accessibility-popup__action"
+            data-a11y-action="toggle-letter-spacing"
+            data-a11y-toggle="letter-spacing" aria-pressed="false"        >
+            Increase letter spacing        </button>
+                                    
+                                                                    <button
+            type="button"
+            class="am24h-accessibility-popup__action"
+            data-a11y-action="toggle-readable-font"
+            data-a11y-toggle="readable-font" aria-pressed="false"        >
+            Readable font        </button>
+                                                            </div>
+                    </section>
+
+                    <section class="am24h-accessibility-popup__group" aria-labelledby="am24h-accessibility-group-navigation">
+                        <h3 id="am24h-accessibility-group-navigation">Navigation</h3>
+                        <div class="am24h-accessibility-popup__control-row" role="group" aria-label="Navigation">
+                                                                    <button
+            type="button"
+            class="am24h-accessibility-popup__action"
+            data-a11y-action="toggle-reading-mode"
+            data-a11y-toggle="reading-mode" aria-pressed="false"        >
+            Reading mode        </button>
+                                    
+                                                                    <button
+            type="button"
+            class="am24h-accessibility-popup__action"
+            data-a11y-action="toggle-reading-guide"
+            data-a11y-toggle="reading-guide" aria-pressed="false"        >
+            Reading guide        </button>
+                                    
+                                                                    <button
+            type="button"
+            class="am24h-accessibility-popup__action"
+            data-a11y-action="toggle-reading-mask"
+            data-a11y-toggle="reading-mask" aria-pressed="false"        >
+            Reading mask        </button>
+                                    
+                                                                    <button
+            type="button"
+            class="am24h-accessibility-popup__action"
+            data-a11y-action="toggle-highlight-links"
+            data-a11y-toggle="highlight-links" aria-pressed="false"        >
+            Highlight links        </button>
+                                    
+                                                                    <button
+            type="button"
+            class="am24h-accessibility-popup__action"
+            data-a11y-action="toggle-highlight-headings"
+            data-a11y-toggle="highlight-headings" aria-pressed="false"        >
+            Highlight headings        </button>
+                                    
+                                                                    <button
+            type="button"
+            class="am24h-accessibility-popup__action"
+            data-a11y-action="toggle-hide-images"
+            data-a11y-toggle="hide-images" aria-pressed="false"        >
+            Hide images        </button>
+                                    
+                                                                    <button
+            type="button"
+            class="am24h-accessibility-popup__action"
+            data-a11y-action="toggle-pause-animations"
+            data-a11y-toggle="pause-animations" aria-pressed="false"        >
+            Pause animations        </button>
+                                                            </div>
+                    </section>
+
+                    <section class="am24h-accessibility-popup__group" aria-labelledby="am24h-accessibility-group-color">
+                        <h3 id="am24h-accessibility-group-color">Color Controls</h3>
+                        <div class="am24h-accessibility-popup__control-row" role="group" aria-label="Color Controls">
+                                                                    <button
+            type="button"
+            class="am24h-accessibility-popup__action"
+            data-a11y-action="toggle-high-contrast"
+            data-a11y-toggle="high-contrast" aria-pressed="false"        >
+            High contrast        </button>
+                                    
+                                                                    <button
+            type="button"
+            class="am24h-accessibility-popup__action"
+            data-a11y-action="toggle-reduced-saturation"
+            data-a11y-toggle="reduced-saturation" aria-pressed="false"        >
+            Reduced saturation        </button>
+                                    
+                                                                    <button
+            type="button"
+            class="am24h-accessibility-popup__action"
+            data-a11y-action="toggle-grayscale"
+            data-a11y-toggle="grayscale" aria-pressed="false"        >
+            Grayscale        </button>
+                                                            </div>
+                    </section>
+
+                    <div class="am24h-accessibility-popup__control-row" role="group" aria-label="Reset controls">
+                        <button type="button" class="am24h-accessibility-popup__action am24h-accessibility-popup__action--reset" data-a11y-action="reset-all">Reset Accessibility Settings</button>
+                    </div>
+                </div>
+
+                                    <ul class="am24h-accessibility-popup__features">
+                                                    <li>Use Tab and Shift+Tab to navigate focusable elements.\nPress Enter or Space to activate controls.\nPress Escape to close dialogs and overlays.</li>
+                                            </ul>
+                            </section>
+        </div>
+        <script>var rocket_beacon_data = {"ajax_url":"https:\/\/www.portalam24h.com\/wp-admin\/admin-ajax.php","nonce":"832a767fb6","url":"https:\/\/www.portalam24h.com\/barco-afunda-na-orla-de-manacapuru-durante-forte-chuva-no-municipio","is_mobile":false,"width_threshold":1600,"height_threshold":700,"delay":500,"debug":null,"status":{"atf":true,"lrc":true,"preconnect_external_domain":true},"elements":"img, video, picture, p, main, div, li, svg, section, header, span","lrc_threshold":1800,"preconnect_external_domain_elements":["link","script","iframe"],"preconnect_external_domain_exclusions":["static.cloudflareinsights.com","rel=\"profile\"","rel=\"preconnect\"","rel=\"dns-prefetch\"","rel=\"icon\""]}</script><script data-name="wpr-wpr-beacon" src='https://www.portalam24h.com/wp-content/plugins/wp-rocket/assets/js/wpr-beacon.min.js' async></script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e909d7bee252bd0',t:'MTc3NTY0NDQyMA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

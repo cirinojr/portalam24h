@@ -28,7 +28,7 @@ class Am24h_FontLoader
 
     public function render_preload(): void
     {
-        if ($this->options->should_defer_visual_overrides()) {
+        if ($this->should_defer_visual_overrides_for_request()) {
             return;
         }
 
@@ -53,7 +53,7 @@ class Am24h_FontLoader
 
     public function render_font_faces(): void
     {
-        if ($this->options->should_defer_visual_overrides()) {
+        if ($this->should_defer_visual_overrides_for_request()) {
             return;
         }
 
@@ -62,11 +62,25 @@ class Am24h_FontLoader
 
     public function render_font_faces_deferred(): void
     {
-        if (! $this->options->should_defer_visual_overrides()) {
+        if (! $this->should_defer_visual_overrides_for_request()) {
             return;
         }
 
         $this->output_font_faces();
+    }
+
+    private function should_defer_visual_overrides_for_request(): bool
+    {
+        if (! $this->options->should_defer_visual_overrides()) {
+            return false;
+        }
+
+        // Keep font CSS in head for single posts to avoid typography-related CLS.
+        if (is_singular('post')) {
+            return false;
+        }
+
+        return true;
     }
 
     private function output_font_faces(): void

@@ -39,7 +39,7 @@ class Am24h_FontFaceGenerator
             $css .= 'src:url("' . esc_url($url) . '") format("' . $format . '");';
             $css .= 'font-weight:' . $weight . ';';
             $css .= 'font-style:' . $style . ';';
-            $css .= 'font-display:swap;';
+            $css .= 'font-display:optional;';
             $css .= '}';
         }
 

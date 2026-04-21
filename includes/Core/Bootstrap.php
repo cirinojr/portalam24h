@@ -12,6 +12,7 @@ require_once __DIR__ . '/Assets.php';
 
 require_once __DIR__ . '/../Performance/CriticalCss.php';
 require_once __DIR__ . '/../Performance/HeadStyles.php';
+require_once __DIR__ . '/../Performance/ClsDebug.php';
 require_once __DIR__ . '/../Performance/Cleanup.php';
 
 require_once __DIR__ . '/../Admin/SettingsSanitizer.php';
@@ -68,6 +69,7 @@ class Am24h_Bootstrap
             new Am24h_Cleanup($this->options),
             new Am24h_CriticalCss($assets),
             new Am24h_HeadStyles($assets),
+            new Am24h_ClsDebug(),
             new Am24h_ThemeCustomCss($this->options),
             new Am24h_CookieConsentBanner($this->options, $assets),
             new Am24h_AccessibilityPopup($this->options, $assets),
