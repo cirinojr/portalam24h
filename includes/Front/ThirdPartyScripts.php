@@ -43,6 +43,23 @@ class Am24h_ThirdPartyScripts
             $this->enqueue_main_script($script['url'], $script['strategy'], $script['inline']);
         }
 
+        // Compatibility path: keep Google tag runtimes on main thread even when configured
+        // in worker mode, because some setups block or miss GA hits through worker execution.
+        foreach ($this->enabled_worker_scripts() as $script) {
+            if (! $this->should_force_worker_script_to_main_thread($script)) {
+                continue;
+            }
+
+            $url_key = $this->normalized_url_key($script['url']);
+
+            if ($url_key === '' || isset($seen[$url_key])) {
+                continue;
+            }
+
+            $seen[$url_key] = true;
+            $this->enqueue_main_script($script['url'], 'defer', $script['inline']);
+        }
+
         if ($this->partytown_is_available()) {
             return;
         }
@@ -77,6 +94,10 @@ class Am24h_ThirdPartyScripts
         $filtered_scripts = array();
 
         foreach ($worker_scripts as $script) {
+            if ($this->should_force_worker_script_to_main_thread($script)) {
+                continue;
+            }
+
             $url_key = $this->normalized_url_key($script['url']);
 
             if ($url_key === '' || isset($excluded[$url_key]) || isset($urls_seen[$url_key])) {
@@ -242,5 +263,32 @@ class Am24h_ThirdPartyScripts
     private function normalized_url_key(string $url): string
     {
         return strtolower(trim($url));
+    }
+
+    /**
+     * @param array{label: string, url: string, inline: string, forward: array<int, string>, enabled: bool} $script
+     */
+    private function should_force_worker_script_to_main_thread(array $script): bool
+    {
+        $url = isset($script['url']) ? (string) $script['url'] : '';
+
+        if ($url === '') {
+            return false;
+        }
+
+        $host = wp_parse_url($url, PHP_URL_HOST);
+        $path = (string) wp_parse_url($url, PHP_URL_PATH);
+
+        if (! is_string($host) || $host === '') {
+            return false;
+        }
+
+        $host = strtolower($host);
+
+        if ($host !== 'googletagmanager.com' && $host !== 'www.googletagmanager.com') {
+            return false;
+        }
+
+        return strpos($path, '/gtag/js') !== false || strpos($path, '/gtm.js') !== false;
     }
 }
