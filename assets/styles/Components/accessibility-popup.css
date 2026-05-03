@@ -64,6 +64,33 @@
     z-index: 9999;
 }
 
+.am24h-accessibility-popup.is-ready .am24h-accessibility-popup__backdrop,
+.am24h-accessibility-popup.is-ready .am24h-accessibility-popup__dialog {
+    transition: opacity 180ms ease, transform 220ms ease;
+}
+
+.am24h-accessibility-popup .am24h-accessibility-popup__backdrop {
+    opacity: 0;
+}
+
+.am24h-accessibility-popup .am24h-accessibility-popup__dialog {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.am24h-accessibility-popup.is-open .am24h-accessibility-popup__backdrop,
+.am24h-accessibility-popup.is-open .am24h-accessibility-popup__dialog {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .am24h-accessibility-popup.is-ready .am24h-accessibility-popup__backdrop,
+    .am24h-accessibility-popup.is-ready .am24h-accessibility-popup__dialog {
+        transition: none;
+    }
+}
+
 .am24h-accessibility-popup__backdrop {
     position: absolute;
     inset: 0;

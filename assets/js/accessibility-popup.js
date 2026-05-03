@@ -213,6 +213,21 @@
         };
     }
 
+    function scheduleIdleInitialization(callback) {
+        if (typeof callback !== 'function') {
+            return;
+        }
+
+        if ('requestIdleCallback' in globalThis) {
+            globalThis.requestIdleCallback(() => {
+                callback();
+            }, { timeout: 2000 });
+            return;
+        }
+
+        globalThis.addEventListener('load', callback, { once: true });
+    }
+
     function initAccessibilityPopup() {
         const trigger = document.querySelector('[data-accessibility-open]');
         const container = document.querySelector('[data-accessibility-popup]');
@@ -224,18 +239,57 @@
         trigger.hidden = false;
 
         const enabledTools = parseEnabledTools(container);
-        const dialog = container.querySelector('.am24h-accessibility-popup__dialog');
-        const closeControls = container.querySelectorAll('[data-accessibility-close]');
-        const readingHelpers = setupReadingHelpers();
-        const hasReadingOverlayTools = isToolEnabled(enabledTools, 'reading_guide') || isToolEnabled(enabledTools, 'reading_mask');
         const focusableSelector = 'button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])';
+        const hasReadingOverlayTools = isToolEnabled(enabledTools, 'reading_guide') || isToolEnabled(enabledTools, 'reading_mask');
+        const reduceMotion = globalThis.matchMedia && globalThis.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let runtimeInitialized = false;
         let previousFocus = null;
         let state = loadState();
         let pointerFrameRequested = false;
         let latestPointerY = globalThis.innerHeight / 2;
+        let readingHelpers = null;
+        let closeControls = null;
+        let dialog = null;
 
+        // Apply persisted accessibility preferences immediately to avoid delayed reflow.
         applyState(state);
-        updateToggleButtons(container, state);
+
+        function getReadingHelpers() {
+            if (!readingHelpers) {
+                readingHelpers = setupReadingHelpers();
+            }
+
+            return readingHelpers;
+        }
+
+        function restoreTriggerFocus() {
+            if (previousFocus && typeof previousFocus.focus === 'function') {
+                previousFocus.focus();
+                return;
+            }
+
+            trigger.focus();
+        }
+
+        function hideContainerAfterTransition() {
+            if (container.hidden) {
+                return;
+            }
+
+            const finalizeClose = () => {
+                container.hidden = true;
+                container.classList.remove('is-ready');
+                container.removeEventListener('transitionend', finalizeClose);
+                restoreTriggerFocus();
+            };
+
+            if (reduceMotion) {
+                finalizeClose();
+                return;
+            }
+
+            container.addEventListener('transitionend', finalizeClose);
+        }
 
         function commitState() {
             applyState(state);
@@ -254,6 +308,11 @@
             }
 
             state[key] = !state[key];
+
+            if (hasReadingOverlayTools && (key === 'readingGuide' || key === 'readingMask') && state[key]) {
+                getReadingHelpers().updatePosition(latestPointerY);
+            }
+
             commitState();
         }
 
@@ -349,7 +408,12 @@
         function openPopup() {
             previousFocus = document.activeElement;
             container.hidden = false;
+            container.classList.add('is-ready');
             trigger.setAttribute('aria-expanded', 'true');
+
+            globalThis.requestAnimationFrame(() => {
+                container.classList.add('is-open');
+            });
 
             if (dialog) {
                 dialog.focus();
@@ -357,18 +421,96 @@
         }
 
         function closePopup() {
-            container.hidden = true;
+            container.classList.remove('is-open');
             trigger.setAttribute('aria-expanded', 'false');
+            hideContainerAfterTransition();
+        }
 
-            if (previousFocus && typeof previousFocus.focus === 'function') {
-                previousFocus.focus();
+        function setupRuntime() {
+            if (runtimeInitialized) {
                 return;
             }
 
-            trigger.focus();
+            runtimeInitialized = true;
+            dialog = container.querySelector('.am24h-accessibility-popup__dialog');
+            closeControls = container.querySelectorAll('[data-accessibility-close]');
+            updateToggleButtons(container, state);
+
+            closeControls.forEach((control) => {
+                control.addEventListener('click', closePopup);
+            });
+
+            container.addEventListener('click', (event) => {
+                const actionTarget = event.target.closest('[data-a11y-action]');
+
+                if (!actionTarget) {
+                    return;
+                }
+
+                const action = actionTarget.dataset.a11yAction;
+
+                if (!action) {
+                    return;
+                }
+
+                handleAction(action);
+            });
+
+            if (hasReadingOverlayTools) {
+                document.addEventListener('mousemove', (event) => {
+                    if (!state.readingGuide && !state.readingMask) {
+                        return;
+                    }
+
+                    latestPointerY = event.clientY;
+
+                    if (pointerFrameRequested) {
+                        return;
+                    }
+
+                    pointerFrameRequested = true;
+                    globalThis.requestAnimationFrame(() => {
+                        pointerFrameRequested = false;
+                        getReadingHelpers().updatePosition(latestPointerY);
+                    });
+                });
+            }
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && !container.hidden) {
+                    closePopup();
+                    return;
+                }
+
+                if (event.key !== 'Tab' || container.hidden || !dialog) {
+                    return;
+                }
+
+                const focusable = dialog.querySelectorAll(focusableSelector);
+
+                if (!focusable.length) {
+                    return;
+                }
+
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+
+                if (event.shiftKey && document.activeElement === first) {
+                    event.preventDefault();
+                    last.focus();
+                    return;
+                }
+
+                if (!event.shiftKey && document.activeElement === last) {
+                    event.preventDefault();
+                    first.focus();
+                }
+            });
         }
 
         trigger.addEventListener('click', function () {
+            setupRuntime();
+
             if (container.hidden) {
                 openPopup();
                 return;
@@ -377,92 +519,13 @@
             closePopup();
         });
 
-        closeControls.forEach((control) => {
-            control.addEventListener('click', closePopup);
-        });
-
-        container.addEventListener('click', (event) => {
-            const actionTarget = event.target.closest('[data-a11y-action]');
-
-            if (!actionTarget) {
-                return;
-            }
-
-            const action = actionTarget.dataset.a11yAction;
-
-            if (!action) {
-                return;
-            }
-
-            handleAction(action);
-        });
-
-        if (hasReadingOverlayTools) {
-            document.addEventListener('mousemove', (event) => {
-                latestPointerY = event.clientY;
-
-                if (pointerFrameRequested) {
-                    return;
-                }
-
-                pointerFrameRequested = true;
-                globalThis.requestAnimationFrame(() => {
-                    pointerFrameRequested = false;
-                    readingHelpers.updatePosition(latestPointerY);
-                });
-            });
-        }
-
-        document.addEventListener('focusin', (event) => {
-            if (!hasReadingOverlayTools) {
-                return;
-            }
-
-            if (!(event.target instanceof HTMLElement)) {
-                return;
-            }
-
-            const rect = event.target.getBoundingClientRect();
-
-            readingHelpers.updatePosition(rect.top + (rect.height / 2));
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && !container.hidden) {
-                closePopup();
-                return;
-            }
-
-            if (event.key !== 'Tab' || container.hidden || !dialog) {
-                return;
-            }
-
-            const focusable = dialog.querySelectorAll(focusableSelector);
-
-            if (!focusable.length) {
-                return;
-            }
-
-            const first = focusable[0];
-            const last = focusable[focusable.length - 1];
-
-            if (event.shiftKey && document.activeElement === first) {
-                event.preventDefault();
-                last.focus();
-                return;
-            }
-
-            if (!event.shiftKey && document.activeElement === last) {
-                event.preventDefault();
-                first.focus();
-            }
-        });
+        scheduleIdleInitialization(setupRuntime);
     }
 
-    if (document.readyState === 'complete') {
+    if (document.readyState !== 'loading') {
         initAccessibilityPopup();
         return;
     }
 
-    globalThis.addEventListener('load', initAccessibilityPopup, { once: true });
+    document.addEventListener('DOMContentLoaded', initAccessibilityPopup, { once: true });
 })();

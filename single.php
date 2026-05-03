@@ -58,6 +58,7 @@ get_header();
                         $featured_ratio = '';
                         $featured_width = 0;
                         $featured_height = 0;
+                        $featured_sizes = '(min-width: 768px) 728px, 100vw';
 
                         if (has_post_thumbnail()) {
                             $image_id = get_post_thumbnail_id();
@@ -80,6 +81,7 @@ get_header();
                                 'loading' => 'eager',
                                 'fetchpriority' => 'high',
                                 'decoding' => 'async',
+                                'sizes' => $featured_sizes,
                             );
 
                             if ($featured_width > 0 && $featured_height > 0) {

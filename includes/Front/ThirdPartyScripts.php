@@ -22,10 +22,38 @@ class Am24h_ThirdPartyScripts
     {
         add_action('wp_enqueue_scripts', array($this, 'enqueue_main_thread_scripts'), 30);
         add_action('wp_head', array($this, 'render_worker_scripts'), 30);
+        add_filter('wp_resource_hints', array($this, 'add_google_tag_resource_hints'), 10, 2);
 
         if (is_admin()) {
             add_action('admin_notices', array($this, 'maybe_render_worker_assets_notice'));
         }
+    }
+
+    /**
+     * @param array<int, string|array<string, string>> $urls
+     * @return array<int, string|array<string, string>>
+     */
+    public function add_google_tag_resource_hints(array $urls, string $relation_type): array
+    {
+        if (! $this->google_tag_runtime_is_enabled()) {
+            return $urls;
+        }
+
+        if ($relation_type === 'preconnect') {
+            $urls = $this->append_resource_hint($urls, 'https://www.googletagmanager.com', true);
+            $urls = $this->append_resource_hint($urls, 'https://www.google-analytics.com', true);
+
+            return $urls;
+        }
+
+        if ($relation_type === 'dns-prefetch') {
+            $urls = $this->append_resource_hint($urls, '//www.googletagmanager.com', false);
+            $urls = $this->append_resource_hint($urls, '//www.google-analytics.com', false);
+
+            return $urls;
+        }
+
+        return $urls;
     }
 
     public function enqueue_main_thread_scripts(): void
@@ -266,16 +294,54 @@ class Am24h_ThirdPartyScripts
     }
 
     /**
-     * @param array{label: string, url: string, inline: string, forward: array<int, string>, enabled: bool} $script
+     * @param array<int, string|array<string, string>> $urls
+     * @return array<int, string|array<string, string>>
      */
-    private function should_force_worker_script_to_main_thread(array $script): bool
+    private function append_resource_hint(array $urls, string $href, bool $use_crossorigin): array
     {
-        $url = isset($script['url']) ? (string) $script['url'] : '';
+        foreach ($urls as $existing) {
+            if (is_string($existing) && $existing === $href) {
+                return $urls;
+            }
 
-        if ($url === '') {
-            return false;
+            if (is_array($existing) && isset($existing['href']) && $existing['href'] === $href) {
+                return $urls;
+            }
         }
 
+        if (! $use_crossorigin) {
+            $urls[] = $href;
+
+            return $urls;
+        }
+
+        $urls[] = array(
+            'href' => $href,
+            'crossorigin' => 'anonymous',
+        );
+
+        return $urls;
+    }
+
+    private function google_tag_runtime_is_enabled(): bool
+    {
+        foreach ($this->enabled_main_thread_scripts() as $script) {
+            if ($this->is_google_tag_runtime_url((string) $script['url'])) {
+                return true;
+            }
+        }
+
+        foreach ($this->enabled_worker_scripts() as $script) {
+            if ($this->is_google_tag_runtime_url((string) $script['url'])) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private function is_google_tag_runtime_url(string $url): bool
+    {
         $host = wp_parse_url($url, PHP_URL_HOST);
         $path = (string) wp_parse_url($url, PHP_URL_PATH);
 
@@ -290,5 +356,19 @@ class Am24h_ThirdPartyScripts
         }
 
         return strpos($path, '/gtag/js') !== false || strpos($path, '/gtm.js') !== false;
+    }
+
+    /**
+     * @param array{label: string, url: string, inline: string, forward: array<int, string>, enabled: bool} $script
+     */
+    private function should_force_worker_script_to_main_thread(array $script): bool
+    {
+        $url = isset($script['url']) ? (string) $script['url'] : '';
+
+        if ($url === '') {
+            return false;
+        }
+
+        return $this->is_google_tag_runtime_url($url);
     }
 }
