@@ -21,8 +21,8 @@
                     return;
                 }
 
-                if (key === 'enabled_hidden') {
-                    field.name = groupName + '[' + index + '][enabled]';
+                if (key === 'enabled_hidden' || key === 'preconnect_hidden') {
+                    field.name = groupName + '[' + index + '][' + key.replace('_hidden', '') + ']';
                     return;
                 }
 

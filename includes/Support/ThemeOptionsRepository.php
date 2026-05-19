@@ -345,7 +345,7 @@ class Am24h_ThemeOptionsRepository
     }
 
     /**
-     * @return array<int, array{label: string, url: string, inline: string, forward: array<int, string>, enabled: bool}>
+     * @return array<int, array{label: string, url: string, inline: string, forward: array<int, string>, preconnect: bool, enabled: bool}>
      */
     public function get_third_party_worker_scripts(): array
     {
@@ -397,6 +397,7 @@ class Am24h_ThemeOptionsRepository
                 'url' => $url,
                 'inline' => $this->normalize_inline_script(isset($row['inline']) ? $row['inline'] : ''),
                 'forward' => $forward,
+                'preconnect' => ! isset($row['preconnect']) || (int) $row['preconnect'] === 1,
                 'enabled' => ! empty($row['enabled']) && (int) $row['enabled'] === 1,
             );
 
@@ -409,7 +410,7 @@ class Am24h_ThemeOptionsRepository
     }
 
     /**
-     * @return array<int, array{label: string, url: string, inline: string, strategy: string, enabled: bool}>
+     * @return array<int, array{label: string, url: string, inline: string, strategy: string, preconnect: bool, enabled: bool}>
      */
     public function get_third_party_main_thread_scripts(): array
     {
@@ -443,6 +444,7 @@ class Am24h_ThemeOptionsRepository
                 'url' => $url,
                 'inline' => $this->normalize_inline_script(isset($row['inline']) ? $row['inline'] : ''),
                 'strategy' => $strategy,
+                'preconnect' => ! isset($row['preconnect']) || (int) $row['preconnect'] === 1,
                 'enabled' => ! empty($row['enabled']) && (int) $row['enabled'] === 1,
             );
 

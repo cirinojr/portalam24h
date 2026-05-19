@@ -249,6 +249,7 @@ class Am24h_SettingsSanitizer
                 'label' => substr(sanitize_text_field((string) (isset($row['label']) ? $row['label'] : '')), 0, 80),
                 'url' => $url,
                 'inline' => $this->sanitize_inline_js_snippet(isset($row['inline']) ? $row['inline'] : ''),
+                'preconnect' => $this->sanitize_checkbox(isset($row['preconnect']) ? $row['preconnect'] : 1),
                 'enabled' => $this->sanitize_checkbox(isset($row['enabled']) ? $row['enabled'] : 0),
             );
 

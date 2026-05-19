@@ -35,20 +35,28 @@ class Am24h_ThirdPartyScripts
      */
     public function add_google_tag_resource_hints(array $urls, string $relation_type): array
     {
-        if (! $this->google_tag_runtime_is_enabled()) {
-            return $urls;
-        }
-
         if ($relation_type === 'preconnect') {
-            $urls = $this->append_resource_hint($urls, 'https://www.googletagmanager.com', true);
-            $urls = $this->append_resource_hint($urls, 'https://www.google-analytics.com', true);
+            foreach ($this->enabled_third_party_hosts() as $host) {
+                $urls = $this->append_resource_hint($urls, 'https://' . $host, true);
+            }
+
+            if ($this->google_tag_preconnect_is_enabled()) {
+                $urls = $this->append_resource_hint($urls, 'https://www.googletagmanager.com', true);
+                $urls = $this->append_resource_hint($urls, 'https://www.google-analytics.com', true);
+            }
 
             return $urls;
         }
 
         if ($relation_type === 'dns-prefetch') {
-            $urls = $this->append_resource_hint($urls, '//www.googletagmanager.com', false);
-            $urls = $this->append_resource_hint($urls, '//www.google-analytics.com', false);
+            foreach ($this->enabled_third_party_hosts() as $host) {
+                $urls = $this->append_resource_hint($urls, '//' . $host, false);
+            }
+
+            if ($this->google_tag_preconnect_is_enabled()) {
+                $urls = $this->append_resource_hint($urls, '//www.googletagmanager.com', false);
+                $urls = $this->append_resource_hint($urls, '//www.google-analytics.com', false);
+            }
 
             return $urls;
         }
@@ -205,7 +213,7 @@ class Am24h_ThirdPartyScripts
     }
 
     /**
-     * @return array<int, array{label: string, url: string, inline: string, strategy: string, enabled: bool}>
+     * @return array<int, array{label: string, url: string, inline: string, strategy: string, preconnect: bool, enabled: bool}>
      */
     private function enabled_main_thread_scripts(): array
     {
@@ -223,7 +231,7 @@ class Am24h_ThirdPartyScripts
     }
 
     /**
-     * @return array<int, array{label: string, url: string, inline: string, forward: array<int, string>, enabled: bool}>
+     * @return array<int, array{label: string, url: string, inline: string, forward: array<int, string>, preconnect: bool, enabled: bool}>
      */
     private function enabled_worker_scripts(): array
     {
@@ -294,6 +302,46 @@ class Am24h_ThirdPartyScripts
     }
 
     /**
+     * @return array<int, string>
+     */
+    private function enabled_third_party_hosts(): array
+    {
+        $hosts = array();
+
+        foreach ($this->enabled_main_thread_scripts() as $script) {
+            if (! $this->script_has_preconnect_enabled($script)) {
+                continue;
+            }
+
+            $this->append_script_host($hosts, (string) $script['url']);
+        }
+
+        foreach ($this->enabled_worker_scripts() as $script) {
+            if (! $this->script_has_preconnect_enabled($script)) {
+                continue;
+            }
+
+            $this->append_script_host($hosts, (string) $script['url']);
+        }
+
+        return array_keys($hosts);
+    }
+
+    /**
+     * @param array<string, bool> $hosts
+     */
+    private function append_script_host(array &$hosts, string $url): void
+    {
+        $host = wp_parse_url($url, PHP_URL_HOST);
+
+        if (! is_string($host) || $host === '') {
+            return;
+        }
+
+        $hosts[strtolower($host)] = true;
+    }
+
+    /**
      * @param array<int, string|array<string, string>> $urls
      * @return array<int, string|array<string, string>>
      */
@@ -340,6 +388,35 @@ class Am24h_ThirdPartyScripts
         return false;
     }
 
+    private function google_tag_preconnect_is_enabled(): bool
+    {
+        if (! $this->google_tag_runtime_is_enabled()) {
+            return false;
+        }
+
+        foreach ($this->enabled_main_thread_scripts() as $script) {
+            if (! $this->script_has_preconnect_enabled($script)) {
+                continue;
+            }
+
+            if ($this->is_google_tag_runtime_url((string) $script['url'])) {
+                return true;
+            }
+        }
+
+        foreach ($this->enabled_worker_scripts() as $script) {
+            if (! $this->script_has_preconnect_enabled($script)) {
+                continue;
+            }
+
+            if ($this->is_google_tag_runtime_url((string) $script['url'])) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private function is_google_tag_runtime_url(string $url): bool
     {
         $host = wp_parse_url($url, PHP_URL_HOST);
@@ -359,7 +436,7 @@ class Am24h_ThirdPartyScripts
     }
 
     /**
-     * @param array{label: string, url: string, inline: string, forward: array<int, string>, enabled: bool} $script
+     * @param array{label: string, url: string, inline: string, forward: array<int, string>, preconnect: bool, enabled: bool} $script
      */
     private function should_force_worker_script_to_main_thread(array $script): bool
     {
@@ -370,5 +447,17 @@ class Am24h_ThirdPartyScripts
         }
 
         return $this->is_google_tag_runtime_url($url);
+    }
+
+    /**
+     * @param array<string, mixed> $script
+     */
+    private function script_has_preconnect_enabled(array $script): bool
+    {
+        if (! array_key_exists('preconnect', $script)) {
+            return true;
+        }
+
+        return ! empty($script['preconnect']) && (int) $script['preconnect'] === 1;
     }
 }

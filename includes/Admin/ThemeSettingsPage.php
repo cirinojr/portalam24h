@@ -707,6 +707,7 @@ class Am24h_ThemeSettingsPage
                                 'url' => '',
                                 'inline' => '',
                                 'forward' => array(),
+                                'preconnect' => true,
                                 'enabled' => true,
                             )); ?>
                         </template>
@@ -742,6 +743,7 @@ class Am24h_ThemeSettingsPage
                                 'url' => '',
                                 'inline' => '',
                                 'strategy' => 'defer',
+                                'preconnect' => true,
                                 'enabled' => true,
                             )); ?>
                         </template>
@@ -993,12 +995,13 @@ class Am24h_ThemeSettingsPage
         <?php
     }
 
-    /**
-     * @param array{label: string, url: string, inline: string, forward: array<int, string>, enabled: bool} $script
-     */
+        /**
+         * @param array{label: string, url: string, inline: string, forward: array<int, string>, preconnect: bool, enabled: bool} $script
+         */
     private function render_third_party_worker_row(array $script): void
     {
         $forward_value = implode(', ', isset($script['forward']) && is_array($script['forward']) ? $script['forward'] : array());
+                $preconnect_enabled = ! isset($script['preconnect']) || ! empty($script['preconnect']);
         ?>
         <div class="am24h-script-row" data-script-row>
             <div class="am24h-script-row-head">
@@ -1028,6 +1031,12 @@ class Am24h_ThemeSettingsPage
             </div>
 
             <label class="am24h-inline-control">
+                <input type="hidden" value="0" data-field="preconnect_hidden" />
+                <input type="checkbox" value="1" data-field="preconnect" <?php checked(true, $preconnect_enabled); ?> />
+                <span><?php esc_html_e('Add preconnect/dns-prefetch hints for this domain', 'am24h'); ?></span>
+            </label>
+
+            <label class="am24h-inline-control">
                 <input type="hidden" value="0" data-field="enabled_hidden" />
                 <input type="checkbox" value="1" data-field="enabled" <?php checked(true, ! empty($script['enabled'])); ?> />
                 <span><?php esc_html_e('Enable this script', 'am24h'); ?></span>
@@ -1036,12 +1045,13 @@ class Am24h_ThemeSettingsPage
         <?php
     }
 
-    /**
-     * @param array{label: string, url: string, inline: string, strategy: string, enabled: bool} $script
-     */
+        /**
+         * @param array{label: string, url: string, inline: string, strategy: string, preconnect: bool, enabled: bool} $script
+         */
     private function render_third_party_main_thread_row(array $script): void
     {
         $strategy = isset($script['strategy']) && in_array($script['strategy'], array('async', 'defer'), true) ? $script['strategy'] : 'defer';
+                $preconnect_enabled = ! isset($script['preconnect']) || ! empty($script['preconnect']);
         ?>
         <div class="am24h-script-row" data-script-row>
             <div class="am24h-script-row-head">
@@ -1071,6 +1081,12 @@ class Am24h_ThemeSettingsPage
                     <option value="async" <?php selected($strategy, 'async'); ?>><?php esc_html_e('async (fastest fetch, unordered execution)', 'am24h'); ?></option>
                 </select>
             </div>
+
+            <label class="am24h-inline-control">
+                <input type="hidden" value="0" data-field="preconnect_hidden" />
+                <input type="checkbox" value="1" data-field="preconnect" <?php checked(true, $preconnect_enabled); ?> />
+                <span><?php esc_html_e('Add preconnect/dns-prefetch hints for this domain', 'am24h'); ?></span>
+            </label>
 
             <label class="am24h-inline-control">
                 <input type="hidden" value="0" data-field="enabled_hidden" />

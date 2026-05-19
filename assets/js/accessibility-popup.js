@@ -6,6 +6,7 @@
     const FONT_STEP_PERCENT = 4;
     const FONT_MIN_STEP = -1;
     const FONT_MAX_STEP = 2;
+    const POINTER_MOVE_DELTA_THRESHOLD = 2;
 
     function defaultState() {
         return {
@@ -119,7 +120,17 @@
         return enabledTools.has(key);
     }
 
-    function applyState(state) {
+    function setBodyClass(body, className, enabled) {
+        const shouldEnable = Boolean(enabled);
+
+        if (body.classList.contains(className) === shouldEnable) {
+            return;
+        }
+
+        body.classList.toggle(className, shouldEnable);
+    }
+
+    function applyState(state, previousState) {
         const body = document.body;
         const html = document.documentElement;
 
@@ -127,24 +138,66 @@
             return;
         }
 
-        const htmlFontSize = FONT_BASE_PERCENT + (state.fontStep * FONT_STEP_PERCENT);
+        const previous = previousState || null;
 
-        html.style.fontSize = `${htmlFontSize}%`;
-        body.dataset.am24hA11yFontStep = String(state.fontStep);
+        if (!previous || previous.fontStep !== state.fontStep) {
+            const htmlFontSize = FONT_BASE_PERCENT + (state.fontStep * FONT_STEP_PERCENT);
 
-        body.classList.toggle('am24h-a11y-line-height', state.lineHeight);
-        body.classList.toggle('am24h-a11y-letter-spacing', state.letterSpacing);
-        body.classList.toggle('am24h-a11y-readable-font', state.readableFont);
-        body.classList.toggle('am24h-a11y-reading-mode', state.readingMode);
-        body.classList.toggle('am24h-a11y-reading-guide', state.readingGuide);
-        body.classList.toggle('am24h-a11y-reading-mask', state.readingMask);
-        body.classList.toggle('am24h-a11y-highlight-links', state.highlightLinks);
-        body.classList.toggle('am24h-a11y-highlight-headings', state.highlightHeadings);
-        body.classList.toggle('am24h-a11y-hide-images', state.hideImages);
-        body.classList.toggle('am24h-a11y-pause-animations', state.pauseAnimations);
-        body.classList.toggle('am24h-a11y-high-contrast', state.highContrast);
-        body.classList.toggle('am24h-a11y-reduced-saturation', state.reducedSaturation);
-        body.classList.toggle('am24h-a11y-grayscale', state.grayscale);
+            html.style.fontSize = `${htmlFontSize}%`;
+            body.dataset.am24hA11yFontStep = String(state.fontStep);
+        }
+
+        if (!previous || previous.lineHeight !== state.lineHeight) {
+            setBodyClass(body, 'am24h-a11y-line-height', state.lineHeight);
+        }
+
+        if (!previous || previous.letterSpacing !== state.letterSpacing) {
+            setBodyClass(body, 'am24h-a11y-letter-spacing', state.letterSpacing);
+        }
+
+        if (!previous || previous.readableFont !== state.readableFont) {
+            setBodyClass(body, 'am24h-a11y-readable-font', state.readableFont);
+        }
+
+        if (!previous || previous.readingMode !== state.readingMode) {
+            setBodyClass(body, 'am24h-a11y-reading-mode', state.readingMode);
+        }
+
+        if (!previous || previous.readingGuide !== state.readingGuide) {
+            setBodyClass(body, 'am24h-a11y-reading-guide', state.readingGuide);
+        }
+
+        if (!previous || previous.readingMask !== state.readingMask) {
+            setBodyClass(body, 'am24h-a11y-reading-mask', state.readingMask);
+        }
+
+        if (!previous || previous.highlightLinks !== state.highlightLinks) {
+            setBodyClass(body, 'am24h-a11y-highlight-links', state.highlightLinks);
+        }
+
+        if (!previous || previous.highlightHeadings !== state.highlightHeadings) {
+            setBodyClass(body, 'am24h-a11y-highlight-headings', state.highlightHeadings);
+        }
+
+        if (!previous || previous.hideImages !== state.hideImages) {
+            setBodyClass(body, 'am24h-a11y-hide-images', state.hideImages);
+        }
+
+        if (!previous || previous.pauseAnimations !== state.pauseAnimations) {
+            setBodyClass(body, 'am24h-a11y-pause-animations', state.pauseAnimations);
+        }
+
+        if (!previous || previous.highContrast !== state.highContrast) {
+            setBodyClass(body, 'am24h-a11y-high-contrast', state.highContrast);
+        }
+
+        if (!previous || previous.reducedSaturation !== state.reducedSaturation) {
+            setBodyClass(body, 'am24h-a11y-reduced-saturation', state.reducedSaturation);
+        }
+
+        if (!previous || previous.grayscale !== state.grayscale) {
+            setBodyClass(body, 'am24h-a11y-grayscale', state.grayscale);
+        }
     }
 
     function updateToggleButtons(container, state) {
@@ -246,13 +299,19 @@
         let previousFocus = null;
         let state = loadState();
         let pointerFrameRequested = false;
+        let commitFrameRequested = false;
+        let hasPendingCommit = false;
+        let lastAppliedState = null;
         let latestPointerY = globalThis.innerHeight / 2;
+        let renderedPointerY = latestPointerY;
         let readingHelpers = null;
         let closeControls = null;
         let dialog = null;
 
         // Apply persisted accessibility preferences immediately to avoid delayed reflow.
-        applyState(state);
+        state = normalizeState(state);
+        applyState(state, lastAppliedState);
+        lastAppliedState = normalizeState(state);
 
         function getReadingHelpers() {
             if (!readingHelpers) {
@@ -291,10 +350,35 @@
             container.addEventListener('transitionend', finalizeClose);
         }
 
-        function commitState() {
-            applyState(state);
+        function flushCommit() {
+            commitFrameRequested = false;
+
+            if (!hasPendingCommit) {
+                return;
+            }
+
+            hasPendingCommit = false;
+            applyState(state, lastAppliedState);
+            lastAppliedState = normalizeState(state);
             updateToggleButtons(container, state);
             saveState(state);
+        }
+
+        function commitState(immediate) {
+            state = normalizeState(state);
+            hasPendingCommit = true;
+
+            if (immediate === true) {
+                flushCommit();
+                return;
+            }
+
+            if (commitFrameRequested) {
+                return;
+            }
+
+            commitFrameRequested = true;
+            globalThis.requestAnimationFrame(flushCommit);
         }
 
         function resetState() {
@@ -310,6 +394,7 @@
             state[key] = !state[key];
 
             if (hasReadingOverlayTools && (key === 'readingGuide' || key === 'readingMask') && state[key]) {
+                renderedPointerY = latestPointerY;
                 getReadingHelpers().updatePosition(latestPointerY);
             }
 
@@ -471,6 +556,12 @@
                     pointerFrameRequested = true;
                     globalThis.requestAnimationFrame(() => {
                         pointerFrameRequested = false;
+
+                        if (Math.abs(latestPointerY - renderedPointerY) < POINTER_MOVE_DELTA_THRESHOLD) {
+                            return;
+                        }
+
+                        renderedPointerY = latestPointerY;
                         getReadingHelpers().updatePosition(latestPointerY);
                     });
                 });
