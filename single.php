@@ -66,7 +66,7 @@ get_header();
                             $thumbnail_metadata = wp_get_attachment_metadata($image_id);
 
                             if (! is_array($thumbnail_metadata) || empty($thumbnail_metadata['sizes']['single-featured'])) {
-                                $single_image_size = 'large';
+                                $single_image_size = 'medium';
                             }
 
                             $image_src_data = wp_get_attachment_image_src($image_id, $single_image_size);
@@ -169,7 +169,7 @@ get_header();
 
                             <?php if ($featured_image_html !== '') : ?>
                                 <figure class="cc-single__hero-media cc-single__media cc-single__post-thumbnail"<?php if ($featured_ratio !== '') : ?> style="--cc-single-media-ratio: <?php echo esc_attr($featured_ratio); ?>;"<?php endif; ?>>
-                                    <?php echo wp_kses_post($featured_image_html); ?>
+                                    <?php echo $featured_image_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_get_attachment_image() returns escaped markup with responsive attributes. ?>
 
                                     <?php if ($featured_image_caption) : ?>
                                         <figcaption>

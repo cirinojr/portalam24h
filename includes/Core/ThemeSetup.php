@@ -27,7 +27,7 @@ class Am24h_ThemeSetup
         add_image_size('thumb-desktop', 248, 387, true);
         add_image_size('thumb-mobile', 149, 232, true);
         add_image_size('news-card-thumb', 360, 240, true);
-        add_image_size('single-featured', 1200, 640, true);
+        add_image_size('single-featured', 728, 388, true);
 
         add_theme_support(
             'custom-logo',

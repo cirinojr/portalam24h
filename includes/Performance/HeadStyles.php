@@ -6,7 +6,7 @@ class Am24h_HeadStyles
     private const MAIN_STYLE_HANDLE = 'am24h-main-style';
     private const COMPONENT_STYLE_PATH_FRAGMENT = '/assets/styles/Components/';
     private const SINGLE_FEATURED_IMAGE_SIZE = 'single-featured';
-    private const SINGLE_FEATURED_IMAGE_FALLBACK_SIZE = 'large';
+    private const SINGLE_FEATURED_IMAGE_FALLBACK_SIZE = 'medium';
     private const SINGLE_FEATURED_IMAGE_SIZES = '(min-width: 768px) 728px, 100vw';
 
     public function __construct(Am24h_AssetLocator $assets)
